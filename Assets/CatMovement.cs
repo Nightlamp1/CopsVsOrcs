@@ -2,65 +2,76 @@
 using System.Collections;
 
 public class CatMovement : MonoBehaviour {
+  public bool grounded = false;
+  public Transform groundedEnd;
+  public Transform spawnPosition;
+  public Vector2 directionxy;
+  public bool facingRight;
+  public float Speed = 6.0f;
 
-	public bool grounded = false;
-	public Transform groundedEnd;
-	public Transform spawnPosition;
-	public GameObject bullet;
-	public Vector2 directionxy;
-	//public Transform Shoot;
+  public Bullet bullet;
 
-	public float Speed = 6.0f;
+  Animator anim;
+  
+  void Start()
+  {
+    anim = GetComponent <Animator>();
+    facingRight = true;
+  }
+  
+  // Update is called once per frame
+  void Update () 
+  {
+    Movement ();
+    Raycasting ();
+    Weapon ();
+  }
 
-	Animator anim;
+  void Movement ()
+  {
+    anim.SetFloat ("Speed", Mathf.Abs (Input.GetAxis ("Horizontal")));
 
-	void Start()
-	{
-		anim = GetComponent <Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		Movement ();
-		Raycasting ();
-		Weapon ();
-	}
+    if (Input.GetKey (KeyCode.D)) 
+    {
+      facingRight = true;
+      transform.Translate (Vector2.right * Speed * Time.deltaTime);
+      transform.eulerAngles = new Vector2(0, 0);
+    } 
+    else if (Input.GetKey (KeyCode.A)) 
+    {
+      facingRight = false;
+      transform.Translate (Vector2.right * Speed * Time.deltaTime);
+      transform.eulerAngles = new Vector2(0, 180);
+    }
 
-	void Movement ()
-	{
-		anim.SetFloat ("Speed", Mathf.Abs (Input.GetAxis ("Horizontal")));
+    if (Input.GetKeyDown (KeyCode.Space) && grounded == true) 
+    {
+      rigidbody2D.AddForce (Vector2.up * 300f);
+    }
+  }
 
-		if (Input.GetKey (KeyCode.D)) 
-		{
-			transform.Translate (Vector2.right * Speed * Time.deltaTime);
-			transform.eulerAngles = new Vector2(0, 0);			
-		}
-		if (Input.GetKey (KeyCode.A)) 
-		{
-			transform.Translate (Vector2.right * Speed * Time.deltaTime);
-			transform.eulerAngles = new Vector2(0, 180);
-		}
-		if (Input.GetKeyDown (KeyCode.Space) && grounded == true) 
-		{
-			rigidbody2D.AddForce (Vector2.up * 300f);
-		}
-	}
+  void Raycasting()
+  {
+    Debug.DrawLine (this.transform.position, groundedEnd.position, Color.green);
 
-	void Raycasting()
-	{
-		Debug.DrawLine (this.transform.position, groundedEnd.position, Color.green);
+    grounded = Physics2D.Linecast (this.transform.position, groundedEnd.position, 1 << LayerMask.NameToLayer ("Ground"));
+  }
 
-		grounded = Physics2D.Linecast (this.transform.position, groundedEnd.position, 1 << LayerMask.NameToLayer ("Ground"));
-	}
+  void Weapon ()
+  {
+    if (Input.GetKeyDown (KeyCode.R))
+    {
+      Bullet b;
 
-	void Weapon ()
-	{
-		if (Input.GetKeyDown (KeyCode.R))
-		{
-			directionxy = new Vector2(transform.forward.x,0);
-			Instantiate(bullet,spawnPosition.position, spawnPosition.rotation);
-			//bullet.rigidbody2D.AddForce(directionxy*10f);
-		}
-	}
+      b = Instantiate(bullet, this.transform.position, this.transform.rotation) as Bullet;
+
+      b.transform.Translate(new Vector2(0.5f, 0));
+
+      b.rigidbody2D.velocity.Set(0, 0);
+
+      b.setFacingRight(facingRight);
+
+      b.fire();
+    }
+  }
 }

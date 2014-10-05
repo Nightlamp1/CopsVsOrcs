@@ -545,7 +545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf715be4e3c97c4ca163c8af7c45b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cop: {fileID: 1677905143}
 --- !u!61 &766595787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1130,6 +1129,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1677905149}
   m_RootOrder: 1
+--- !u!1 &1642799101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1642799103}
+  - 50: {fileID: 1642799102}
+  - 114: {fileID: 1642799104}
+  m_Layer: 0
+  m_Name: bullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &1642799102
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642799101}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!4 &1642799103
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642799101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .5, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+--- !u!114 &1642799104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642799101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1e21de428489c44a4d8ec1457f9f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1677905143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,10 +1218,10 @@ MonoBehaviour:
   grounded: 0
   groundedEnd: {fileID: 1274209796}
   spawnPosition: {fileID: 906760737}
-  bullet: {fileID: 766595783}
   directionxy: {x: 0, y: 0}
-  Shoot: {fileID: 0}
+  facingRight: 0
   Speed: 6
+  projectile: {fileID: 0}
 --- !u!95 &1677905145
 Animator:
   serializedVersion: 3
@@ -1238,7 +1292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1677905143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9044323, y: 5.72175169, z: 0}
+  m_LocalPosition: {x: -1.9044323, y: .25, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1274209796}
@@ -1405,10 +1459,10 @@ MonoBehaviour:
   grounded: 0
   groundedEnd: {fileID: 2091424658}
   spawnPosition: {fileID: 1598443254}
-  bullet: {fileID: 0}
   directionxy: {x: 0, y: 0}
-  Shoot: {fileID: 0}
+  facingRight: 0
   Speed: 6
+  projectile: {fileID: 0}
 --- !u!61 &1957080930
 BoxCollider2D:
   m_ObjectHideFlags: 0
