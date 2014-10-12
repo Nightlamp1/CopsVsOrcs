@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Collections;
 
 public class CatMovement : MonoBehaviour {
+  public const float JUMP_FORCE = 350f;
+  public Vector2 directionxy;
   public bool grounded = false; //Used as a groundcheck to verify player jump ability is valid
   public Transform groundedEnd; //the TRANSFORM object used in ground checking function
   public Transform spawnPosition;//this variable is used to spawn the bullet in front of the player
@@ -60,7 +62,7 @@ public class CatMovement : MonoBehaviour {
 
     if (Input.GetKeyDown (KeyCode.Space) && grounded == true) //This if statement controls player JUMP controls
     {
-      rigidbody2D.AddForce (Vector2.up * 300f);
+      rigidbody2D.AddForce (Vector2.up * JUMP_FORCE);
     }
   }
 
