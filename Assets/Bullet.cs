@@ -13,7 +13,10 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
   {
-	  
+		if (gameObject.name == "bullet(Clone)") 
+		{
+			Destroy(gameObject, 1);
+		}
   }
   
   public void setFacingRight(bool p_facingRight)
@@ -23,23 +26,24 @@ public class Bullet : MonoBehaviour {
   
   void OnCollisionEnter2D(Collision2D other)
   {
-    Debug.Log (this.transform.tag + " struck " + other.transform.tag + " (" + other.GetType() + ")");
+    //Debug.Log (this.transform.tag + " struck " + other.transform.tag + " (" + other.GetType() + ")");
 
-    if(other.transform.tag == "Enemy")
+    /*if(other.transform.tag == "Enemy" && gameObject.name == "bullet(Clone)")
     { 
-      Destroy (this);
-      other.gameObject.SendMessage("struckWithBullet");
-    }
-    else if (other.transform.tag == "Cop")
+		Destroy (gameObject);
+      //other.gameObject.SendMessage("struckWithBullet");
+    }*/
+	if (other.transform.tag == "Cop" && gameObject.name == "bullet(Clone)")
     {
       Destroy (this);
-      other.gameObject.SendMessage("struckWithBullet");
+      //other.gameObject.SendMessage("struckWithBullet");
     }
-    else
-    {
-      // Always destroy the bullet upon collision.
-      Destroy (this);
-    }
+	else if (other.transform.tag == "Ground" && gameObject.name == "bullet(Clone)")
+	{
+		Destroy (gameObject);
+			//other.gameObject.SendMessage("struckWithBullet");
+	}
+
   }
   
   public void fire()
