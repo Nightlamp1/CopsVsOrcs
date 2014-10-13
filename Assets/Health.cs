@@ -17,11 +17,17 @@ public class Health : MonoBehaviour
         HankGUI.getInstance().decPlayerHP(0.20f);
       }
     }
+    else if (gameObject.transform.tag == "Enemy")
+    {
+      // Do nothing
+      Destroy (gameObject);
+    }
     else if (gameObject.transform.tag == "Boss")
     {
       if (other.gameObject.name == "bullet(Clone)")
       {
         HankGUI.getInstance().decEnemyHP(0.10f);
+        Destroy (gameObject);
       }
     }
   }

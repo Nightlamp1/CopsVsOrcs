@@ -18,12 +18,6 @@ public abstract class Activateable : MonoBehaviour {
     m_cooldownActivate = 0;
     m_cooldownActivateAlternate = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-    m_cooldownActivate -= 1;
-    m_cooldownActivateAlternate -= 1;
-  }
   
   public bool canActivate()
   {

@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Bullet : MonoBehaviour {
-  bool facingRight = true;
   public GameObject prefab;
   public static GameObject staticPrefab;
   public float m_range;
