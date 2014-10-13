@@ -20,6 +20,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
 
+	bool doubleJump = false;
 
     void Awake()
 	{
@@ -38,6 +39,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 		// Set the vertical animation
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+
+		if (grounded)
+		{
+			doubleJump = false;
+		}
 	}
 
 
@@ -79,10 +85,18 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 
         // If the player should jump...
-        if (grounded && jump) {
+        if ((grounded || !doubleJump) && jump) {
             // Add a vertical force to the player.
             anim.SetBool("Ground", false);
+
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
+
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+
+			if(!grounded)
+			{
+				doubleJump = true;
+			}
         }
 	}
 
