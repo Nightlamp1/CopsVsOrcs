@@ -60,7 +60,6 @@ public class PlatformerCharacter2D : MonoBehaviour
     {
       doubleJump = false;
       jumpCheck = 0;
-      Debug.Log ("Setting jumpCheck to 0");
     }
   }
 
@@ -103,8 +102,6 @@ public class PlatformerCharacter2D : MonoBehaviour
 
     // If the player should jump...
 		if (jumpCheck <2 && jump) {
-			Debug.Log ("Jumping {" + jumpCheck + "}");
-
       grounded = false;
 
       // Add a vertical force to the player.
