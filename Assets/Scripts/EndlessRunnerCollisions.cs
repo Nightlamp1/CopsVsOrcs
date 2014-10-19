@@ -9,32 +9,33 @@ public class EndlessRunnerCollisions : MonoBehaviour {
     hud_script = GameObject.Find("Main Camera").GetComponent<HudScript>();
   }
 
-  void OnTriggerEnter2D(Collider2D other)
+  void OnCollisionEnter2D(Collision2D other)
   {
-    if (other.name == "Powerup(Clone)")
+    /*if (other.name == "Powerup(Clone)")
     {
       Destroy (other);
       hud_script.IncreaseScore(100);
-    }
-    else if (other.name == "Enemy")
+    }*/
+    if (other.gameObject.tag == "Enemy")
     {
-      if (this.name == "Player")
+      if (other.gameObject.tag == "Player")
       {
+				Debug.Log ("Player Hit");
         hud_script.IncreaseScore(-100);
       }
-      else if(this.name == "Bullet(clone)")
+      else if(other.gameObject.tag == "Bullet")
       {
+				Debug.Log ("enemy hit");
         hud_script.IncreaseScore(100);
       }
       else
       {
         return;
       }
-      Destroy (other);
     }
-    else
-    {
-      Debug.Log (this.name + "Collided with " + other.name);
-    }
+    //else
+    //{
+     // Debug.Log ("Collided with " + other.gameObject.tag);
+    //}
   }
 }
