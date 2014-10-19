@@ -6,10 +6,18 @@ public class SpawnGround : MonoBehaviour {
 	public GameObject[] obj;
 	public float spawnMin = 1f;
 	public float spawnMax = 2f;
+  public bool startSpawn;
 
 	// Use this for initialization
 	void Start () {
-		Spawn ();
+    if (startSpawn)
+    {
+		  Spawn ();
+    }
+    else
+    {
+      Invoke ("Spawn", Random.Range (spawnMin, spawnMax));
+    }
 	}
 
 	void Spawn()
