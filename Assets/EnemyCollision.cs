@@ -11,10 +11,16 @@ public class EnemyCollision : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "Player")
+		if (other.gameObject.tag == "Player") 
 		{
-			hud.IncreaseScore(-10);
+			hud.IncreaseScore (-10);
 			Destroy (this.gameObject);
+		} 
+		else if (other.gameObject.tag == "Bullet") 
+		{
+			hud.IncreaseScore (10);
+			Destroy (this.gameObject);
+			Destroy (other.gameObject);
 		}
 	}
 }
