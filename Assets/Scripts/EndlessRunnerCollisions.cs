@@ -3,6 +3,11 @@ using System.Collections;
 
 public class EndlessRunnerCollisions : MonoBehaviour {
   HudScript hud_script;
+  
+  void Start()
+  {
+    hud_script = GameObject.Find("Main Camera").GetComponent<HudScript>();
+  }
 
   void OnTriggerEnter2D(Collider2D other)
   {
@@ -11,7 +16,7 @@ public class EndlessRunnerCollisions : MonoBehaviour {
       Destroy (other);
       hud_script.IncreaseScore(100);
     }
-    if (other.name == "Enemy")
+    else if (other.name == "Enemy")
     {
       if (this.name == "Player")
       {
@@ -26,6 +31,10 @@ public class EndlessRunnerCollisions : MonoBehaviour {
         return;
       }
       Destroy (other);
+    }
+    else
+    {
+      Debug.Log (this.name + "Collided with " + other.name);
     }
   }
 }
