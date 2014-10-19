@@ -20,7 +20,6 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
 
-	bool doubleJump = false;
   bool justJumped = false;
 	int jumpCheck = 0; //this is going to allow for ungrounded double jumps
 
@@ -58,9 +57,7 @@ public class PlatformerCharacter2D : MonoBehaviour
   {
     if (grounded)
     {
-      doubleJump = false;
       jumpCheck = 0;
-      Debug.Log ("Setting jumpCheck to 0");
     }
   }
 

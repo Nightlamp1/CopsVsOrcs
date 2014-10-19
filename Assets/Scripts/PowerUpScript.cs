@@ -12,7 +12,6 @@ public class PowerUpScript : MonoBehaviour {
 			hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
 			hud.IncreaseScore(10);
 			Destroy (this.gameObject);
-
 		}
 	}
 }
