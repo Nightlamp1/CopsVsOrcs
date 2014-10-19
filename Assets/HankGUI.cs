@@ -88,15 +88,18 @@ public class HankGUI : MonoBehaviour
       // Reduce enemy health recalculations
       if (m_lastEnemyHP != m_enemyHP)
       {
-        m_enemyHealthForeground = new Rect(m_enemyHealthBackground);
+        m_enemyHealthForeground = new Rect(m_enemyHealthBackground.xMin,  m_enemyHealthBackground.yMin,
+                                           m_enemyHealthBackground.width, m_enemyHealthBackground.height);
         
         m_enemyHealthForeground.width = (m_enemyHP * m_enemyHealthForeground.width);
-        
+
         m_lastEnemyHP = m_enemyHP;
       }
       
       // Draw enemy health
-      GUI.Box(m_enemyHealthForeground, "");
+      GUI.DrawTexture(m_enemyHealthBackground, playerHealthBackgroundTexture, ScaleMode.StretchToFill, true, 0 );
+      GUI.DrawTexture(m_enemyHealthForeground, playerHealthForegroundTexture, ScaleMode.StretchToFill, true, 0 );
+      GUI.DrawTexture(m_enemyHealthBackground, playerHealthFrameTexture, ScaleMode.StretchToFill, true, 0 );
     }
   }
 
@@ -148,13 +151,6 @@ public class HankGUI : MonoBehaviour
 
   public static HankGUI getInstance()
   {
-    if (singleton == null)
-    {
-      singleton = new HankGUI();
-
-      singleton.init();
-    }
-
     return singleton;
   }
 }
