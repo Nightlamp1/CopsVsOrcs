@@ -23,7 +23,7 @@ public class PlatformerCharacter2D : MonoBehaviour
   bool justJumped = false;
 	int jumpCheck = 0; //this is going to allow for ungrounded double jumps
 
-    void Awake()
+  void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("GroundCheck");

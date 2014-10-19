@@ -2,26 +2,24 @@
 using System.Collections;
 
 public class HudScript : MonoBehaviour {
-	float playerScore = 0;
-	
+  void Start ()
+  {
+  }
+
 	// Update is called once per frame
 	void Update () 
 	{
-		playerScore += Time.deltaTime;
+    GameVars.getInstance().score += Time.deltaTime;
 	}
 
 	public void IncreaseScore (int amount)
 	{
-		playerScore += amount;
-	}
-
-	void OnDisable()
-	{
-		PlayerPrefs.SetFloat("Score", (float)(playerScore * 10));
+    GameVars.getInstance().score += amount;
 	}
 
 	void OnGUI()
 	{
-		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), "Score: " + (int)(playerScore * 10));
+    GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
+               "Score: " + (int)(GameVars.getInstance().score * 10));
 	}
 }

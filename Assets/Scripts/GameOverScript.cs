@@ -8,8 +8,7 @@ public class GameOverScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		score = PlayerPrefs.GetFloat ("Score");
-
+    score = GameVars.getInstance().score * 10;
 	}
 
 	void OnGUI()
