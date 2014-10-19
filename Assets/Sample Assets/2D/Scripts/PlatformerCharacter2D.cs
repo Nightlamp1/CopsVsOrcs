@@ -21,6 +21,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	Animator anim;										// Reference to the player's animator component.
 
 	bool doubleJump = false;
+  bool justJumped = false;
+	int jumpCheck = 0; //this is going to allow for ungrounded double jumps
 
     void Awake()
 	{
@@ -30,27 +32,40 @@ public class PlatformerCharacter2D : MonoBehaviour
 		anim = GetComponent<Animator>();
 	}
 
+  bool calcGrounded()
+  {
+    return Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+  }
 
 	void FixedUpdate()
 	{
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+    if (!justJumped) {
+      // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+      grounded = calcGrounded ();
+    } else {
+      if (!calcGrounded ()) {
+        justJumped = false;
+      }
+    }
+
 		anim.SetBool("Ground", grounded);
 
 		// Set the vertical animation
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
-
-		if (grounded)
-		{
-			doubleJump = false;
-		}
 	}
 
+  public void checkGround()
+  {
+    if (grounded)
+    {
+      doubleJump = false;
+      jumpCheck = 0;
+      Debug.Log ("Setting jumpCheck to 0");
+    }
+  }
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-
-
 		// If crouching, check to see if the character can stand up
 		if(!crouch && anim.GetBool("Crouch"))
 		{
@@ -84,20 +99,24 @@ public class PlatformerCharacter2D : MonoBehaviour
 				Flip();
 		}
 
-        // If the player should jump...
-        if ((grounded || !doubleJump) && jump) {
-            // Add a vertical force to the player.
-            anim.SetBool("Ground", false);
+    checkGround ();
 
+    // If the player should jump...
+		if (jumpCheck <2 && jump) {
+			Debug.Log ("Jumping {" + jumpCheck + "}");
+
+      grounded = false;
+
+      // Add a vertical force to the player.
+      anim.SetBool("Ground", false);
+
+			jumpCheck+=1;
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
 
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+      rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 
-			if(!grounded)
-			{
-				doubleJump = true;
-			}
-        }
+      justJumped = true;
+    }
 	}
 
 	
