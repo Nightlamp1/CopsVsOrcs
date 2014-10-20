@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameVars : MonoBehaviour 
 {
-  public static GameVars singleton;
+  private static GameVars singleton;
   
   public Transform somePrefab;
   
