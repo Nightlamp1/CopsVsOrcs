@@ -21,5 +21,10 @@ public class HudScript : MonoBehaviour {
 	{
     GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
                "Score: " + (int)(GameVars.getInstance().score * 10));
+	
+		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.07f, 100, 30), "Distance");
+
+		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.09f, 100, 30), "Orcs Destroyed");
+	
 	}
 }
