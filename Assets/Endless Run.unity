@@ -2088,6 +2088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
   score: 0
+  distance: 0
 --- !u!4 &1714443447
 Transform:
   m_ObjectHideFlags: 0
