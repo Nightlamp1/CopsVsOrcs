@@ -21,7 +21,7 @@ public class Platformer2DUserControl : MonoBehaviour
   {
       // Read the jump input in Update so button presses aren't missed.
 #if CROSS_PLATFORM_INPUT
-    //if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
+    if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
 #else
 	  if (Input.GetButtonDown("Jump")) jump = true;
@@ -40,18 +40,18 @@ public class Platformer2DUserControl : MonoBehaviour
 
 		// Pass all parameters to the character control script.
 		character.Move(1, false, jump);
-    /*if (shoot)
+    if (shoot)
     {
       gameObject.GetComponent<Armable> ().activate ();
       shoot = false;
-    }*/
+    }
 
     // Reset the jump input once it has been used.
 	  jump = false;
 	}
 
 	//The following onGUI function allows for touch input controls
-	void OnGUI()
+	/*void OnGUI()
 	{
 		if (GUI.Button (new Rect (Screen.width * 0.89f, Screen.height * 0.85f, 150, 150), "Shoot")) 
 		{
@@ -65,7 +65,7 @@ public class Platformer2DUserControl : MonoBehaviour
 		}
 	
 
-	}
+	}*/
 
 
 }

@@ -8,6 +8,7 @@ public class GameVars : MonoBehaviour
   public Transform somePrefab;
   
   public float score;
+  public float distance;
 
   void Awake()
   {

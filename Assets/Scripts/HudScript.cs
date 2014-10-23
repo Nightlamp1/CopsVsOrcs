@@ -10,6 +10,7 @@ public class HudScript : MonoBehaviour {
 	void Update () 
 	{
     GameVars.getInstance().score += Time.deltaTime;
+	GameVars.getInstance ().distance += Time.deltaTime;
 	}
 
 	public void IncreaseScore (int amount)
@@ -21,5 +22,10 @@ public class HudScript : MonoBehaviour {
 	{
     GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
                "Score: " + (int)(GameVars.getInstance().score * 10));
+	
+		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.07f, 100, 30), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
+
+		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.09f, 100, 30), "Orcs Destroyed");
+	
 	}
 }
