@@ -20,6 +20,8 @@ public class GameOverScript : MonoBehaviour {
 		if (GUI.Button (new Rect (Screen.width * 0.5f - 30, 350, 60, 30), "Retry?"))
 		{
       GameVars.getInstance().score = 0;
+			GameVars.getInstance().orcKills = 0;
+			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(1);
 		}
 	}

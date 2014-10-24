@@ -19,6 +19,7 @@ public class EnemyCollision : MonoBehaviour {
 		else if (other.gameObject.tag == "Bullet") 
 		{
 			hud.IncreaseScore (10);
+			GameVars.getInstance().orcKills += 1;
 			Destroy (this.gameObject);
 			Destroy (other.gameObject);
 		}
