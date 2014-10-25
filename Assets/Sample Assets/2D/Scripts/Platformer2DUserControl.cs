@@ -39,7 +39,7 @@ public class Platformer2DUserControl : MonoBehaviour
 		//#endif
 
 		// Pass all parameters to the character control script.
-		character.Move(0, false, jump);
+		character.Move(1, false, jump);
     if (shoot)
     {
       gameObject.GetComponent<Armable> ().activate ();
