@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Pistol : Activateable {
-  int DEFAULT_ACTIVATE_COOLDOWN = 150;
+  int DEFAULT_ACTIVATE_COOLDOWN = 50;
   public GameObject prefab;
   public static GameObject staticPrefab;
   

@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc1a5e0c4872f48880cfedd034f0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: .0199999996
 --- !u!1 &711404638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,6 +2103,7 @@ MonoBehaviour:
   score: 0
   distance: 0
   orcKills: 0
+  debugMessage: 
 --- !u!4 &1714443447
 Transform:
   m_ObjectHideFlags: 0
@@ -2197,7 +2198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc1a5e0c4872f48880cfedd034f0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: .00999999978
 --- !u!1 &1989659746
 GameObject:
   m_ObjectHideFlags: 0

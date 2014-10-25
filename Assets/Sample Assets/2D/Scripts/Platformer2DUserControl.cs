@@ -7,6 +7,13 @@ public class Platformer2DUserControl : MonoBehaviour
   private bool jump;
   private bool shoot;
 
+  private bool jumpOver = true;
+  private bool shootOver = true;
+
+  private int counter1 = 0;
+  private int counter2 = 0;
+  private int counter3 = 0;
+
   void Start()
   {
     gameObject.GetComponent<Armable> ().equip ("Pistol");
@@ -20,11 +27,40 @@ public class Platformer2DUserControl : MonoBehaviour
   void Update ()
   {
       // Read the jump input in Update so button presses aren't missed.
-#if CROSS_PLATFORM_INPUT
+//#if CROSS_PLATFORM_INPUT
+#if (!UNITY_EDITOR_WIN && !UNITY_STANDALONE_OSX)
+    if (Input.touchCount > 0)
+    {
+      for (int i = 0; i < Input.touchCount; i++)
+      {
+        var touch = Input.GetTouch(i);
+        if (touch.position.x < Screen.width/2 && jumpOver)
+        {
+          //Debug.Log ("You Jumped");
+          jump = true;
+          jumpOver = false;
+          
+          counter1 += 1;
+        }
+        else if (touch.position.x > Screen.width/2 && shootOver)
+        {
+          //Debug.Log("You shoot");
+          shoot = true;
+          shootOver = false;
+        }
+      }
+      
+      update_hud();
+    }
+    else
+    {
+      jumpOver = true;
+      shootOver = true;
+      counter3 += 1;
+    }
+#else
     if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
-#else
-	  if (Input.GetButtonDown("Jump")) jump = true;
 #endif
   }
 
@@ -38,8 +74,18 @@ public class Platformer2DUserControl : MonoBehaviour
 		//float h = Input.GetAxis("Horizontal");
 		//#endif
 
+
+
 		// Pass all parameters to the character control script.
 		character.Move(1, false, jump);
+
+    if (jump)
+    {
+      counter2 += 1;
+    }
+
+    update_hud();
+
     if (shoot)
     {
       gameObject.GetComponent<Armable> ().activate ();
@@ -68,4 +114,10 @@ public class Platformer2DUserControl : MonoBehaviour
 	}*/
 
 
+  void update_hud()
+  {
+    GameVars.getInstance().debugMessage = 
+      "c1, c2, c3, sO, jO, tC = {" + 
+      counter1 + ", " + counter2 + ", " + counter3 + ", " + shootOver + ", " + jumpOver + ", " + Input.touchCount + "}";
+  }
 }
