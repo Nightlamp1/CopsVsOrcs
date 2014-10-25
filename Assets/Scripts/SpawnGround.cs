@@ -21,8 +21,11 @@ public class SpawnGround : MonoBehaviour {
 	}
 
 	void Spawn()
-	{
-		Instantiate(obj[Random.Range (0, obj.GetLength(0))], transform.position, Quaternion.identity);
-		Invoke ("Spawn", Random.Range (spawnMin, spawnMax));
+  {
+    GameObject new_obj;
+    
+    new_obj = (GameObject) Instantiate(obj[Random.Range (0, obj.GetLength(0))], transform.position, Quaternion.identity);
+
+    Invoke ("Spawn", Random.Range (spawnMin, spawnMax));
 	}
 }

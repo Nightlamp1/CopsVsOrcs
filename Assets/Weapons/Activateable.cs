@@ -5,8 +5,8 @@ public abstract class Activateable : MonoBehaviour {
   protected bool m_hasActivate;
   protected bool m_hasActivateAlternate;
 
-  protected int m_cooldownActivate;
-  protected int m_cooldownActivateAlternate;
+  protected float m_cooldownActivate;
+  protected float m_cooldownActivateAlternate;
 
   public Transform spawnPosition;
 

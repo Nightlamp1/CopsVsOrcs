@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Pistol : Activateable {
-  int DEFAULT_ACTIVATE_COOLDOWN = 50;
+  float DEFAULT_ACTIVATE_COOLDOWN = 0.05f;
   public GameObject prefab;
   public static GameObject staticPrefab;
   
@@ -24,12 +24,12 @@ public class Pistol : Activateable {
   void Update () {
     if (m_cooldownActivate > 0)
     {
-      m_cooldownActivate -= 1;
+      m_cooldownActivate -= Time.deltaTime;
     }
 
     if (m_cooldownActivateAlternate > 0)
     {
-      m_cooldownActivateAlternate -= 1;
+      m_cooldownActivate -= Time.deltaTime;
     }
   }
   
@@ -37,8 +37,7 @@ public class Pistol : Activateable {
   {
     if (staticPrefab == null) 
     {
-      Debug.Log ("New Pistol");
-      new Rifle();
+      new Pistol();
     }
     
     return staticPrefab;
