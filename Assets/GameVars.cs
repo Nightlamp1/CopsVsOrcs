@@ -9,6 +9,7 @@ public class GameVars : MonoBehaviour
   
   public float score;
   public float distance;
+  public int orcKills = 0;
 
   void Awake()
   {
