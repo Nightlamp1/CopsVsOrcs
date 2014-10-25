@@ -27,5 +27,9 @@ public class HudScript : MonoBehaviour {
 
 		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.09f, 150, 30), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
 	
+    if (GameVars.getInstance().debugMessage != "")
+    {
+      GUI.Label (new Rect(Screen.width * 0.5f, Screen.height * 0.13f, 500, 200), GameVars.getInstance().debugMessage);
+    }
 	}
 }

@@ -58,6 +58,8 @@ public class PlatformerCharacter2D : MonoBehaviour
     if (grounded)
     {
       jumpCheck = 0;
+      
+      GameVars.getInstance().debugMessage = "jumpCheck: " + jumpCheck;
     }
   }
 
@@ -99,7 +101,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     checkGround ();
 
     // If the player should jump...
-		if (jumpCheck <2 && jump) {
+		if (jumpCheck < 2 && jump) {
       grounded = false;
 
       // Add a vertical force to the player.
@@ -108,7 +110,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			jumpCheck+=1;
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
 
-      rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+      rigidbody2D.AddForce(new Vector2(0.5f, jumpForce));
 
       justJumped = true;
     }
