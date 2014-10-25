@@ -24,12 +24,19 @@ public class MainMenuGuis : MonoBehaviour {
 		GUI.skin.button.active.background = (Texture2D)start.image;
 		GUI.skin.button.alignment = TextAnchor.MiddleCenter;
 
+    GUI.Label (new Rect(Screen.width * 0.34f, Screen.height * 0.5f - 126, 300, 100), "Name");
+    GameVars.getInstance().player_name = GUI.TextField (
+      new Rect(Screen.width * 0.34f, Screen.height * 0.5f - 63, 300, 100), GameVars.getInstance().player_name);
+
 		if (GUI.Button (new Rect (Screen.width * 0.34f, Screen.height * 0.5f, 300, 100), "Start")) 
-		{
+    {
+      if (GameVars.getInstance().player_name == "")
+      {
+        GameVars.getInstance().player_name = "not entered";
+      }
+
 			Application.LoadLevel(1);
 		}
-
-
 
 		GUI.Button (new Rect (Screen.width * 0.34f, (Screen.height * 0.5f) + 63, 300, 100), "Options");
 		GUI.Button (new Rect (Screen.width * 0.34f, (Screen.height * 0.5f) + 125, 300, 100), "Credits");

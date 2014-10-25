@@ -30,7 +30,6 @@ public class Rifle : Activateable {
   {
     if (staticPrefab == null) 
     {
-      Debug.Log ("New Rifle");
       new Rifle();
     }
 

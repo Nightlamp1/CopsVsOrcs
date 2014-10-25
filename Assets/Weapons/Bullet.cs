@@ -34,7 +34,6 @@ public class Bullet : MonoBehaviour {
   {
     if (staticPrefab == null) 
     {
-      Debug.Log ("New Rifle");
       new Bullet();
     }
 

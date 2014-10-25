@@ -4,7 +4,6 @@ using System.Collections;
 public class Armable : MonoBehaviour {
   int m_handsRequired;
   GameObject m_arm;
-  string m_type;
 
 	// Use this for initialization
 	void Start () {
@@ -32,8 +31,6 @@ public class Armable : MonoBehaviour {
         return true;
       }
 
-      m_type = p_arm;
-
       m_arm = (GameObject) Instantiate(Resources.Load("Prefabs/" + p_arm + "Prefab"), 
                                        gameObject.transform.position, 
                                        gameObject.transform.rotation);
@@ -48,9 +45,6 @@ public class Armable : MonoBehaviour {
 
       return false;
     }
-
-    Debug.Log ("Successfully equipped " + p_arm);
-    Debug.Log (m_arm);
 
     return true;
   }
@@ -71,8 +65,6 @@ public class Armable : MonoBehaviour {
 
   public Activateable getActivateable()
   {
-    Debug.Log ("Type: " + m_type);
-
     return m_arm.GetComponent<Activateable>();
   }
 }
