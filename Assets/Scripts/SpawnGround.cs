@@ -30,6 +30,7 @@ public class SpawnGround : MonoBehaviour {
     
     new_obj = (GameObject) Instantiate(LowerObj[Random.Range (0, LowerObj.GetLength(0))], new Vector3(transform.position.x + 25, -4, 10), Quaternion.identity);
 	new_obj = (GameObject) Instantiate(MidObj[Random.Range (0, MidObj.GetLength(0))], new Vector3(transform.position.x + 30, 0, 10), Quaternion.identity);
+	new_obj = (GameObject) Instantiate(MidObj[Random.Range (0, MidObj.GetLength(0))], new Vector3(transform.position.x + 40, 0, 10), Quaternion.identity);
 	startSpawn = false;
 
     Invoke ("Spawn", Random.Range (spawnMin, spawnMax));
