@@ -89,18 +89,18 @@ public class SpawnGround : MonoBehaviour {
 	void SpawnLow()//Spawn objects in the lower tier
 	{
 	  GameObject new_low;
-	  new_low = (GameObject) Instantiate(LowerObj[Random.Range (0, LowerObj.GetLength(0))], new Vector3(transform.position.x + 19 + Random.Range(-1,3), -4, 10), Quaternion.identity);
+	  new_low = (GameObject) Instantiate(LowerObj[Random.Range (0, LowerObj.GetLength(0))], new Vector3(transform.position.x + 23 + Random.Range(-1,3), -4, 10), Quaternion.identity);
 	}
 
 	void SpawnMid()//Spawn objects in the middle tier
 	{
 	  GameObject new_mid;
-	  new_mid = (GameObject)Instantiate (MidObj [Random.Range (0, MidObj.GetLength (0))], new Vector3 (transform.position.x + 19 + Random.Range(-1,3), 0, 10), Quaternion.identity);
+	  new_mid = (GameObject)Instantiate (MidObj [Random.Range (0, MidObj.GetLength (0))], new Vector3 (transform.position.x + 23 + Random.Range(-1,3), 0, 10), Quaternion.identity);
 	}
 
 	void SpawnHigh()//Spawn objects in the highest tier
 	{
 		GameObject new_high;
-		new_high = (GameObject)Instantiate (HighObj [Random.Range (0, HighObj.GetLength (0))], new Vector3 (transform.position.x + 19 + Random.Range(-1,3), 4, 10), Quaternion.identity);
+		new_high = (GameObject)Instantiate (HighObj [Random.Range (0, HighObj.GetLength (0))], new Vector3 (transform.position.x + 23 + Random.Range(-1,3), 4, 10), Quaternion.identity);
 	}
 }
