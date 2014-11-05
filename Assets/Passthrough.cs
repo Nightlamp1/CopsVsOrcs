@@ -2,13 +2,17 @@
 using System.Collections;
 
 public class Passthrough : MonoBehaviour {
-
 	public GameObject platform;
+
 	void Update()
 	{
-		if (this.transform.position.y < platform.transform.position.y) {
-						platform.collider2D.isTrigger = true;
-				}
+		if (platform == null)
+      return;
+
+		if (this.transform.position.y < platform.transform.position.y) 
+    {
+			platform.collider2D.isTrigger = true;
+		}
 	}
 	
 	
