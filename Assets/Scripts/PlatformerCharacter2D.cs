@@ -29,6 +29,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
 		anim = GetComponent<Animator>();
+    anim.SetBool("Run", true);
 	}
 
   bool calcGrounded()
@@ -47,10 +48,10 @@ public class PlatformerCharacter2D : MonoBehaviour
       }
     }
 
-		anim.SetBool("Ground", grounded);
+		//anim.SetBool("Ground", grounded);
 
 		// Set the vertical animation
-		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+		//anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 	}
 
   public void checkGround()
@@ -65,6 +66,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+
 		// If crouching, check to see if the character can stand up
 		if(!crouch && anim.GetBool("Crouch"))
 		{
@@ -74,7 +76,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 
 		// Set whether or not the character is crouching in the animator
-		anim.SetBool("Crouch", crouch);
+		//anim.SetBool("Crouch", crouch);
 
 		//only control the player if grounded or airControl is turned on
 		if(grounded || airControl)
@@ -83,7 +85,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 			move = (crouch ? move * crouchSpeed : move);
 
 			// The Speed animator parameter is set to the absolute value of the horizontal input.
-			anim.SetFloat("Speed", Mathf.Abs(move));
+			//anim.SetFloat("Speed", Mathf.Abs(move));
+
 
 			// Move the character
 			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
@@ -105,7 +108,7 @@ public class PlatformerCharacter2D : MonoBehaviour
       grounded = false;
 
       // Add a vertical force to the player.
-      anim.SetBool("Ground", false);
+      //anim.SetBool("Ground", false);
 
 			jumpCheck+=1;
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
