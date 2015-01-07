@@ -276,7 +276,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183888169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0607805252, y: 1.74881613, z: 0}
+  m_LocalPosition: {x: -.18356514, y: .800755501, z: 0}
   m_LocalScale: {x: 1, y: .833333313, z: 1}
   m_Children: []
   m_Father: {fileID: 1936809623}
@@ -872,7 +872,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1260802164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.60280323, y: -2.23702788, z: 0}
+  m_LocalPosition: {x: -.387779236, y: -1.10326481, z: 0}
   m_LocalScale: {x: .564481974, y: .470403314, z: 1}
   m_Children: []
   m_Father: {fileID: 1936809623}
@@ -1207,8 +1207,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936809622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.80000114, y: -2.67718267, z: 0}
-  m_LocalScale: {x: .400000006, y: .400000006, z: 1}
+  m_LocalPosition: {x: -5.6729393, y: -2.5208025, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1260802165}
   - {fileID: 183888170}
@@ -1223,7 +1223,7 @@ Animator:
   m_GameObject: {fileID: 1936809622}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 34f250e435a70bd46a7acfb10657ba28, type: 2}
+  m_Controller: {fileID: 9100000, guid: ec7250dbb7db7e740b29b411cb7f3fcd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -1249,7 +1249,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3bf2fdfd84b1dfe4296f6c2011070ac3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4728dd1bd5e671428fff2684e975832, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1936809626
 MonoBehaviour:
@@ -1358,7 +1358,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 3626fe8e008014f6bbd19bb72937b311, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 3.79999995, y: 4}
+  m_Size: {x: 1.79999995, y: 2.29999995}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1989659746
 GameObject:

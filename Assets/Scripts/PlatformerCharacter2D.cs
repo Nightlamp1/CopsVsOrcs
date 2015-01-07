@@ -28,8 +28,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		// Setting up references.
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
-		anim = GetComponent<Animator>();
-    anim.SetBool("Run", true);
+		anim = gameObject.GetComponent<Animator>();
 	}
 
   bool calcGrounded()
@@ -39,6 +38,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	void FixedUpdate()
 	{
+    if (rigidbody2D.velocity.y > 0 && !grounded) {
+      anim.SetBool ("Jump", true);
+    } else {
+      anim.SetBool ("Jump", false);
+    }
+
     if (!justJumped) {
       // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
       grounded = calcGrounded ();
@@ -59,6 +64,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     if (grounded)
     {
       jumpCheck = 0;
+      anim.SetBool("Jump",false);
       
       GameVars.getInstance().debugMessage = "jumpCheck: " + jumpCheck;
     }
@@ -106,6 +112,8 @@ public class PlatformerCharacter2D : MonoBehaviour
     // If the player should jump...
 		if (jumpCheck < 2 && jump) {
       grounded = false;
+      //anim.SetBool("Jump",true);
+      //Debug.Log("Jump is now" + anim.GetBool("Jump"));
 
       // Add a vertical force to the player.
       //anim.SetBool("Ground", false);
