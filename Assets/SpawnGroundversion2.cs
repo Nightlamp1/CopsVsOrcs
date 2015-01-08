@@ -22,7 +22,7 @@ public class SpawnGroundversion2 : MonoBehaviour {
   {
     if (nextLower < Time.time)
     {
-      Spawn (-4);
+      Spawn (-5);
       nextLower += nextTime();
     }
 
@@ -34,7 +34,7 @@ public class SpawnGroundversion2 : MonoBehaviour {
 
     if (nextUpper < Time.time)
     {
-      Spawn (4);
+      Spawn (5);
       nextUpper += nextTime();
     }
   }

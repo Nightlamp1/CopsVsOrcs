@@ -38,11 +38,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	void FixedUpdate()
 	{
-    if (rigidbody2D.velocity.y > 0 && !grounded) {
+    /*if (rigidbody2D.velocity.y > 0 && !grounded) {
       anim.SetBool ("Jump", true);
-    } else {
+    } else if (grounded) {
       anim.SetBool ("Jump", false);
-    }
+    }*/
 
     if (!justJumped) {
       // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
@@ -65,6 +65,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     {
       jumpCheck = 0;
       anim.SetBool("Jump",false);
+      anim.SetBool("Jump2",false);
       
       GameVars.getInstance().debugMessage = "jumpCheck: " + jumpCheck;
     }
@@ -74,18 +75,18 @@ public class PlatformerCharacter2D : MonoBehaviour
 	{
 
 		// If crouching, check to see if the character can stand up
-		if(!crouch && anim.GetBool("Crouch"))
-		{
+		//if(!crouch && anim.GetBool("Crouch"))
+		//{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
-			if( Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
-				crouch = true;
-		}
+			//if( Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
+				//crouch = true;
+		//}
 
 		// Set whether or not the character is crouching in the animator
 		//anim.SetBool("Crouch", crouch);
 
 		//only control the player if grounded or airControl is turned on
-		if(grounded || airControl)
+		//if(grounded || airControl)
 		{
 			// Reduce the speed if crouching by the crouchSpeed multiplier
 			move = (crouch ? move * crouchSpeed : move);
@@ -112,7 +113,11 @@ public class PlatformerCharacter2D : MonoBehaviour
     // If the player should jump...
 		if (jumpCheck < 2 && jump) {
       grounded = false;
-      //anim.SetBool("Jump",true);
+      anim.SetBool("Jump",true);
+      if (jumpCheck == 1)
+      {
+        anim.SetBool("Jump2",true);
+      }
       //Debug.Log("Jump is now" + anim.GetBool("Jump"));
 
       // Add a vertical force to the player.

@@ -159,7 +159,7 @@ Transform:
   - {fileID: 580057776}
   - {fileID: 1846936487}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &63257094
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ Transform:
   - {fileID: 268359335}
   - {fileID: 63257097}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
 --- !u!1 &183888169
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ Transform:
   - {fileID: 1198447481}
   - {fileID: 720578976}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!1 &540606226
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +439,33 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d90a8faf6fb9540b084ef2825cc3a5dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &578346782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: 4aef8c2a7fe4d8a4f803c6dcca102ce3, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 578346783}
+  m_Layer: 0
+  m_Name: 1.5Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &578346783
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 4aef8c2a7fe4d8a4f803c6dcca102ce3, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 578346782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.79596472, y: 1.75328386, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &580057772
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +773,33 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d90a8faf6fb9540b084ef2825cc3a5dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1213505587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: bb955834393914640a2ced566ba42862, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1213505588}
+  m_Layer: 0
+  m_Name: SmallGround
+  m_TagString: Passable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213505588
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: bb955834393914640a2ced566ba42862, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213505587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.31850815, y: .749370933, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1001 &1221223524
 Prefab:
   m_ObjectHideFlags: 0
@@ -783,7 +837,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d280ee0ebf952eb469d17701aef6d83a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
@@ -835,7 +889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d280ee0ebf952eb469d17701aef6d83a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
@@ -965,7 +1019,7 @@ Transform:
   - {fileID: 1016960547}
   - {fileID: 2004077686}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1352497778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &1846936486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1267,7 @@ Transform:
   - {fileID: 1260802165}
   - {fileID: 183888170}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!95 &1936809624
 Animator:
   serializedVersion: 3
@@ -1263,14 +1317,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform:
-  - {fileID: 100006, guid: b031c786ed8f8d34886dc408dc72f2f9, type: 2}
-  - {fileID: 100004, guid: 4aef8c2a7fe4d8a4f803c6dcca102ce3, type: 2}
-  - {fileID: 100002, guid: 6b881bf474d28fd4c9daa957062ff31b, type: 2}
-  - {fileID: 100002, guid: d774bb08f9b9fcc4a8f33ab0185ef8f9, type: 2}
-  - {fileID: 100008, guid: b1a95ab5a97c3e941ad207ce859ea4ec, type: 2}
-  - {fileID: 100006, guid: 263349bc6374d7e48adbb9c207178411, type: 2}
-  - {fileID: 100000, guid: d280ee0ebf952eb469d17701aef6d83a, type: 2}
-  - {fileID: 100004, guid: c2f2edeb76b1a9749ade83f36487fc21, type: 2}
+  - {fileID: 100000, guid: 0cf86d0a3742e4541b8334a3e898750f, type: 2}
+  - {fileID: 100000, guid: 2a84dda388470684589d3e982d9c64b8, type: 2}
+  - {fileID: 100000, guid: 66106eb82bad91f459ea4d7282c5315a, type: 2}
+  - {fileID: 100000, guid: 390fdd9b6f4854f4b8206e0f79f9ed4a, type: 2}
+  - {fileID: 100000, guid: 4e3e7a78699128a4c96578318abfbd2b, type: 2}
+  - {fileID: 100000, guid: 4e983bfaa6b6d5a4f8a34c901e08494c, type: 2}
+  - {fileID: 100002, guid: 6b5edec7e65a25a429fd65adb8c77e05, type: 2}
+  - {fileID: 100002, guid: c69eb4eedcda0fb4aab0fe2ee3c6657c, type: 2}
+  - {fileID: 100000, guid: aa0302fe603aa5d40b4816be182bf6e1, type: 2}
+  - {fileID: 100000, guid: 8fd60de6e82e56f499777b17893265ac, type: 2}
+  - {fileID: 100000, guid: afe5f391cae3e62408fee0b8b46754a7, type: 2}
+  - {fileID: 100000, guid: abe35cc1127896e4fa3658bf39ad4927, type: 2}
+  - {fileID: 100000, guid: c8a5459fe89a21b46a48a96be7db9a31, type: 2}
+  - {fileID: 100000, guid: a83d1492f252d82429544c57d28cc1dd, type: 2}
+  - {fileID: 100000, guid: e516202bb428dd74cb67cbd505b69460, type: 2}
+  - {fileID: 100000, guid: 5c79932cdf472be47a29bedc72ecf79e, type: 2}
+  - {fileID: 100000, guid: 9b5a8fc0f808c314e8d5d891fe9af75e, type: 2}
+  - {fileID: 100000, guid: e516202bb428dd74cb67cbd505b69460, type: 2}
+  - {fileID: 100000, guid: afe5f391cae3e62408fee0b8b46754a7, type: 2}
+  - {fileID: 100000, guid: aa0302fe603aa5d40b4816be182bf6e1, type: 2}
+  - {fileID: 100000, guid: 4e3e7a78699128a4c96578318abfbd2b, type: 2}
 --- !u!114 &1936809627
 MonoBehaviour:
   m_ObjectHideFlags: 0
