@@ -114,21 +114,30 @@ public class PlatformerCharacter2D : MonoBehaviour
 		if (jumpCheck < 2 && jump) {
       grounded = false;
       anim.SetBool("Jump",true);
-      if (jumpCheck == 1)
+      if (jumpCheck == 0)
       {
+        jumpCheck+=1;
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
+        
+        rigidbody2D.AddForce(new Vector2(1f, jumpForce));
+        
+        justJumped = true;
+       
+      }
+      else if (jumpCheck == 1)
+      {
+        jumpCheck+=1;
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
+        
+        rigidbody2D.AddForce(new Vector2(1f, jumpForce-100f));
+        
+        justJumped = true;
         anim.SetBool("Jump2",true);
       }
       //Debug.Log("Jump is now" + anim.GetBool("Jump"));
 
       // Add a vertical force to the player.
       //anim.SetBool("Ground", false);
-
-			jumpCheck+=1;
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
-
-      rigidbody2D.AddForce(new Vector2(1f, jumpForce));
-
-      justJumped = true;
     }
 	}
 

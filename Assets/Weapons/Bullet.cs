@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour {
   public GameObject prefab;
   public static GameObject staticPrefab;
   public float m_range;
-
+  int travelDistance = 0;
   public Bullet()
   {
     if (staticPrefab == null)
@@ -28,6 +28,8 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
   {
+    travelDistance += 1;
+    if(travelDistance > 200) Destroy (gameObject);
   }
 
   public static GameObject getPrefab()
