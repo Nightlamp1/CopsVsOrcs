@@ -5,7 +5,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool facingRight = true;							// For determining which way the player is currently facing.
 
 	[SerializeField] float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
-	[SerializeField] float jumpForce = 400f;			// Amount of force added when the player jumps.	
+	[SerializeField] float jumpForce = 500f;			// Amount of force added when the player jumps.	
 
 	[Range(0, 1)]
 	[SerializeField] float crouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%

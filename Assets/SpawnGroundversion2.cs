@@ -55,6 +55,9 @@ public class SpawnGroundversion2 : MonoBehaviour {
       Instantiate (
         platform [Random.Range (platform.GetLowerBound(0), platform.GetUpperBound(0) + 1)], 
         new Vector3 (this.transform.position.x + 23, yOffset, 10), Quaternion.identity);
+    if (go.gameObject.tag == "Passable") {
+      go.gameObject.AddComponent ("Onewayplat");
+    }
 
     /*
     for (int i = 0; i < go.transform.childCount; ++i)
