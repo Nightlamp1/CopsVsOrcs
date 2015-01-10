@@ -19,11 +19,12 @@ public class Passthrough : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		platform = other.gameObject;
-		if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y > 0) 
+		if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y > -5) 
 		{
           platform = other.gameObject;
       Debug.Log ("Trigger entered");
       Debug.Log (rigidbody2D.velocity.y);
+      rigidbody2D.AddForce (new Vector2 (0f, 5f));
 		  Physics2D.IgnoreCollision(platform.collider2D, collider2D, rigidbody2D.velocity.y > 0);
 		} 
 		else if(other.gameObject.tag == "Passable")
@@ -35,12 +36,15 @@ public class Passthrough : MonoBehaviour {
 	
 	void OnTriggerExit2D (Collider2D other)
 	{
-    if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y >0)
+    if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y > 0) {
+      Debug.Log ("Trigger exit " + platform.collider2D);
+      Physics2D.IgnoreCollision (platform.collider2D, collider2D, false);
+      rigidbody2D.AddForce (new Vector2 (0f, -10f));
+      other.collider2D.isTrigger = false;
+    } 
+    else if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y < 0) 
     {
-      Debug.Log("Trigger exit " + platform.collider2D);
-		  Physics2D.IgnoreCollision (platform.collider2D, collider2D, false);
-		  rigidbody2D.AddForce(new Vector2(0f, -100f));
-		  other.collider2D.isTrigger = false;
+      other.collider2D.isTrigger = true;
     }
 
 	}
