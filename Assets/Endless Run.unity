@@ -608,7 +608,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
+  mPlayer: {fileID: 0}
   score: 0
   distance: 0
   orcKills: 0
