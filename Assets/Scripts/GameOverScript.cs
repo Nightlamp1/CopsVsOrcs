@@ -45,10 +45,10 @@ public class GameOverScript : MonoBehaviour {
     if (!up_handled && !up_requested)
     {
       up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
-                         "?id=" + WWW.EscapeURL(GameVars.getInstance().player_name) + 
+                         "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
                          "&score=" + WWW.EscapeURL(score.ToString()));
 
-      Debug.Log ("Inserted score " + score + " for " + GameVars.getInstance().player_name);
+      Debug.Log ("Inserted score " + score + " for " + GameVars.getInstance().getPlayerName());
 
       up_requested = true;
     }
