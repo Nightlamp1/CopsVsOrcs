@@ -55,11 +55,10 @@ public class Platformer2DUserControl : MonoBehaviour
       shootOver = true;
       counter3 += 1;
     }
+#endif
 
-#else
     if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
-#endif
   }
 
 	void FixedUpdate()
