@@ -27,7 +27,6 @@ public class Platformer2DUserControl : MonoBehaviour
   void Update ()
   {
       // Read the jump input in Update so button presses aren't missed.
-//#if CROSS_PLATFORM_INPUT
 #if (!UNITY_EDITOR_WIN && !UNITY_STANDALONE_OSX && !UNITY_WEBPLAYER)
     if (Input.touchCount > 0)
     {
@@ -36,7 +35,6 @@ public class Platformer2DUserControl : MonoBehaviour
         var touch = Input.GetTouch(i);
         if (touch.position.x < Screen.width/2 && jumpOver)
         {
-          //Debug.Log ("You Jumped");
           jump = true;
           jumpOver = false;
           
@@ -44,7 +42,6 @@ public class Platformer2DUserControl : MonoBehaviour
         }
         else if (touch.position.x > Screen.width/2 && shootOver)
         {
-          //Debug.Log("You shoot");
           shoot = true;
           shootOver = false;
         }
@@ -58,6 +55,7 @@ public class Platformer2DUserControl : MonoBehaviour
       shootOver = true;
       counter3 += 1;
     }
+
 #else
     if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
@@ -66,16 +64,6 @@ public class Platformer2DUserControl : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		// Read the inputs.
-		//bool crouch = Input.GetKey(KeyCode.LeftControl);
-		//#if CROSS_PLATFORM_INPUT
-		//float h = CrossPlatformInput.GetAxis("Horizontal");
-		//#else
-		//float h = Input.GetAxis("Horizontal");
-		//#endif
-
-
-
 		// Pass all parameters to the character control script.
 		character.Move(1, false, jump);
 
@@ -95,24 +83,6 @@ public class Platformer2DUserControl : MonoBehaviour
     // Reset the jump input once it has been used.
 	  jump = false;
 	}
-
-	//The following onGUI function allows for touch input controls
-	/*void OnGUI()
-	{
-		if (GUI.Button (new Rect (Screen.width * 0.89f, Screen.height * 0.85f, 150, 150), "Shoot")) 
-		{
-			gameObject.GetComponent<Armable> ().activate ();
-			shoot = false;					
-		}
-
-		if (GUI.Button(new Rect (Screen.width * 0.02f, Screen.height * 0.85f, 150, 150), "Jump"))
-		{
-			jump = true;
-		}
-	
-
-	}*/
-
 
   void update_hud()
   {
