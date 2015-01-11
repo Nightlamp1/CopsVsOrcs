@@ -546,14 +546,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1516178392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc6b851bf8893e458e254651d86bd1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7871c895e3a3d3e4aacd8d0aced51b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
   score: 0
   distance: 0
   orcKills: 0
-  player_name: 
   debugMessage: 
 --- !u!4 &1516178394
 Transform:
