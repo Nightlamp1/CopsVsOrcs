@@ -103,13 +103,6 @@ public class PlatformerCharacter2D : MonoBehaviour
         justJumped = true;
         anim.SetBool("Jump2",true);
       }
-
-			jumpCheck+=1;
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
-
-      rigidbody2D.AddForce(new Vector2(1f, jumpForce));
-
-      justJumped = true;
     }
 	}
 
