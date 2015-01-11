@@ -26,10 +26,10 @@ public class Bullet : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+  void FixedUpdate()
   {
     travelDistance += 1;
-    if(travelDistance > 200) Destroy (gameObject);
+    if(travelDistance > 100) Destroy (gameObject);
   }
 
   public static GameObject getPrefab()
