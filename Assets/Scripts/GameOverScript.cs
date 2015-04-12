@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
-
+	private       float XPOS   = 0; // Set in OnGUI once.  Should be fixed...
+	private       float YPOS   = 0; // Set in OnGUI once.  Should be fixed...
+	
+	private const float WIDTH  = 200;
+	private const float HEIGHT = 50;
 	float score = 0;
   string scores;
   WWW down_query;
@@ -13,6 +17,10 @@ public class GameOverScript : MonoBehaviour {
 
   bool up_handled;
   bool down_handled;
+
+  public Texture2D MainMenu;
+  public Texture2D Retry;
+  
 
 	//int convertedScore = 0;
 	// Use this for initialization
@@ -30,16 +38,24 @@ public class GameOverScript : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Label (new Rect (Screen.width * 0.5f - 40, 50, 80, 30), "GAME OVER");
+		XPOS = Screen.width * 0.5f;
+		YPOS = Screen.height * 0.5f;
 
 		GUI.Label (new Rect (Screen.width * 0.5f - 30, 300, 80, 30), "Score: " + score);
 
-		if (GUI.Button (new Rect (Screen.width * 0.5f - 300, 350, 600, 300), "Retry?"))
+		if (GUI.Button (new Rect (XPOS + 63, YPOS - 155, WIDTH, HEIGHT), Retry, ""))
 		{
-      GameVars.getInstance().score = 0;
+            GameVars.getInstance().score = 0;
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(1);
+		}
+		if (GUI.Button (new Rect (XPOS - 200, YPOS - 155, WIDTH, HEIGHT), MainMenu, ""))
+		{
+			GameVars.getInstance().score = 0;
+			GameVars.getInstance().orcKills = 0;
+			GameVars.getInstance().distance = 0;
+			Application.LoadLevel(0);
 		}
 
     if (!up_handled && !up_requested)
