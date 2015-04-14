@@ -14,21 +14,21 @@ function Update ()
   if (Input.GetKey(moveRight))
   {
     facingRight = true;
-    rigidbody2D.velocity.x = speed;
+    GetComponent.<Rigidbody2D>().velocity.x = speed;
   }
   else if (Input.GetKey(moveLeft))
   {
     facingRight = false;
-    rigidbody2D.velocity.x = speed * -1;
+    GetComponent.<Rigidbody2D>().velocity.x = speed * -1;
   }
   else
   {
-    rigidbody2D.velocity.x = 0;
+    GetComponent.<Rigidbody2D>().velocity.x = 0;
   }
 		
   if (Input.GetKey(jump) && canJump)
   {
-    rigidbody2D.velocity.y = 11;
+    GetComponent.<Rigidbody2D>().velocity.y = 11;
     canJump = false;
   }
 }

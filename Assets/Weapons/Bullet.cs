@@ -44,6 +44,6 @@ public class Bullet : MonoBehaviour {
   
   public void fire()
   {
-    this.rigidbody2D.AddForce(gameObject.transform.right * 1000f, 0);
+    this.GetComponent<Rigidbody2D>().AddForce(gameObject.transform.right * 1000f, 0);
   }
 }

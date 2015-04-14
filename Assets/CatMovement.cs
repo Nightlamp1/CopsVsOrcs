@@ -99,11 +99,11 @@ public class CatMovement : MonoBehaviour {
 
       if (Input.GetKeyDown (KeyCode.W)) // Jetpack
       {
-        rigidbody2D.AddForce (Vector2.up * JUMP_FORCE);
+        GetComponent<Rigidbody2D>().AddForce (Vector2.up * JUMP_FORCE);
       }
       else if (Input.GetKeyDown (KeyCode.S)) // Reverse Jetpack
       {
-        rigidbody2D.AddForce (Vector2.up * (- JUMP_FORCE));
+        GetComponent<Rigidbody2D>().AddForce (Vector2.up * (- JUMP_FORCE));
       }
     }
     else
@@ -112,7 +112,7 @@ public class CatMovement : MonoBehaviour {
 
     if (Input.GetKeyDown (KeyCode.Space) && getGrounded() == true) //This if statement controls player JUMP controls
     {
-      rigidbody2D.AddForce (Vector2.up * JUMP_FORCE);
+      GetComponent<Rigidbody2D>().AddForce (Vector2.up * JUMP_FORCE);
     }
 
   }

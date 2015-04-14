@@ -11,7 +11,7 @@ public class Passthrough : MonoBehaviour {
 
 		if (this.transform.position.y < platform.transform.position.y) 
     {
-			platform.collider2D.isTrigger = true;
+			platform.GetComponent<Collider2D>().isTrigger = true;
 		}
 	}
 	
@@ -19,32 +19,32 @@ public class Passthrough : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		platform = other.gameObject;
-		if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y > 0) 
+		if (other.gameObject.tag == "Passable" && GetComponent<Rigidbody2D>().velocity.y > 0) 
 		{
           platform = other.gameObject;
       Debug.Log ("Trigger entered");
-      Debug.Log (rigidbody2D.velocity.y);
-      rigidbody2D.AddForce (new Vector2 (0f, 20f));
-		  Physics2D.IgnoreCollision(platform.collider2D, collider2D, true);
+      Debug.Log (GetComponent<Rigidbody2D>().velocity.y);
+      GetComponent<Rigidbody2D>().AddForce (new Vector2 (0f, 20f));
+		  Physics2D.IgnoreCollision(platform.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
 		} 
 		else if(other.gameObject.tag == "Passable")
 		{
 			platform = other.gameObject;
-		    other.collider2D.isTrigger = false;
+		    other.GetComponent<Collider2D>().isTrigger = false;
 		}
 	}
 	
 	void OnTriggerExit2D (Collider2D other)
 	{
-    if (other.gameObject.tag == "Passable" && rigidbody2D.velocity.y > 0) {
-      Debug.Log ("Trigger exit " + platform.collider2D);
-      Physics2D.IgnoreCollision (platform.collider2D, collider2D, false);
+    if (other.gameObject.tag == "Passable" && GetComponent<Rigidbody2D>().velocity.y > 0) {
+      Debug.Log ("Trigger exit " + platform.GetComponent<Collider2D>());
+      Physics2D.IgnoreCollision (platform.GetComponent<Collider2D>(), GetComponent<Collider2D>(), false);
       //rigidbody2D.AddForce (new Vector2 (0f, -5f));
-      other.collider2D.isTrigger = false;
+      other.GetComponent<Collider2D>().isTrigger = false;
     } 
     else if (platform.transform.position.y > this.transform.position.y) 
     {
-      platform.collider2D.isTrigger = true;
+      platform.GetComponent<Collider2D>().isTrigger = true;
     }
 
 	}

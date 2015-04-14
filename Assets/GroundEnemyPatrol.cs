@@ -31,17 +31,17 @@ public class GroundEnemyPatrol : MonoBehaviour {
 	void Update () {
 		if (moveRight) 
 		{
-			rigidbody2D.velocity = new Vector2(moveSpeed,0);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed,0);
 		}
-		if (rigidbody2D.position.x >= endPos) 
+		if (GetComponent<Rigidbody2D>().position.x >= endPos) 
 		{
 			moveRight = false;
 		}
 		if (!moveRight) 
 		{
-			rigidbody2D.velocity = new Vector2 (-moveSpeed, 0);
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (-moveSpeed, 0);
 		}
-		if (rigidbody2D.position.x <= startPos) 
+		if (GetComponent<Rigidbody2D>().position.x <= startPos) 
 		{
 			moveRight = true;
 		}

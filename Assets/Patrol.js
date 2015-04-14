@@ -6,7 +6,7 @@ var curr_iter : int;
 var direction : int;
 
 function Start () {
-  rigidbody2D.velocity.x = VELOCITY;
+  GetComponent.<Rigidbody2D>().velocity.x = VELOCITY;
 }
 
 function Update () {
@@ -27,6 +27,6 @@ function Update () {
 	  direction = 1;
 	}
 	
-	rigidbody2D.velocity.x = direction * VELOCITY;
+	GetComponent.<Rigidbody2D>().velocity.x = direction * VELOCITY;
   }
 }

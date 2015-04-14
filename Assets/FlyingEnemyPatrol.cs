@@ -25,17 +25,17 @@ public class FlyingEnemyPatrol : MonoBehaviour {
 	void Update () {
 		if (moveRight) 
 		{
-			rigidbody2D.velocity = new Vector2(XmoveSpeed,YmoveSpeed);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(XmoveSpeed,YmoveSpeed);
 		}
-		if (rigidbody2D.position.x >= endPos) 
+		if (GetComponent<Rigidbody2D>().position.x >= endPos) 
 		{
 			moveRight = false;
 		}
 		if (!moveRight) 
 		{
-			rigidbody2D.velocity = new Vector2 (-XmoveSpeed,-YmoveSpeed);
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (-XmoveSpeed,-YmoveSpeed);
 		}
-		if (rigidbody2D.position.x <= startPos) 
+		if (GetComponent<Rigidbody2D>().position.x <= startPos) 
 		{
 			moveRight = true;
 		}

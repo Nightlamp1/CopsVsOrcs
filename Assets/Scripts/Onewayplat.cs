@@ -6,9 +6,9 @@ public class Onewayplat : MonoBehaviour {
   void Update(){
     GameObject Player = GameVars.getInstance ().getPlayer ();
     if (Player.transform.position.y - 1.1 > this.transform.position.y) {
-      this.collider2D.isTrigger = false;
+      this.GetComponent<Collider2D>().isTrigger = false;
     } else {
-      this.collider2D.isTrigger = true;
+      this.GetComponent<Collider2D>().isTrigger = true;
     }
   }
 	// Update is called once per frame
@@ -28,7 +28,7 @@ public class Onewayplat : MonoBehaviour {
     GameObject Player = other.gameObject;
     if (Player.transform.position.y > this.transform.position.y +1.1) {
       Physics2D.IgnoreLayerCollision (0, 2, false);
-      this.collider2D.isTrigger = false;
+      this.GetComponent<Collider2D>().isTrigger = false;
     }
 
   }

@@ -66,7 +66,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		move = (crouch ? move * crouchSpeed : move);
 
 		// Move the character
-		rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+		GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		
 		// If the input is moving the player right and the player is facing left...
 		if(move > 0 && !facingRight)
@@ -86,9 +86,9 @@ public class PlatformerCharacter2D : MonoBehaviour
       if (jumpCheck == 0)
       {
         jumpCheck+=1;
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,0);
         
-        rigidbody2D.AddForce(new Vector2(1f, jumpForce));
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, jumpForce));
         
         justJumped = true;
        
@@ -96,9 +96,9 @@ public class PlatformerCharacter2D : MonoBehaviour
       else if (jumpCheck == 1)
       {
         jumpCheck+=1;
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,0);
         
-        rigidbody2D.AddForce(new Vector2(1f, jumpForce-100f));
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, jumpForce-100f));
         
         justJumped = true;
         anim.SetBool("Jump2",true);
