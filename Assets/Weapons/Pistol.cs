@@ -18,6 +18,9 @@ public class Pistol : Activateable {
   void Start () {
     m_hasActivate = true;
     m_hasActivateAlternate = false;
+
+    addActivateableSound(GameVars.getInstance().sounds[4]);
+    addActivateableSound(GameVars.getInstance().sounds[6]);
   }
   
   // Update is called once per frame
@@ -58,6 +61,7 @@ public class Pistol : Activateable {
       b.transform.name = "bullet(Clone)";
       
       b.GetComponent<Bullet>().fire();
+      activateRandomSound();
     }
   }
   

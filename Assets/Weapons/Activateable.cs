@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public abstract class Activateable : MonoBehaviour {
   protected bool m_hasActivate;
@@ -9,6 +9,8 @@ public abstract class Activateable : MonoBehaviour {
   protected float m_cooldownActivateAlternate;
 
   public Transform spawnPosition;
+
+  public List<AudioClip> activateableSounds;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +29,22 @@ public abstract class Activateable : MonoBehaviour {
   public bool canActivateAlternate()
   {
     return (m_hasActivateAlternate && m_cooldownActivateAlternate <= 0);
+  }
+
+  public void addActivateableSound(AudioClip newSound)
+  {
+    if (activateableSounds == null) activateableSounds = new List<AudioClip>();
+
+    activateableSounds.Add(newSound);
+  }
+
+  public void activateRandomSound()
+  {
+    if (activateableSounds == null || activateableSounds.Count == 0) return;
+
+    AudioSource.PlayClipAtPoint(
+      activateableSounds[Random.Range(0, activateableSounds.Count)], 
+      new Vector3());
   }
 
   public abstract void activate();
