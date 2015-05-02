@@ -33,6 +33,11 @@ public class GameOverScript : MonoBehaviour {
     down_handled = false;
 
     scores = "";
+
+    if (GameVars.getInstance().score == null) {
+      return;
+    }
+
     score = Mathf.Round(GameVars.getInstance().score * 10);
 	}
 
@@ -45,7 +50,7 @@ public class GameOverScript : MonoBehaviour {
 
 		if (GUI.Button (new Rect (XPOS + 63, YPOS - 155, WIDTH, HEIGHT), Retry, ""))
 		{
-            GameVars.getInstance().score = 0;
+      GameVars.getInstance().score = 0;
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(1);
@@ -60,6 +65,10 @@ public class GameOverScript : MonoBehaviour {
 
     if (!up_handled && !up_requested)
     {
+      if (GameVars.getInstance () == null || score == null) {
+        return;
+      }
+
       up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
                          "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
                          "&score=" + WWW.EscapeURL(score.ToString()));
