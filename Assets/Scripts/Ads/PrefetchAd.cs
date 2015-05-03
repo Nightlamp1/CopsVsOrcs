@@ -119,16 +119,17 @@ public class PrefetchAd : MonoBehaviour {
     }
   }
 
-  public void showInterstitial() {
+  public bool showInterstitial() {
     if (lastAdTime.AddSeconds(minSecondsBetweenAds) > System.DateTime.Now) {
       print ("========== Refusing to display another ad within " + minSecondsBetweenAds + " ==========");
-      return;
+      return false;
     }
 
     lastAdTime = System.DateTime.Now;
 
     getInterstitial().Show();
     print ("========== Interstitial should be visible ==========");
+    return true;
   }
 
   public void resetInterstitial() {

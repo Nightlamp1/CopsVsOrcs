@@ -18,8 +18,11 @@ public class GameOverInterstitialAd : MonoBehaviour
     // Only load the InterstitialAd on Level 2 (The Interstitial Ad Scene)
     if (Application.loadedLevel == 2) {
       if (pre.getInterstitial().IsLoaded()) {
-        pre.showInterstitial();
         pre.getInterstitial().AdClosed += HandleAdClosed;
+
+        if (! pre.showInterstitial()) {
+          endScene();
+        }
       }
       
       startTime = System.DateTime.Now;
