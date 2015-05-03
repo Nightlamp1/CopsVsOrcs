@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1.10629487, y: 1.24868953, z: 1.09534168}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &734928276
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &734928282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +241,59 @@ MonoBehaviour:
   startGame: {fileID: 2800000, guid: d777b847c3658fa4e8587256cb2cf012, type: 3}
   optionButton: {fileID: 2800000, guid: ac5a4a3ec84808f48b8b24b88101ae49, type: 3}
   creditsButton: {fileID: 2800000, guid: a3afb16676d5313448270c1b58f569c8, type: 3}
+--- !u!1 &748285897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 748285899}
+  - 114: {fileID: 748285898}
+  m_Layer: 0
+  m_Name: GameVars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &748285898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748285897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7871c895e3a3d3e4aacd8d0aced51b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  somePrefab: {fileID: 0}
+  score: 0
+  distance: 0
+  sounds:
+  - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
+  - {fileID: 8300000, guid: 33924decec288344e8e6f223f8c76a53, type: 3}
+  - {fileID: 8300000, guid: 845fa8250c8f3344ea8221860784268f, type: 3}
+  - {fileID: 8300000, guid: b165b0e7c16386a42b48784e7a614429, type: 3}
+  - {fileID: 8300000, guid: 1208f0ee6ceaa3744947ee1696ff3168, type: 3}
+  - {fileID: 8300000, guid: f8299a3f290e8fd409bfdefa81b35c23, type: 3}
+  - {fileID: 8300000, guid: 8f095577fdfe82747a6211efcf862a88, type: 3}
+  - {fileID: 8300000, guid: af4c1297c0e979e4aadb9f665cfff7bc, type: 3}
+  orcKills: 0
+  debugMessage: 
+--- !u!4 &748285899
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748285897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.72259927, y: .0442935713, z: -.0244140625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &1516178392
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +324,7 @@ MonoBehaviour:
   somePrefab: {fileID: 0}
   score: 0
   distance: 0
+  sounds: []
   orcKills: 0
   debugMessage: 
 --- !u!4 &1516178394
@@ -284,7 +338,47 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!1 &1770374496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1770374498}
+  - 114: {fileID: 1770374497}
+  m_Layer: 0
+  m_Name: AdObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1770374497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1770374496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ed3f789c324774981e31a8b1549599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSecondsBetweenAds: 1
+--- !u!4 &1770374498
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1770374496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &2004502839
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,4 +432,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
