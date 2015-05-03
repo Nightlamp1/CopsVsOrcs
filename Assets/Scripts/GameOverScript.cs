@@ -34,10 +34,6 @@ public class GameOverScript : MonoBehaviour {
 
     scores = "";
 
-    if (GameVars.getInstance().score == null) {
-      return;
-    }
-
     score = Mathf.Round(GameVars.getInstance().score * 10);
 	}
 
@@ -65,9 +61,6 @@ public class GameOverScript : MonoBehaviour {
 
     if (!up_handled && !up_requested)
     {
-      if (GameVars.getInstance () == null || score == null) {
-        return;
-      }
 
       up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
                          "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 

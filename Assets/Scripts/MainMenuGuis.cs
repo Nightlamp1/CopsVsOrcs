@@ -12,7 +12,6 @@ public class MainMenuGuis : MonoBehaviour {
 	public Texture2D startGame;
 	public Texture2D optionButton;
 	public Texture2D creditsButton;
-	string startText = "Start Game";
 
 	// Use this for initialization
 	void Awake () 
@@ -26,21 +25,7 @@ public class MainMenuGuis : MonoBehaviour {
     XPOS = Screen.width * 0.72f;
     YPOS = Screen.height * 0.55f;
 
-
-
-    //GUI.Label(new Rect(XPOS, YPOS - 126, WIDTH, HEIGHT), "Name");
-    GameVars inst = GameVars.getInstance();
-
-   /* if (inst != null)
-    {
-      inst.setPlayerName(GUI.TextField(new Rect(XPOS, YPOS - 63, WIDTH, HEIGHT), inst.getPlayerName()));
-    }
-    else
-    {
-      GUI.TextField(new Rect(XPOS, YPOS - 63, WIDTH, HEIGHT), "There may be an issue using the GameVars script...");
-    }*/
-
-	if (GUI.Button (new Rect (XPOS, YPOS, WIDTH, HEIGHT), startGame, "")) 
+	  if (GUI.Button (new Rect (XPOS, YPOS, WIDTH, HEIGHT), startGame, "")) 
     {
       if (GameVars.getInstance().getPlayerName() == "")
       {
