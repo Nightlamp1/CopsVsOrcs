@@ -20,12 +20,12 @@ public abstract class Activateable : MonoBehaviour {
     m_cooldownActivate = 0;
     m_cooldownActivateAlternate = 0;
 	}
-  
+
   public bool canActivate()
   {
     return (m_hasActivate && m_cooldownActivate <= 0);
   }
-  
+
   public bool canActivateAlternate()
   {
     return (m_hasActivateAlternate && m_cooldownActivateAlternate <= 0);
@@ -42,9 +42,13 @@ public abstract class Activateable : MonoBehaviour {
   {
     if (activateableSounds == null || activateableSounds.Count == 0) return;
 
-    AudioSource.PlayClipAtPoint(
-      activateableSounds[Random.Range(0, activateableSounds.Count)], 
-      new Vector3());
+    if (activateableSounds.Count > 0) {
+      AudioSource.PlayClipAtPoint(
+        activateableSounds[Random.Range(0, activateableSounds.Count)],
+        new Vector3());
+    } else {
+      print("No available sounds to randomly select.");
+    }
   }
 
   public abstract void activate();
