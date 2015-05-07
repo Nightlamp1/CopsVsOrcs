@@ -10,7 +10,7 @@ public class HudScript : MonoBehaviour {
 	void Update () 
 	{
     GameVars.getInstance().score += Time.deltaTime;
-	GameVars.getInstance ().distance += Time.deltaTime;
+	  GameVars.getInstance ().distance += Time.deltaTime;
 	}
 
 	public void IncreaseScore (int amount)

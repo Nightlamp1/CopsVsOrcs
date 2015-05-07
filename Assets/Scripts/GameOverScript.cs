@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#pragma warning disable 0168 // variable declared but not used.
+
+using UnityEngine;
 using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
@@ -35,7 +37,7 @@ public class GameOverScript : MonoBehaviour {
     scores = "";
 
     score = Mathf.Round(GameVars.getInstance().score * 10);
-	}
+  }
 
 	void OnGUI()
 	{
@@ -57,11 +59,16 @@ public class GameOverScript : MonoBehaviour {
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(0);
+
+      try {
+        gameObject.GetComponent<GameOverInterstitialAd>().hideBannerAd();
+      } catch (System.Exception ex) {
+        print ("Exception trying to hide banner ad.");
+      }
 		}
 
     if (!up_handled && !up_requested)
     {
-
       up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
                          "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
                          "&score=" + WWW.EscapeURL(score.ToString()));
