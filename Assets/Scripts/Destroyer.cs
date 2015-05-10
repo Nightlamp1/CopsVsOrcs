@@ -7,7 +7,11 @@ public class Destroyer : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
+#if NOADS || BANNERADS
+      Application.LoadLevel(3);
+#else
 			Application.LoadLevel(2);
+#endif
 			return;
 		}
 

@@ -1,9 +1,17 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 7658f5caf94739d40b47fe7e17597dc9
-=======
-guid: 8a3ad4d59c8623f4ea5985addcbb12a9
->>>>>>> a28d458a04d2696f92ff85ac198aff05512403b3
+guid: 4bdaa7fee9bdb934a9b2da205bed7b07
 folderAsset: yes
-DefaultImporter:
+timeCreated: 1430630648
+licenseType: Free
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 1
+      settings: {}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
