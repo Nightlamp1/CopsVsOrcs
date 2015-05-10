@@ -46,16 +46,16 @@ public class GameOverScript : MonoBehaviour {
 		XPOS = Screen.width * 0.5f;
 		YPOS = Screen.height * 0.5f;
 
-		GUI.Label (new Rect (Screen.width * 0.5f - 30, 300, 80, 30), "Score: " + score);
+		GUI.Label (new Rect (Screen.width * 0.5f - 30, Screen.height * 0.5f - 50, 80, 30), "Score: " + score);
 
-		if (GUI.Button (new Rect (XPOS + 63, YPOS - 155, WIDTH, HEIGHT), Retry, ""))
+		if (GUI.Button (new Rect (XPOS + 53, YPOS - 105, WIDTH, HEIGHT), Retry, ""))
 		{
       GameVars.getInstance().score = 0;
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(1);
 		}
-		if (GUI.Button (new Rect (XPOS - 200, YPOS - 155, WIDTH, HEIGHT), MainMenu, ""))
+		if (GUI.Button (new Rect (XPOS - 230, YPOS - 105, WIDTH, HEIGHT), MainMenu, ""))
 		{
 			GameVars.getInstance().score = 0;
 			GameVars.getInstance().orcKills = 0;

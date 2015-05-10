@@ -581,6 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84cbff7d3e09304b8487397b739fce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CVOFont: {fileID: 12800000, guid: 06f9667f78da40344923afa4c267a2d2, type: 3}
 --- !u!82 &1352497780
 AudioSource:
   m_ObjectHideFlags: 0
@@ -850,12 +851,12 @@ MonoBehaviour:
   - {fileID: 100000, guid: 8fd60de6e82e56f499777b17893265ac, type: 2}
   - {fileID: 100000, guid: afe5f391cae3e62408fee0b8b46754a7, type: 2}
   - {fileID: 100000, guid: abe35cc1127896e4fa3658bf39ad4927, type: 2}
-  - {fileID: 100000, guid: c8a5459fe89a21b46a48a96be7db9a31, type: 2}
+  - {fileID: 100002, guid: c69eb4eedcda0fb4aab0fe2ee3c6657c, type: 2}
   - {fileID: 100000, guid: a83d1492f252d82429544c57d28cc1dd, type: 2}
   - {fileID: 100006, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
-  - {fileID: 100000, guid: 5c79932cdf472be47a29bedc72ecf79e, type: 2}
+  - {fileID: 100000, guid: afe5f391cae3e62408fee0b8b46754a7, type: 2}
   - {fileID: 100000, guid: 9b5a8fc0f808c314e8d5d891fe9af75e, type: 2}
-  - {fileID: 100000, guid: e516202bb428dd74cb67cbd505b69460, type: 2}
+  - {fileID: 100000, guid: aa0302fe603aa5d40b4816be182bf6e1, type: 2}
   - {fileID: 100004, guid: 0b7dd13d30505e945ac0ff74562c811c, type: 2}
   - {fileID: 100004, guid: 691117c3ac7fc3348a4f864fafe0045b, type: 2}
   - {fileID: 100000, guid: 4e3e7a78699128a4c96578318abfbd2b, type: 2}
