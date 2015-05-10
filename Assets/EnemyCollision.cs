@@ -13,12 +13,12 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") 
 		{
-			hud.IncreaseScore (-10);
+			hud.IncreaseScore (-100);
 			Destroy (this.gameObject);
 		} 
 		else if (other.gameObject.tag == "Bullet") 
 		{
-			hud.IncreaseScore (10);
+			hud.IncreaseScore (100);
 			GameVars.getInstance().orcKills += 1;
 			Destroy (this.gameObject);
 			Destroy (other.gameObject);

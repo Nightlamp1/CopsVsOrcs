@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class HudScript : MonoBehaviour {
+	private int ScoreTen = 0;
   void Start ()
   {
   }
@@ -9,8 +10,15 @@ public class HudScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-    GameVars.getInstance().score += Time.deltaTime;
-	GameVars.getInstance ().distance += Time.deltaTime;
+		ScoreTen += 1;
+		if (ScoreTen >= 100) {
+			GameVars.getInstance().score += 10;
+			GameVars.getInstance ().distance += 1;
+			ScoreTen = 0;
+		}
+
+    //GameVars.getInstance().score += Time.deltaTime;
+	//GameVars.getInstance ().distance += Time.deltaTime;
 	}
 
 	public void IncreaseScore (int amount)
@@ -21,7 +29,7 @@ public class HudScript : MonoBehaviour {
 	void OnGUI()
 	{
     GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
-               "Score: " + (int)(GameVars.getInstance().score * 10));
+               "Score: " + (int)(GameVars.getInstance().score));
 	
 		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.07f, 100, 30), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
 
