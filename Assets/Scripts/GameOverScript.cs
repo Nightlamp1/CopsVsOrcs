@@ -36,7 +36,7 @@ public class GameOverScript : MonoBehaviour {
 
     scores = "";
 
-    score = Mathf.Round(GameVars.getInstance().score * 10);
+    score = Mathf.Round(GameVars.getInstance().score);
   }
 
 	void OnGUI()
