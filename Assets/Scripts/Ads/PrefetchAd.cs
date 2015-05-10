@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#define BANNER
+
+using UnityEngine;
 using System.Collections;
 using GoogleMobileAds.Api;
 
@@ -6,7 +8,6 @@ public class PrefetchAd : MonoBehaviour {
   protected BannerView banner;
   protected InterstitialAd interstitial;
 
-  protected bool preloadedBanner;
   protected bool preloadedInterstitial;
 
   private static PrefetchAd singleton;
@@ -32,11 +33,9 @@ public class PrefetchAd : MonoBehaviour {
     lastAdTime = new System.DateTime(1970, 1, 1);
 
     singleton = this;
-    preloadedBanner = false;
     preloadedInterstitial = false;
 
 #if BANNER
-    getBanner();
 #elif ! NOADS
     getInterstitial();
 #endif
@@ -44,7 +43,6 @@ public class PrefetchAd : MonoBehaviour {
 
   void Update() {
 #if BANNER
-    preloadBanner();
 #elif ! NOADS
     preloadInterstitial();
 #endif
@@ -74,24 +72,31 @@ public class PrefetchAd : MonoBehaviour {
 
   public BannerView getBanner() {
     if (banner == null) {
-      banner = new BannerView(
-        adUnitId, AdSize.Banner, AdPosition.Bottom);
-      preloadedBanner = false;
+      return getNewBanner ();
     }
 
     return banner;
   }
 
+  public BannerView getNewBanner() {
+    if (banner != null) {
+      banner.Destroy();
+    }
+
+    banner = new BannerView(
+      adUnitId, AdSize.Banner, AdPosition.Bottom);
+
+    return banner;
+  }
+
+  // Do nothing
   void preloadBanner() {
+    return;
+    /*
     if (preloadedBanner) return;
 
     preloadedBanner = true;
-    //ca-app-pub-5012360525975215/8810625686
-    // Create an empty ad request.
-    AdRequest request = new AdRequest.Builder().AddTestDevice("0EDE6C15F6AD443908050688F06D494F").Build();
-    
-    // Load the banner with the request.
-    getBanner().LoadAd(request);
+    */
   }
 
   void preloadInterstitial() {
@@ -115,7 +120,6 @@ public class PrefetchAd : MonoBehaviour {
     
     if (banner != null) {
       getBanner().Destroy();
-      preloadedBanner = false;
     }
   }
 
@@ -132,7 +136,25 @@ public class PrefetchAd : MonoBehaviour {
     return true;
   }
 
+  public void showBanner() {
+    if (banner != null) {
+      print ("========== Destroying old banner ==========");
+      getNewBanner();
+    } else {
+      print ("========== Showing new banner ==========");
+    }
+    
+    // Load the banner with the request.
+    getBanner().LoadAd(new AdRequest.Builder().AddTestDevice("0EDE6C15F6AD443908050688F06D494F").Build());
+    getBanner ().Show ();
+  }
+
   public void resetInterstitial() {
     preloadedInterstitial = false;
+  }
+
+  public void resetBanner() {
+    getBanner ().Hide();
+    getBanner ().Destroy ();
   }
 }

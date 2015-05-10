@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#define BANNER
+
+using UnityEngine;
 using System.Collections;
 
 public class Destroyer : MonoBehaviour {
@@ -7,7 +9,7 @@ public class Destroyer : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
-#if NOADS || BANNERADS
+#if NOADS || BANNER
       Application.LoadLevel(3);
 #else
 			Application.LoadLevel(2);
