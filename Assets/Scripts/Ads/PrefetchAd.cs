@@ -1,10 +1,10 @@
-﻿#define BANNER
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using GoogleMobileAds.Api;
 
 public class PrefetchAd : MonoBehaviour {
+  public const int DEFAULT_MIN_SECONDS_BETWEEN_ADS = 120;
+
   protected BannerView banner;
   protected InterstitialAd interstitial;
 
@@ -12,16 +12,22 @@ public class PrefetchAd : MonoBehaviour {
 
   private static PrefetchAd singleton;
   protected System.DateTime lastAdTime;
+  private bool interstitialAdsEnabled;
+  private bool bannerAdsEnabled;
 
-  [SerializeField] public int minSecondsBetweenAds;
+  private bool bannerAdHidden;
+  protected int minSecondsBetweenAds;
 
   // Initialize an InterstitialAd.
 #if UNITY_ANDROID
-  public const string adUnitId = "ca-app-pub-5012360525975215/8810625686";
+  public const string bannerAdUnitId       = "ca-app-pub-5012360525975215/4791908484";
+  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
 #elif UNITY_IPHONE
-  public const string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
+  public const string bannerAdUnitId       = "";
+  public const string interstitialAdUnitId = "";
 #else
-  public const string adUnitId = "unexpected_platform";
+  public const string bannerAdUnitId       = "ca-app-pub-5012360525975215/4791908484";
+  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
 #endif
 
   void Start() {
@@ -30,22 +36,26 @@ public class PrefetchAd : MonoBehaviour {
       singleton.destroyAds();
     }
 
+    minSecondsBetweenAds = DEFAULT_MIN_SECONDS_BETWEEN_ADS;
+
+    bannerAdHidden = false;
+    interstitialAdsEnabled = true;
+    bannerAdsEnabled = false;
+
     lastAdTime = new System.DateTime(1970, 1, 1);
 
     singleton = this;
     preloadedInterstitial = false;
 
-#if BANNER
-#elif ! NOADS
-    getInterstitial();
-#endif
+    if (interstitialAdsEnabled) {
+      getInterstitial();
+    }
   }
 
   void Update() {
-#if BANNER
-#elif ! NOADS
-    preloadInterstitial();
-#endif
+    if (interstitialAdsEnabled) {
+      preloadInterstitial();
+    }
   }
 
   // Returns a singleton instance of this class.
@@ -61,9 +71,33 @@ public class PrefetchAd : MonoBehaviour {
     DontDestroyOnLoad(transform.gameObject);
   }
 
+  public int getMinSecondsBetweenAds() {
+    return minSecondsBetweenAds;
+  }
+
+  public void setMinSecondsBetweenAds(int seconds) {
+    minSecondsBetweenAds = seconds;
+  }
+
+  public void setInterstitialAdsEnabled(bool pEnable) {
+    interstitialAdsEnabled = pEnable;
+  }
+
+  public void setBannerAdsEnabled(bool pEnable) {
+    bannerAdsEnabled = pEnable;
+  }
+
+  public bool getInterstitialAdsEnabled() {
+    return interstitialAdsEnabled;
+  }
+
+  public bool getBannerAdsEnabled() {
+    return bannerAdsEnabled;
+  }
+
   public InterstitialAd getInterstitial() {
     if (interstitial == null) {
-      interstitial = new InterstitialAd(adUnitId);
+      interstitial = new InterstitialAd(interstitialAdUnitId);
       preloadedInterstitial = false;
     }
     
@@ -84,7 +118,7 @@ public class PrefetchAd : MonoBehaviour {
     }
 
     banner = new BannerView(
-      adUnitId, AdSize.Banner, AdPosition.Bottom);
+      bannerAdUnitId, AdSize.Banner, AdPosition.Bottom);
 
     return banner;
   }
@@ -92,15 +126,10 @@ public class PrefetchAd : MonoBehaviour {
   // Do nothing
   void preloadBanner() {
     return;
-    /*
-    if (preloadedBanner) return;
-
-    preloadedBanner = true;
-    */
   }
 
   void preloadInterstitial() {
-    if (preloadedInterstitial) return;
+    if (!interstitialAdsEnabled || preloadedInterstitial) return;
 
     preloadedInterstitial = true;
 
@@ -124,6 +153,7 @@ public class PrefetchAd : MonoBehaviour {
   }
 
   public bool showInterstitial() {
+    if (!interstitialAdsEnabled) return false;
     if (lastAdTime.AddSeconds(minSecondsBetweenAds) > System.DateTime.Now) {
       print ("========== Refusing to display another ad within " + minSecondsBetweenAds + " ==========");
       return false;
@@ -137,12 +167,16 @@ public class PrefetchAd : MonoBehaviour {
   }
 
   public void showBanner() {
+    if (!bannerAdsEnabled) return;
+
     if (banner != null) {
       print ("========== Destroying old banner ==========");
       getNewBanner();
     } else {
       print ("========== Showing new banner ==========");
     }
+
+    bannerAdHidden = false;
     
     // Load the banner with the request.
     getBanner().LoadAd(new AdRequest.Builder().AddTestDevice("0EDE6C15F6AD443908050688F06D494F").Build());
@@ -154,7 +188,14 @@ public class PrefetchAd : MonoBehaviour {
   }
 
   public void resetBanner() {
+    if (!bannerAdsEnabled) return;
     getBanner ().Hide();
     getBanner ().Destroy ();
+  }
+
+  public void hideBannerAd() {
+    if (bannerAdHidden) return;
+    bannerAdHidden = true;
+    banner.Hide ();
   }
 }
