@@ -1,6 +1,4 @@
-﻿#define BANNER
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Destroyer : MonoBehaviour {
