@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#pragma warning disable 0168 // variable declared but not used.
+
+using UnityEngine;
 using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
@@ -33,29 +35,36 @@ public class GameOverScript : MonoBehaviour {
     down_handled = false;
 
     scores = "";
-    score = Mathf.Round(GameVars.getInstance().score * 10);
-	}
+
+    score = Mathf.Round(GameVars.getInstance().score);
+  }
 
 	void OnGUI()
 	{
 		XPOS = Screen.width * 0.5f;
 		YPOS = Screen.height * 0.5f;
 
-		GUI.Label (new Rect (Screen.width * 0.5f - 30, 300, 80, 30), "Score: " + score);
+		GUI.Label (new Rect (Screen.width * 0.5f - 30, Screen.height * 0.5f - 50, 80, 30), "Score: " + score);
 
-		if (GUI.Button (new Rect (XPOS + 63, YPOS - 155, WIDTH, HEIGHT), Retry, ""))
+		if (GUI.Button (new Rect (XPOS + 53, YPOS - 105, WIDTH, HEIGHT), Retry, ""))
 		{
-            GameVars.getInstance().score = 0;
+      GameVars.getInstance().score = 0;
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(1);
 		}
-		if (GUI.Button (new Rect (XPOS - 200, YPOS - 155, WIDTH, HEIGHT), MainMenu, ""))
+		if (GUI.Button (new Rect (XPOS - 230, YPOS - 105, WIDTH, HEIGHT), MainMenu, ""))
 		{
 			GameVars.getInstance().score = 0;
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(0);
+
+      try {
+        gameObject.GetComponent<GameOverInterstitialAd>().hideBannerAd();
+      } catch (System.Exception ex) {
+        print ("Exception trying to hide banner ad.");
+      }
 		}
 
     if (!up_handled && !up_requested)

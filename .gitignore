@@ -7,6 +7,9 @@ UnityGenerated/
 Library/
 Assets/AssetStoreTools*
 
+# Binary output folder
+bin
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #

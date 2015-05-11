@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class GameVars : MonoBehaviour 
 {
@@ -11,6 +11,7 @@ public class GameVars : MonoBehaviour
 
   public float score;
   public float distance;
+  public List<AudioClip> sounds;
   public int orcKills = 0;
   private string mPlayerName = "";
   public string debugMessage = "";
