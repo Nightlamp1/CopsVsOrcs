@@ -31,6 +31,8 @@ public class MainMenuGuis : MonoBehaviour {
     XPOS = Screen.width * 0.665f;
     YPOS = Screen.height * 0.52f;
 
+    /*
+     * Removing this since we don't have working ads anymore.
     if (GUI.Button (new Rect (XPOS, YPOS + 217, 190, 65), moarAdsText)) {
       if (PrefetchAd.get().getMinSecondsBetweenAds() == PrefetchAd.DEFAULT_MIN_SECONDS_BETWEEN_ADS) {
         print("========== Moar Ads ==========");
@@ -42,6 +44,7 @@ public class MainMenuGuis : MonoBehaviour {
         moarAdsText = "More Ads Plz";
       }
     }
+    */
 
 	  if (GUI.Button (new Rect (XPOS, YPOS, WIDTH, HEIGHT), startGame, "")) 
     {

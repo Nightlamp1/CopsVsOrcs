@@ -19,11 +19,12 @@ public class GameOverInterstitialAd : MonoBehaviour
   }
 
 	// Use this for initialization
-	void Start () {
+  void Start () {
     loadedLevel = Application.loadedLevel;
     
     pre = PrefetchAd.get();
 
+    pre.getInterstitial().AdFailedToLoad += HandleAdFailedToLoad;
     pre.getBanner().AdLoaded += HandleAdLoaded;
 
     // Only load the InterstitialAd on Level 2 (The Interstitial Ad Scene)
@@ -37,7 +38,15 @@ public class GameOverInterstitialAd : MonoBehaviour
         }
       }
     }
-	}
+
+    // HOTFIX
+    endScene();
+  }
+
+  void HandleAdFailedToLoad (object sender, AdFailedToLoadEventArgs e)
+  {
+    endScene();
+  }
 
   void Update() {
     if (Application.loadedLevel == 2 && !pre.getInterstitialAdsEnabled()) {
