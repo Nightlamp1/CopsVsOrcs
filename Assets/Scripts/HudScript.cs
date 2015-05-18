@@ -11,11 +11,11 @@ public class HudScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-    GameVars.getInstance().score += Time.deltaTime;
-	  GameVars.getInstance ().distance += Time.deltaTime;
+    //GameVars.getInstance().score += Time.deltaTime;
+	  //GameVars.getInstance ().distance += Time.deltaTime;
 		ScoreTen += 1;
 		if (ScoreTen >= 100) {
-			GameVars.getInstance().score += 10;
+			GameVars.getInstance().score += 0.1f;
 			GameVars.getInstance ().distance += 1;
 			ScoreTen = 0;
 		}
