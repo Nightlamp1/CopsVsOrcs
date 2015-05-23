@@ -6,7 +6,7 @@ public class MainMenuGuis : MonoBehaviour {
   private       float YPOS   = 0; // Set in OnGUI once.  Should be fixed...
 
   private const float WIDTH  = 1000;
-  private const float HEIGHT = 200;
+  private const float HEIGHT = 100;
 
 	public GUISkin customSkin;
 	public Texture2D startGame;
@@ -54,7 +54,9 @@ public class MainMenuGuis : MonoBehaviour {
 		}
 
 		GUI.Button (new Rect (XPOS, YPOS + 73, WIDTH, HEIGHT), optionButton ,"");
-		GUI.Button (new Rect (XPOS, YPOS + 145, WIDTH, HEIGHT), creditsButton, "");
+		if (GUI.Button (new Rect (XPOS, YPOS + 145, WIDTH, HEIGHT), creditsButton, "")) {
+			Application.LoadLevel(4);
+		}
 
 	}
 }
