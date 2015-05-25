@@ -17,12 +17,14 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		MyRay = Physics2D.Linecast(new Vector2(this.transform.position.x-1f,this.transform.position.y),new Vector2(this.transform.position.x - 3f,this.transform.position.y));
 		Debug.DrawLine(new Vector3(this.transform.position.x-1f,this.transform.position.y),new Vector3(this.transform.position.x - 3f,this.transform.position.y));
-		if (MyRay.collider.tag == "Player") 
-		{
-			anim.SetTrigger("Attack1");
+		if (MyRay.collider.tag == "Player") {
+			anim.SetTrigger ("Attack1");
 			//Debug.Log ("HITHIHTIHTIHTI");
 			//Debug.Log (MyRay.collider.tag);
-		}
+		} /*else if (MyRay.collider.tag == "Bullet") {
+			anim.SetTrigger ("Death");
+		}*/
+
 	}
 
 	
@@ -37,9 +39,11 @@ public class EnemyCollision : MonoBehaviour {
 		} 
 		else if (other.gameObject.tag == "Bullet") 
 		{
+			anim.SetTrigger("Death");
 			hud.IncreaseScore (1);
 			GameVars.getInstance().orcKills += 1;
-			Destroy (this.gameObject);
+			this.GetComponent<Collider2D>().enabled = false;
+			Destroy (this.gameObject, 0.3f);
 			Destroy (other.gameObject);
 		}
 	}

@@ -6,6 +6,7 @@ public class Platformer2DUserControl : MonoBehaviour
 	private PlatformerCharacter2D character;
   private bool jump;
   private bool shoot;
+	private int isMove = 1; //1 is moving. 0 is no movement
 
   private bool jumpOver = true;
   private bool shootOver = true;
@@ -64,7 +65,7 @@ public class Platformer2DUserControl : MonoBehaviour
 	void FixedUpdate()
 	{
 		// Pass all parameters to the character control script.
-		character.Move(1, false, jump);
+		character.Move(isMove, false, jump);
 
     if (jump)
     {
