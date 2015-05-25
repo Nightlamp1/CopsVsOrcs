@@ -18,6 +18,7 @@ public class Platformer2DUserControl : MonoBehaviour
   void Start()
   {
     gameObject.GetComponent<Armable> ().equip ("Pistol");
+		Time.timeScale = 0;
   }
 
 	void Awake()
@@ -58,7 +59,13 @@ public class Platformer2DUserControl : MonoBehaviour
     }
 #endif
 
-    if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
+    if (CrossPlatformInput.GetButtonDown ("Jump")) {
+			if(Time.timeScale ==1){
+			jump = true;
+			Time.timeScale=1;
+			}
+			else Time.timeScale=1;
+		}
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
   }
 
@@ -90,4 +97,6 @@ public class Platformer2DUserControl : MonoBehaviour
       "c1, c2, c3, sO, jO, tC = {" + 
       counter1 + ", " + counter2 + ", " + counter3 + ", " + shootOver + ", " + jumpOver + ", " + Input.touchCount + "}";
   }
+
+
 }

@@ -21,9 +21,7 @@ public class EnemyCollision : MonoBehaviour {
 			anim.SetTrigger ("Attack1");
 			//Debug.Log ("HITHIHTIHTIHTI");
 			//Debug.Log (MyRay.collider.tag);
-		} /*else if (MyRay.collider.tag == "Bullet") {
-			anim.SetTrigger ("Death");
-		}*/
+		} 
 
 	}
 

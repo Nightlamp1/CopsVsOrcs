@@ -13,6 +13,7 @@ public class HudScript : MonoBehaviour {
 	{
     //GameVars.getInstance().score += Time.deltaTime;
 	  //GameVars.getInstance ().distance += Time.deltaTime;
+		if (Time.timeScale == 0)return;
 		ScoreTen += 1;
 		if (ScoreTen >= 100) {
 			GameVars.getInstance().score += 0.1f;
