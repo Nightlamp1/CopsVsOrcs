@@ -21,8 +21,6 @@ public class BackgroundScroll : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
-		Debug.Log(GetComponent<MeshRenderer>().material.mainTexture.name);
-
     try {
       GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (Time.time * speed, 0f);
     } catch (System.Exception ex) {
