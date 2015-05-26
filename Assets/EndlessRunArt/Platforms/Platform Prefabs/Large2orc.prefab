@@ -32,7 +32,7 @@ GameObject:
   - 95: {fileID: 9543480}
   m_Layer: 0
   m_Name: RedOrc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ GameObject:
   - 95: {fileID: 9546332}
   m_Layer: 0
   m_Name: BlueORc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

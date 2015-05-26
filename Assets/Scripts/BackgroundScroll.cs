@@ -6,7 +6,19 @@ using System.Collections;
 public class BackgroundScroll : MonoBehaviour {
 
   public float speed = 0;
+	public Texture2D DayTime;
+	public Texture2D NightTime;
   
+ void Start(){
+		int RandScreen = Random.Range (0,2);
+		if (RandScreen >= 1) {
+			GetComponent<MeshRenderer> ().material.mainTexture = DayTime;
+		} else {
+			GetComponent<MeshRenderer>().material.mainTexture = NightTime;
+		}
+	}
+
+
   // Update is called once per frame
   void Update () {
     try {
