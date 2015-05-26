@@ -20,8 +20,8 @@ public class PrefetchAd : MonoBehaviour {
 
   // Initialize an InterstitialAd.
 #if UNITY_ANDROID
-  public const string bannerAdUnitId       = "casdfa";
-  public const string interstitialAdUnitId = "dasdf";
+  public const string bannerAdUnitId       = "ca-app-pub-5012360525975215/4791908484";
+  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
 #elif UNITY_IPHONE
   public const string bannerAdUnitId       = "";
   public const string interstitialAdUnitId = "";
