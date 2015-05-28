@@ -747,7 +747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
-  score: 0
   distance: 0
   sounds:
   - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
