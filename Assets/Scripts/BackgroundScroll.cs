@@ -11,6 +11,9 @@ public class BackgroundScroll : MonoBehaviour {
   
  void Start(){
 		int RandScreen = Random.Range (0,2);
+
+    print("========== {3} " + System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " ==========");
+
 		if (RandScreen >= 1) {
 			GetComponent<MeshRenderer> ().material.mainTexture = DayTime;
 		} else {
@@ -22,7 +25,9 @@ public class BackgroundScroll : MonoBehaviour {
   // Update is called once per frame
   void Update () {
     try {
-      GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (Time.time * speed, 0f);
+      if (GameVars.getInstance().getUserHasStarted()) {
+        GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (Time.time * speed, 0f);
+      }
     } catch (System.Exception ex) {
       // I'm not certain what's generating this Exception, we'll continue to ignore it.
       //  But we have to do something with it in order for it to not complain.

@@ -19,10 +19,13 @@ public class Platformer2DUserControl : MonoBehaviour
   {
     gameObject.GetComponent<Armable> ().equip ("Pistol");
 		Time.timeScale = 0;
+    GameVars.getInstance().setUserHasStarted(false);
   }
 
 	void Awake()
 	{
+    jump = false;
+    shoot = false;
 		character = GetComponent<PlatformerCharacter2D>();
 	}
 
@@ -48,8 +51,6 @@ public class Platformer2DUserControl : MonoBehaviour
           shootOver = false;
         }
       }
-      
-      update_hud();
     }
     else
     {
@@ -60,13 +61,20 @@ public class Platformer2DUserControl : MonoBehaviour
 #endif
 
     if (CrossPlatformInput.GetButtonDown ("Jump")) {
-			if(Time.timeScale ==1){
 			jump = true;
-			Time.timeScale=1;
-			}
-			else Time.timeScale=1;
 		}
+
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
+
+    // If the user hasn't started yet and they tried to jump or shoot, then start movement.
+    //   This is essentially a ghetto 'press any key' implementation.
+    if (!GameVars.getInstance().getUserHasStarted() && (jump || shoot)) {
+      jump = false;
+      shoot = false;
+
+      Time.timeScale = 1;
+      GameVars.getInstance().setUserHasStarted(true);
+    }
   }
 
 	void FixedUpdate()
@@ -79,8 +87,6 @@ public class Platformer2DUserControl : MonoBehaviour
       counter2 += 1;
     }
 
-    update_hud();
-
     if (shoot)
     {
       gameObject.GetComponent<Armable> ().activate ();
@@ -90,13 +96,4 @@ public class Platformer2DUserControl : MonoBehaviour
     // Reset the jump input once it has been used.
 	  jump = false;
 	}
-
-  void update_hud()
-  {
-    GameVars.getInstance().debugMessage = 
-      "c1, c2, c3, sO, jO, tC = {" + 
-      counter1 + ", " + counter2 + ", " + counter3 + ", " + shootOver + ", " + jumpOver + ", " + Input.touchCount + "}";
-  }
-
-
 }

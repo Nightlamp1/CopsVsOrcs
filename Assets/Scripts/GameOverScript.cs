@@ -36,7 +36,7 @@ public class GameOverScript : MonoBehaviour {
 
     scores = "";
 
-    score = Mathf.Round(GameVars.getInstance().score);
+    score = Mathf.Round(GameVars.getInstance().getScore());
   }
 
 	void OnGUI()
@@ -44,18 +44,18 @@ public class GameOverScript : MonoBehaviour {
 		XPOS = Screen.width * 0.5f;
 		YPOS = Screen.height * 0.5f;
 
-		GUI.Label (new Rect (Screen.width * 0.5f - 30, Screen.height * 0.5f - 50, 80, 30), "Score: " + score);
+		GUI.Label (new Rect (Screen.width * 0.5f - 75, Screen.height * 0.5f - 250, 150, 45), "Your Score this round was " + score + "!");
 
 		if (GUI.Button (new Rect (XPOS + 53, YPOS - 105, WIDTH, HEIGHT), Retry, ""))
 		{
-      GameVars.getInstance().score = 0;
+      GameVars.getInstance().setScore(0);
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(1);
 		}
 		if (GUI.Button (new Rect (XPOS - 230, YPOS - 105, WIDTH, HEIGHT), MainMenu, ""))
 		{
-			GameVars.getInstance().score = 0;
+			GameVars.getInstance().setScore(0);
 			GameVars.getInstance().orcKills = 0;
 			GameVars.getInstance().distance = 0;
 			Application.LoadLevel(0);
@@ -96,7 +96,7 @@ public class GameOverScript : MonoBehaviour {
 
     if (down_handled)
     {
-      GUI.Label (new Rect (Screen.width * 0.5f - 150, 450, 300, 150), scores);
+      GUI.Label (new Rect (XPOS - 150, YPOS, 300, 150), scores);
     }
 	}
 
