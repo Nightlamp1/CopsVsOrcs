@@ -6,6 +6,7 @@ public class Platformer2DUserControl : MonoBehaviour
 	private PlatformerCharacter2D character;
   private bool jump;
   private bool shoot;
+	private int isMove = 1; //1 is moving. 0 is no movement
 
   private bool jumpOver = true;
   private bool shootOver = true;
@@ -17,10 +18,14 @@ public class Platformer2DUserControl : MonoBehaviour
   void Start()
   {
     gameObject.GetComponent<Armable> ().equip ("Pistol");
+		Time.timeScale = 0;
+    GameVars.getInstance().setUserHasStarted(false);
   }
 
 	void Awake()
 	{
+    jump = false;
+    shoot = false;
 		character = GetComponent<PlatformerCharacter2D>();
 	}
 
@@ -46,8 +51,6 @@ public class Platformer2DUserControl : MonoBehaviour
           shootOver = false;
         }
       }
-      
-      update_hud();
     }
     else
     {
@@ -57,21 +60,32 @@ public class Platformer2DUserControl : MonoBehaviour
     }
 #endif
 
-    if (CrossPlatformInput.GetButtonDown("Jump")) jump = true;
+    if (CrossPlatformInput.GetButtonDown ("Jump")) {
+			jump = true;
+		}
+
     if (CrossPlatformInput.GetButtonDown("Shoot")) shoot = true;
+
+    // If the user hasn't started yet and they tried to jump or shoot, then start movement.
+    //   This is essentially a ghetto 'press any key' implementation.
+    if (!GameVars.getInstance().getUserHasStarted() && (jump || shoot)) {
+      jump = false;
+      shoot = false;
+
+      Time.timeScale = 1;
+      GameVars.getInstance().setUserHasStarted(true);
+    }
   }
 
 	void FixedUpdate()
 	{
 		// Pass all parameters to the character control script.
-		character.Move(1, false, jump);
+		character.Move(isMove, false, jump);
 
     if (jump)
     {
       counter2 += 1;
     }
-
-    update_hud();
 
     if (shoot)
     {
@@ -82,11 +96,4 @@ public class Platformer2DUserControl : MonoBehaviour
     // Reset the jump input once it has been used.
 	  jump = false;
 	}
-
-  void update_hud()
-  {
-    GameVars.getInstance().debugMessage = 
-      "c1, c2, c3, sO, jO, tC = {" + 
-      counter1 + ", " + counter2 + ", " + counter3 + ", " + shootOver + ", " + jumpOver + ", " + Input.touchCount + "}";
-  }
 }

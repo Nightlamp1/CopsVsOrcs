@@ -5,15 +5,13 @@ public class MainMenuGuis : MonoBehaviour {
   private       float XPOS   = 0; // Set in OnGUI once.  Should be fixed...
   private       float YPOS   = 0; // Set in OnGUI once.  Should be fixed...
 
-  private const float WIDTH  = 1000;
-  private const float HEIGHT = 200;
+  private const float WIDTH  = 185;
+  private const float HEIGHT = 50;
 
 	public GUISkin customSkin;
 	public Texture2D startGame;
 	public Texture2D optionButton;
 	public Texture2D creditsButton;
-
-  string moarAdsText;
 
 	// Use this for initialization
 	void Awake () 
@@ -22,7 +20,6 @@ public class MainMenuGuis : MonoBehaviour {
 	}
 
   void Start() {
-    moarAdsText = "Moar Ads Plz";
   }
 	
 	// Update is called once per frame
@@ -31,33 +28,27 @@ public class MainMenuGuis : MonoBehaviour {
     XPOS = Screen.width * 0.665f;
     YPOS = Screen.height * 0.52f;
 
-    /*
-     * Removing this since we don't have working ads anymore.
-    if (GUI.Button (new Rect (XPOS, YPOS + 217, 190, 65), moarAdsText)) {
-      if (PrefetchAd.get().getMinSecondsBetweenAds() == PrefetchAd.DEFAULT_MIN_SECONDS_BETWEEN_ADS) {
-        print("========== Moar Ads ==========");
-        PrefetchAd.get().setMinSecondsBetweenAds(1);
-        moarAdsText = "Less Ads Plz";
-      } else {
-        print("========== Less Ads ==========");
-        PrefetchAd.get().setMinSecondsBetweenAds(PrefetchAd.DEFAULT_MIN_SECONDS_BETWEEN_ADS);
-        moarAdsText = "More Ads Plz";
-      }
-    }
-    */
+    GameVars.getInstance().setPlayerName(GUI.TextField(new Rect(XPOS, YPOS-73, WIDTH, HEIGHT),
+          GameVars.getInstance().getPlayerName()));
 
 	  if (GUI.Button (new Rect (XPOS, YPOS, WIDTH, HEIGHT), startGame, "")) 
     {
+      print("========== {1} " + System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " ==========");
+
       if (GameVars.getInstance().getPlayerName() == "")
       {
         GameVars.getInstance().setPlayerName("not entered");
       }
 
+      print("========== {2} " + System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " ==========");
+
 			Application.LoadLevel(1);
 		}
 
 		GUI.Button (new Rect (XPOS, YPOS + 73, WIDTH, HEIGHT), optionButton ,"");
-		GUI.Button (new Rect (XPOS, YPOS + 145, WIDTH, HEIGHT), creditsButton, "");
+		if (GUI.Button (new Rect (XPOS, YPOS + 145, WIDTH, HEIGHT), creditsButton, "")) {
+			Application.LoadLevel(4);
+		}
 
 	}
 }

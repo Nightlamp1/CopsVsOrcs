@@ -76,13 +76,17 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.deliriumgw.copsvsorcs
-  bundleVersion: 1.0.5
+  bundleVersion: 1.0.6
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 07a996f3a1fa743948c9913c0cac8a72
+<<<<<<< HEAD
   AndroidBundleVersionCode: 6
+=======
+  AndroidBundleVersionCode: 7
+>>>>>>> release/1.0.6
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -123,11 +127,11 @@ PlayerSettings:
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: C:/dev/fuckit/keys/alpha.keystore
+  AndroidKeystoreName: keys/alpha.keystore
   AndroidKeyaliasName: alpha
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
-  androidEnableBanner: 1
+  androidEnableBanner: 0
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -137,10 +141,13 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 16b5e7d36ec4422469a3b6f0ffa37eac, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Web
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
+  - m_BuildTarget: Android
     m_StaticBatching: 1
     m_DynamicBatching: 1
   webPlayerTemplate: APPLICATION:Black Background

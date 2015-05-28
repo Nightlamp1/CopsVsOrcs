@@ -99,7 +99,6 @@ GameObject:
   - 124: {fileID: 17129761}
   - 92: {fileID: 17129760}
   - 81: {fileID: 17129759}
-  - 114: {fileID: 17129764}
   m_Layer: 0
   m_Name: BackGroundCamera
   m_TagString: Untagged
@@ -173,18 +172,6 @@ Transform:
   - {fileID: 598655908}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &17129764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 17129758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a7e3133cd970b4f95574861d1e5107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
 --- !u!1 &183888169
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .100000001
+  DayTime: {fileID: 2800000, guid: c7d748d3477ccad428b56c58e7862b87, type: 3}
+  NightTime: {fileID: 2800000, guid: 1b8f090aa425f0f43ad6d9c36ffbac54, type: 3}
 --- !u!4 &804673650 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
@@ -327,7 +316,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -.899999976, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1841162654}
+  - {fileID: 1090650943}
   - {fileID: 804673650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -475,6 +464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab6c0cc46a25db4687a7aeddf828522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1090650943 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400004, guid: 0b7dd13d30505e945ac0ff74562c811c, type: 2}
+  m_PrefabInternal: {fileID: 1682175744}
 --- !u!1 &1260802164
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
-  score: 0
   distance: 0
   sounds:
   - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
@@ -778,7 +770,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1936809622
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,14 +872,14 @@ MonoBehaviour:
   - {fileID: 100000, guid: 4e983bfaa6b6d5a4f8a34c901e08494c, type: 2}
   - {fileID: 100002, guid: 6b5edec7e65a25a429fd65adb8c77e05, type: 2}
   - {fileID: 100002, guid: c69eb4eedcda0fb4aab0fe2ee3c6657c, type: 2}
-  - {fileID: 100000, guid: aa0302fe603aa5d40b4816be182bf6e1, type: 2}
+  - {fileID: 100004, guid: 0b7dd13d30505e945ac0ff74562c811c, type: 2}
   - {fileID: 100000, guid: 8fd60de6e82e56f499777b17893265ac, type: 2}
   - {fileID: 100000, guid: afe5f391cae3e62408fee0b8b46754a7, type: 2}
   - {fileID: 100000, guid: abe35cc1127896e4fa3658bf39ad4927, type: 2}
   - {fileID: 100002, guid: c69eb4eedcda0fb4aab0fe2ee3c6657c, type: 2}
   - {fileID: 100000, guid: a83d1492f252d82429544c57d28cc1dd, type: 2}
   - {fileID: 100006, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
-  - {fileID: 100000, guid: afe5f391cae3e62408fee0b8b46754a7, type: 2}
+  - {fileID: 100006, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
   - {fileID: 100000, guid: 9b5a8fc0f808c314e8d5d891fe9af75e, type: 2}
   - {fileID: 100000, guid: aa0302fe603aa5d40b4816be182bf6e1, type: 2}
   - {fileID: 100004, guid: 0b7dd13d30505e945ac0ff74562c811c, type: 2}

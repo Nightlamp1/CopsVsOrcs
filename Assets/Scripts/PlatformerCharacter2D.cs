@@ -15,16 +15,19 @@ public class PlatformerCharacter2D : MonoBehaviour
   Transform groundCheck;								// A position marking where to check if the player is grounded.
   float groundedRadius = .2f;							// Radius of the overlap circle to determine if grounded
   bool grounded = false;								// Whether or not the player is grounded.
-  Animator anim;										// Reference to the player's animator component.
+  Animator anim;	// Reference to the player's animator component.
+	float FlashPeriod = 0.1f;
 
   bool justJumped = false;
-  int jumpCheck = 0;                                  // This is going to allow for ungrounded double jumps
+  int jumpCheck = 0;  // This is going to allow for ungrounded double jumps
+	SpriteRenderer Rend;
 
   void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("GroundCheck");
 		anim = gameObject.GetComponent<Animator>();
+		Rend = gameObject.GetComponent<SpriteRenderer> ();
 	}
 
   bool calcGrounded()
@@ -112,5 +115,28 @@ public class PlatformerCharacter2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "Enemy") {
+
+			for(var n = 0; n < 2; n++)
+			{
+				Invoke("Flashoff", (n*FlashPeriod) + 0.01f);
+				Invoke ("FlashOn", (n*FlashPeriod) + FlashPeriod);
+			}
+			Rend.enabled = true;
+		}
+	}
+	void FlashOn()
+	{
+		Rend.enabled = true;
+		return;
+	}
+	void Flashoff()
+	{
+		Rend.enabled = false;
+		return;
 	}
 }

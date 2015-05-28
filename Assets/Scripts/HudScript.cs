@@ -11,11 +11,13 @@ public class HudScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-    GameVars.getInstance().score += Time.deltaTime;
-	  GameVars.getInstance ().distance += Time.deltaTime;
+		if (!GameVars.getInstance().getUserHasStarted()) {
+      return;
+    }
+
 		ScoreTen += 1;
 		if (ScoreTen >= 100) {
-			GameVars.getInstance().score += 10;
+			GameVars.getInstance().incrementScore(0.1f);
 			GameVars.getInstance ().distance += 1;
 			ScoreTen = 0;
 		}
@@ -23,7 +25,7 @@ public class HudScript : MonoBehaviour {
 
 	public void IncreaseScore (int amount)
 	{
-    GameVars.getInstance().score += amount;
+    GameVars.getInstance().incrementScore((float)amount);
 	}
 
 	void OnGUI()
@@ -31,10 +33,14 @@ public class HudScript : MonoBehaviour {
 		GUI.color = Color.white;
 		GUI.skin.font = CVOFont;
     GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
-               "Score: " + (int)(GameVars.getInstance().score));
+               "Score: " + (int) GameVars.getInstance().getScore());
 	
 		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f, 200, 50), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
 
 		GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
+
+    if (!GameVars.getInstance().getUserHasStarted()) {
+      GUI.Label (new Rect (Screen.width * 0.5f - 150, Screen.height * 0.5f + 400, 300, 50), "Please tap the screen to start.");
+    }
 	}
 }
