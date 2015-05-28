@@ -20,6 +20,10 @@ public class SpawnGroundversion2 : MonoBehaviour {
 
   void Update()
   {
+    if (!GameVars.getInstance().getUserHasStarted()) {
+      return;
+    }
+
     if (nextLower < Time.time)
     {
       Spawn (-5);
