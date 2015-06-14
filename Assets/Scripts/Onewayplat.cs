@@ -4,7 +4,7 @@ using System.Collections;
 public class Onewayplat : MonoBehaviour {
 	
   void Update(){
-    GameObject Player = GameVars.getInstance ().getPlayer ();
+    GameObject Player = GameVars.getInstance().getPlayer();
     if (Player.transform.position.y - 1.1 > this.transform.position.y) {
       this.GetComponent<Collider2D>().isTrigger = false;
     } else {

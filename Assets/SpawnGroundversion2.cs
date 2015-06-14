@@ -41,6 +41,8 @@ public class SpawnGroundversion2 : MonoBehaviour {
       Spawn (5);
       nextUpper += nextTime();
     }
+		if (Application.loadedLevel != 1)
+			GetComponent<SpawnGroundversion2> ().enabled = false;
   }
 
   float nextTime()
