@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
-  score: 0
   distance: 0
   sounds:
   - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
@@ -294,6 +293,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1001 &1453799699
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.72259927
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .0442935713
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.0244140625
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495056, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: eda6c30a64137c5498c7a8814e002723, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1516178392
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
-  score: 0
   distance: 0
   sounds: []
   orcKills: 0
