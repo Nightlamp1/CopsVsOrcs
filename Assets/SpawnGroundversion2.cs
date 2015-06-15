@@ -13,9 +13,9 @@ public class SpawnGroundversion2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-    nextLower = Time.time;
-    nextMiddl = Time.time;
-    nextUpper = Time.time;
+    nextLower = Time.timeSinceLevelLoad;
+    nextMiddl = Time.timeSinceLevelLoad;
+    nextUpper = Time.timeSinceLevelLoad;
 	}
 
   void Update()
@@ -23,20 +23,25 @@ public class SpawnGroundversion2 : MonoBehaviour {
     if (!GameVars.getInstance().getUserHasStarted()) {
       return;
     }
+		if (Application.loadedLevel != 1) {
+			nextLower = 0;
+			nextMiddl = 0;
+			nextUpper = 0;
+		}
 
-    if (nextLower < Time.time)
+    if (nextLower < Time.timeSinceLevelLoad)
     {
       Spawn (-5);
       nextLower += nextTime();
     }
 
-    if (nextMiddl < Time.time)
+    if (nextMiddl < Time.timeSinceLevelLoad)
     {
       Spawn (0);
       nextMiddl += nextTime();
     }
 
-    if (nextUpper < Time.time)
+    if (nextUpper < Time.timeSinceLevelLoad)
     {
       Spawn (5);
       nextUpper += nextTime();
