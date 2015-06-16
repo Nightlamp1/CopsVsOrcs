@@ -40,7 +40,8 @@ public class HudScript : MonoBehaviour {
 		GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
 
     if (!GameVars.getInstance().getUserHasStarted()) {
-      GUI.Label (new Rect (Screen.width * 0.5f - 150, Screen.height * 0.5f + 400, 300, 50), "Please tap the screen to start.");
+			Debug.Log("message should be here!!!!!!!!");
+      GUI.Label (new Rect (Screen.width * 0.35f , Screen.height * 0.83f, 300, 50), "Please tap the screen to start.");
     }
 	}
 }
