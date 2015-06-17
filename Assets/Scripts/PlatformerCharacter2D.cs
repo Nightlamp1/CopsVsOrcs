@@ -47,6 +47,9 @@ public class PlatformerCharacter2D : MonoBehaviour
         justJumped = false;
       }
     }
+
+		//Code for distance calculation
+		GameVars.getInstance ().distance = (this.transform.position.x + 5.8f) / 10f;
 	}
 
   public void checkGround()

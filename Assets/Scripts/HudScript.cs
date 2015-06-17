@@ -18,7 +18,6 @@ public class HudScript : MonoBehaviour {
 		ScoreTen += 1;
 		if (ScoreTen >= 100) {
 			GameVars.getInstance().incrementScore(0.1f);
-			GameVars.getInstance ().distance += 1;
 			ScoreTen = 0;
 		}
 	}
@@ -40,7 +39,6 @@ public class HudScript : MonoBehaviour {
 		GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
 
     if (!GameVars.getInstance().getUserHasStarted()) {
-			Debug.Log("message should be here!!!!!!!!");
       GUI.Label (new Rect (Screen.width * 0.35f , Screen.height * 0.83f, 300, 50), "Please tap the screen to start.");
     }
 	}

@@ -14,9 +14,9 @@ public class SpawnGroundversion2 : MonoBehaviour {
 	// Use this for initialization
 	void OnLevelWasLoaded (int level) {
     if (level == 1) {
-			nextLower = Time.timeSinceLevelLoad;
-			nextMiddl = Time.timeSinceLevelLoad;
-			nextUpper = Time.timeSinceLevelLoad;
+			nextLower = 0;
+			nextMiddl = 0;
+			nextUpper = 0;
 			Time.timeScale = 0;
 			GameVars.getInstance().setUserHasStarted(false);
 
@@ -28,7 +28,7 @@ public class SpawnGroundversion2 : MonoBehaviour {
     if (!GameVars.getInstance().getUserHasStarted()) {
       return;
     }
-
+		Debug.Log (Time.timeSinceLevelLoad + " This is the new time");
 
     if (nextLower < Time.timeSinceLevelLoad)
     {
