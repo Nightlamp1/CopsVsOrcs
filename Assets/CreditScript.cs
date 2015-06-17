@@ -2,18 +2,38 @@
 using System.Collections;
 
 public class CreditScript : MonoBehaviour {
-	private       float XPOS   = Screen.width *0.9f; // Set in OnGUI once.  Should be fixed...
-	private       float YPOS   = Screen.height*0.8f; // Set in OnGUI once.  Should be fixed...
-	
-	private const float WIDTH  = 50;
-	private const float HEIGHT = 50;
 	public Texture2D MainReturn;
 
+  void flexibleSpaces(int num) {
+    for (int i = 0; i < num; ++i) {
+      GUILayout.FlexibleSpace();
+    }
+  }
+
 	void OnGUI(){
+    GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+    GUIStyle buttonStyle = new GUIStyle();
+    GUILayoutOption[] buttonOptions = {
+        GUILayout.Width(0.15f * Screen.width),
+        GUILayout.Height(0.15f * Screen.height)
+      };
 
+    flexibleSpaces(9);
 
-		if (GUI.Button (new Rect (XPOS, YPOS, WIDTH, HEIGHT), MainReturn, "")) {
+    GUILayout.BeginHorizontal();
+
+    flexibleSpaces(39);
+
+		if (GUILayout.Button (MainReturn, buttonStyle, buttonOptions)) {
 			Application.LoadLevel (0);
 		}
+
+    flexibleSpaces(1);
+
+    GUILayout.EndHorizontal();
+
+    flexibleSpaces(1);
+
+    GUILayout.EndArea();
 	}
 }
