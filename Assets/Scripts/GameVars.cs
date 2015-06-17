@@ -88,7 +88,7 @@ public class GameVars : MonoBehaviour
   {
     if (mPlayer == null)
     {
-      mPlayer = GameObject.Find("Cop_Run01");
+      mPlayer = GameObject.Find("HeroCop(Clone)");
     }
 
     return mPlayer;

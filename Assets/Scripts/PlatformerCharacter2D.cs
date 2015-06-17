@@ -22,12 +22,14 @@ public class PlatformerCharacter2D : MonoBehaviour
   int jumpCheck = 0;  // This is going to allow for ungrounded double jumps
 	SpriteRenderer Rend;
 
+
   void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("GroundCheck");
 		anim = gameObject.GetComponent<Animator>();
 		Rend = gameObject.GetComponent<SpriteRenderer> ();
+		DontDestroyOnLoad (gameObject);
 	}
 
   bool calcGrounded()
