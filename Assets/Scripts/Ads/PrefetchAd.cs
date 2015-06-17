@@ -20,11 +20,11 @@ public class PrefetchAd : MonoBehaviour {
 
   // Initialize an InterstitialAd.
 #if UNITY_ANDROID
-  public const string bannerAdUnitId       = "ca-app-pub-5012360525975215/4791908484";
-  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
+	public const string bannerAdUnitId       = "ca-app-pub-5012360525975215/4791908484";
+	public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/4791908484";
 #elif UNITY_IPHONE
   public const string bannerAdUnitId       = "";
-  public const string interstitialAdUnitId = "";
+  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/7853108485";
 #else
   public const string bannerAdUnitId       = "ca-app-pub-5012360525975215/4791908484";
   public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
@@ -134,7 +134,7 @@ public class PrefetchAd : MonoBehaviour {
     preloadedInterstitial = true;
 
     // Create an empty ad request.
-    AdRequest request = new AdRequest.Builder().AddTestDevice("0EDE6C15F6AD443908050688F06D494F").Build();
+		AdRequest request = new AdRequest.Builder().AddTestDevice("0EDE6C15F6AD443908050688F06D494F").AddTestDevice("228DB787B1BA32D99786A227FF0256CC").AddTestDevice("A7F4BFA8EFD8F7E09E23709A1D509B73").Build();
 
     // Load the interstitial with the request.
     getInterstitial().LoadAd(request);

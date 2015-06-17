@@ -75,6 +75,9 @@ public class Platformer2DUserControl : MonoBehaviour
       Time.timeScale = 1;
       GameVars.getInstance().setUserHasStarted(true);
     }
+
+		if (Application.loadedLevel == 1)
+			GetComponent<SpawnGroundversion2> ().enabled = true;
   }
 
 	void FixedUpdate()

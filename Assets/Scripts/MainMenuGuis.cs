@@ -8,6 +8,9 @@ public class MainMenuGuis : MonoBehaviour {
   private const float WIDTH  = 185;
   private const float HEIGHT = 50;
 
+  private float buttonWidth  = 0;
+  private float buttonHeight = 0;
+
 	public GUISkin customSkin;
 	public Texture2D startGame;
 	public Texture2D optionButton;
@@ -20,35 +23,80 @@ public class MainMenuGuis : MonoBehaviour {
 	}
 
   void Start() {
+    buttonWidth = Screen.width * .15f;
+    buttonHeight = Screen.height * .075f;
+  }
+
+  void flexibleSpaces(int num) {
+    for (int i = 0; i < num; ++i) {
+      GUILayout.FlexibleSpace();
+    }
   }
 	
 	// Update is called once per frame
 	void OnGUI()
 	{
-    XPOS = Screen.width * 0.665f;
-    YPOS = Screen.height * 0.52f;
+    int vSpaceBetweenButtons = 1;
+    int hSpaceBeforeButton = 11;
+    int hSpaceAfterButton  = 2;
 
-    GameVars.getInstance().setPlayerName(GUI.TextField(new Rect(XPOS, YPOS-73, WIDTH, HEIGHT),
-          GameVars.getInstance().getPlayerName()));
+    GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
+    GUIStyle textStyle   = GUI.skin.GetStyle("TextField");
+    //GUIStyle buttonStyle = GUI.skin.GetStyle("Button");
+    GUIStyle buttonStyle = new GUIStyle();
 
-	  if (GUI.Button (new Rect (XPOS, YPOS, WIDTH, HEIGHT), startGame, "")) 
-    {
-      print("========== {1} " + System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " ==========");
+    //buttonStyle.fixedHeight = buttonHeight;
+    //buttonStyle.fixedWidth = buttonWidth;
+    textStyle.fontSize = 30;
 
-      if (GameVars.getInstance().getPlayerName() == "")
-      {
-        GameVars.getInstance().setPlayerName("not entered");
-      }
+    GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-      print("========== {2} " + System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " ==========");
+    flexibleSpaces(200);
 
-			Application.LoadLevel(1);
-		}
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(hSpaceBeforeButton);
 
-		GUI.Button (new Rect (XPOS, YPOS + 73, WIDTH, HEIGHT), optionButton ,"");
-		if (GUI.Button (new Rect (XPOS, YPOS + 145, WIDTH, HEIGHT), creditsButton, "")) {
-			Application.LoadLevel(4);
-		}
+    GameVars.getInstance().setPlayerName(
+      GUILayout.TextField(GameVars.getInstance().getPlayerName(), textStyle, buttonOptions)
+      );
 
+    flexibleSpaces(hSpaceAfterButton);
+    GUILayout.EndHorizontal();
+
+    flexibleSpaces(vSpaceBetweenButtons);
+
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(hSpaceBeforeButton);
+
+    if (GUILayout.Button(startGame, buttonStyle, buttonOptions)) {
+      Application.LoadLevel(1);
+    }
+
+    flexibleSpaces(hSpaceAfterButton);
+    GUILayout.EndHorizontal();
+
+    flexibleSpaces(vSpaceBetweenButtons);
+
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(hSpaceBeforeButton);
+    GUILayout.Button(optionButton, buttonStyle, buttonOptions);
+    flexibleSpaces(hSpaceAfterButton);
+    GUILayout.EndHorizontal();
+    
+    flexibleSpaces(vSpaceBetweenButtons);
+
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(hSpaceBeforeButton);
+    
+    if (GUILayout.Button(creditsButton, buttonStyle, buttonOptions)) {
+      Application.LoadLevel(4);
+    }
+
+    flexibleSpaces(hSpaceAfterButton);
+    GUILayout.EndHorizontal();
+
+    flexibleSpaces(70);
+
+    GUILayout.EndArea();
 	}
 }
