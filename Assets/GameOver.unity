@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
-  score: 0
   distance: 0
   sounds:
   - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
@@ -205,7 +204,6 @@ GameObject:
   - 20: {fileID: 1951577352}
   - 92: {fileID: 1951577351}
   - 124: {fileID: 1951577350}
-  - 81: {fileID: 1951577349}
   - 114: {fileID: 1951577354}
   m_Layer: 0
   m_Name: Main Camera
@@ -214,13 +212,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1951577349
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1951577348}
-  m_Enabled: 1
 --- !u!124 &1951577350
 Behaviour:
   m_ObjectHideFlags: 0

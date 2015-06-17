@@ -28,7 +28,6 @@ public class SpawnGroundversion2 : MonoBehaviour {
     if (!GameVars.getInstance().getUserHasStarted()) {
       return;
     }
-		Debug.Log (Time.timeSinceLevelLoad + " This is the new time");
 
     if (nextLower < Time.timeSinceLevelLoad)
     {
