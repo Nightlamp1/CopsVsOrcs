@@ -82,11 +82,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 07a996f3a1fa743948c9913c0cac8a72
-<<<<<<< HEAD
-  AndroidBundleVersionCode: 6
-=======
   AndroidBundleVersionCode: 7
->>>>>>> release/1.0.6
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 

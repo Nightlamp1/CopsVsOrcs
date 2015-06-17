@@ -97,6 +97,8 @@ public class MainMenuGuis : MonoBehaviour {
 
     flexibleSpaces(70);
 
+    GUILayout.Label("v1.0.7");
+
     GUILayout.EndArea();
 	}
 }
