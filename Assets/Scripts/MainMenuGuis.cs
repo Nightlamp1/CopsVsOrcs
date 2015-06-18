@@ -2,9 +2,6 @@
 using System.Collections;
 
 public class MainMenuGuis : MonoBehaviour {
-  private       float XPOS   = 0; // Set in OnGUI once.  Should be fixed...
-  private       float YPOS   = 0; // Set in OnGUI once.  Should be fixed...
-
   private const float WIDTH  = 185;
   private const float HEIGHT = 50;
 
