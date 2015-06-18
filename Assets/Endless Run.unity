@@ -538,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CVOFont: {fileID: 12800000, guid: 06f9667f78da40344923afa4c267a2d2, type: 3}
+  tutorialOverlay: {fileID: 2800000, guid: f61157894c101ba46a04c1595b72da92, type: 3}
 --- !u!1001 &1682175744
 Prefab:
   m_ObjectHideFlags: 0

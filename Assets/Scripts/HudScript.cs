@@ -4,6 +4,9 @@ using System.Collections;
 public class HudScript : MonoBehaviour {
 	public Font CVOFont;
 	private int ScoreTen = 0;
+
+	public Texture2D tutorialOverlay;
+  
   void Start ()
   {
   }
@@ -29,17 +32,21 @@ public class HudScript : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.color = Color.white;
-		GUI.skin.font = CVOFont;
-    GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
-               "Score: " + (int) GameVars.getInstance().getScore());
+    if (GameVars.getInstance().getUserHasStarted()) {
+  		GUI.color = Color.white;
+	  	GUI.skin.font = CVOFont;
+      GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
+                  "Score: " + (int) GameVars.getInstance().getScore());
 	
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f, 200, 50), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
+  		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f, 200, 50), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
 
-		GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
+	  	GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
 
-    if (!GameVars.getInstance().getUserHasStarted()) {
-      GUI.Label (new Rect (Screen.width * 0.35f , Screen.height * 0.83f, 300, 50), "Please tap the screen to start.");
+      if (!GameVars.getInstance().getUserHasStarted()) {
+        GUI.Label (new Rect (Screen.width * 0.35f , Screen.height * 0.83f, 300, 50), "Please tap the screen to start.");
+      }
+    } else {
+      GUI.Box(new Rect(0, 0, Screen.width, Screen.height), tutorialOverlay);
     }
 	}
 }
