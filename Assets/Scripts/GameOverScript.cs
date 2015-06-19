@@ -13,14 +13,10 @@ public class GameOverScript : MonoBehaviour {
 
 	float score = 0;
   string scores;
-  WWW down_query;
+
   WWW up_query;
 
-  bool up_requested;
-  bool down_requested;
-
   bool up_handled;
-  bool down_handled;
 
   public Texture2D MainMenu;
   public Texture2D Retry;
@@ -36,11 +32,7 @@ public class GameOverScript : MonoBehaviour {
     buttonWidth = Screen.width * .15f;
     buttonHeight = Screen.height * .075f;
 
-    up_requested = false;
-    down_requested = false;
-
     up_handled = false;
-    down_handled = false;
 
     scores = "";
 
@@ -139,18 +131,6 @@ public class GameOverScript : MonoBehaviour {
     flexibleSpaces(1);
 
     GUILayout.EndArea();
-
-    return;
-
-    GUILayout.Box(scores);
-
-		GUI.Label (new Rect (Screen.width * 0.5f - 75, Screen.height * 0.5f - 250, 150, 45), "Your Score this round was " + score + "!");
-
-
-    if (down_handled)
-    {
-      //GUI.Label (new Rect (XPOS - 150, YPOS, 300, 150), scores);
-    }
 	}
 
 }

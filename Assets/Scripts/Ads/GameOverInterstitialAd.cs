@@ -38,6 +38,10 @@ public class GameOverInterstitialAd : MonoBehaviour
         }
       }
     }
+
+    if (Application.isEditor) {
+      endScene();
+    }
   }
 
   void HandleAdFailedToLoad (object sender, AdFailedToLoadEventArgs e)
