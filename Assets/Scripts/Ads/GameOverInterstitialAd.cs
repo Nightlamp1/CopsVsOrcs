@@ -38,9 +38,6 @@ public class GameOverInterstitialAd : MonoBehaviour
         }
       }
     }
-
-    // HOTFIX
-    endScene();
   }
 
   void HandleAdFailedToLoad (object sender, AdFailedToLoadEventArgs e)
