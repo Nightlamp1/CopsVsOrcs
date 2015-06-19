@@ -31,6 +31,9 @@ public class Platformer2DUserControl : MonoBehaviour
 
   void Update ()
   {
+    // Don't do anything if we're not on the Endless Run Level.
+    if (Application.loadedLevel != 1) return;
+
     // Read the jump input in Update so button presses aren't missed.
     if (Input.touchCount > 0)
     {
