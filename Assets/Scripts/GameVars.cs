@@ -23,8 +23,12 @@ public class GameVars : MonoBehaviour
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
+  private AudioSource audioSource;
+
   void Awake()
   {
+    audioSource = GetComponent<AudioSource>();
+
     mUserHasStarted = false;
     // TODO Does this code even do anything consequential?
     if(singleton != null && singleton != this)
@@ -43,11 +47,28 @@ public class GameVars : MonoBehaviour
     }
   }
 
+  void Update() {
+    switch (Application.loadedLevel) {
+      case 0:
+        if (audioSource.isPlaying) {
+          audioSource.Stop();
+        }
+        break;
+      case 1:
+        if (!audioSource.isPlaying) {
+          audioSource.Play();
+        }
+        break;
+      default:
+        // Do nothing.
+        break;
+    }
+  }
+
   public static GameVars getInstance()
   {
     if (singleton == null) {
-      print("========== This is a major problem, this should not happen. ==========");
-      return null;
+      singleton = new GameVars();
     }
 
     return singleton;
