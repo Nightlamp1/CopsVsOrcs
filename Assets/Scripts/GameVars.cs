@@ -17,9 +17,9 @@ public class GameVars : MonoBehaviour
   private GameObject mPlayer;
 
   private float mScore;
-  public float distance;
+  public float mDistance;
   public List<AudioClip> sounds;
-  public int orcKills = 0;
+  public int mOrcKills = 0;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
@@ -67,10 +67,6 @@ public class GameVars : MonoBehaviour
 
   public static GameVars getInstance()
   {
-    if (singleton == null) {
-      singleton = new GameVars();
-    }
-
     return singleton;
   }
 
@@ -82,6 +78,30 @@ public class GameVars : MonoBehaviour
   public string getPlayerName()
   {
     return PlayerPrefs.GetString("playerName");
+  }
+
+  public void setDistance(float distance) {
+    mDistance = distance;
+  }
+
+  public float getDistance() {
+    return mDistance;
+  }
+
+  public void incrementDistance(float inc) {
+    setDistance(getDistance() + inc);
+  }
+
+  public void setOrcKills(int orcKills) {
+    mOrcKills = orcKills;
+  }
+
+  public int getOrcKills() {
+    return mOrcKills;
+  }
+
+  public void incrementOrcKills(int inc) {
+    setOrcKills(getOrcKills() + inc);
   }
 
   public void setUserHasStarted(bool userHasStarted) {
