@@ -538,7 +538,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CVOFont: {fileID: 12800000, guid: 06f9667f78da40344923afa4c267a2d2, type: 3}
-  tutorialOverlay: {fileID: 2800000, guid: f61157894c101ba46a04c1595b72da92, type: 3}
+  tutorialOverlay: {fileID: 2800000, guid: 613e8cc793ef99e458b0ca5b4e1a1e74, type: 3}
+  tutorialGetReadyOverlay: {fileID: 2800000, guid: b6ec720fe31da91449f694605f97c36d,
+    type: 3}
+  tutorialTapLeftToJumpOverlay: {fileID: 2800000, guid: 36258d94533512c4c986a6e97ecd2255,
+    type: 3}
+  tutorialDividerOverlay: {fileID: 2800000, guid: acb19527d493b8c4a9f211dc3dc72f2d,
+    type: 3}
+  tutorialTapRightToFireOverlay: {fileID: 2800000, guid: e53edcdbf8db3eb429022f26570cf9fd,
+    type: 3}
+  tutorialTapToContinueOverlay: {fileID: 2800000, guid: 250cd0ca960b5a34aaf2447b8c5837f4,
+    type: 3}
 --- !u!1001 &1682175744
 Prefab:
   m_ObjectHideFlags: 0

@@ -5,8 +5,19 @@ public class HudScript : MonoBehaviour {
 	public Font CVOFont;
 	private int ScoreTen = 0;
 
-	public Texture2D tutorialOverlay;
-  
+  public Texture2D tutorialOverlay;
+	public Texture2D tutorialGetReadyOverlay;
+  public Texture2D tutorialTapLeftToJumpOverlay;
+  public Texture2D tutorialDividerOverlay;
+  public Texture2D tutorialTapRightToFireOverlay;
+  public Texture2D tutorialTapToContinueOverlay;
+
+  void flexibleSpaces(int num) {
+    for (int i = 0; i < num; ++i) {
+      GUILayout.FlexibleSpace();
+    }
+  }
+
   void Start ()
   {
   }
@@ -41,12 +52,21 @@ public class HudScript : MonoBehaviour {
   		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f, 200, 50), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
 
 	  	GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
-
-      if (!GameVars.getInstance().getUserHasStarted()) {
-        GUI.Label (new Rect (Screen.width * 0.35f , Screen.height * 0.83f, 300, 50), "Please tap the screen to start.");
-      }
     } else {
-      GUI.Box(new Rect(0, 0, Screen.width, Screen.height), tutorialOverlay);
+      GUIStyle style = GUI.skin.GetStyle("Box");
+
+      style.stretchHeight = true;
+      style.stretchWidth = true;
+
+      GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height), style);
+      GUILayout.BeginVertical();
+      flexibleSpaces(1);
+
+      GUILayout.Label(tutorialOverlay);
+
+      flexibleSpaces(1);
+      GUILayout.EndVertical();
+      GUILayout.EndArea();
     }
 	}
 }
