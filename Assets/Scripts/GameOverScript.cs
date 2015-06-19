@@ -52,11 +52,6 @@ public class GameOverScript : MonoBehaviour {
       scores = up_query.text;
     }
 
-    GUIStyle labelStyle = GUI.skin.GetStyle("Label");
-    labelStyle.fontSize = 24;
-    labelStyle.wordWrap = false;
-    labelStyle.stretchWidth = true;
-
     GUIStyle buttonStyle = new GUIStyle();
 
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
@@ -68,7 +63,7 @@ public class GameOverScript : MonoBehaviour {
     GUILayout.BeginHorizontal();
     flexibleSpaces(1);
 
-    GUILayout.Label("Your score this round was " + score + "!", labelStyle);
+    GUILayout.Label("Your score this round was " + score + "!", GUI.skin.label);
 
     flexibleSpaces(1);
     GUILayout.EndHorizontal();
@@ -81,8 +76,8 @@ public class GameOverScript : MonoBehaviour {
 		if (GUILayout.Button(Retry, buttonStyle, buttonOptions))
 		{
       GameVars.getInstance().setScore(0);
-			GameVars.getInstance().orcKills = 0;
-			GameVars.getInstance().distance = 0;
+			GameVars.getInstance().setOrcKills(0);
+			GameVars.getInstance().setDistance(0);
 			Application.LoadLevel(1);
 		}
 
@@ -91,8 +86,8 @@ public class GameOverScript : MonoBehaviour {
 		if (GUILayout.Button(MainMenu, buttonStyle, buttonOptions))
 		{
 			GameVars.getInstance().setScore(0);
-			GameVars.getInstance().orcKills = 0;
-			GameVars.getInstance().distance = 0;
+			GameVars.getInstance().setOrcKills(0);
+			GameVars.getInstance().setDistance(0);
 			Application.LoadLevel(0);
 
       try {

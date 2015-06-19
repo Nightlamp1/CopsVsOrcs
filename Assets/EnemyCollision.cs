@@ -46,7 +46,7 @@ public class EnemyCollision : MonoBehaviour {
 		{
 			anim.SetTrigger("Death");
 			hud.IncreaseScore (1);
-			GameVars.getInstance().orcKills += 1;
+			GameVars.getInstance().incrementOrcKills(1);
 			this.GetComponent<Collider2D>().enabled = false;
 			Destroy (this.gameObject, 0.3f);
 			Destroy (other.gameObject);

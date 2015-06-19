@@ -49,7 +49,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     }
 
 		//Code for distance calculation
-		GameVars.getInstance ().distance = (this.transform.position.x + 5.8f) / 10f;
+		GameVars.getInstance().setDistance((this.transform.position.x + 5.8f) / 10f);
 	}
 
   public void checkGround()
