@@ -4,6 +4,13 @@ using System.Collections;
 public class HudScript : MonoBehaviour {
 	public Font CVOFont;
 	private int ScoreTen = 0;
+
+  void flexibleSpaces(int num) {
+    for (int i = 0; i < num; ++i) {
+      GUILayout.FlexibleSpace();
+    }
+  }
+
   void Start ()
   {
   }
