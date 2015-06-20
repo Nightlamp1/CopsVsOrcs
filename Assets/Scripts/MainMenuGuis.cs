@@ -20,8 +20,8 @@ public class MainMenuGuis : MonoBehaviour {
 	}
 
   void Start() {
-    buttonWidth = Screen.width * .15f;
-    buttonHeight = Screen.height * .075f;
+    buttonWidth = Screen.width * .3f;
+    buttonHeight = Screen.height * .15f;
   }
 
   void flexibleSpaces(int num) {
@@ -34,7 +34,7 @@ public class MainMenuGuis : MonoBehaviour {
 	void OnGUI()
 	{
     int vSpaceBetweenButtons = 1;
-    int hSpaceBeforeButton = 11;
+    int hSpaceBeforeButton = 27;
     int hSpaceAfterButton  = 2;
 
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
@@ -48,19 +48,7 @@ public class MainMenuGuis : MonoBehaviour {
 
     GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-    flexibleSpaces(200);
-
-    GUILayout.BeginHorizontal();
-    flexibleSpaces(hSpaceBeforeButton);
-
-    GameVars.getInstance().setPlayerName(
-      GUILayout.TextField(GameVars.getInstance().getPlayerName(), textStyle, buttonOptions)
-      );
-
-    flexibleSpaces(hSpaceAfterButton);
-    GUILayout.EndHorizontal();
-
-    flexibleSpaces(vSpaceBetweenButtons);
+    flexibleSpaces(600);
 
     GUILayout.BeginHorizontal();
     flexibleSpaces(hSpaceBeforeButton);
@@ -71,15 +59,7 @@ public class MainMenuGuis : MonoBehaviour {
 
     flexibleSpaces(hSpaceAfterButton);
     GUILayout.EndHorizontal();
-
-    flexibleSpaces(vSpaceBetweenButtons);
-
-    GUILayout.BeginHorizontal();
-    flexibleSpaces(hSpaceBeforeButton);
-    GUILayout.Button(optionButton, buttonStyle, buttonOptions);
-    flexibleSpaces(hSpaceAfterButton);
-    GUILayout.EndHorizontal();
-    
+		    
     flexibleSpaces(vSpaceBetweenButtons);
 
     GUILayout.BeginHorizontal();
@@ -92,7 +72,18 @@ public class MainMenuGuis : MonoBehaviour {
     flexibleSpaces(hSpaceAfterButton);
     GUILayout.EndHorizontal();
 
-    flexibleSpaces(70);
+	GUILayout.BeginHorizontal();
+	flexibleSpaces(2);
+		
+	GameVars.getInstance().setPlayerName(
+	GUILayout.TextField(GameVars.getInstance().getPlayerName(), textStyle, buttonOptions));
+		
+	flexibleSpaces(hSpaceAfterButton);
+	GUILayout.EndHorizontal();
+		
+	flexibleSpaces(vSpaceBetweenButtons);
+    
+	flexibleSpaces(0);
 
     GUILayout.Label("v1.0.7");
 
