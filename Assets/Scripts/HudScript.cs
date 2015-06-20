@@ -4,6 +4,13 @@ using System.Collections;
 public class HudScript : MonoBehaviour {
 	public Font CVOFont;
 	private int ScoreTen = 0;
+
+  void flexibleSpaces(int num) {
+    for (int i = 0; i < num; ++i) {
+      GUILayout.FlexibleSpace();
+    }
+  }
+
   void Start ()
   {
   }
@@ -31,15 +38,20 @@ public class HudScript : MonoBehaviour {
 	{
 		GUI.color = Color.white;
 		GUI.skin.font = CVOFont;
-    GUI.Label (new Rect (Screen.width * 0.5f, Screen.height * 0.05f, 100, 30), 
-               "Score: " + (int) GameVars.getInstance().getScore());
-	
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f, 200, 50), "Distance: " + (int)(GameVars.getInstance().distance) + "m");
+    GUI.skin.label.wordWrap = false;
+    GUI.skin.label.stretchWidth = true;
+    GUI.skin.label.fontSize = 24;
 
-		GUI.Label (new Rect (Screen.width * 0.76f, Screen.height * 0.01f, 200, 50), "Orcs Destroyed: " + (int)(GameVars.getInstance().orcKills));
+    GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-    if (!GameVars.getInstance().getUserHasStarted()) {
-      GUI.Label (new Rect (Screen.width * 0.35f , Screen.height * 0.83f, 300, 50), "Please tap the screen to start.");
-    }
+    GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+
+    GUILayout.Label((int) GameVars.getInstance().getDistance() + "m  " + (int) GameVars.getInstance().getScore() + "pts", GUI.skin.label);
+
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+
+    GUILayout.EndArea();
 	}
 }

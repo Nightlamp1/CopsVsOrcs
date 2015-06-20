@@ -31,8 +31,10 @@ public class Platformer2DUserControl : MonoBehaviour
 
   void Update ()
   {
-      // Read the jump input in Update so button presses aren't missed.
-#if (!UNITY_EDITOR_WIN && !UNITY_STANDALONE_OSX && !UNITY_WEBPLAYER)
+    // Don't do anything if we're not on the Endless Run Level.
+    if (Application.loadedLevel != 1) return;
+
+    // Read the jump input in Update so button presses aren't missed.
     if (Input.touchCount > 0)
     {
       for (int i = 0; i < Input.touchCount; i++)
@@ -58,7 +60,6 @@ public class Platformer2DUserControl : MonoBehaviour
       shootOver = true;
       counter3 += 1;
     }
-#endif
 
     if (CrossPlatformInput.GetButtonDown ("Jump")) {
 			jump = true;

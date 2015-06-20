@@ -39,8 +39,9 @@ public class GameOverInterstitialAd : MonoBehaviour
       }
     }
 
-    // HOTFIX
-    endScene();
+    if (Application.isEditor) {
+      endScene();
+    }
   }
 
   void HandleAdFailedToLoad (object sender, AdFailedToLoadEventArgs e)

@@ -17,15 +17,18 @@ public class GameVars : MonoBehaviour
   private GameObject mPlayer;
 
   private float mScore;
-  public float distance;
+  public float mDistance;
   public List<AudioClip> sounds;
-  public int orcKills = 0;
-  private string mPlayerName = "";
+  public int mOrcKills = 0;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
+  private AudioSource audioSource;
+
   void Awake()
   {
+    audioSource = GetComponent<AudioSource>();
+
     mUserHasStarted = false;
     // TODO Does this code even do anything consequential?
     if(singleton != null && singleton != this)
@@ -44,13 +47,26 @@ public class GameVars : MonoBehaviour
     }
   }
 
+  void Update() {
+    switch (Application.loadedLevel) {
+      case 0:
+        if (audioSource.isPlaying) {
+          audioSource.Stop();
+        }
+        break;
+      case 1:
+        if (!audioSource.isPlaying) {
+          audioSource.Play();
+        }
+        break;
+      default:
+        // Do nothing.
+        break;
+    }
+  }
+
   public static GameVars getInstance()
   {
-    if (singleton == null) {
-      print("========== This is a major problem, this should not happen. ==========");
-      return null;
-    }
-
     return singleton;
   }
 
@@ -62,6 +78,30 @@ public class GameVars : MonoBehaviour
   public string getPlayerName()
   {
     return PlayerPrefs.GetString("playerName");
+  }
+
+  public void setDistance(float distance) {
+    mDistance = distance;
+  }
+
+  public float getDistance() {
+    return mDistance;
+  }
+
+  public void incrementDistance(float inc) {
+    setDistance(getDistance() + inc);
+  }
+
+  public void setOrcKills(int orcKills) {
+    mOrcKills = orcKills;
+  }
+
+  public int getOrcKills() {
+    return mOrcKills;
+  }
+
+  public void incrementOrcKills(int inc) {
+    setOrcKills(getOrcKills() + inc);
   }
 
   public void setUserHasStarted(bool userHasStarted) {

@@ -4,60 +4,90 @@ using UnityEngine;
 using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
-	private       float XPOS   = 0; // Set in OnGUI once.  Should be fixed...
-	private       float YPOS   = 0; // Set in OnGUI once.  Should be fixed...
-	
-	private const float WIDTH  = 200;
-	private const float HEIGHT = 50;
+  private const int INSERT_VERSION = 1;
+
+  private float buttonWidth  = 0f;
+  private float buttonHeight = 0f;
+
+  private float topSize      = 0.4f;
+
 	float score = 0;
   string scores;
-  WWW down_query;
+
   WWW up_query;
 
-  bool up_requested;
-  bool down_requested;
-
   bool up_handled;
-  bool down_handled;
 
   public Texture2D MainMenu;
   public Texture2D Retry;
   
+  void flexibleSpaces(int num) {
+    for (int i = 0; i < num; ++i) {
+      GUILayout.FlexibleSpace();
+    }
+  }
 
-	//int convertedScore = 0;
-	// Use this for initialization
 	void Start () 
 	{
-    up_requested = false;
-    down_requested = false;
+    buttonWidth = Screen.width * .15f;
+    buttonHeight = Screen.height * .075f;
 
     up_handled = false;
-    down_handled = false;
 
     scores = "";
 
     score = Mathf.Round(GameVars.getInstance().getScore());
+
+    up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
+                       "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
+                       "&score=" + WWW.EscapeURL(score.ToString()) +
+                       "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString()));
   }
 
 	void OnGUI()
 	{
-		XPOS = Screen.width * 0.5f;
-		YPOS = Screen.height * 0.5f;
+    if (!up_handled && up_query != null && up_query.isDone)
+    {
+      up_handled = true;
+      scores = up_query.text;
+    }
 
-		GUI.Label (new Rect (Screen.width * 0.5f - 75, Screen.height * 0.5f - 250, 150, 45), "Your Score this round was " + score + "!");
+    GUIStyle buttonStyle = new GUIStyle();
 
-		if (GUI.Button (new Rect (XPOS + 53, YPOS - 105, WIDTH, HEIGHT), Retry, ""))
+    GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
+
+    GUILayout.BeginArea(new Rect(0, 0, Screen.width, topSize * Screen.height));
+
+    GUILayout.BeginVertical();
+    flexibleSpaces(20);
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(1);
+
+    GUILayout.Label("Your score this round was " + score + "!", GUI.skin.label);
+
+    flexibleSpaces(1);
+    GUILayout.EndHorizontal();
+
+    flexibleSpaces(1);
+
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(4);
+
+		if (GUILayout.Button(Retry, buttonStyle, buttonOptions))
 		{
       GameVars.getInstance().setScore(0);
-			GameVars.getInstance().orcKills = 0;
-			GameVars.getInstance().distance = 0;
+			GameVars.getInstance().setOrcKills(0);
+			GameVars.getInstance().setDistance(0);
 			Application.LoadLevel(1);
 		}
-		if (GUI.Button (new Rect (XPOS - 230, YPOS - 105, WIDTH, HEIGHT), MainMenu, ""))
+
+    flexibleSpaces(1);
+
+		if (GUILayout.Button(MainMenu, buttonStyle, buttonOptions))
 		{
 			GameVars.getInstance().setScore(0);
-			GameVars.getInstance().orcKills = 0;
-			GameVars.getInstance().distance = 0;
+			GameVars.getInstance().setOrcKills(0);
+			GameVars.getInstance().setDistance(0);
 			Application.LoadLevel(0);
 
       try {
@@ -67,37 +97,35 @@ public class GameOverScript : MonoBehaviour {
       }
 		}
 
-    if (!up_handled && !up_requested)
-    {
-      up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
-                         "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
-                         "&score=" + WWW.EscapeURL(score.ToString()));
+    flexibleSpaces(4);
 
-      Debug.Log ("Inserted score " + score + " for " + GameVars.getInstance().getPlayerName());
+    GUILayout.EndHorizontal();
 
-      up_requested = true;
-    }
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(4);
 
-    if (up_requested && !up_handled && !(up_query == null) && up_query.isDone)
-    {
-      up_handled = true;
-      down_handled = false;
+    flexibleSpaces(4);
+    GUILayout.EndHorizontal();
 
-      down_query = new WWW("https://www.copsvsorcs.com/select_high_score.php");
+    GUILayout.EndVertical();
+    
+    GUILayout.EndArea();
 
-      down_requested = true;
-    }
+    GUILayout.BeginArea(new Rect(0, topSize * Screen.height, Screen.width, (1 - topSize) * Screen.height));
 
-    if (down_requested && !down_handled && !(down_query == null) && down_query.isDone)
-    {
-      down_handled = true;
-      scores = down_query.text;
-    }
+    flexibleSpaces(1);
 
-    if (down_handled)
-    {
-      GUI.Label (new Rect (XPOS - 150, YPOS, 300, 150), scores);
-    }
+    GUILayout.BeginHorizontal();
+    flexibleSpaces(1);
+
+    GUILayout.Label(scores);
+
+    flexibleSpaces(1);
+    GUILayout.EndHorizontal();
+
+    flexibleSpaces(1);
+
+    GUILayout.EndArea();
 	}
 
 }
