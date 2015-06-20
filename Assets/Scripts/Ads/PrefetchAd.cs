@@ -129,12 +129,25 @@ public class PrefetchAd : MonoBehaviour {
   }
 
   void preloadInterstitial() {
+    string[] testDevices = {
+      "0EDE6C15F6AD443908050688F06D494F",
+      "228DB787B1BA32D99786A227FF0256CC",
+      "A7F4BFA8EFD8F7E09E23709A1D509B73",
+      "E1AB6EF5FB621FA3D7EC54239C1814C1",
+    };
+
     if (!interstitialAdsEnabled || preloadedInterstitial) return;
 
     preloadedInterstitial = true;
 
-    // Create an empty ad request.
-		AdRequest request = new AdRequest.Builder().AddTestDevice("0EDE6C15F6AD443908050688F06D494F").AddTestDevice("228DB787B1BA32D99786A227FF0256CC").AddTestDevice("A7F4BFA8EFD8F7E09E23709A1D509B73").Build();
+    // Create an ad request.
+    AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
+
+    for (int i = 0; i < testDevices.Length; ++i) {
+      adRequestBuilder.AddTestDevice(testDevices[i]);
+    }
+
+    AdRequest request = adRequestBuilder.Build();
 
     // Load the interstitial with the request.
     getInterstitial().LoadAd(request);
