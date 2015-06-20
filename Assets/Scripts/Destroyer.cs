@@ -7,20 +7,19 @@ public class Destroyer : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
-#if NOADS || BANNER
-      Application.LoadLevel(3);
-#else
+      Debug.Log("Loading Level 2");
 			Application.LoadLevel(2);
-#endif
 			return;
 		}
 
 		if (other.gameObject.transform.parent) 
 		{
+      Debug.Log("Destroying a game object.");
 			Destroy (other.gameObject.transform.parent.gameObject);	
 		} 
 		else 
 		{
+      Debug.Log("Destroying an other game object.");
 			Destroy (other.gameObject);
 		}
 	}
