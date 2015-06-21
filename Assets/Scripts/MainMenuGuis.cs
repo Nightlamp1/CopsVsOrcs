@@ -85,7 +85,7 @@ public class MainMenuGuis : MonoBehaviour {
     
 	flexibleSpaces(0);
 
-    GUILayout.Label("v1.0.7");
+    GUILayout.Label("vDEVELOPMENT_VERSION");
 
     GUILayout.EndArea();
 	}
