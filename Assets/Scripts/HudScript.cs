@@ -22,17 +22,17 @@ public class HudScript : MonoBehaviour {
       return;
     }
 
-		ScoreTen += 1;
+		/*ScoreTen += 1;
 		if (ScoreTen >= 100) {
-			GameVars.getInstance().incrementScore(0.1f);
+			GameVars.getInstance().incrementScore(0.5f);
 			ScoreTen = 0;
-		}
+		}*/
 	}
 
-	public void IncreaseScore (int amount)
+	/*public void IncreaseScore (int amount)
 	{
     GameVars.getInstance().incrementScore((float)amount);
-	}
+	}*/
 
 	void OnGUI()
 	{

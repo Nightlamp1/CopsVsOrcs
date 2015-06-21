@@ -30,6 +30,7 @@ public class GameVars : MonoBehaviour
   public float mDistance;
   public List<AudioClip> sounds;
   public int mOrcKills = 0;
+  public int mOrcHits = 0;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
@@ -114,6 +115,18 @@ public class GameVars : MonoBehaviour
     setOrcKills(getOrcKills() + inc);
   }
 
+  public void setOrcHits(int orcHits) {
+	mOrcHits = orcHits;
+  }
+	
+  public int getOrcHits() {
+	return mOrcHits;
+  }
+	
+  public void incrementOrcHits(int inc) {
+	setOrcHits(getOrcHits() + inc);
+  }
+
   public void setUserHasStarted(bool userHasStarted) {
     mUserHasStarted = userHasStarted;
   }
@@ -122,15 +135,9 @@ public class GameVars : MonoBehaviour
     return mUserHasStarted;
   }
 
-  public void incrementScore(float increment) {
-    mScore += increment;
-  }
-
-  public void setScore(float score) {
-    mScore = score;
-  }
 
   public float getScore() {
+		mScore = (mDistance / 2) + mOrcKills - mOrcHits;
     return mScore;
   }
   
