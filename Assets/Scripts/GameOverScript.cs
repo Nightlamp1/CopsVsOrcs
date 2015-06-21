@@ -42,6 +42,9 @@ public class GameOverScript : MonoBehaviour {
                        "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
                        "&score=" + WWW.EscapeURL(score.ToString()) +
                        "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString()));
+
+    GameObject.Find ("HeroCop(Clone)").transform.position = new Vector3 (-6f, -3.4f, 0f);
+    GameVars.getInstance().setUserHasStarted(false);
   }
 
 	void OnGUI()
