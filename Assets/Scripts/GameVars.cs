@@ -137,7 +137,7 @@ public class GameVars : MonoBehaviour
 
 
   public float getScore() {
-		mScore = (mDistance / 2) + mOrcKills - mOrcHits;
+		mScore = (mDistance / 2) + (mOrcKills * 2) - (mOrcHits * 2);
     return mScore;
   }
   

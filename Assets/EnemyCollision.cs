@@ -35,13 +35,13 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") 
 		{
-			GameVars.getInstance().incrementOrcHits(2);
+			GameVars.getInstance().incrementOrcHits(1);
 			Physics2D.IgnoreCollision(other.collider, this.GetComponent<Collider2D>());
 		} 
 		else if (other.gameObject.tag == "Bullet") 
 		{
 			anim.SetTrigger("Death");
-			GameVars.getInstance().incrementOrcKills(2);
+			GameVars.getInstance().incrementOrcKills(1);
 			this.GetComponent<Collider2D>().enabled = false;
 			Destroy (this.gameObject, 0.3f);
 			Destroy (other.gameObject);
