@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour {
   void FixedUpdate()
   {
     travelDistance += 1;
-    if(travelDistance > 100) Destroy (gameObject);
+    if(travelDistance > 75) Destroy (gameObject);
   }
 
   public static GameObject getPrefab()
