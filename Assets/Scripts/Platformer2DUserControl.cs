@@ -75,6 +75,7 @@ public class Platformer2DUserControl : MonoBehaviour
 
       Time.timeScale = 1;
       GameVars.getInstance().setUserHasStarted(true);
+      GameObject.Find ("HeroCop(Clone)").transform.position = new Vector3 (-6f, -3.4f, 0f);
     }
 
 		if (Application.loadedLevel == 1)

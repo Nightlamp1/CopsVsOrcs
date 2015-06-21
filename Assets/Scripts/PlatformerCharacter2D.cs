@@ -66,6 +66,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+    if (!GameVars.getInstance().getUserHasStarted() || Application.loadedLevel != 1) {
+      GetComponent<Rigidbody2D>().velocity = new Vector2();
+      return;
+    }
+
 		// Reduce the speed if crouching by the crouchSpeed multiplier
 		move = (crouch ? move * crouchSpeed : move);
 
