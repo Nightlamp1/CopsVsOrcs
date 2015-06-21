@@ -13,7 +13,7 @@ public class PowerUpScript : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			hud.IncreaseScore(10);
+			//hud.IncreaseScore(10);
 			Destroy (this.gameObject);
 		}
 	}
