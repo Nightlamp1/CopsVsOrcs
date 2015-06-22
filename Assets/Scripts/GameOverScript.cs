@@ -8,8 +8,12 @@ public class GameOverScript : MonoBehaviour {
 
   private float buttonWidth  = 0f;
   private float buttonHeight = 0f;
+	private float backGroundWidth = 0f;
+	private float backGroundHeight = 0f;
+	private float labelWidth = 0f;
+	private float labelHeight = 0f;
 
-  private float topSize      = 0.4f;
+  private float topSize      = 0.35f;
 
 	float score = 0;
   string scores;
@@ -20,6 +24,10 @@ public class GameOverScript : MonoBehaviour {
 
   public Texture2D MainMenu;
   public Texture2D Retry;
+  public Texture2D HighScoreBG;
+  public Texture2D DonutMasters;
+	public Texture2D Twitter;
+	public Texture2D Facebook;
   
   void flexibleSpaces(int num) {
     for (int i = 0; i < num; ++i) {
@@ -29,9 +37,12 @@ public class GameOverScript : MonoBehaviour {
 
 	void Start () 
 	{
-    buttonWidth = Screen.width * .15f;
-    buttonHeight = Screen.height * .075f;
-
+    buttonWidth = Screen.width * .2f;
+    buttonHeight = Screen.height * .1f;
+	labelWidth = 436 ;
+	labelHeight = 94;
+	backGroundWidth = 554;
+	backGroundHeight = 481;
     up_handled = false;
 
     scores = "";
@@ -56,13 +67,15 @@ public class GameOverScript : MonoBehaviour {
     }
 
     GUIStyle buttonStyle = new GUIStyle();
-
+		GUI.skin.label.fontSize = 32;
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
+	GUILayoutOption[] BackgroundOptions = {GUILayout.Width(backGroundWidth), GUILayout.Height(backGroundHeight)};
+	GUILayoutOption[] LabelOptions = {GUILayout.Width(labelWidth), GUILayout.Height(labelHeight)};
 
-    GUILayout.BeginArea(new Rect(0, 0, Screen.width, topSize * Screen.height));
+    GUILayout.BeginArea(new Rect(0, 0, Screen.width, 0.3f * Screen.height));
 
     GUILayout.BeginVertical();
-    flexibleSpaces(20);
+    flexibleSpaces(1);
     GUILayout.BeginHorizontal();
     flexibleSpaces(1);
 
@@ -70,11 +83,11 @@ public class GameOverScript : MonoBehaviour {
 
     flexibleSpaces(1);
     GUILayout.EndHorizontal();
+	GUILayout.EndArea();
 
-    flexibleSpaces(1);
-
+	GUILayout.BeginArea(new Rect(0, Screen.height * 0.05f, Screen.width, topSize * Screen.height));
     GUILayout.BeginHorizontal();
-    flexibleSpaces(4);
+    flexibleSpaces(1);
 
 		if (GUILayout.Button(Retry, buttonStyle, buttonOptions))
 		{
@@ -84,7 +97,7 @@ public class GameOverScript : MonoBehaviour {
 			Application.LoadLevel(1);
 		}
 
-    flexibleSpaces(1);
+    flexibleSpaces(10);
 
 		if (GUILayout.Button(MainMenu, buttonStyle, buttonOptions))
 		{
@@ -100,23 +113,31 @@ public class GameOverScript : MonoBehaviour {
       }
 		}
 
-    flexibleSpaces(4);
+    flexibleSpaces(1);
 
     GUILayout.EndHorizontal();
 
-    GUILayout.BeginHorizontal();
-    flexibleSpaces(4);
-
-    flexibleSpaces(4);
-    GUILayout.EndHorizontal();
+		flexibleSpaces (1);
 
     GUILayout.EndVertical();
     
     GUILayout.EndArea();
 
-    GUILayout.BeginArea(new Rect(0, topSize * Screen.height, Screen.width, (1 - topSize) * Screen.height));
+	GUILayout.BeginArea (new Rect (Screen.width/2-(277), topSize * Screen.height, Screen.width,Screen.height));
+		GUILayout.BeginHorizontal ();
+		//flexibleSpaces (1);
+		GUILayout.Box (HighScoreBG,buttonStyle,BackgroundOptions);
+		//flexibleSpaces (1);
+		GUILayout.EndHorizontal();
+	GUILayout.EndArea ();
 
-    flexibleSpaces(1);
+		GUILayout.BeginArea (new Rect (Screen.width/2-(218), 0.3f * Screen.height, Screen.width,Screen.height));
+		GUILayout.BeginHorizontal ();
+		GUILayout.Label (DonutMasters,LabelOptions);
+		GUILayout.EndHorizontal();
+		GUILayout.EndArea ();
+
+    GUILayout.BeginArea(new Rect(0, (topSize+0.09f) * Screen.height, Screen.width, (1 - topSize) * Screen.height));
 
     GUILayout.BeginHorizontal();
     flexibleSpaces(1);
@@ -126,9 +147,17 @@ public class GameOverScript : MonoBehaviour {
     flexibleSpaces(1);
     GUILayout.EndHorizontal();
 
-    flexibleSpaces(1);
+    GUILayout.EndArea(); 
 
-    GUILayout.EndArea();
+	GUILayout.BeginArea(new Rect(Screen.width * 0.7f, Screen.height * 0.85f, 200, 100));
+		GUILayout.BeginHorizontal ();
+		GUILayout.Button (Twitter,GUIStyle.none);
+		flexibleSpaces (1);
+		GUILayout.Button(Facebook,GUIStyle.none);
+		GUILayout.EndHorizontal ();
+
+	GUILayout.EndArea ();
+
 	}
 
 }
