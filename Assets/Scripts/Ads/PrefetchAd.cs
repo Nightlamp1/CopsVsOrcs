@@ -55,7 +55,7 @@ public class PrefetchAd : MonoBehaviour {
     if (singleton == null) {
       singleton = new PrefetchAd();
     }
-    
+
     return singleton;
   }
 
@@ -84,7 +84,7 @@ public class PrefetchAd : MonoBehaviour {
       interstitial = new InterstitialAd(interstitialAdUnitId);
       preloadedInterstitial = false;
     }
-    
+
     return interstitial;
   }
 
@@ -128,10 +128,20 @@ public class PrefetchAd : MonoBehaviour {
       return false;
     }
 
+    // Prevent this function from running multiple times.
+    interstitialAdsEnabled = false;
+
+    print("========== Ads - Displaying a new interstitial ad because " +
+          lastAdTime.AddSeconds(minSecondsBetweenAds) + " < " +
+          System.DateTime.Now + " ==========");
+
     lastAdTime = System.DateTime.Now;
 
     getInterstitial().Show();
     print ("========== Interstitial should be visible ==========");
+
+    interstitialAdsEnabled = true;
+
     return true;
   }
 

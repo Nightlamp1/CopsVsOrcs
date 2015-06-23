@@ -7,6 +7,7 @@ public class GameOverInterstitialAd : MonoBehaviour
   double secondsLeft;
 
   PrefetchAd pre;
+  int lastLoadedLevel;
 
   void Awake() {
     DontDestroyOnLoad(transform.gameObject);
@@ -21,13 +22,24 @@ public class GameOverInterstitialAd : MonoBehaviour
       pre.getInterstitial().AdClosed += HandleAdClosed;
       pre.getInterstitial().AdFailedToLoad += HandleAdFailedToLoad;
       pre.getInterstitial().AdLoaded += HandleAdLoaded;
+    }
+  }
 
-      if (pre.getInterstitial().IsLoaded()) {
-        if (! pre.showInterstitial()) {
-          print("========== Failed to show interstitial ==========");
+  void Update() {
+    if (Application.loadedLevel != lastLoadedLevel) {
+      lastLoadedLevel = Application.loadedLevel;
+
+      if (Application.loadedLevel == GameVars.GAME_OVER_SCENE) {
+        if (pre.getInterstitial().IsLoaded()) {
+          print("========== Ad is loaded ==========");
+          if (! pre.showInterstitial()) {
+            print("========== Did not show interstitial ==========");
+          }
         }
       }
     }
+
+    lastLoadedLevel = Application.loadedLevel;
   }
 
   void HandleAdClosed (object sender, System.EventArgs e)
