@@ -42,6 +42,7 @@ public class MainMenuGuis : MonoBehaviour {
     //GUIStyle buttonStyle = GUI.skin.GetStyle("Button");
     GUIStyle buttonStyle = new GUIStyle();
 
+
     //buttonStyle.fixedHeight = buttonHeight;
     //buttonStyle.fixedWidth = buttonWidth;
     textStyle.fontSize = 30;
