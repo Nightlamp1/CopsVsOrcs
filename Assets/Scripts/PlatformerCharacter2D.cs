@@ -66,7 +66,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-    if (!GameVars.getInstance().getUserHasStarted() || Application.loadedLevel != 1) {
+    if (!GameVars.getInstance().getUserHasStarted() || Application.loadedLevel != GameVars.ENDLESS_RUN_SCENE) {
       GetComponent<Rigidbody2D>().velocity = new Vector2();
       return;
     }

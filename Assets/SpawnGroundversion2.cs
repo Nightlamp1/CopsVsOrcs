@@ -13,7 +13,7 @@ public class SpawnGroundversion2 : MonoBehaviour {
 
 	// Use this for initialization
 	void OnLevelWasLoaded (int level) {
-    if (level == 1) {
+    if (level == GameVars.ENDLESS_RUN_SCENE) {
 			nextLower = 0;
 			nextMiddl = 0;
 			nextUpper = 0;
@@ -46,7 +46,7 @@ public class SpawnGroundversion2 : MonoBehaviour {
       Spawn (5);
       nextUpper += nextTime();
     }
-		if (Application.loadedLevel != 1)
+		if (Application.loadedLevel != GameVars.ENDLESS_RUN_SCENE)
 			GetComponent<SpawnGroundversion2> ().enabled = false;
   }
 

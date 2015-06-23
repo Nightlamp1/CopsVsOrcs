@@ -32,7 +32,7 @@ public class Platformer2DUserControl : MonoBehaviour
   void Update ()
   {
     // Don't do anything if we're not on the Endless Run Level.
-    if (Application.loadedLevel != 1) return;
+    if (Application.loadedLevel != GameVars.ENDLESS_RUN_SCENE) return;
 
     // Read the jump input in Update so button presses aren't missed.
     if (Input.touchCount > 0)
@@ -78,7 +78,7 @@ public class Platformer2DUserControl : MonoBehaviour
       GameObject.Find ("HeroCop(Clone)").transform.position = new Vector3 (-6f, -3.4f, 0f);
     }
 
-		if (Application.loadedLevel == 1)
+		if (Application.loadedLevel == GameVars.ENDLESS_RUN_SCENE)
 			GetComponent<SpawnGroundversion2> ().enabled = true;
   }
 
