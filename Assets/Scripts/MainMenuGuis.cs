@@ -55,7 +55,7 @@ public class MainMenuGuis : MonoBehaviour {
     flexibleSpaces(hSpaceBeforeButton);
 
     if (GUILayout.Button(startGame, buttonStyle, buttonOptions)) {
-      Application.LoadLevel(1);
+      Application.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
     }
 
     flexibleSpaces(hSpaceAfterButton);
@@ -67,7 +67,7 @@ public class MainMenuGuis : MonoBehaviour {
     flexibleSpaces(hSpaceBeforeButton);
     
     if (GUILayout.Button(creditsButton, buttonStyle, buttonOptions)) {
-      Application.LoadLevel(4);
+      Application.LoadLevel(GameVars.CREDITS_SCENE);
     }
 
     flexibleSpaces(hSpaceAfterButton);
@@ -86,7 +86,7 @@ public class MainMenuGuis : MonoBehaviour {
     
 	flexibleSpaces(0);
 
-    GUILayout.Label("vDEVELOPMENT_VERSION");
+    GUILayout.Label("v" + GameVars.VERSION_NUMBER);
 
     GUILayout.EndArea();
 	}

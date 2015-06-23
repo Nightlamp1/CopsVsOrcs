@@ -10,8 +10,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Endless Run.unity
   - enabled: 1
-    path: Assets/InterstitialAds.unity
-  - enabled: 1
     path: Assets/GameOver.unity
   - enabled: 1
     path: Assets/Credits.unity

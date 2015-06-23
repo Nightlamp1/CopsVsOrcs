@@ -8,7 +8,7 @@ public class Destroyer : MonoBehaviour {
 		if (other.tag == "Player") 
 		{
       Debug.Log("Loading Level 2");
-			Application.LoadLevel(2);
+			Application.LoadLevel(GameVars.GAME_OVER_SCENE);
 			return;
 		}
 

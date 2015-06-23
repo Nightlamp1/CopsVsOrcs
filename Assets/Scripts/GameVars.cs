@@ -3,6 +3,16 @@ using System.Collections.Generic;
 
 public class GameVars : MonoBehaviour 
 {
+  // Scene constants (These need to change anytime we build.
+  //  We should no longer use stuff like "Application.loadedLevel == 3"
+  //  And use these constants instead.
+  public const int MAIN_MENU_SCENE    = 0;
+  public const int ENDLESS_RUN_SCENE  = 1;
+  public const int GAME_OVER_SCENE    = 2;
+  public const int CREDITS_SCENE      = 3;
+
+  public const string VERSION_NUMBER  = "1.0.9";
+
 #if UNITY_WEBPLAYER
   private const string DEFAULT_PLAYER_NAME = "WEB_PLAYER";
 #elif UNITY_STANDALONE || UNITY_EDITOR_WIN
