@@ -139,12 +139,9 @@ public class PrefetchAd : MonoBehaviour {
 
     getInterstitial().Show();
     print ("========== Interstitial should be visible ==========");
-<<<<<<< HEAD
-=======
 
     interstitialAdsEnabled = true;
 
->>>>>>> master
     return true;
   }
 
