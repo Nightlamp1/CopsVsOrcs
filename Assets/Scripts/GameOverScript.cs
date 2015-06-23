@@ -12,6 +12,7 @@ public class GameOverScript : MonoBehaviour {
 	private float backGroundHeight = 0f;
 	private float labelWidth = 0f;
 	private float labelHeight = 0f;
+	public GUISkin gameOverSkin;
 
   private float topSize      = 0.35f;
 
@@ -41,8 +42,8 @@ public class GameOverScript : MonoBehaviour {
     buttonHeight = Screen.height * .1f;
 	labelWidth = 436 ;
 	labelHeight = 94;
-	backGroundWidth = 554;
-	backGroundHeight = 481;
+	backGroundWidth = Screen.width * 0.9f;
+	backGroundHeight = Screen.height * 0.9f;
     up_handled = false;
 
     scores = "";
@@ -67,7 +68,8 @@ public class GameOverScript : MonoBehaviour {
     }
 
     GUIStyle buttonStyle = new GUIStyle();
-		GUI.skin.label.fontSize = 32;
+		GUI.skin = gameOverSkin;
+	GUI.skin.label.fontSize = 32;
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
 	GUILayoutOption[] BackgroundOptions = {GUILayout.Width(backGroundWidth), GUILayout.Height(backGroundHeight)};
 	GUILayoutOption[] LabelOptions = {GUILayout.Width(labelWidth), GUILayout.Height(labelHeight)};
@@ -89,7 +91,7 @@ public class GameOverScript : MonoBehaviour {
     GUILayout.BeginHorizontal();
     flexibleSpaces(1);
 
-		if (GUILayout.Button(Retry, buttonStyle, buttonOptions))
+		if (GUILayout.Button(Retry, buttonOptions))
 		{
       GameVars.getInstance().setScore(0);
 			GameVars.getInstance().setOrcKills(0);
@@ -99,7 +101,7 @@ public class GameOverScript : MonoBehaviour {
 
     flexibleSpaces(10);
 
-		if (GUILayout.Button(MainMenu, buttonStyle, buttonOptions))
+		if (GUILayout.Button(MainMenu, buttonOptions))
 		{
 			GameVars.getInstance().setScore(0);
 			GameVars.getInstance().setOrcKills(0);
@@ -123,10 +125,10 @@ public class GameOverScript : MonoBehaviour {
     
     GUILayout.EndArea();
 
-	GUILayout.BeginArea (new Rect (Screen.width/2-(277), topSize * Screen.height, Screen.width,Screen.height));
+	GUILayout.BeginArea (new Rect (Screen.width*0.1f, topSize * Screen.height, Screen.width,Screen.height));
 		GUILayout.BeginHorizontal ();
 		//flexibleSpaces (1);
-		GUILayout.Box (HighScoreBG,buttonStyle,BackgroundOptions);
+		GUILayout.Box (HighScoreBG,BackgroundOptions);
 		//flexibleSpaces (1);
 		GUILayout.EndHorizontal();
 	GUILayout.EndArea ();
