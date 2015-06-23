@@ -109,22 +109,9 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		
 		if (GUILayout.Button(MainMenu, buttonOptions))
 		{
-<<<<<<< HEAD
-			GameVars.getInstance().setScore(0);
-			GameVars.getInstance().setOrcKills(0);
-			GameVars.getInstance().setDistance(0);
-			Application.LoadLevel(0);
-			
-			try {
-				gameObject.GetComponent<GameOverInterstitialAd>().hideBannerAd();
-			} catch (System.Exception ex) {
-				print ("Exception trying to hide banner ad.");
-			}
-=======
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
 			Application.LoadLevel(GameVars.MAIN_MENU_SCENE);
->>>>>>> eb5c6ec... LAB-61: Minor bug fix for new GameOver script.
 		}
 
 		flexibleSpaces (1);//space from main menu to right edge
