@@ -81,7 +81,7 @@ public class GameOverScript : MonoBehaviour {
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
 			GameVars.getInstance().setOrcHits(0);
-			Application.LoadLevel(1);
+			Application.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
 		}
 
     flexibleSpaces(1);
@@ -91,13 +91,7 @@ public class GameOverScript : MonoBehaviour {
 			//GameVars.getInstance().setScore(0);
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
-			Application.LoadLevel(0);
-
-      try {
-        gameObject.GetComponent<GameOverInterstitialAd>().hideBannerAd();
-      } catch (System.Exception ex) {
-        print ("Exception trying to hide banner ad.");
-      }
+			Application.LoadLevel(GameVars.MAIN_MENU_SCENE);
 		}
 
     flexibleSpaces(4);
