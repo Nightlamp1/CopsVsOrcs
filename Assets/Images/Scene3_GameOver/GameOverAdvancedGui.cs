@@ -48,11 +48,11 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	{
 	    buttonWidth = Screen.width * .2f;
 		buttonHeight = Screen.height * .1f;
-		ScoreButtonWidth = Screen.width * 0.1f;
+		ScoreButtonWidth = Screen.width * 0.15f;
 		ScoreButtonHeight = Screen.height * 0.15f;
-		goLabelWidth = Screen.width * 0.4f;
+		goLabelWidth = Screen.width * 0.3f;
 		goLabelHeight = Screen.height * 0.15f;
-		labelWidth = 436 ;
+		labelWidth = Screen.width * 0.5f;
 		labelHeight = 94;
 		backGroundWidth = Screen.width * 0.5f;
 		backGroundHeight = Screen.height * 0.5f;
@@ -81,7 +81,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		
 		GUIStyle buttonStyle = new GUIStyle();
 		GUI.skin = gameOverSkin;
-		GUI.skin.label.fontSize = 24;
+		GUI.skin.label.fontSize = (int) (Screen.height*0.038f);
 		GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
 		GUILayoutOption[] BackgroundOptions = {GUILayout.Width(backGroundWidth), GUILayout.Height(backGroundHeight)};
 		GUILayoutOption[] LabelOptions = {GUILayout.Width(labelWidth), GUILayout.Height(labelHeight)};
@@ -116,11 +116,12 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
 		flexibleSpaces (1);//space from main menu to right edge
 		GUILayout.EndHorizontal ();
-		flexibleSpaces (2);//vert distance from gameover to score text prompt
+		flexibleSpaces (1);//vert distance from gameover to score text prompt
 
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
 		GUI.skin = labelSkin;
+		GUI.skin.label.fontSize = (int) (Screen.height*0.04f);
 		GUILayout.Label("Your score this round was " + score + "!",LabelOptions);
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (1);
@@ -130,19 +131,38 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
-		GUILayout.Button (GlobalButtonOn, scoreButtonOptions);
 		GUILayout.Label (scores,BackgroundOptions);
-		GUILayout.Button (LocalButtonOn, scoreButtonOptions);
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
 
-		flexibleSpaces (1);
-		GUILayout.BeginHorizontal ();
+		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
+		GUILayout.BeginVertical ();
 		flexibleSpaces (2);
-		GUILayout.Button (Twitter,GUIStyle.none);
-		GUILayout.Button (Facebook,GUIStyle.none);
+		GUILayout.BeginHorizontal ();
+		flexibleSpaces (1);
+		GUILayout.Button (GlobalButtonOn, scoreButtonOptions);
+		GUILayout.Box (DonutMasters, goLabelOptions);
+		GUILayout.Button (LocalButtonOn, scoreButtonOptions);
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
+		flexibleSpaces (3);
+		GUILayout.EndVertical ();
+		GUILayout.EndArea ();
+	
+		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
+		GUILayout.BeginVertical ();
+		flexibleSpaces (8);
+		GUILayout.BeginHorizontal ();
+		flexibleSpaces (5);
+		GUILayout.Button (Twitter,GUIStyle.none);
+		GUILayout.Button (Facebook,GUIStyle.none);
+		flexibleSpaces (2);
+		GUILayout.EndHorizontal ();
+		flexibleSpaces (1);
+		GUILayout.EndVertical ();
+		GUILayout.EndArea ();
+
+		flexibleSpaces (5);
 
 		GUILayout.EndVertical ();
 		GUILayout.EndArea ();

@@ -180,6 +180,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8f095577fdfe82747a6211efcf862a88, type: 3}
   - {fileID: 8300000, guid: af4c1297c0e979e4aadb9f665cfff7bc, type: 3}
   mOrcKills: 0
+  mOrcHits: 0
   debugMessage: 
 --- !u!4 &1746573461
 Transform:
@@ -204,7 +205,6 @@ GameObject:
   - 20: {fileID: 1951577352}
   - 92: {fileID: 1951577351}
   - 124: {fileID: 1951577350}
-  - 114: {fileID: 1951577354}
   - 114: {fileID: 1951577349}
   m_Layer: 0
   m_Name: Main Camera
@@ -293,21 +293,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!114 &1951577354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1951577348}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7641162bf3fbfd4eb9e50ef1669fe77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverSkin: {fileID: 11400000, guid: 557bc60cc974e2845ac9667567783cd3, type: 2}
-  MainMenu: {fileID: 2800000, guid: 6939d7afd5f21144dacf8d4f21d4ec6f, type: 3}
-  Retry: {fileID: 2800000, guid: 3702eefaae200f1408dcfbe5034dc680, type: 3}
-  HighScoreBG: {fileID: 2800000, guid: 25880a6437244a7459aa4499ec675e2b, type: 3}
-  DonutMasters: {fileID: 2800000, guid: d530b8b6415dc924482c60cdd7a35549, type: 3}
-  Twitter: {fileID: 2800000, guid: 5782f02b404dcd1428f58feeb4d85f60, type: 3}
-  Facebook: {fileID: 2800000, guid: 0af394146a1304b4b8065a853b5dd187, type: 3}
