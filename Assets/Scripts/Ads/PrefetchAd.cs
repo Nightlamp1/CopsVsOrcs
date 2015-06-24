@@ -24,19 +24,22 @@ public class PrefetchAd : MonoBehaviour {
   public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
 #endif
 
-  void Start() {
-    if (singleton != null) {
-      print ("========== Maybe we're wasting our time and destroying the old singleton a lot? ==========");
-      singleton.destroyAds();
+  void Awake() {
+    if (singleton != null && singleton != this) {
+      Destroy(gameObject);
+    } else {
+      singleton = this;
+      DontDestroyOnLoad(transform.gameObject);
     }
+  }
 
+  void Start() {
     minSecondsBetweenAds = DEFAULT_MIN_SECONDS_BETWEEN_ADS;
 
     interstitialAdsEnabled = true;
 
     lastAdTime = new System.DateTime(1970, 1, 1);
 
-    singleton = this;
     preloadedInterstitial = false;
 
     if (interstitialAdsEnabled) {
@@ -57,10 +60,6 @@ public class PrefetchAd : MonoBehaviour {
     }
 
     return singleton;
-  }
-
-  void Awake() {
-    DontDestroyOnLoad(transform.gameObject);
   }
 
   public int getMinSecondsBetweenAds() {
