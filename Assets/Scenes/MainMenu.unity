@@ -503,7 +503,7 @@ GameObject:
   - 114: {fileID: 1770374497}
   - 114: {fileID: 1770374499}
   m_Layer: 0
-  m_Name: AdObject
+  m_Name: AdManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
