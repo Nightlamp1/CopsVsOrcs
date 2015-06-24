@@ -58,24 +58,6 @@ public class GameVars : MonoBehaviour
     }
   }
 
-  void Update() {
-    switch (Application.loadedLevel) {
-      case 0:
-        if (audioSource.isPlaying) {
-          audioSource.Stop();
-        }
-        break;
-      case 1:
-        if (!audioSource.isPlaying) {
-          audioSource.Play();
-        }
-        break;
-      default:
-        // Do nothing.
-        break;
-    }
-  }
-
   public static GameVars getInstance()
   {
     return singleton;
