@@ -11,7 +11,7 @@ public class GameVars : MonoBehaviour
   public const int GAME_OVER_SCENE    = 2;
   public const int CREDITS_SCENE      = 3;
 
-  public const string VERSION_NUMBER  = "1.0.9";
+  public const string VERSION_NUMBER  = "DEVELOPMENT";
 
 #if UNITY_WEBPLAYER
   private const string DEFAULT_PLAYER_NAME = "WEB_PLAYER";
