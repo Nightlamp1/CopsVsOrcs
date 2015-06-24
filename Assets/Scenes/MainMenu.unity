@@ -274,6 +274,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8f095577fdfe82747a6211efcf862a88, type: 3}
   - {fileID: 8300000, guid: af4c1297c0e979e4aadb9f665cfff7bc, type: 3}
   mOrcKills: 0
+  mOrcHits: 0
   debugMessage: 
 --- !u!4 &748285899
 Transform:
@@ -394,6 +395,7 @@ MonoBehaviour:
   mDistance: 0
   sounds: []
   mOrcKills: 0
+  mOrcHits: 0
   debugMessage: 
 --- !u!4 &1516178394
 Transform:
