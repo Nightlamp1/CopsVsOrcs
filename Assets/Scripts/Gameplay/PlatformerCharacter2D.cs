@@ -19,7 +19,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float FlashPeriod = 0.1f;
 
   bool justJumped = false;
-  int jumpCheck = 0;  // This is going to allow for ungrounded double jumps
+  public int jumpCheck = 0;  // This is going to allow for ungrounded double jumps
 	SpriteRenderer Rend;
 
 

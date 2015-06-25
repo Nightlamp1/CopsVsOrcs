@@ -25,8 +25,7 @@ public class GameVars : MonoBehaviour
   public Transform somePrefab;
   
   private GameObject mPlayer;
-
-  private float mScore;
+	
   public float mDistance;
   public List<AudioClip> sounds;
   public int mOrcKills = 0;
@@ -98,7 +97,8 @@ public class GameVars : MonoBehaviour
   }
 
   public void setOrcHits(int orcHits) {
-	mOrcHits = orcHits;
+		Debug.Log ("HITS SETTTTTT");
+		mOrcHits = orcHits;
   }
 	
   public int getOrcHits() {
@@ -119,8 +119,7 @@ public class GameVars : MonoBehaviour
 
 
   public float getScore() {
-		mScore = (mDistance / 2) + (mOrcKills * 2) - (mOrcHits * 2);
-    return mScore;
+		return (mDistance / 2) + (mOrcKills * 2) - (mOrcHits * 2);
   }
   
   public GameObject getPlayer()
