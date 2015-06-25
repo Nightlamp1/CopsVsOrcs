@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   somePrefab: {fileID: 0}
-  distance: 0
+  mDistance: 0
   sounds:
   - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
   - {fileID: 8300000, guid: 33924decec288344e8e6f223f8c76a53, type: 3}
@@ -684,7 +684,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f8299a3f290e8fd409bfdefa81b35c23, type: 3}
   - {fileID: 8300000, guid: 8f095577fdfe82747a6211efcf862a88, type: 3}
   - {fileID: 8300000, guid: af4c1297c0e979e4aadb9f665cfff7bc, type: 3}
-  orcKills: 0
+  mOrcKills: 0
+  mOrcHits: 0
   debugMessage: 
 --- !u!4 &1714443447
 Transform:
