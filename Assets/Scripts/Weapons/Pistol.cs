@@ -58,7 +58,7 @@ public class Pistol : Activateable {
       b.transform.name = "bullet(Clone)";
 
       b.GetComponent<Bullet>().fire();
-      AudioScript.getInstance().playFiringSound();
+      AudioManager.getInstance().playFiringSound();
     }
   }
 

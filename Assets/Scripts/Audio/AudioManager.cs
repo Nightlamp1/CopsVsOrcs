@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AudioScript : MonoBehaviour {
+public class AudioManager : MonoBehaviour {
   private         int         lastLoadedLevel;
   public          AudioSource musicSource;
   public          AudioSource sfxSource;
@@ -13,7 +13,7 @@ public class AudioScript : MonoBehaviour {
   public          AudioClip[] firingSounds;
 
   private static  bool        initialized = false;
-  private static  AudioScript singleton;
+  private static  AudioManager singleton;
 
 	void Awake(){
     if (initialized) {
@@ -52,7 +52,7 @@ public class AudioScript : MonoBehaviour {
     }
   }
 
-  public static AudioScript getInstance() {
+  public static AudioManager getInstance() {
     return singleton;
   }
 
