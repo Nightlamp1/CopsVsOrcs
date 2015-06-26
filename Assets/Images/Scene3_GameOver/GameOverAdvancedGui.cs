@@ -5,6 +5,7 @@ using System.Collections;
 
 public class GameOverAdvancedGui: MonoBehaviour {
 	private const int INSERT_VERSION = 1;
+	const string TwitterShare = "http://twitter.com/intent/tweet";
 	
 	private float buttonWidth  = 0f;
 	private float buttonHeight = 0f;
@@ -159,7 +160,12 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		flexibleSpaces (18);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (4);
-		GUILayout.Button (Twitter,GUIStyle.none,shareButtonOptions);
+		if (GUILayout.Button (Twitter, GUIStyle.none, shareButtonOptions)) {
+			Application.OpenURL(TwitterShare + "?text=" + WWW.EscapeURL("I scored " + score + " on Cops vs Orcs! Cops vs Orcs out now for Android and iOS!!") 
+			                    + "&amp;url=" + WWW.EscapeURL("https://www.deliriumgameworks.com") 
+			                    + "&amp;related=" + WWW.EscapeURL("https://www.twitter.com/Delirium_GW") 
+			                    + "&amp;lang=" + WWW.EscapeURL("en"));
+		}
 		GUILayout.Button (Facebook,GUIStyle.none,shareButtonOptions);
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (2);
