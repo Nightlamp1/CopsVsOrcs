@@ -10,6 +10,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	private float buttonHeight = 0f;
 	private float ScoreButtonWidth  = 0f;
 	private float ScoreButtonHeight = 0f;
+	private float ShareButtonWidth  = 0f;
+	private float ShareButtonHeight = 0f;
 	private float goLabelWidth  = 0f;
 	private float goLabelHeight = 0f;
 	private float backGroundWidth = 0f;
@@ -50,11 +52,13 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		buttonHeight = Screen.height * .1f;
 		ScoreButtonWidth = Screen.width * 0.15f;
 		ScoreButtonHeight = Screen.height * 0.15f;
-		goLabelWidth = Screen.width * 0.3f;
+		ShareButtonWidth = Screen.width * 0.06f;
+		ShareButtonHeight = Screen.height * 0.1f;
+		goLabelWidth = Screen.width * 0.25f;
 		goLabelHeight = Screen.height * 0.15f;
 		labelWidth = Screen.width * 0.5f;
 		labelHeight = 94;
-		backGroundWidth = Screen.width * 0.5f;
+		backGroundWidth = Screen.width * 0.4f;
 		backGroundHeight = Screen.height * 0.5f;
 		up_handled = false;
 		
@@ -87,6 +91,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayoutOption[] LabelOptions = {GUILayout.Width(labelWidth), GUILayout.Height(labelHeight)};
 		GUILayoutOption[] goLabelOptions = {GUILayout.Width(goLabelWidth), GUILayout.Height(goLabelHeight)};
 		GUILayoutOption[] scoreButtonOptions = {GUILayout.Width(ScoreButtonWidth), GUILayout.Height(ScoreButtonHeight)};
+		GUILayoutOption[] shareButtonOptions = {GUILayout.Width(ShareButtonWidth), GUILayout.Height(ShareButtonHeight)};
 		
 		GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
@@ -151,11 +156,12 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
-		flexibleSpaces (8);
+		flexibleSpaces (18);
 		GUILayout.BeginHorizontal ();
-		flexibleSpaces (5);
-		GUILayout.Button (Twitter,GUIStyle.none);
-		GUILayout.Button (Facebook,GUIStyle.none);
+		flexibleSpaces (4);
+		GUILayout.Button (Twitter,GUIStyle.none,shareButtonOptions);
+		GUILayout.Button (Facebook,GUIStyle.none,shareButtonOptions);
+		GUI.skin = gameOverSkin;
 		flexibleSpaces (2);
 		GUILayout.EndHorizontal ();
 		flexibleSpaces (1);
