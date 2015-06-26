@@ -171,7 +171,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (4);
 		if (GUILayout.Button (Twitter, GUIStyle.none, shareButtonOptions)) {
-			Application.OpenURL(TwitterShare + "?text=" + WWW.EscapeURL("I scored " + score + " on Cops vs Orcs! Cops vs Orcs out now for Android and iOS!!") 
+			Application.OpenURL(TwitterShare + "?text=" + WWW.EscapeURL("@Delirium_GW, I scored " + score + " on the beta version of #CopsVsOrcs!") 
 			                    + "&url=" + WWW.EscapeURL("https://www.deliriumgameworks.com") 
 			                    + "&related=" + WWW.EscapeURL("https://www.twitter.com/Delirium_GW") 
 			                    + "&lang=" + WWW.EscapeURL("en"));
@@ -182,8 +182,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 			                    "&link=" + WWW.EscapeURL("https://www.facebook.com/deliriumgameworks?fref=ts")+
 			                    "&picture=" + WWW.EscapeURL("https://pbs.twimg.com/profile_images/602945529169883136/j21GJ7G4.jpg")+
 			                    "&name=" + WWW.EscapeURL("Cops vs Orcs!!!") +
-			                    "&caption=" + WWW.EscapeURL("Checkout my new HighScore") +
-			                    "&description=" + WWW.EscapeURL("My new Cops vs Orcs score is " + score) +
+			                    "&caption=" + WWW.EscapeURL("Check out my new HighScore on the beta version of CopsVsOrcs") +
+			                    "&description=" + WWW.EscapeURL("@deliriumgameworks, My new Cops vs Orcs score is " + score) +
 			                    "&redirect_uri=" + WWW.EscapeURL("https://www.deliriumgameworks.com/"));
 		}
 		GUI.skin = gameOverSkin;
