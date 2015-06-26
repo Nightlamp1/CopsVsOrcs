@@ -56,4 +56,15 @@ public class MusicScript : MonoBehaviour {
     musicSource.clip = jingle;
     musicSource.Play();
   }
+
+  // Use this if you need to be able to set the mute state to an absolute value (true/false)
+  public void setMute(bool state) {
+    musicSource.mute = state;
+  }
+
+  // Use this if you just need to toggle the mute state from what it is now (true/false) to
+  //  what you want it to be (false/true)
+  public void toggleMute() {
+    musicSource.mute = (!musicSource.mute);
+  }
 }
