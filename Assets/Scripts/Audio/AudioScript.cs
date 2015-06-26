@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MusicScript : MonoBehaviour {
-  private static  MusicScript singleton = null;
-
+public class AudioScript : MonoBehaviour {
   private         int         lastLoadedLevel;
   public          AudioSource musicSource;
   public          AudioSource sfxSource;
@@ -13,13 +11,16 @@ public class MusicScript : MonoBehaviour {
   public          AudioClip   gameOverJingle;
   public          AudioClip   creditsJingle;
 
+  private static  bool        initialized = false;
+
 	void Awake(){
-    if (singleton != null && singleton != this) {
+    if (initialized) {
       Destroy(gameObject);
       return;
     }
 
-    singleton = this;
+    initialized = true;
+
     lastLoadedLevel = -1;
 
 		DontDestroyOnLoad (gameObject);
@@ -60,11 +61,13 @@ public class MusicScript : MonoBehaviour {
   // Use this if you need to be able to set the mute state to an absolute value (true/false)
   public void setMute(bool state) {
     musicSource.mute = state;
+    sfxSource.mute   = state;
   }
 
   // Use this if you just need to toggle the mute state from what it is now (true/false) to
   //  what you want it to be (false/true)
   public void toggleMute() {
     musicSource.mute = (!musicSource.mute);
+    sfxSource.mute   = (!sfxSource.mute);
   }
 }
