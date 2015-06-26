@@ -6,6 +6,8 @@ using System.Collections;
 public class GameOverAdvancedGui: MonoBehaviour {
 	private const int INSERT_VERSION = 1;
 	const string TwitterShare = "http://twitter.com/intent/tweet";
+	const string FacebookID = "648150285304327";
+	const string FacebookShare = "http://www.facebook.com/dialog/feed";
 	
 	private float buttonWidth  = 0f;
 	private float buttonHeight = 0f;
@@ -166,7 +168,16 @@ public class GameOverAdvancedGui: MonoBehaviour {
 			                    + "&amp;related=" + WWW.EscapeURL("https://www.twitter.com/Delirium_GW") 
 			                    + "&amp;lang=" + WWW.EscapeURL("en"));
 		}
-		GUILayout.Button (Facebook,GUIStyle.none,shareButtonOptions);
+		if (GUILayout.Button (Facebook, GUIStyle.none, shareButtonOptions)) {
+			Application.OpenURL(FacebookShare + 
+			                    "?app_id=" + FacebookID +
+			                    "&link=" + WWW.EscapeURL("https://www.facebook.com/deliriumgameworks?fref=ts")+
+			                    "&picture=" + WWW.EscapeURL("https://pbs.twimg.com/profile_images/602945529169883136/j21GJ7G4.jpg")+
+			                    "&name=" + WWW.EscapeURL("Cops vs Orcs!!!") +
+			                    "&caption=" + WWW.EscapeURL("Checkout my new HighScore") +
+			                    "&description=" + WWW.EscapeURL("My new Cops vs Orcs score is " + score) +
+			                    "&redirect_uri=" + WWW.EscapeURL("https://www.deliriumgameworks.com/"));
+		}
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (2);
 		GUILayout.EndHorizontal ();
