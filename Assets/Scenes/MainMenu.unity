@@ -430,6 +430,11 @@ MonoBehaviour:
   deathJingle: {fileID: 8300000, guid: da7abea83c1979845a1c6d6d6d56d483, type: 3}
   gameOverJingle: {fileID: 8300000, guid: 32eef775cd4c5344abf5024f572294a6, type: 3}
   creditsJingle: {fileID: 8300000, guid: 1c56e47e542c53d42a73dd7cd76becbf, type: 3}
+  firingSounds:
+  - {fileID: 8300000, guid: 433763a15c1a6c8428165df9422089f2, type: 3}
+  - {fileID: 8300000, guid: ca0c7a3c9d804b040aba0e09d09b4c39, type: 3}
+  - {fileID: 8300000, guid: 29a883f88f490494f9c4ab51ba0d26d2, type: 3}
+  - {fileID: 8300000, guid: 8f11ecb6733c9b749b0f68b93976b582, type: 3}
 --- !u!81 &1089631525
 AudioListener:
   m_ObjectHideFlags: 0
