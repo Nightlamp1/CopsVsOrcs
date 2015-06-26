@@ -5,9 +5,14 @@ using System.Collections;
 
 public class GameOverAdvancedGui: MonoBehaviour {
 	private const int INSERT_VERSION = 1;
+	const string TwitterShare = "http://twitter.com/intent/tweet";
+	const string FacebookID = "648150285304327";
+	const string FacebookShare = "http://www.facebook.com/dialog/feed";
 	
 	private float buttonWidth  = 0f;
 	private float buttonHeight = 0f;
+	private float rateWidth  = 0f;
+	private float rateHeight = 0f;
 	private float ScoreButtonWidth  = 0f;
 	private float ScoreButtonHeight = 0f;
 	private float ShareButtonWidth  = 0f;
@@ -32,6 +37,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	
 	public Texture2D MainMenu;
 	public Texture2D Retry;
+	public Texture2D RateUs;
 	public Texture2D HighScoreBG;
 	public Texture2D DonutMasters;
 	public Texture2D Twitter;
@@ -50,6 +56,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	{
 	    buttonWidth = Screen.width * .2f;
 		buttonHeight = Screen.height * .1f;
+		rateWidth = Screen.width * .2f;
+		rateHeight = Screen.height * .1f;
 		ScoreButtonWidth = Screen.width * 0.15f;
 		ScoreButtonHeight = Screen.height * 0.15f;
 		ShareButtonWidth = Screen.width * 0.06f;
@@ -87,6 +95,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUI.skin = gameOverSkin;
 		GUI.skin.label.fontSize = (int) (Screen.height*0.038f);
 		GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
+		GUILayoutOption[] rateOptions = {GUILayout.Width(rateWidth), GUILayout.Height(rateHeight)};
 		GUILayoutOption[] BackgroundOptions = {GUILayout.Width(backGroundWidth), GUILayout.Height(backGroundHeight)};
 		GUILayoutOption[] LabelOptions = {GUILayout.Width(labelWidth), GUILayout.Height(labelHeight)};
 		GUILayoutOption[] goLabelOptions = {GUILayout.Width(goLabelWidth), GUILayout.Height(goLabelHeight)};
@@ -158,11 +167,25 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
-		flexibleSpaces (18);
+		flexibleSpaces (10);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (4);
-		GUILayout.Button (Twitter,GUIStyle.none,shareButtonOptions);
-		GUILayout.Button (Facebook,GUIStyle.none,shareButtonOptions);
+		if (GUILayout.Button (Twitter, GUIStyle.none, shareButtonOptions)) {
+			Application.OpenURL(TwitterShare + "?text=" + WWW.EscapeURL("I scored " + score + " on Cops vs Orcs! Cops vs Orcs out now for Android and iOS!!") 
+			                    + "&url=" + WWW.EscapeURL("https://www.deliriumgameworks.com") 
+			                    + "&related=" + WWW.EscapeURL("https://www.twitter.com/Delirium_GW") 
+			                    + "&lang=" + WWW.EscapeURL("en"));
+		}
+		if (GUILayout.Button (Facebook, GUIStyle.none, shareButtonOptions)) {
+			Application.OpenURL(FacebookShare + 
+			                    "?app_id=" + FacebookID +
+			                    "&link=" + WWW.EscapeURL("https://www.facebook.com/deliriumgameworks?fref=ts")+
+			                    "&picture=" + WWW.EscapeURL("https://pbs.twimg.com/profile_images/602945529169883136/j21GJ7G4.jpg")+
+			                    "&name=" + WWW.EscapeURL("Cops vs Orcs!!!") +
+			                    "&caption=" + WWW.EscapeURL("Checkout my new HighScore") +
+			                    "&description=" + WWW.EscapeURL("My new Cops vs Orcs score is " + score) +
+			                    "&redirect_uri=" + WWW.EscapeURL("https://www.deliriumgameworks.com/"));
+		}
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (2);
 		GUILayout.EndHorizontal ();
@@ -170,8 +193,15 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayout.EndVertical ();
 		GUILayout.EndArea ();
 
-		flexibleSpaces (5);
-
+		flexibleSpaces (1);
+		if (GUILayout.Button (RateUs, rateOptions)) {
+#if UNITY_ANDROID
+			Application.OpenURL("market://details?id=com.deliriumgw.copsvsorcs");
+#elif UNITY_IPHONE
+			Application.OpenURL("itms-apps://itunes.apple.com/app/1004888424");
+#endif
+		}
+		flexibleSpaces (1);
 		GUILayout.EndVertical ();
 		GUILayout.EndArea ();
 		
