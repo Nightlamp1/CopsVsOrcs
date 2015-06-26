@@ -47,16 +47,6 @@ public class Pistol : Activateable {
   {
     if (canActivate())
     {
-      if (activateableSounds.Count < 1) {
-        if (GameVars.getInstance().sounds.Count >= 5) {
-          addActivateableSound(GameVars.getInstance().sounds[4]);
-        }
-
-        if (GameVars.getInstance().sounds.Count >= 7) {
-          addActivateableSound(GameVars.getInstance().sounds[6]);
-        }
-      }
-
       m_cooldownActivate = DEFAULT_ACTIVATE_COOLDOWN;
 
       GameObject b;
@@ -68,7 +58,7 @@ public class Pistol : Activateable {
       b.transform.name = "bullet(Clone)";
 
       b.GetComponent<Bullet>().fire();
-      activateRandomSound();
+      AudioScript.getInstance().playFiringSound();
     }
   }
 

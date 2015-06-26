@@ -10,8 +10,6 @@ public abstract class Activateable : MonoBehaviour {
 
   public Transform spawnPosition;
 
-  public List<AudioClip> activateableSounds;
-
 	// Use this for initialization
 	void Start () {
     m_hasActivate = false;
@@ -29,26 +27,6 @@ public abstract class Activateable : MonoBehaviour {
   public bool canActivateAlternate()
   {
     return (m_hasActivateAlternate && m_cooldownActivateAlternate <= 0);
-  }
-
-  public void addActivateableSound(AudioClip newSound)
-  {
-    if (activateableSounds == null) activateableSounds = new List<AudioClip>();
-
-    activateableSounds.Add(newSound);
-  }
-
-  public void activateRandomSound()
-  {
-    if (activateableSounds == null || activateableSounds.Count == 0) return;
-
-    if (activateableSounds.Count > 0) {
-      AudioSource.PlayClipAtPoint(
-        activateableSounds[Random.Range(0, activateableSounds.Count)],
-        new Vector3());
-    } else {
-      print("No available sounds to randomly select.");
-    }
   }
 
   public abstract void activate();

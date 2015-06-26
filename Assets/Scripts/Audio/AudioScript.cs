@@ -10,8 +10,10 @@ public class AudioScript : MonoBehaviour {
   public          AudioClip   deathJingle;
   public          AudioClip   gameOverJingle;
   public          AudioClip   creditsJingle;
+  public          AudioClip[] firingSounds;
 
   private static  bool        initialized = false;
+  private static  AudioScript singleton;
 
 	void Awake(){
     if (initialized) {
@@ -20,6 +22,7 @@ public class AudioScript : MonoBehaviour {
     }
 
     initialized = true;
+    singleton = this;
 
     lastLoadedLevel = -1;
 
@@ -49,6 +52,10 @@ public class AudioScript : MonoBehaviour {
     }
   }
 
+  public static AudioScript getInstance() {
+    return singleton;
+  }
+
   void play(AudioClip jingle) {
     if (jingle == null) {
       return;
@@ -69,5 +76,11 @@ public class AudioScript : MonoBehaviour {
   public void toggleMute() {
     musicSource.mute = (!musicSource.mute);
     sfxSource.mute   = (!sfxSource.mute);
+  }
+
+  // Call this method to trigger a firing sound
+  public void playFiringSound() {
+    sfxSource.clip = firingSounds[Random.Range(0, firingSounds.Length - 1)];
+    sfxSource.Play();
   }
 }
