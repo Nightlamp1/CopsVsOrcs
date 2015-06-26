@@ -97,7 +97,6 @@ public class GameVars : MonoBehaviour
   }
 
   public void setOrcHits(int orcHits) {
-		Debug.Log ("HITS SETTTTTT");
 		mOrcHits = orcHits;
   }
 	
