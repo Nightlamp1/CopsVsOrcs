@@ -1,0 +1,814 @@
+fileFormatVersion: 2
+guid: c5f2a3c4858a5214c8702fed6df08f1d
+timeCreated: 1435283967
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sheet_Cop_Animations_0
+    21300002: Sheet_Cop_Animations_1
+    21300004: Sheet_Cop_Animations_2
+    21300006: Sheet_Cop_Animations_3
+    21300008: Sheet_Cop_Animations_4
+    21300010: Sheet_Cop_Animations_5
+    21300012: Sheet_Cop_Animations_6
+    21300014: Sheet_Cop_Animations_7
+    21300016: Sheet_Cop_Animations_8
+    21300018: Sheet_Cop_Animations_9
+    21300020: Sheet_Cop_Animations_10
+    21300022: Sheet_Cop_Animations_11
+    21300024: Sheet_Cop_Animations_12
+    21300026: Sheet_Cop_Animations_13
+    21300028: Sheet_Cop_Animations_14
+    21300030: Sheet_Cop_Animations_15
+    21300032: Sheet_Cop_Animations_16
+    21300034: Sheet_Cop_Animations_17
+    21300036: Sheet_Cop_Animations_18
+    21300038: Sheet_Cop_Animations_19
+    21300040: Sheet_Cop_Animations_20
+    21300042: Sheet_Cop_Animations_21
+    21300044: Sheet_Cop_Animations_22
+    21300046: Sheet_Cop_Animations_23
+    21300048: Sheet_Cop_Animations_24
+    21300050: Sheet_Cop_Animations_25
+    21300052: Sheet_Cop_Animations_26
+    21300054: Sheet_Cop_Animations_27
+    21300056: Sheet_Cop_Animations_28
+    21300058: Sheet_Cop_Animations_29
+    21300060: Sheet_Cop_Animations_30
+    21300062: Sheet_Cop_Animations_31
+    21300064: Sheet_Cop_Animations_32
+    21300066: Sheet_Cop_Animations_33
+    21300068: Sheet_Cop_Animations_34
+    21300070: Sheet_Cop_Animations_35
+    21300072: Sheet_Cop_Animations_36
+    21300074: Sheet_Cop_Animations_37
+    21300076: Sheet_Cop_Animations_38
+    21300078: Sheet_Cop_Animations_39
+    21300080: Sheet_Cop_Animations_40
+    21300082: Sheet_Cop_Animations_41
+    21300084: Sheet_Cop_Animations_42
+    21300086: Sheet_Cop_Animations_43
+    21300088: Sheet_Cop_Animations_44
+    21300090: Sheet_Cop_Animations_45
+    21300092: Sheet_Cop_Animations_46
+    21300094: Sheet_Cop_Animations_47
+    21300096: Sheet_Cop_Animations_48
+    21300098: Sheet_Cop_Animations_49
+    21300100: Sheet_Cop_Animations_50
+    21300102: Sheet_Cop_Animations_51
+    21300104: Sheet_Cop_Animations_52
+    21300106: Sheet_Cop_Animations_53
+    21300108: Sheet_Cop_Animations_54
+    21300110: Sheet_Cop_Animations_55
+    21300112: Sheet_Cop_Animations_56
+    21300114: Sheet_Cop_Animations_57
+    21300116: Sheet_Cop_Animations_58
+    21300118: Sheet_Cop_Animations_59
+    21300120: Sheet_Cop_Animations_60
+    21300122: Sheet_Cop_Animations_61
+    21300124: Sheet_Cop_Animations_62
+    21300126: Sheet_Cop_Animations_63
+    21300128: Sheet_Cop_Animations_64
+    21300130: Sheet_Cop_Animations_65
+    21300132: Sheet_Cop_Animations_66
+    21300134: Sheet_Cop_Animations_67
+    21300136: Sheet_Cop_Animations_68
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 160
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sheet_Cop_Animations_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 877
+        width: 294
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_1
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 877
+        width: 294
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_2
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 877
+        width: 292
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_3
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 877
+        width: 292
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_4
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 877
+        width: 294
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_5
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 877
+        width: 296
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_6
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 877
+        width: 296
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_7
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 877
+        width: 296
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_8
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 877
+        width: 296
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_9
+      rect:
+        serializedVersion: 2
+        x: 2895
+        y: 877
+        width: 296
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_10
+      rect:
+        serializedVersion: 2
+        x: 3215
+        y: 877
+        width: 296
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_11
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 877
+        width: 296
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_12
+      rect:
+        serializedVersion: 2
+        x: 3857
+        y: 877
+        width: 294
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_13
+      rect:
+        serializedVersion: 2
+        x: 4177
+        y: 877
+        width: 294
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_14
+      rect:
+        serializedVersion: 2
+        x: 4497
+        y: 877
+        width: 294
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_15
+      rect:
+        serializedVersion: 2
+        x: 4819
+        y: 877
+        width: 292
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_16
+      rect:
+        serializedVersion: 2
+        x: 5139
+        y: 877
+        width: 292
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_17
+      rect:
+        serializedVersion: 2
+        x: 5459
+        y: 877
+        width: 292
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_18
+      rect:
+        serializedVersion: 2
+        x: 5779
+        y: 877
+        width: 294
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_19
+      rect:
+        serializedVersion: 2
+        x: 6101
+        y: 877
+        width: 292
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_20
+      rect:
+        serializedVersion: 2
+        x: 6421
+        y: 877
+        width: 292
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_21
+      rect:
+        serializedVersion: 2
+        x: 6741
+        y: 877
+        width: 292
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_22
+      rect:
+        serializedVersion: 2
+        x: 7061
+        y: 877
+        width: 292
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_23
+      rect:
+        serializedVersion: 2
+        x: 7381
+        y: 877
+        width: 292
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_24
+      rect:
+        serializedVersion: 2
+        x: 7699
+        y: 877
+        width: 294
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_25
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 483
+        width: 292
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_26
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 483
+        width: 294
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_27
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 489
+        width: 294
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_28
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 489
+        width: 292
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_29
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 503
+        width: 292
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_30
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 503
+        width: 292
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_31
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 507
+        width: 302
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_32
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 501
+        width: 302
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_33
+      rect:
+        serializedVersion: 2
+        x: 2813
+        y: 497
+        width: 292
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_34
+      rect:
+        serializedVersion: 2
+        x: 3161
+        y: 483
+        width: 292
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_35
+      rect:
+        serializedVersion: 2
+        x: 3509
+        y: 483
+        width: 292
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_36
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 485
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_37
+      rect:
+        serializedVersion: 2
+        x: 4171
+        y: 489
+        width: 326
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_38
+      rect:
+        serializedVersion: 2
+        x: 4521
+        y: 503
+        width: 324
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_39
+      rect:
+        serializedVersion: 2
+        x: 4867
+        y: 505
+        width: 326
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_40
+      rect:
+        serializedVersion: 2
+        x: 5215
+        y: 513
+        width: 326
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_41
+      rect:
+        serializedVersion: 2
+        x: 5567
+        y: 527
+        width: 324
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_42
+      rect:
+        serializedVersion: 2
+        x: 5915
+        y: 533
+        width: 324
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_43
+      rect:
+        serializedVersion: 2
+        x: 6255
+        y: 489
+        width: 330
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_44
+      rect:
+        serializedVersion: 2
+        x: 6607
+        y: 485
+        width: 326
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_45
+      rect:
+        serializedVersion: 2
+        x: 6991
+        y: 483
+        width: 290
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_46
+      rect:
+        serializedVersion: 2
+        x: 7337
+        y: 481
+        width: 292
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_47
+      rect:
+        serializedVersion: 2
+        x: 7685
+        y: 481
+        width: 292
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_48
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 304
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_49
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1
+        width: 308
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_50
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1
+        width: 314
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_51
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 5
+        width: 316
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_52
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 7
+        width: 308
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_53
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 9
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_54
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 13
+        width: 296
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_55
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 15
+        width: 294
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_56
+      rect:
+        serializedVersion: 2
+        x: 2975
+        y: 17
+        width: 292
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_57
+      rect:
+        serializedVersion: 2
+        x: 3341
+        y: 23
+        width: 290
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_58
+      rect:
+        serializedVersion: 2
+        x: 3707
+        y: 27
+        width: 286
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_59
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 47
+        width: 290
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_60
+      rect:
+        serializedVersion: 2
+        x: 4419
+        y: 55
+        width: 292
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_61
+      rect:
+        serializedVersion: 2
+        x: 4775
+        y: 49
+        width: 296
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_62
+      rect:
+        serializedVersion: 2
+        x: 5143
+        y: 35
+        width: 302
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_63
+      rect:
+        serializedVersion: 2
+        x: 5511
+        y: 25
+        width: 306
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_64
+      rect:
+        serializedVersion: 2
+        x: 5879
+        y: 15
+        width: 310
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_65
+      rect:
+        serializedVersion: 2
+        x: 6249
+        y: 13
+        width: 310
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_66
+      rect:
+        serializedVersion: 2
+        x: 6619
+        y: 5
+        width: 308
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_67
+      rect:
+        serializedVersion: 2
+        x: 6989
+        y: 1
+        width: 306
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_Cop_Animations_68
+      rect:
+        serializedVersion: 2
+        x: 7369
+        y: 1
+        width: 304
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
