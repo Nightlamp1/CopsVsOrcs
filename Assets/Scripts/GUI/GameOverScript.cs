@@ -103,7 +103,7 @@ public class GameOverScript : MonoBehaviour {
 
 		if (GUILayout.Button(MainMenu, buttonOptions))
 		{
-			//GameVars.getInstance().setScore(0);
+			GameVars.getInstance().setOrcHits(0);
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
 			Application.LoadLevel(GameVars.MAIN_MENU_SCENE);

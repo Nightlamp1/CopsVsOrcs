@@ -105,6 +105,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		{
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
+			GameVars.getInstance().setOrcHits(0);
 			Application.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
 		}
 
@@ -116,6 +117,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		{
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
+			GameVars.getInstance().setOrcHits(0);
 			Application.LoadLevel(GameVars.MAIN_MENU_SCENE);
 		}
 

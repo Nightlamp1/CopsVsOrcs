@@ -19,7 +19,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float FlashPeriod = 0.1f;
 
   bool justJumped = false;
-  int jumpCheck = 0;  // This is going to allow for ungrounded double jumps
+  private int jumpCheck = 0;  // This is going to allow for ungrounded double jumps
 	SpriteRenderer Rend;
 
 
@@ -51,6 +51,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 		//Code for distance calculation
 		GameVars.getInstance().setDistance((this.transform.position.x + 5.8f) / 10f);
 	}
+
+  // This function serves as an API to reset the jump counter from outside
+  //  of this class.
+  public void resetJumpCheck() {
+    jumpCheck = 0;
+  }
 
   public void checkGround()
   {

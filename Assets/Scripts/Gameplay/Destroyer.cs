@@ -7,19 +7,16 @@ public class Destroyer : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
-      Debug.Log("Loading Level 2");
 			Application.LoadLevel(GameVars.GAME_OVER_SCENE);
 			return;
 		}
 
 		if (other.gameObject.transform.parent) 
 		{
-      Debug.Log("Destroying a game object.");
 			Destroy (other.gameObject.transform.parent.gameObject);	
 		} 
 		else 
 		{
-      Debug.Log("Destroying an other game object.");
 			Destroy (other.gameObject);
 		}
 	}
