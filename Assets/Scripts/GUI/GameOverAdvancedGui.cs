@@ -115,7 +115,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
 			GameVars.getInstance().setOrcHits(0);
-			Application.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
+			SceneManager.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
 		}
 
 		flexibleSpaces (1);//spacefrom retry button to game over label
@@ -127,7 +127,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
 			GameVars.getInstance().setOrcHits(0);
-			Application.LoadLevel(GameVars.MAIN_MENU_SCENE);
+			SceneManager.LoadLevel(GameVars.MAIN_MENU_SCENE);
 		}
 
 		flexibleSpaces (1);//space from main menu to right edge

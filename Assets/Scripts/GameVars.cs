@@ -73,6 +73,8 @@ public class GameVars : MonoBehaviour
   }
 
   public void setDistance(float distance) {
+    if (PlayerManager.getInstance().isPlayerAlive()) return;
+
     mDistance = distance;
   }
 
