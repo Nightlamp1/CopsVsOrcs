@@ -35,7 +35,6 @@ public class HighScoreboard {
       names += "\n";
     }
 
-
     return names;
   }
 

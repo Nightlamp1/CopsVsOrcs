@@ -236,14 +236,14 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 29
     m_FontStyle: 0
     m_Alignment: 5
     m_WordWrap: 1
     m_RichText: 1
     m_TextClipping: 1
     m_ImagePosition: 0
-    m_ContentOffset: {x: -45, y: 0}
+    m_ContentOffset: {x: -45, y: -9}
     m_FixedWidth: 0
     m_FixedHeight: 0
     m_StretchWidth: 1

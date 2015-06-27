@@ -170,8 +170,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
-		//GUI.skin.label.alignment = 
-		GUILayout.Label (highScoreboard.getNames(), BackgroundOptions);//HANK PUT NAME FIELD HERE
+		GUILayout.Label (highScoreboard.getNames(), BackgroundOptions);
         flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
@@ -180,7 +179,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
 		GUI.skin = labelSkinOverlay;
-		GUILayout.Label (highScoreboard.getScores(), BackgroundOptions);//HANK PUT SCORE FIELD HERE
+    GUI.skin.label.fontSize = (int) (Screen.height*0.0389f);
+		GUILayout.Label (highScoreboard.getScores(), BackgroundOptions);
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
