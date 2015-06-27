@@ -8,10 +8,12 @@ public class SceneManager : MonoBehaviour {
   public event BeforeSceneChangeEventHandler  BeforeSceneChange;
   public event SceneChangedEventHandler       SceneChanged;
 
-  private static  bool          initialized = false;
-  private static  SceneManager  singleton;
+  private static  bool              initialized = false;
+  private static  SceneManager      singleton;
 
-  private         int           currentScene = 0;
+  private         int               currentScene = 0;
+
+  public          GoogleAnalyticsV4 googleAnalytics;
 
   void Awake() {
     if (initialized) {
@@ -36,6 +38,7 @@ public class SceneManager : MonoBehaviour {
     }
     
     Application.LoadLevel(newScene);
+    googleAnalytics.LogScreen(Application.loadedLevelName);
 
     if (SceneChanged != null) {
       SceneChanged(currentScene, newScene);
