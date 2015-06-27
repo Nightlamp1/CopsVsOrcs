@@ -98,10 +98,10 @@ public class MainMenuGuis : MonoBehaviour {
 	 * will change to "NAME IS INVALID" and font color/label color will turn to red.
 	 * All that is left is your logic to toggle the nameCheck variable!!!
 	 */
-	if (!nameCheck) {
+	if (GameVars.getInstance().getValidUsername()) {
 		GUI.color = Color.white;
 		GUILayout.Label ("Enter Name Here:");
-	} else if (nameCheck) {
+	} else {
 		GUI.color = Color.red;
 		GUILayout.Label ("NAME IS INVALID");
 	}
