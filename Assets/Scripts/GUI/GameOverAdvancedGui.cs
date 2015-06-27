@@ -138,7 +138,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		flexibleSpaces (1);
 		GUI.skin = labelSkin;
 		GUI.skin.label.fontSize = (int) (Screen.height*0.04f);
-		GUILayout.Label("Your score this round was " + score + "!",LabelOptions);
+		GUILayout.Label("Your score this round was $" + score + "!",LabelOptions);
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
