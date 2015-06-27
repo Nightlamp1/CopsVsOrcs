@@ -149,6 +149,10 @@ public class AudioManager : MonoBehaviour {
     sfxSourceBlocking = blocking;
   }
 
+  public void setFiring(bool pFiringEnabled) {
+    firingEnabled = pFiringEnabled;
+  }
+
   public void disableFiring() {
     firingEnabled = false;
   }
