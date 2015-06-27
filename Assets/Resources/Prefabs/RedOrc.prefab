@@ -27,14 +27,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .51924932, y: -3.7171762, z: 0}
+  m_LocalPosition: {x: 16.3558388, y: -3.66873813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5002178
 Rigidbody2D:
-  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -43,11 +42,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
+  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &6107984
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -58,9 +57,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .300000012, y: .0599999987}
   serializedVersion: 2
-  m_Size: {x: 1.41999996, y: 1.79999995}
+  m_Size: {x: 1.41999996, y: 1.60000002}
 --- !u!95 &9533700
 Animator:
   serializedVersion: 3
@@ -113,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2af0fa2c51c3d4438593d41649d35b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 721e21d2693516c4e9be9c4577c94602, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
