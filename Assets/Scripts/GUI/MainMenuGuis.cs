@@ -33,7 +33,6 @@ public class MainMenuGuis : MonoBehaviour {
 	muteHeight = Screen.height * .15f;
 	textWidth = Screen.width * .3f;
 	textHeight = Screen.height * .10f;
-	//AudioManager.getInstance ().setMute (false);
   }
 
   void flexibleSpaces(int num) {
