@@ -172,7 +172,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		flexibleSpaces (4);
 		if (GUILayout.Button (Twitter, GUIStyle.none, shareButtonOptions)) {
 			Application.OpenURL(TwitterShare + "?text=" + WWW.EscapeURL("@Delirium_GW, I scored " + score + " on the beta version of #CopsVsOrcs!") 
-			                    + "&url=" + WWW.EscapeURL("https://www.deliriumgameworks.com") 
+			                    + "&url=" + WWW.EscapeURL("https://www.facebook.com/deliriumgameworks?fref=ts") 
 			                    + "&related=" + WWW.EscapeURL("https://www.twitter.com/Delirium_GW") 
 			                    + "&lang=" + WWW.EscapeURL("en"));
 		}
