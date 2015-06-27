@@ -25,6 +25,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	private float labelHeight = 0f;
 	public GUISkin gameOverSkin;
 	public GUISkin labelSkin;
+
+  private HighScoreboard highScoreboard;
 	
 	private float topSize      = 0.35f;
 	
@@ -54,6 +56,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	
 	void Start () 
 	{
+    highScoreboard = HighScores.getInstance().localScores;
 	    buttonWidth = Screen.width * .2f;
 		buttonHeight = Screen.height * .1f;
 		rateWidth = Screen.width * .2f;
@@ -73,6 +76,17 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		scores = "";
 		
 		score = Mathf.Round(GameVars.getInstance().getScore());
+
+    HighScoreEntry highScoreEntry = new HighScoreEntry();
+
+    highScoreEntry.playerName   = GameVars.getInstance().getPlayerName();
+    highScoreEntry.scoreUuid    = System.Guid.NewGuid();
+    highScoreEntry.score        = (int) score;
+    highScoreEntry.scoreVersion = 1;
+    highScoreEntry.appVersion   = GameVars.VERSION_NUMBER;
+
+    HighScores.getInstance().localScores.addHighScoreEntry(highScoreEntry);
+
 		
     if (GameVars.getInstance().getValidUsername()) {
   		up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
@@ -90,7 +104,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		if (!up_handled && up_query != null && up_query.isDone)
 		{
 			up_handled = true;
-			scores = up_query.text;
+			HighScores.getInstance().LoadGlobalScoresResponseString(up_query.text);
 		}
 		
 		GUIStyle buttonStyle = new GUIStyle();
@@ -140,7 +154,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		flexibleSpaces (1);
 		GUI.skin = labelSkin;
 		GUI.skin.label.fontSize = (int) (Screen.height*0.04f);
-		GUILayout.Label("Your score this round was $" + score + "!",LabelOptions);
+		GUILayout.Label("Your score this round was $" + score + "!", LabelOptions);
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
@@ -149,8 +163,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
-		GUILayout.Label (scores,BackgroundOptions);
-		flexibleSpaces (1);
+		GUILayout.Label (highScoreboard.getScores(), BackgroundOptions);
+    flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
 
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
@@ -158,9 +172,17 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		flexibleSpaces (2);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
-		GUILayout.Button (GlobalButtonOn, scoreButtonOptions);
+
+		if (GUILayout.Button (GlobalButtonOn, scoreButtonOptions)) {
+      highScoreboard = HighScores.getInstance().globalScores;
+    }
+    
 		GUILayout.Box (DonutMasters, goLabelOptions);
-		GUILayout.Button (LocalButtonOn, scoreButtonOptions);
+
+		if (GUILayout.Button (LocalButtonOn, scoreButtonOptions)) {
+      highScoreboard = HighScores.getInstance().localScores;
+    }
+
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
 		flexibleSpaces (3);

@@ -8,7 +8,7 @@ public class SceneManager : MonoBehaviour {
   public event BeforeSceneChangeEventHandler  BeforeSceneChange;
   public event SceneChangedEventHandler       SceneChanged;
 
-  private         bool          initialized = false;
+  private static  bool          initialized = false;
   private static  SceneManager  singleton;
 
   private         int           currentScene = 0;
@@ -21,6 +21,8 @@ public class SceneManager : MonoBehaviour {
 
     initialized = true;
     singleton = this;
+
+    DontDestroyOnLoad(gameObject);
   }
 
   public static SceneManager getInstance() {

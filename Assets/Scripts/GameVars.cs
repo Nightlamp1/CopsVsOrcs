@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 
 public class GameVars : MonoBehaviour 
@@ -127,11 +127,11 @@ public class GameVars : MonoBehaviour
   }
 	
   public int getOrcHits() {
-	return mOrcHits;
+    return mOrcHits;
   }
 	
   public void incrementOrcHits(int inc) {
-	setOrcHits(getOrcHits() + inc);
+    setOrcHits(getOrcHits() + inc);
   }
 
   public void setUserHasStarted(bool userHasStarted) {

@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour {
 
     initialized = true;
     singleton = this;
+
+    DontDestroyOnLoad(gameObject);
   }
 
   void Start() {
@@ -24,8 +26,6 @@ public class PlayerManager : MonoBehaviour {
   }
 
   public void AfterSceneChange(int oldScene, int newScene) {
-    Debug.Log("Scene changed.");
-
     if (newScene != GameVars.ENDLESS_RUN_SCENE) {
       return;
     }

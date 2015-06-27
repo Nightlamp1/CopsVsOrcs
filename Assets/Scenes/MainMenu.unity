@@ -292,6 +292,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &734928281
 Transform:
   m_ObjectHideFlags: 0
@@ -330,6 +331,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 748285899}
   - 114: {fileID: 748285898}
+  - 114: {fileID: 748285900}
   m_Layer: 0
   m_Name: GameVars
   m_TagString: Untagged
@@ -374,6 +376,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &748285900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748285897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914252c3c8a21a840ac5c36e10f57feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892984842
 GameObject:
   m_ObjectHideFlags: 0
