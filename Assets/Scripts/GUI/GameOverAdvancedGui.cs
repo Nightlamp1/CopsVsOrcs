@@ -175,7 +175,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayout.EndHorizontal ();
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
-		flexibleSpaces (9);
+		flexibleSpaces (10);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
 		GUI.skin = labelSkinOverlay;
