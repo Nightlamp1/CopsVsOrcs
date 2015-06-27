@@ -43,7 +43,7 @@ public class EnemyCollision : MonoBehaviour {
 			anim.SetTrigger("Death");
 			GameVars.getInstance().incrementOrcKills(1);
 			this.GetComponent<Collider2D>().enabled = false;
-			Destroy (this.gameObject, 0.3f);
+			Destroy (this.gameObject, 0.4f);
 			Destroy (other.gameObject);
 		}
 	}

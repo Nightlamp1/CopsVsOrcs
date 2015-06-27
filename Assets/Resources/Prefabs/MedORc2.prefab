@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.97449303, y: .350926995, z: 0}
+  m_LocalPosition: {x: 22.0211372, y: -2.3282671, z: 0}
   m_LocalScale: {x: 3, y: 2, z: 1}
   m_Children:
   - {fileID: 427590}
@@ -57,14 +57,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .498502433, y: .559536517, z: 0}
+  m_LocalPosition: {x: .499000013, y: .529999971, z: 0}
   m_LocalScale: {x: .333333343, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 0
 --- !u!50 &5033662
 Rigidbody2D:
-  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,11 +72,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
+  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -103,7 +102,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.41999996, y: 1.79999995}
+  m_Size: {x: 1.41999996, y: 1.60000002}
 --- !u!95 &9539940
 Animator:
   serializedVersion: 3
