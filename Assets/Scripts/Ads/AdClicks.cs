@@ -2,42 +2,29 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
+[XmlRoot("AdClicks")]
 public class AdClicks {
   public static AdClicks singleton;
   
-  private List<DateTime> clicks;
+  [XmlArray("clicks")]
+  [XmlArrayItem("DateTime", typeof(DateTime))]
+  public List<DateTime> clicks;
 
   private AdClicks() {
-    string[] split = PlayerPrefs.GetString("adClicks").Split(new char[] {});
-
-    clicks = new List<DateTime>();
-
-    try {
-      for (int i = 0; i < split.Length; ++i) {
-        getInstance().clicks.Add(Base64.decodeDateTime(split[i]));
-      }
-    } catch (Exception ex) {
-    }
   }
 
   public static void serialize() {
-    string serializedClicks = "";
-
-    for (int i = 0; i < getInstance().clicks.Count; ++i) {
-      serializedClicks += Base64.encodeDateTime(getInstance().clicks[i]);
-
-      if (i + 1 != getInstance().clicks.Count) {
-        serializedClicks += "\n";
-      }
-    }
-
-    PlayerPrefs.SetString("adClicks", serializedClicks);
+    getInstance().serializeToPlayerPrefs();
   }
   
   public static void addClick() {
     getInstance().clicks.Add(DateTime.Now);
+
+    serialize();
   }
 
   public static bool tooManyClicks() {
@@ -47,14 +34,61 @@ public class AdClicks {
       }
     }
 
+    serialize();
+
     return getInstance().clicks.Count >= 3;
+  }
+
+  public static bool wayTooManyClicks() {
+    if (tooManyClicks()) {
+      return getInstance().clicks.Count >= 5;
+    }
+
+    return false;
   }
 
   public static AdClicks getInstance() {
     if (singleton == null) {
-      singleton = new AdClicks();
+      try {
+        serializeFromPlayerPrefs();
+      } catch (Exception ex) {
+        singleton = new AdClicks();
+      }
+    }
+
+    if (singleton.clicks == null) {
+      singleton.clicks = new List<DateTime>();
     }
 
     return singleton;
+  }
+
+  private void serializeToPlayerPrefs() {
+    string clicksText = "";
+
+    for (int i = 0; i < clicks.Count; ++i) {
+      clicksText += clicks[i].ToString() + "\n";
+    }
+
+    PlayerPrefs.SetString("adClicks", clicksText);
+  }
+
+  // This function loads the local scores from the player preferences.
+  private static void serializeFromPlayerPrefs() {
+    if (singleton == null) {
+      singleton = new AdClicks();
+    }
+
+    try {
+      string clicksText = PlayerPrefs.GetString("adClicks");
+      string[] clicksSplit = clicksText.Split(new char[] {'\n'});
+
+      singleton.clicks = new List<DateTime>();
+
+      for (int i = 0; i < clicksSplit.Length; ++i) {
+        singleton.clicks.Add(DateTime.Parse(clicksSplit[i]));
+      }
+    } catch (Exception ex) {
+    }
   }
 }
