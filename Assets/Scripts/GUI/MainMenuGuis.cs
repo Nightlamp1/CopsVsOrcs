@@ -11,6 +11,7 @@ public class MainMenuGuis : MonoBehaviour {
   private float muteHeight = 0;
   private float textWidth  = 0;
   private float textHeight = 0;
+	private bool nameCheck = false; //if false user name is VALID if true user name is BLOCKED
 
 	public GUISkin customSkin;
 	public Texture2D startGame;
@@ -50,7 +51,7 @@ public class MainMenuGuis : MonoBehaviour {
 			toggleTextureMute = muteFalse;
 		}
     int vSpaceBetweenButtons = 1;
-    int hSpaceBeforeButton = 27;
+    int hSpaceBeforeButton = 25;
     int hSpaceAfterButton  = 2;
 
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
@@ -67,14 +68,12 @@ public class MainMenuGuis : MonoBehaviour {
 
     GUILayout.BeginHorizontal();
     flexibleSpaces(hSpaceBeforeButton);
-
     if (GUILayout.Button(startGame, buttonStyle, buttonOptions)) {
       SceneManager.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
     }
 
     flexibleSpaces(hSpaceAfterButton);
-    GUILayout.EndHorizontal();
-		    
+    GUILayout.EndHorizontal(); 
     flexibleSpaces(vSpaceBetweenButtons);
 
     GUILayout.BeginHorizontal();
@@ -92,13 +91,27 @@ public class MainMenuGuis : MonoBehaviour {
 
 	GUILayout.BeginVertical ();
 	flexibleSpaces (2);
-	GUILayout.Label ("Enter Name Here:");
+	/*
+	 * The following code will set the correct label string/color based on the boolean variable nameCheck
+	 * if nameCheck is false we assume the name to be valid (no curse words) and the GUI shows no change
+	 * if nameCheck is true we assume an invalid name. At this point the text string "Enter Name here:"
+	 * will change to "NAME IS INVALID" and font color/label color will turn to red.
+	 * All that is left is your logic to toggle the nameCheck variable!!!
+	 */
+	if (!nameCheck) {
+		GUI.color = Color.white;
+		GUILayout.Label ("Enter Name Here:");
+	} else if (nameCheck) {
+		GUI.color = Color.red;
+		GUILayout.Label ("NAME IS INVALID");
+	}
 
 	GameVars.getInstance().setPlayerName(
 	GUILayout.TextField(GameVars.getInstance().getPlayerName(), textOptions));
 	GUILayout.EndVertical ();
 		
 	flexibleSpaces(1);
+		GUI.color = Color.white;//used to reset the color to white (clear) after our name input gui element.
 	if (GUILayout.Button (toggleTextureMute, muteOptions)) {
 			AudioManager.getInstance().toggleMute();
 		}

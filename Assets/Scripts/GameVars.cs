@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class GameVars : MonoBehaviour 
@@ -13,13 +14,8 @@ public class GameVars : MonoBehaviour
 
   public const string VERSION_NUMBER  = "DEVELOPMENT";
 
-#if UNITY_WEBPLAYER
-  private const string DEFAULT_PLAYER_NAME = "WEB_PLAYER";
-#elif UNITY_STANDALONE || UNITY_EDITOR_WIN
-  private const string DEFAULT_PLAYER_NAME = "STANDALONE";
-#elif UNITY_ANDROID
-  private const string DEFAULT_PLAYER_NAME = "ANDROID";
-#endif
+  private const string DEFAULT_PLAYER_NAME = "";
+
   private static GameVars singleton;
   
   public Transform somePrefab;
@@ -32,6 +28,8 @@ public class GameVars : MonoBehaviour
   public int mOrcHits = 0;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
+
+  private bool validUsername = false;
 
   private AudioSource audioSource;
 
@@ -64,7 +62,33 @@ public class GameVars : MonoBehaviour
 
   public void setPlayerName(string playerName)
   {
-    PlayerPrefs.SetString("playerName", playerName);
+    if (playerName != PlayerPrefs.GetString("playerName")) {
+      StartCoroutine(validateUsername(playerName));
+      PlayerPrefs.SetString("playerName", playerName);
+    }
+  }
+
+  public IEnumerator validateUsername(string playerName) {
+    if (playerName.Length > 16) {
+      validUsername = false;
+    } else {
+      string url = "https://www.copsvsorcs.com/validate_username.php?username=" + WWW.EscapeURL(playerName);
+      WWW www = new WWW(url);
+
+      yield return www;
+
+      validUsername = false;
+
+      if (www.error == null) {
+        if (www.text == "PASS") {
+          validUsername = true;
+        }
+      }
+    }
+  }
+
+  public bool getValidUsername() {
+    return validUsername;
   }
 
   public string getPlayerName()
@@ -103,11 +127,11 @@ public class GameVars : MonoBehaviour
   }
 	
   public int getOrcHits() {
-	return mOrcHits;
+    return mOrcHits;
   }
 	
   public void incrementOrcHits(int inc) {
-	setOrcHits(getOrcHits() + inc);
+    setOrcHits(getOrcHits() + inc);
   }
 
   public void setUserHasStarted(bool userHasStarted) {
