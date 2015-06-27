@@ -130,6 +130,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: eb5b47b08880548c795ced5f38c9e001, type: 2}
+      propertyPath: dryRun
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb5b47b08880548c795ced5f38c9e001, type: 2}
   m_IsPrefabParent: 0
@@ -186,7 +190,7 @@ Transform:
   m_LocalScale: {x: 1.10629487, y: 1.24868953, z: 1.09534168}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!1001 &149305727
 Prefab:
   m_ObjectHideFlags: 0
@@ -272,7 +276,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1 &734928276
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +342,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &734928281
 Transform:
   m_ObjectHideFlags: 0
@@ -459,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3486ff4026990443ba987007e4f0f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  googleAnalytics: {fileID: 1042161902}
 --- !u!4 &892984844
 Transform:
   m_ObjectHideFlags: 0
@@ -470,7 +476,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
+--- !u!114 &1042161902 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400000, guid: eb5b47b08880548c795ced5f38c9e001,
+    type: 2}
+  m_PrefabInternal: {fileID: 41197154}
+  m_Script: {fileID: 11500000, guid: 9d19fcca4c3864274a625305eece3f48, type: 3}
 --- !u!1001 &1069494361
 Prefab:
   m_ObjectHideFlags: 0
@@ -548,7 +560,7 @@ Transform:
   - {fileID: 1069494362}
   - {fileID: 149305728}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1089631524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6626ddf0f44f40438832503da0bb41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleAnalytics: {fileID: 363348806}
+  googleAnalytics: {fileID: 0}
 --- !u!82 &1573768706 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 8233622, guid: 570721c83b2454547957551ac9f3b137,
@@ -656,7 +668,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1770374498}
   - 114: {fileID: 1770374497}
-  - 114: {fileID: 1770374499}
   - 114: {fileID: 1770374500}
   m_Layer: 0
   m_Name: AdManager
@@ -687,18 +698,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
---- !u!114 &1770374499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1770374496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b66b47217ae41342b62bc7613487563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_RootOrder: 5
 --- !u!114 &1770374500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6626ddf0f44f40438832503da0bb41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleAnalytics: {fileID: 363348806}
+  googleAnalytics: {fileID: 1042161902}
 --- !u!1 &2004502839
 GameObject:
   m_ObjectHideFlags: 0

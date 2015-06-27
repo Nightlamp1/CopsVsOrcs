@@ -13,6 +13,9 @@ public class AdManager : MonoBehaviour {
   private         InterstitialAd  interstitial;
   private         bool            preloaded;
 
+  private         int             adsShown;
+  private         int             adsFailedToLoad;
+
   // Initialize an InterstitialAd.
 #if UNITY_ANDROID
 	public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
@@ -51,6 +54,10 @@ public class AdManager : MonoBehaviour {
 
         getInterstitial().Show();
 
+        ++adsShown;
+        SceneManager.getInstance().googleAnalytics.LogEvent(
+          SystemInfo.operatingSystem, "InterstitialAdShown", "Shown", adsShown);
+
         StartCoroutine(resetFrequencyTimer());
 
         break;
@@ -70,6 +77,10 @@ public class AdManager : MonoBehaviour {
   public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args) {
     preloaded = false;
     frequencyTimerExpired = false;
+
+    ++adsFailedToLoad;
+    SceneManager.getInstance().googleAnalytics.LogEvent(
+      SystemInfo.operatingSystem, "AdFailedToLoad", "FailedToLoad", adsFailedToLoad);
   }
 
   // Returns a singleton instance of this class.
@@ -113,7 +124,7 @@ public class AdManager : MonoBehaviour {
     AdRequest request = adRequestBuilder.Build();
 
     // Load the interstitial with the request.
-    interstitial.LoadAd(request);
+    getInterstitial().LoadAd(request);
     print ("========== Preloaded interstitial ==========");
   }
 }
