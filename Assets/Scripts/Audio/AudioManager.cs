@@ -45,9 +45,12 @@ public class AudioManager : MonoBehaviour {
     sfxSourceBlocking = false;
     firingEnabled = false;
 
-    setMute(false);
-
 		DontDestroyOnLoad (gameObject);
+
+    if (PlayerPrefs.HasKey("muteState")) {
+      musicSource.mute = (PlayerPrefs.GetInt("muteState") != 0);
+      sfxSource.mute   = (PlayerPrefs.GetInt("muteState") != 0);
+    }
 	}
 
   void Update() {
@@ -81,6 +84,8 @@ public class AudioManager : MonoBehaviour {
   public void setMute(bool state) {
     musicSource.mute = state;
     sfxSource.mute   = state;
+
+    PlayerPrefs.SetInt("muteState", (state ? 1 : 0));
   }
 
   // Use this if you just need to toggle the mute state from what it is now (true/false) to
@@ -88,6 +93,8 @@ public class AudioManager : MonoBehaviour {
   public void toggleMute() {
     musicSource.mute = (!musicSource.mute);
     sfxSource.mute   = (!sfxSource.mute);
+
+    PlayerPrefs.SetInt("muteState", (sfxSource.mute ? 1 : 0));
   }
 
   public IEnumerator playMusic(AudioClip jingle, bool blocking = false, bool events = false) {
