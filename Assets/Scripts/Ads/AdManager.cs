@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using GoogleMobileAds.Api;
 
@@ -40,6 +41,10 @@ public class AdManager : MonoBehaviour {
     DontDestroyOnLoad(gameObject);
   }
 
+  void OnDestroy() {
+    AdClicks.serialize();
+  }
+
   void Start() {
     SceneManager.getInstance().SceneChanged += new SceneChangedEventHandler(SceneChange);
   }
@@ -47,7 +52,9 @@ public class AdManager : MonoBehaviour {
   private void SceneChange(int oldScene, int newScene) {
     switch (newScene) {
       case GameVars.GAME_OVER_SCENE:
-        if (!frequencyTimerExpired || !preloaded) return;
+        if (!frequencyTimerExpired || !preloaded || AdClicks.tooManyClicks()) {
+          return;
+        }
 
         frequencyTimerExpired = false;
         preloaded = false;
@@ -74,15 +81,6 @@ public class AdManager : MonoBehaviour {
     frequencyTimerExpired = true;
   }
 
-  public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args) {
-    preloaded = false;
-    frequencyTimerExpired = false;
-
-    ++adsFailedToLoad;
-    SceneManager.getInstance().googleAnalytics.LogEvent(
-      SystemInfo.operatingSystem, "AdFailedToLoad", "FailedToLoad", adsFailedToLoad);
-  }
-
   // Returns a singleton instance of this class.
   public static AdManager getInstance() {
     if (singleton == null) {
@@ -96,7 +94,25 @@ public class AdManager : MonoBehaviour {
     if (interstitial == null) {
       interstitial = new InterstitialAd(interstitialAdUnitId);
 
-      interstitial.AdFailedToLoad += HandleAdFailedToLoad;
+      interstitial.AdLeftApplication += delegate(object sender, EventArgs args) {
+        AdClicks.addClick();
+
+        // If someone is just hitting the same ad over and over again, this can happen, and in order to
+        //  protect us, I'll just quit the app at this point.  They can relaunch, but won't see anymore
+        //  ads until they drop below the tooManyClicks() threshold.
+        if (AdClicks.wayTooManyClicks()) {
+          Application.Quit();
+        }
+      };
+
+      interstitial.AdFailedToLoad += delegate(object sender, AdFailedToLoadEventArgs args) {
+        preloaded = false;
+        frequencyTimerExpired = false;
+
+        ++adsFailedToLoad;
+        SceneManager.getInstance().googleAnalytics.LogEvent(
+          SystemInfo.operatingSystem, "AdFailedToLoad", args.Message, adsFailedToLoad);
+      };
     }
 
     return interstitial;
@@ -122,6 +138,12 @@ public class AdManager : MonoBehaviour {
     }
 
     AdRequest request = adRequestBuilder.Build();
+  
+    if (interstitial != null) {
+      interstitial.Destroy();
+    }
+
+    interstitial = null;
 
     // Load the interstitial with the request.
     getInterstitial().LoadAd(request);
