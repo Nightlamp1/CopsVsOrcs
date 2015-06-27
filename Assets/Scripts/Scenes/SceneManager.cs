@@ -41,5 +41,11 @@ public class SceneManager : MonoBehaviour {
 
     currentScene = newScene;
   }
+
+  // This wraps changeScene as a static function and is just intended to simplify usage of
+  //  SceneManager
+  public static void LoadLevel(int newLevel) {
+    getInstance().changeScene(newLevel);
+  }
 }
 

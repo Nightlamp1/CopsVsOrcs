@@ -8,21 +8,22 @@ public delegate void SFXEndedEventHandler     (float sfxLength,   bool blocking)
 
 
 public class AudioManager : MonoBehaviour {
-  private         int         lastLoadedLevel;
-  public          AudioSource musicSource;
-  public          AudioSource sfxSource;
-  public          AudioClip   mainMenuJingle;
-  public          AudioClip   endlessRunJingle;
-  public          AudioClip   deathJingle;
-  public          AudioClip   gameOverJingle;
-  public          AudioClip   creditsJingle;
-  public          AudioClip[] firingSounds;
+  private         int           lastLoadedLevel;
+  public          AudioSource   musicSource;
+  public          AudioSource   sfxSource;
+  public          AudioClip     mainMenuJingle;
+  public          AudioClip     endlessRunJingle;
+  public          AudioClip     deathJingle;
+  public          AudioClip     gameOverJingle;
+  public          AudioClip     creditsJingle;
+  public          AudioClip[]   firingSounds;
 
-  private static  bool        initialized = false;
-  private static  AudioManager singleton;
+  private static  bool          initialized = false;
+  private static  AudioManager  singleton;
 
-  private         bool        musicSourceBlocking;
-  private         bool        sfxSourceBlocking;
+  private         bool          musicSourceBlocking;
+  private         bool          sfxSourceBlocking;
+  private         bool          firingEnabled;
 
   public event MusicStartedEventHandler MusicStarted;
   public event MusicEndedEventHandler   MusicEnded;
@@ -42,6 +43,9 @@ public class AudioManager : MonoBehaviour {
 
     musicSourceBlocking = false;
     sfxSourceBlocking = false;
+    firingEnabled = false;
+
+    setMute(false);
 
 		DontDestroyOnLoad (gameObject);
 	}
@@ -53,16 +57,16 @@ public class AudioManager : MonoBehaviour {
 
     switch (Application.loadedLevel) {
       case GameVars.MAIN_MENU_SCENE:
-        playMusic(mainMenuJingle);
+        StartCoroutine(playMusic(mainMenuJingle));
         break;
       case GameVars.ENDLESS_RUN_SCENE:
-        playMusic(endlessRunJingle);
+        StartCoroutine(playMusic(endlessRunJingle));
         break;
       case GameVars.GAME_OVER_SCENE:
-        playMusic(gameOverJingle);
+        StartCoroutine(playMusic(gameOverJingle));
         break;
       case GameVars.CREDITS_SCENE:
-        playMusic(creditsJingle);
+        StartCoroutine(playMusic(creditsJingle));
         break;
       default:
         break;
@@ -86,8 +90,8 @@ public class AudioManager : MonoBehaviour {
     sfxSource.mute   = (!sfxSource.mute);
   }
 
-  public IEnumerable playMusic(AudioClip jingle, bool blocking = false) {
-    if (jingle == null || musicSourceBlocking) {
+  public IEnumerator playMusic(AudioClip jingle, bool blocking = false) {
+    if (jingle == null || (musicSourceBlocking && musicSource.isPlaying)) {
 
     } else {
       musicSourceBlocking = blocking;
@@ -105,8 +109,8 @@ public class AudioManager : MonoBehaviour {
     }
   }
 
-  public IEnumerable playSFX(AudioClip jingle, bool blocking = false) {
-    if (jingle == null || sfxSourceBlocking) {
+  public IEnumerator playSFX(AudioClip jingle, bool blocking = false) {
+    if (jingle == null || (sfxSourceBlocking && sfxSource.isPlaying)) {
 
     } else {
       sfxSourceBlocking = blocking;
@@ -126,11 +130,15 @@ public class AudioManager : MonoBehaviour {
 
   // Call this method to trigger a firing sound
   public void playFiringSound() {
-    playSFX(firingSounds[Random.Range(0, firingSounds.Length - 1)]);
+    if (!firingEnabled) return;
+
+    StartCoroutine(playSFX(firingSounds[Random.Range(0, firingSounds.Length - 1)]));
   }
 
   public void playDeathJingle() {
-    playSFX(deathJingle, true);
+    musicSource.Stop();
+
+    StartCoroutine(playSFX(deathJingle, true));
   }
 
   public void setMusicBlocking(bool blocking) {
@@ -139,5 +147,13 @@ public class AudioManager : MonoBehaviour {
 
   public void setSFXBlocking(bool blocking) {
     sfxSourceBlocking = blocking;
+  }
+
+  public void disableFiring() {
+    firingEnabled = false;
+  }
+
+  public void enableFiring() {
+    firingEnabled = true;
   }
 }
