@@ -52,6 +52,9 @@ public class GameVars : MonoBehaviour
 
     if (getPlayerName() == null || getPlayerName() == "") {
       setPlayerName(DEFAULT_PLAYER_NAME);
+    } else {
+      validUsername = true;
+      validateUsername(getPlayerName());
     }
   }
 
