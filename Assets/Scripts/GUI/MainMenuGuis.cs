@@ -7,6 +7,8 @@ public class MainMenuGuis : MonoBehaviour {
 
   private float buttonWidth  = 0;
   private float buttonHeight = 0;
+  private float muteWidth  = 0;
+  private float muteHeight = 0;
   private float textWidth  = 0;
   private float textHeight = 0;
 
@@ -14,6 +16,9 @@ public class MainMenuGuis : MonoBehaviour {
 	public Texture2D startGame;
 	public Texture2D optionButton;
 	public Texture2D creditsButton;
+	public Texture2D muteFalse;
+	public Texture2D muteTrue;
+	private Texture2D toggleTextureMute;
 
 	// Use this for initialization
 	void Awake () 
@@ -24,8 +29,11 @@ public class MainMenuGuis : MonoBehaviour {
   void Start() {
     buttonWidth = Screen.width * .3f;
     buttonHeight = Screen.height * .15f;
+	muteWidth = Screen.width * .3f;
+	muteHeight = Screen.height * .15f;
 	textWidth = Screen.width * .3f;
 	textHeight = Screen.height * .10f;
+	//AudioManager.getInstance ().setMute (false);
   }
 
   void flexibleSpaces(int num) {
@@ -37,12 +45,18 @@ public class MainMenuGuis : MonoBehaviour {
 	// Update is called once per frame
 	void OnGUI()
 	{
+		if (AudioManager.getInstance ().musicSource.mute) {
+			toggleTextureMute = muteTrue;
+		} else if (!AudioManager.getInstance ().musicSource.mute) {
+			toggleTextureMute = muteFalse;
+		}
     int vSpaceBetweenButtons = 1;
     int hSpaceBeforeButton = 27;
     int hSpaceAfterButton  = 2;
 
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
 	GUILayoutOption[] textOptions = {GUILayout.Width(textWidth), GUILayout.Height(textHeight)};
+	GUILayoutOption[] muteOptions = {GUILayout.Width(muteWidth), GUILayout.Height(muteHeight)};
     GUIStyle buttonStyle = new GUIStyle();
 	GUI.skin = customSkin;
 	GUI.skin.textField.fontSize = (int)(Screen.height * 0.05f);
@@ -75,7 +89,7 @@ public class MainMenuGuis : MonoBehaviour {
     GUILayout.EndHorizontal();
 
 	GUILayout.BeginHorizontal();
-	flexibleSpaces(2);
+	flexibleSpaces(10);
 
 	GUILayout.BeginVertical ();
 	flexibleSpaces (2);
@@ -85,14 +99,19 @@ public class MainMenuGuis : MonoBehaviour {
 	GUILayout.TextField(GameVars.getInstance().getPlayerName(), textOptions));
 	GUILayout.EndVertical ();
 		
-	flexibleSpaces(hSpaceAfterButton);
+	flexibleSpaces(1);
+	if (GUILayout.Button (toggleTextureMute, muteOptions)) {
+			AudioManager.getInstance().toggleMute();
+		}
 	GUILayout.EndHorizontal();
 		
 	flexibleSpaces(vSpaceBetweenButtons);
     
 	flexibleSpaces(0);
+	
 
     GUILayout.Label("v" + GameVars.VERSION_NUMBER);
+
 
     GUILayout.EndArea();
 	}
