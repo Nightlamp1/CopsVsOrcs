@@ -166,25 +166,32 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
 
-		flexibleSpaces (2);//vert distance between score prompt and highscore board
+		flexibleSpaces (20);//vert distance between score prompt bottom of screen
 
+
+		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
+		GUILayout.BeginVertical ();
+		flexibleSpaces (7);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
 		GUILayout.Label (highScoreboard.getNames(), BackgroundOptions);
         flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
+		flexibleSpaces (3);
+		GUILayout.EndVertical ();
+		GUILayout.EndArea ();
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
-		flexibleSpaces (10);
+		flexibleSpaces (7);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
 		GUI.skin = labelSkinOverlay;
-    GUI.skin.label.fontSize = (int) (Screen.height*0.0389f);
+    GUI.skin.label.fontSize = (int) (Screen.height*0.038f);
 		GUILayout.Label (highScoreboard.getScores(), BackgroundOptions);
 		GUI.skin = gameOverSkin;
 		flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
-		flexibleSpaces (2);
+		flexibleSpaces (3);
 		GUILayout.EndVertical ();
 		GUILayout.EndArea ();
 
@@ -219,7 +226,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
-		flexibleSpaces (10);
+		flexibleSpaces (20);
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (4);
 		if (GUILayout.Button (Twitter, GUIStyle.none, shareButtonOptions)) {
