@@ -74,10 +74,12 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		
 		score = Mathf.Round(GameVars.getInstance().getScore());
 		
-		up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
-		                   "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
-		                   "&score=" + WWW.EscapeURL(score.ToString()) +
-		                   "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString()));
+    if (GameVars.getInstance().getValidUsername()) {
+  		up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
+  		                   "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
+  		                   "&score=" + WWW.EscapeURL(score.ToString()) +
+  		                   "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString()));
+    }
 		
 		GameObject.Find ("HeroCop(Clone)").transform.position = new Vector3 (-6f, -3.4f, 0f);
 		GameVars.getInstance().setUserHasStarted(false);
