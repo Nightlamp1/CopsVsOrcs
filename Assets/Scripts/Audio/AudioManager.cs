@@ -138,7 +138,12 @@ public class AudioManager : MonoBehaviour {
   public void playDeathJingle() {
     musicSource.Stop();
 
-    StartCoroutine(playSFX(deathJingle, true, true));
+    if (sfxSource.mute) {
+      // We don't want the muted players to have to wait for the death jingle to finish.
+      SFXEnded(deathJingle.length, true);
+    } else {
+      StartCoroutine(playSFX(deathJingle, true, true));
+    }
   }
 
   public void setMusicBlocking(bool blocking) {
