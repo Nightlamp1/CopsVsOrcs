@@ -90,39 +90,39 @@ public class AudioManager : MonoBehaviour {
     sfxSource.mute   = (!sfxSource.mute);
   }
 
-  public IEnumerator playMusic(AudioClip jingle, bool blocking = false) {
+  public IEnumerator playMusic(AudioClip jingle, bool blocking = false, bool events = false) {
     if (jingle == null || (musicSourceBlocking && musicSource.isPlaying)) {
 
     } else {
       musicSourceBlocking = blocking;
 
-      if (MusicStarted != null) MusicStarted(jingle.length, blocking);
+      if (MusicStarted != null && events) MusicStarted(jingle.length, blocking);
 
       musicSource.clip = jingle;
       musicSource.Play();
 
       yield return new WaitForSeconds(jingle.length);
 
-      if (MusicEnded != null) MusicEnded(jingle.length, blocking);
+      if (MusicEnded != null && events) MusicEnded(jingle.length, blocking);
 
       musicSourceBlocking = false;
     }
   }
 
-  public IEnumerator playSFX(AudioClip jingle, bool blocking = false) {
+  public IEnumerator playSFX(AudioClip jingle, bool blocking = false, bool events = false) {
     if (jingle == null || (sfxSourceBlocking && sfxSource.isPlaying)) {
 
     } else {
       sfxSourceBlocking = blocking;
     
-      if (SFXStarted != null) SFXStarted(jingle.length, blocking);
+      if (SFXStarted != null && events) SFXStarted(jingle.length, blocking);
 
       sfxSource.clip = jingle;
       sfxSource.Play();
 
       yield return new WaitForSeconds(jingle.length);
 
-      if (SFXEnded != null) SFXEnded(jingle.length, blocking);
+      if (SFXEnded != null && events) SFXEnded(jingle.length, blocking);
 
       sfxSourceBlocking = false;
     }
@@ -138,7 +138,7 @@ public class AudioManager : MonoBehaviour {
   public void playDeathJingle() {
     musicSource.Stop();
 
-    StartCoroutine(playSFX(deathJingle, true));
+    StartCoroutine(playSFX(deathJingle, true, true));
   }
 
   public void setMusicBlocking(bool blocking) {
@@ -147,6 +147,10 @@ public class AudioManager : MonoBehaviour {
 
   public void setSFXBlocking(bool blocking) {
     sfxSourceBlocking = blocking;
+  }
+
+  public void setFiring(bool pFiringEnabled) {
+    firingEnabled = pFiringEnabled;
   }
 
   public void disableFiring() {

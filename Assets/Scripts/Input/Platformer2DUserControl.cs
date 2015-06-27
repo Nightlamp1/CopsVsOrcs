@@ -31,8 +31,10 @@ public class Platformer2DUserControl : MonoBehaviour
 
   void Update ()
   {
-    // Don't do anything if we're not on the Endless Run Level.
-    if (Application.loadedLevel != GameVars.ENDLESS_RUN_SCENE) return;
+    // Don't do anything if we're not on the Endless Run Level
+    //  or if the player is dead.
+    if (Application.loadedLevel != GameVars.ENDLESS_RUN_SCENE || 
+        !PlayerManager.getInstance().isPlayerAlive()) return;
 
     // Read the jump input in Update so button presses aren't missed.
     if (Input.touchCount > 0)
