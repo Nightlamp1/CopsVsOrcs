@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using GoogleMobileAds.Api;
 
@@ -40,6 +41,10 @@ public class AdManager : MonoBehaviour {
     DontDestroyOnLoad(gameObject);
   }
 
+  void OnDestroy() {
+    AdClicks.serialize();
+  }
+
   void Start() {
     SceneManager.getInstance().SceneChanged += new SceneChangedEventHandler(SceneChange);
   }
@@ -47,7 +52,7 @@ public class AdManager : MonoBehaviour {
   private void SceneChange(int oldScene, int newScene) {
     switch (newScene) {
       case GameVars.GAME_OVER_SCENE:
-        if (!frequencyTimerExpired || !preloaded) return;
+        if (!frequencyTimerExpired || !preloaded || AdClicks.tooManyClicks()) return;
 
         frequencyTimerExpired = false;
         preloaded = false;
@@ -57,6 +62,8 @@ public class AdManager : MonoBehaviour {
         ++adsShown;
         SceneManager.getInstance().googleAnalytics.LogEvent(
           SystemInfo.operatingSystem, "InterstitialAdShown", "Shown", adsShown);
+
+        AdClicks.addClick();
 
         StartCoroutine(resetFrequencyTimer());
 
@@ -72,6 +79,9 @@ public class AdManager : MonoBehaviour {
     yield return new WaitForSeconds(DEFAULT_MIN_SECONDS_BETWEEN_ADS);
 
     frequencyTimerExpired = true;
+  }
+
+  public void HandleAdOpened(object sender, EventArgs args) {
   }
 
   public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args) {
@@ -96,6 +106,7 @@ public class AdManager : MonoBehaviour {
     if (interstitial == null) {
       interstitial = new InterstitialAd(interstitialAdUnitId);
 
+      interstitial.AdOpened += HandleAdOpened;
       interstitial.AdFailedToLoad += HandleAdFailedToLoad;
     }
 
