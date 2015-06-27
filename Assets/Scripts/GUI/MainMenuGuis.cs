@@ -55,7 +55,7 @@ public class MainMenuGuis : MonoBehaviour {
     flexibleSpaces(hSpaceBeforeButton);
 
     if (GUILayout.Button(startGame, buttonStyle, buttonOptions)) {
-      Application.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
+      SceneManager.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
     }
 
     flexibleSpaces(hSpaceAfterButton);
@@ -67,7 +67,7 @@ public class MainMenuGuis : MonoBehaviour {
     flexibleSpaces(hSpaceBeforeButton);
     
     if (GUILayout.Button(creditsButton, buttonStyle, buttonOptions)) {
-      Application.LoadLevel(GameVars.CREDITS_SCENE);
+      SceneManager.LoadLevel(GameVars.CREDITS_SCENE);
     }
 
     flexibleSpaces(hSpaceAfterButton);
