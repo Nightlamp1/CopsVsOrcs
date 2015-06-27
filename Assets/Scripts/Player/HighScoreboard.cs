@@ -28,12 +28,13 @@ public class HighScoreboard {
     string names = "";
 
     for (int i = 0; i < highScoreEntries.Count; ++i) {
-      names += (i + 1) + " " + highScoreEntries[i].playerName;
-
-      if (i + 1 < highScoreEntries.Count) {
-        names += "\n";
-      }
+      names += (i + 1) + " " + highScoreEntries[i].playerName + "\n";
     }
+
+    for (int i = 0; i < 10 - highScoreEntries.Count; ++i) {
+      names += "\n";
+    }
+
 
     return names;
   }
@@ -42,10 +43,7 @@ public class HighScoreboard {
     string scores = "";
 
     for (int i = 0; i < highScoreEntries.Count; ++i) {
-      scores += 
-        (i + 1) + ". " + 
-        highScoreEntries[i].playerName + "\t\t" + 
-        "$" + highScoreEntries[i].score + "\n";
+      scores += "$" + highScoreEntries[i].score + "\n";
     }
 
     for (int i = 0; i < 10 - highScoreEntries.Count; ++i) {
