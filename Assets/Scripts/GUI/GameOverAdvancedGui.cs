@@ -45,8 +45,12 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	public Texture2D Twitter;
 	public Texture2D Facebook;
 	public Texture2D GameOverLabel;
-	public Texture2D GlobalButtonOn;//need off asset
-	public Texture2D LocalButtonOn;//need off asset
+	public Texture2D GlobalButtonOn;
+	public Texture2D LocalButtonOn;
+	public Texture2D GlobalButtonOff;
+	public Texture2D LocalButtonOff;
+	private Texture2D GlobalButtonToggle;
+	private Texture2D LocalButtonToggle;
 	
 	void flexibleSpaces(int num) {
 		for (int i = 0; i < num; ++i) {
@@ -57,6 +61,8 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	void Start () 
 	{
     highScoreboard = HighScores.getInstance().localScores;
+		GlobalButtonToggle = GlobalButtonOff;
+		LocalButtonToggle = LocalButtonOn;
 	    buttonWidth = Screen.width * .2f;
 		buttonHeight = Screen.height * .1f;
 		rateWidth = Screen.width * .2f;
@@ -173,13 +179,17 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
 
-		if (GUILayout.Button (GlobalButtonOn, scoreButtonOptions)) {
+		if (GUILayout.Button (GlobalButtonToggle, scoreButtonOptions)) {
+			GlobalButtonToggle = GlobalButtonOn;
+			LocalButtonToggle = LocalButtonOff;
       highScoreboard = HighScores.getInstance().globalScores;
     }
     
 		GUILayout.Box (DonutMasters, goLabelOptions);
 
-		if (GUILayout.Button (LocalButtonOn, scoreButtonOptions)) {
+		if (GUILayout.Button (LocalButtonToggle, scoreButtonOptions)) {
+			GlobalButtonToggle = GlobalButtonOff;
+			LocalButtonToggle = LocalButtonOn;
       highScoreboard = HighScores.getInstance().localScores;
     }
 
