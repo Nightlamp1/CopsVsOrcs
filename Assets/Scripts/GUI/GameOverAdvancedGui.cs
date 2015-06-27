@@ -25,6 +25,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	private float labelHeight = 0f;
 	public GUISkin gameOverSkin;
 	public GUISkin labelSkin;
+	public GUISkin labelSkinOverlay;
 
   private HighScoreboard highScoreboard;
 	
@@ -169,9 +170,26 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
 		GUILayout.BeginHorizontal ();
 		flexibleSpaces (1);
-		GUILayout.Label (highScoreboard.getScores(), BackgroundOptions);
-    flexibleSpaces (1);
+		GUI.skin.label.alignment = 
+		GUILayout.Label (highScoreboard.getScores(), BackgroundOptions);//HANK PUT NAME FIELD HERE
+        flexibleSpaces (1);
 		GUILayout.EndHorizontal ();
+		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
+		GUILayout.BeginVertical ();
+		flexibleSpaces (9);
+		GUILayout.BeginHorizontal ();
+		flexibleSpaces (1);
+		GUI.skin = labelSkinOverlay;
+		GUILayout.Label ("$ Test", BackgroundOptions);//HANK PUT SCORE FIELD HERE
+		GUI.skin = gameOverSkin;
+		flexibleSpaces (1);
+		GUILayout.EndHorizontal ();
+		flexibleSpaces (2);
+		GUILayout.EndVertical ();
+		GUILayout.EndArea ();
+
+
+
 
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
