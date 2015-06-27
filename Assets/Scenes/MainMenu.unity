@@ -539,7 +539,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1770374498}
   - 114: {fileID: 1770374497}
-  - 114: {fileID: 1770374499}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
@@ -570,17 +569,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &1770374499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1770374496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b66b47217ae41342b62bc7613487563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2004502839
 GameObject:
   m_ObjectHideFlags: 0

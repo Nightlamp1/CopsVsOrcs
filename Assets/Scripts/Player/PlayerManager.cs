@@ -24,8 +24,6 @@ public class PlayerManager : MonoBehaviour {
   }
 
   public void AfterSceneChange(int oldScene, int newScene) {
-    Debug.Log("Scene changed.");
-
     if (newScene != GameVars.ENDLESS_RUN_SCENE) {
       return;
     }
