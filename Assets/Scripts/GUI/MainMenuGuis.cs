@@ -7,6 +7,8 @@ public class MainMenuGuis : MonoBehaviour {
 
   private float buttonWidth  = 0;
   private float buttonHeight = 0;
+  private float textWidth  = 0;
+  private float textHeight = 0;
 
 	public GUISkin customSkin;
 	public Texture2D startGame;
@@ -22,6 +24,8 @@ public class MainMenuGuis : MonoBehaviour {
   void Start() {
     buttonWidth = Screen.width * .3f;
     buttonHeight = Screen.height * .15f;
+	textWidth = Screen.width * .3f;
+	textHeight = Screen.height * .10f;
   }
 
   void flexibleSpaces(int num) {
@@ -38,14 +42,11 @@ public class MainMenuGuis : MonoBehaviour {
     int hSpaceAfterButton  = 2;
 
     GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
-    GUIStyle textStyle   = GUI.skin.GetStyle("TextField");
-    //GUIStyle buttonStyle = GUI.skin.GetStyle("Button");
+	GUILayoutOption[] textOptions = {GUILayout.Width(textWidth), GUILayout.Height(textHeight)};
     GUIStyle buttonStyle = new GUIStyle();
-
-
-    //buttonStyle.fixedHeight = buttonHeight;
-    //buttonStyle.fixedWidth = buttonWidth;
-    textStyle.fontSize = 30;
+	GUI.skin = customSkin;
+	GUI.skin.textField.fontSize = (int)(Screen.height * 0.05f);
+	GUI.skin.label.fontSize = (int)(Screen.height * 0.05f);
 
     GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
@@ -75,9 +76,14 @@ public class MainMenuGuis : MonoBehaviour {
 
 	GUILayout.BeginHorizontal();
 	flexibleSpaces(2);
-		
+
+	GUILayout.BeginVertical ();
+	flexibleSpaces (2);
+	GUILayout.Label ("Enter Name Here:");
+
 	GameVars.getInstance().setPlayerName(
-	GUILayout.TextField(GameVars.getInstance().getPlayerName(), textStyle, buttonOptions));
+	GUILayout.TextField(GameVars.getInstance().getPlayerName(), textOptions));
+	GUILayout.EndVertical ();
 		
 	flexibleSpaces(hSpaceAfterButton);
 	GUILayout.EndHorizontal();
