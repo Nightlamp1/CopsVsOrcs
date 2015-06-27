@@ -319,6 +319,8 @@ MonoBehaviour:
   startGame: {fileID: 2800000, guid: d777b847c3658fa4e8587256cb2cf012, type: 3}
   optionButton: {fileID: 2800000, guid: ac5a4a3ec84808f48b8b24b88101ae49, type: 3}
   creditsButton: {fileID: 2800000, guid: a3afb16676d5313448270c1b58f569c8, type: 3}
+  muteFalse: {fileID: 2800000, guid: 8751a8e6be8e33340b8840239319c8e8, type: 3}
+  muteTrue: {fileID: 2800000, guid: 62f8b33940ad0c6419d461cebee37409, type: 3}
 --- !u!1 &748285897
 GameObject:
   m_ObjectHideFlags: 0
