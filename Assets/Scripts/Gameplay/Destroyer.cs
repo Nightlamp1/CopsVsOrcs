@@ -7,7 +7,7 @@ public class Destroyer : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
-			Application.LoadLevel(GameVars.GAME_OVER_SCENE);
+      PlayerManager.getInstance().killPlayer();
 			return;
 		}
 
