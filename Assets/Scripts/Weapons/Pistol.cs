@@ -52,7 +52,7 @@ public class Pistol : Activateable {
       GameObject b;
 
       b = (GameObject) Instantiate(Resources.Load("Prefabs/BulletPrefab"),
-                                   gameObject.transform.position + (gameObject.transform.right) - gameObject.transform.up * 0.4f,
+                                   gameObject.transform.position + (gameObject.transform.right*0.5f) - gameObject.transform.up * 0.1f,
                                    gameObject.transform.rotation);
 
       b.transform.name = "bullet(Clone)";
