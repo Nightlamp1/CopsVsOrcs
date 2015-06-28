@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .100000001
-  DayTime: {fileID: 2800000, guid: c7d748d3477ccad428b56c58e7862b87, type: 3}
-  NightTime: {fileID: 2800000, guid: 1b8f090aa425f0f43ad6d9c36ffbac54, type: 3}
+  DayTime: {fileID: 2800000, guid: ce899ee0565873f48b03ed048eb79a7f, type: 3}
+  NightTime: {fileID: 2800000, guid: 926c808b0a0649d43a4165f813a6727b, type: 3}
 --- !u!4 &804673650 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: d842f7bbf2c3f0645ba311eb7fd5b9ac, type: 2}
