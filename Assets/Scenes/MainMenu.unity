@@ -342,7 +342,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &734928281
 Transform:
   m_ObjectHideFlags: 0
@@ -653,7 +652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6626ddf0f44f40438832503da0bb41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleAnalytics: {fileID: 0}
 --- !u!82 &1573768706 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 8233622, guid: 570721c83b2454547957551ac9f3b137,
@@ -710,7 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6626ddf0f44f40438832503da0bb41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleAnalytics: {fileID: 1042161902}
 --- !u!1 &2004502839
 GameObject:
   m_ObjectHideFlags: 0
