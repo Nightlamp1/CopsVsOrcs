@@ -8,6 +8,8 @@ public class BackgroundScroll : MonoBehaviour {
   public float speed = 0;
 	public Texture2D DayTime;
 	public Texture2D NightTime;
+	private Material currentBackground;
+	private float offset;
   
  void Start(){
 		int RandScreen = Random.Range (0,2);
@@ -19,19 +21,15 @@ public class BackgroundScroll : MonoBehaviour {
 		} else {
 			GetComponent<MeshRenderer>().material.mainTexture = NightTime;
 		}
+
+		currentBackground = GetComponent<MeshRenderer> ().material;
 	}
 
 
   // Update is called once per frame
-  void Update () {
-    try {
-      if (GameVars.getInstance().getUserHasStarted()) {
-        GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (Time.time * speed, 0f);
-      }
-    } catch (System.Exception ex) {
-      // I'm not certain what's generating this Exception, we'll continue to ignore it.
-      //  But we have to do something with it in order for it to not complain.
-
-    }
+  void FixedUpdate () {
+		offset += speed * Time.deltaTime;
+		offset = offset % 1.0f;
+		currentBackground.mainTextureOffset = new Vector2 (offset, 0);
   }
 }
