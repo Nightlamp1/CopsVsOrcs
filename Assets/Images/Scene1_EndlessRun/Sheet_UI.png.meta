@@ -1,0 +1,990 @@
+fileFormatVersion: 2
+guid: a801fa65aed1a8b4a954a8a0c272dacb
+timeCreated: 1436726006
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sheet_UI_0
+    21300002: Sheet_UI_1
+    21300004: Sheet_UI_2
+    21300006: Sheet_UI_3
+    21300008: Sheet_UI_4
+    21300010: Sheet_UI_5
+    21300012: Sheet_UI_6
+    21300014: Sheet_UI_7
+    21300016: Sheet_UI_8
+    21300018: Sheet_UI_9
+    21300020: Sheet_UI_10
+    21300022: Sheet_UI_11
+    21300024: Sheet_UI_12
+    21300026: Sheet_UI_13
+    21300028: Sheet_UI_14
+    21300030: Sheet_UI_15
+    21300032: Sheet_UI_16
+    21300034: Sheet_UI_17
+    21300036: Sheet_UI_18
+    21300038: Sheet_UI_19
+    21300040: Sheet_UI_20
+    21300042: Sheet_UI_21
+    21300044: Sheet_UI_22
+    21300046: Sheet_UI_23
+    21300048: Sheet_UI_24
+    21300050: Sheet_UI_25
+    21300052: Sheet_UI_26
+    21300054: Sheet_UI_27
+    21300056: Sheet_UI_28
+    21300058: Sheet_UI_29
+    21300060: Sheet_UI_30
+    21300062: Sheet_UI_31
+    21300064: Sheet_UI_32
+    21300066: Sheet_UI_33
+    21300068: Sheet_UI_34
+    21300070: Sheet_UI_35
+    21300072: Sheet_UI_36
+    21300074: Sheet_UI_37
+    21300076: Sheet_UI_38
+    21300078: Sheet_UI_39
+    21300080: Sheet_UI_40
+    21300082: Sheet_UI_41
+    21300084: Sheet_UI_42
+    21300086: Sheet_UI_43
+    21300088: Sheet_UI_44
+    21300090: Sheet_UI_45
+    21300092: Sheet_UI_46
+    21300094: Sheet_UI_47
+    21300096: Sheet_UI_48
+    21300098: Sheet_UI_49
+    21300100: Sheet_UI_50
+    21300102: Sheet_UI_51
+    21300104: Sheet_UI_52
+    21300106: Sheet_UI_53
+    21300108: Sheet_UI_54
+    21300110: Sheet_UI_55
+    21300112: Sheet_UI_56
+    21300114: Sheet_UI_57
+    21300116: Sheet_UI_58
+    21300118: Sheet_UI_59
+    21300120: Sheet_UI_60
+    21300122: Sheet_UI_61
+    21300124: Sheet_UI_62
+    21300126: Sheet_UI_63
+    21300128: Sheet_UI_64
+    21300130: Sheet_UI_65
+    21300132: Sheet_UI_66
+    21300134: Sheet_UI_67
+    21300136: Sheet_UI_68
+    21300138: Sheet_UI_69
+    21300140: Sheet_UI_70
+    21300142: Sheet_UI_71
+    21300144: Sheet_UI_72
+    21300146: Sheet_UI_73
+    21300148: Sheet_UI_74
+    21300150: Sheet_UI_75
+    21300152: Sheet_UI_76
+    21300154: Sheet_UI_77
+    21300156: Sheet_UI_78
+    21300158: Sheet_UI_79
+    21300160: Sheet_UI_80
+    21300162: Sheet_UI_81
+    21300164: Sheet_UI_82
+    21300166: Sheet_UI_83
+    21300168: Sheet_UI_84
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sheet_UI_0
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 2353
+        width: 500
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_1
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 2259
+        width: 587
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_2
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 2259
+        width: 586
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_3
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 2259
+        width: 585
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_4
+      rect:
+        serializedVersion: 2
+        x: 2779
+        y: 2716
+        width: 583
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 2098
+        width: 325
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_6
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 2098
+        width: 324
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_7
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 2098
+        width: 327
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_8
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 2098
+        width: 325
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_9
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 2181
+        width: 583
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_10
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1969
+        width: 332
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_11
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 1969
+        width: 325
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_12
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 2148
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_13
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 1781
+        width: 290
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_14
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 2109
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_15
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1964
+        width: 327
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_16
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1964
+        width: 325
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_17
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 2069
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_18
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1929
+        width: 705
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_19
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 2028
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_20
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1674
+        width: 413
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_21
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1988
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_22
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1949
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_23
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1831
+        width: 327
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_24
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1831
+        width: 325
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_25
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 1711
+        width: 198
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_26
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1711
+        width: 199
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_27
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1908
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_28
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1868
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_29
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1829
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_30
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1650
+        width: 149
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_31
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1650
+        width: 149
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_32
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1650
+        width: 146
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_33
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1650
+        width: 148
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_34
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1788
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_35
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1504
+        width: 264
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_36
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 1615
+        width: 182
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_37
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1748
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_38
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1709
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_39
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1670
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_40
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 1449
+        width: 198
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_41
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1449
+        width: 199
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_42
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 1582
+        width: 125
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_43
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 1591
+        width: 118
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_44
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1628
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_45
+      rect:
+        serializedVersion: 2
+        x: 3770
+        y: 1582
+        width: 124
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_46
+      rect:
+        serializedVersion: 2
+        x: 3897
+        y: 1580
+        width: 155
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_47
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1475
+        width: 149
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_48
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1475
+        width: 149
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_49
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1475
+        width: 146
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_50
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1475
+        width: 148
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_51
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1589
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_52
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1501
+        width: 190
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_53
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 1523
+        width: 205
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_54
+      rect:
+        serializedVersion: 2
+        x: 2883
+        y: 1523
+        width: 77
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_55
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1549
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_56
+      rect:
+        serializedVersion: 2
+        x: 3770
+        y: 1523
+        width: 205
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_57
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1508
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_58
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 1469
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_59
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1124
+        width: 1015
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_60
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1318
+        width: 203
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_61
+      rect:
+        serializedVersion: 2
+        x: 3062
+        y: 1338
+        width: 234
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_62
+      rect:
+        serializedVersion: 2
+        x: 3298
+        y: 1338
+        width: 160
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_63
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 1338
+        width: 552
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_64
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1126
+        width: 1044
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_65
+      rect:
+        serializedVersion: 2
+        x: 2846
+        y: 975
+        width: 251
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_66
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 975
+        width: 273
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_67
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 975
+        width: 271
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_68
+      rect:
+        serializedVersion: 2
+        x: 3746
+        y: 975
+        width: 264
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_69
+      rect:
+        serializedVersion: 2
+        x: 4047
+        y: 975
+        width: 260
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_70
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 980
+        width: 415
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_71
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 980
+        width: 415
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_72
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 119
+        width: 1319
+        height: 976
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_73
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 842
+        width: 415
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_74
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 842
+        width: 415
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_75
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 696
+        width: 515
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_76
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 86
+        width: 657
+        height: 572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_77
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 482
+        width: 186
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_78
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 488
+        width: 171
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_79
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 292
+        width: 163
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_80
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 292
+        width: 165
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_81
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 141
+        width: 122
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_82
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 141
+        width: 120
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_83
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 34
+        width: 122
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sheet_UI_84
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 34
+        width: 120
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

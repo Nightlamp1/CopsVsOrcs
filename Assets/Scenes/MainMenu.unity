@@ -412,6 +412,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af4c1297c0e979e4aadb9f665cfff7bc, type: 3}
   mOrcKills: 0
   mOrcHits: 0
+  mComboOrcKills: 0
   debugMessage: 
 --- !u!4 &748285899
 Transform:
@@ -628,6 +629,7 @@ MonoBehaviour:
   sounds: []
   mOrcKills: 0
   mOrcHits: 0
+  mComboOrcKills: 0
   debugMessage: 
 --- !u!4 &1516178394
 Transform:

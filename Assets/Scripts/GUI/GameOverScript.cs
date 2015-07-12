@@ -96,6 +96,8 @@ public class GameOverScript : MonoBehaviour {
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
 			GameVars.getInstance().setOrcHits(0);
+			GameVars.getInstance().setcomboOrcKills(0);
+			GameVars.getInstance().setScore(0);
 			SceneManager.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
 		}
 
@@ -106,6 +108,8 @@ public class GameOverScript : MonoBehaviour {
 			GameVars.getInstance().setOrcHits(0);
 			GameVars.getInstance().setOrcKills(0);
 			GameVars.getInstance().setDistance(0);
+			GameVars.getInstance().setcomboOrcKills(0);
+			GameVars.getInstance().setScore(0);
 			SceneManager.LoadLevel(GameVars.MAIN_MENU_SCENE);
 		}
 

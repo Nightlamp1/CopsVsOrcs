@@ -26,6 +26,9 @@ public class GameVars : MonoBehaviour
   public List<AudioClip> sounds;
   public int mOrcKills = 0;
   public int mOrcHits = 0;
+  public int mComboOrcKills = 0;
+  private int comboMultiplier = 0;
+  private float mScore = 0;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
@@ -124,7 +127,23 @@ public class GameVars : MonoBehaviour
   public void incrementOrcKills(int inc) {
     setOrcKills(getOrcKills() + inc);
   }
+	//start combo setup
+	public void setcomboOrcKills(int OrcKills) {
+		mComboOrcKills = OrcKills;
+	}
+	
+	public int getcomboOrcKills() {
+		return mComboOrcKills;
+	}
+	
+	public void incrementcomboOrcKills(int inc) {
+		setcomboOrcKills(getcomboOrcKills() + inc);
+	}
 
+	public void setComboMultiplier (int value){
+		comboMultiplier = value;
+	}
+	//end combo setup
   public void setOrcHits(int orcHits) {
 		mOrcHits = orcHits;
   }
@@ -145,9 +164,19 @@ public class GameVars : MonoBehaviour
     return mUserHasStarted;
   }
 
+  public void setScore(float scoreVal){
+		mScore = scoreVal;
+	}
+  public void incrementScore(float incScore){
+		mScore = getmScore()+(incScore * comboMultiplier);
+		setScore (mScore);
+	}
+  public float getmScore(){
+		return mScore;
+	}
 
-  public float getScore() {
-		return (mDistance / 2) + (mOrcKills * 2) - (mOrcHits * 2);
+  public float getScore() {/*HERE for SCORE*/
+		return (mDistance / 2) + mScore - (mOrcHits * 2);
   }
   
   public GameObject getPlayer()
