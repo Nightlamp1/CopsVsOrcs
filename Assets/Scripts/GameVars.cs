@@ -26,6 +26,7 @@ public class GameVars : MonoBehaviour
   public List<AudioClip> sounds;
   public int mOrcKills = 0;
   public int mOrcHits = 0;
+  private int gameSession =1;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
@@ -159,4 +160,14 @@ public class GameVars : MonoBehaviour
 
     return mPlayer;
   }
+
+  public void setgameSession(int session){
+		gameSession = session;
+	}
+  public int getgameSession(){
+		return gameSession;
+	}
+  public void incrementgameSession(int incSess){
+		setgameSession(getgameSession() + incSess);
+	}
 }

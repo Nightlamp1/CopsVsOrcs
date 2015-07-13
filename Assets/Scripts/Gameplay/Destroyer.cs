@@ -8,6 +8,7 @@ public class Destroyer : MonoBehaviour {
 		if (other.tag == "Player") 
 		{
       PlayerManager.getInstance().killPlayer();
+			GameVars.getInstance().incrementgameSession(1);
 			return;
 		}
 
