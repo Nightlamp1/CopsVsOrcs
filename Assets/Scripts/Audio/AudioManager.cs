@@ -11,12 +11,20 @@ public class AudioManager : MonoBehaviour {
   private         int           lastLoadedLevel;
   public          AudioSource   musicSource;
   public          AudioSource   sfxSource;
+
   public          AudioClip     mainMenuJingle;
   public          AudioClip     endlessRunJingle;
   public          AudioClip     deathJingle;
   public          AudioClip     gameOverJingle;
   public          AudioClip     creditsJingle;
   public          AudioClip[]   firingSounds;
+
+  public          int           mainMenuJingleScaling   = 255;
+  public          int           endlessRunJingleScaling = 255;
+  public          int           gameOverJingleScaling   = 255;
+  public          int           creditsJingleScaling    = 255;
+  public          int           firingSoundsScaling     = 255;
+  public          int           deathJingleScaling      = 255;
 
   private static  bool          initialized = false;
   private static  AudioManager  singleton;
@@ -60,16 +68,16 @@ public class AudioManager : MonoBehaviour {
 
     switch (Application.loadedLevel) {
       case GameVars.MAIN_MENU_SCENE:
-        StartCoroutine(playMusic(mainMenuJingle));
+        StartCoroutine(playMusic(mainMenuJingle, mainMenuJingleScaling));
         break;
       case GameVars.ENDLESS_RUN_SCENE:
-        StartCoroutine(playMusic(endlessRunJingle));
+        StartCoroutine(playMusic(endlessRunJingle, endlessRunJingleScaling));
         break;
       case GameVars.GAME_OVER_SCENE:
-        StartCoroutine(playMusic(gameOverJingle));
+        StartCoroutine(playMusic(gameOverJingle, gameOverJingleScaling));
         break;
       case GameVars.CREDITS_SCENE:
-        StartCoroutine(playMusic(creditsJingle));
+        StartCoroutine(playMusic(creditsJingle, creditsJingleScaling));
         break;
       default:
         break;
@@ -97,7 +105,7 @@ public class AudioManager : MonoBehaviour {
     PlayerPrefs.SetInt("muteState", (sfxSource.mute ? 1 : 0));
   }
 
-  public IEnumerator playMusic(AudioClip jingle, bool blocking = false, bool events = false) {
+  public IEnumerator playMusic(AudioClip jingle, int scaling = 255, bool blocking = false, bool events = false) {
     if (jingle == null || (musicSourceBlocking && musicSource.isPlaying)) {
 
     } else {
@@ -106,6 +114,7 @@ public class AudioManager : MonoBehaviour {
       if (MusicStarted != null && events) MusicStarted(jingle.length, blocking);
 
       musicSource.clip = jingle;
+      musicSource.volume = (scaling / 255.0);
       musicSource.Play();
 
       yield return new WaitForSeconds(jingle.length);
@@ -116,7 +125,7 @@ public class AudioManager : MonoBehaviour {
     }
   }
 
-  public IEnumerator playSFX(AudioClip jingle, bool blocking = false, bool events = false) {
+  public IEnumerator playSFX(AudioClip jingle, int scaling = 255, bool blocking = false, bool events = false) {
     if (jingle == null || (sfxSourceBlocking && sfxSource.isPlaying)) {
 
     } else {
@@ -125,6 +134,7 @@ public class AudioManager : MonoBehaviour {
       if (SFXStarted != null && events) SFXStarted(jingle.length, blocking);
 
       sfxSource.clip = jingle;
+      sfxSource.volume = (scaling / 255.0);
       sfxSource.Play();
 
       yield return new WaitForSeconds(jingle.length);
@@ -139,7 +149,7 @@ public class AudioManager : MonoBehaviour {
   public void playFiringSound() {
     if (!firingEnabled) return;
 
-    StartCoroutine(playSFX(firingSounds[Random.Range(0, firingSounds.Length - 1)]));
+    StartCoroutine(playSFX(firingSounds[Random.Range(0, firingSounds.Length - 1)], firingSoundsScaling));
   }
 
   public void playDeathJingle() {
@@ -149,7 +159,7 @@ public class AudioManager : MonoBehaviour {
       // We don't want the muted players to have to wait for the death jingle to finish.
       SFXEnded(deathJingle.length, true);
     } else {
-      StartCoroutine(playSFX(deathJingle, true, true));
+      StartCoroutine(playSFX(deathJingle, deathJingleScaling, true, true));
     }
   }
 
