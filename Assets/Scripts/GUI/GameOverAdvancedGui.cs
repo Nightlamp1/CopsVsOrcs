@@ -257,7 +257,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 #if UNITY_ANDROID
 			Application.OpenURL("market://details?id=com.deliriumgw.copsvsorcs");
 #elif UNITY_IPHONE
-			Application.OpenURL("itms-apps://itunes.apple.com/app/1004888424");
+			Application.OpenURL("itms-apps://itunes.apple.com/app/id1004888424");
 #endif
 		}
 		flexibleSpaces (1);
