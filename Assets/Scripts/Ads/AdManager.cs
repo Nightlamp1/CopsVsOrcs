@@ -21,7 +21,7 @@ public class AdManager : MonoBehaviour {
 #if UNITY_ANDROID
 	public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
 #elif UNITY_IPHONE
-  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/7853108485";
+  public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/1092637281";
 #else
   public const string interstitialAdUnitId = "ca-app-pub-5012360525975215/8810625686";
 #endif
