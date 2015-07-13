@@ -5,6 +5,7 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+Build/
 Assets/AssetStoreTools*
 
 # Binary output folder
@@ -44,3 +45,6 @@ Thumbs.db
 *bin.html
 *unity3d
 Examples
+*.meta
+ProjectSettings.asset
+sysinfo.txt
