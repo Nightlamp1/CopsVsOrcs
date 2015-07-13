@@ -230,6 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356ea765d5edb5147a22e7c7d0116db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Overlay1: {fileID: 21300000, guid: 613e8cc793ef99e458b0ca5b4e1a1e74, type: 3}
+  Overlay2: {fileID: 21300000, guid: b8eb53b89017ee34497de002e98ab6da, type: 3}
+  Overlay3: {fileID: 21300000, guid: ade365c781118cf45a5aeb921f1684fc, type: 3}
 --- !u!1 &598655907
 GameObject:
   m_ObjectHideFlags: 0

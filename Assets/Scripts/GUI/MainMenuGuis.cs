@@ -34,6 +34,7 @@ public class MainMenuGuis : MonoBehaviour {
 	muteHeight = Screen.height * .15f;
 	textWidth = Screen.width * .3f;
 	textHeight = Screen.height * .10f;
+	GameVars.getInstance ().setgameSession (1);
   }
 
   void flexibleSpaces(int num) {
