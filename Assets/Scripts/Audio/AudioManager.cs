@@ -114,7 +114,7 @@ public class AudioManager : MonoBehaviour {
       if (MusicStarted != null && events) MusicStarted(jingle.length, blocking);
 
       musicSource.clip = jingle;
-      musicSource.volume = (scaling / 255.0);
+      musicSource.volume = (scaling / 255.0f);
       musicSource.Play();
 
       yield return new WaitForSeconds(jingle.length);
@@ -134,7 +134,7 @@ public class AudioManager : MonoBehaviour {
       if (SFXStarted != null && events) SFXStarted(jingle.length, blocking);
 
       sfxSource.clip = jingle;
-      sfxSource.volume = (scaling / 255.0);
+      sfxSource.volume = (scaling / 255.0f);
       sfxSource.Play();
 
       yield return new WaitForSeconds(jingle.length);
