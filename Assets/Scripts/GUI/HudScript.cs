@@ -6,6 +6,12 @@ public class HudScript : MonoBehaviour {
 	private int ScoreTen = 0;
 	public Texture2D roadIcon;
 	public Texture2D moneyIcon;
+	public Texture2D scoreMultiplier;
+	public Texture2D multiplierOne;
+	public Texture2D multiplierTwo;
+	public Texture2D multiplierThree;
+	public Texture2D multiplierFour;
+	public Texture2D multiplierFive;
 	private float boxWidth = 0;
 	private float boxHeight = 0;
 	public GUISkin mainMenuSkin;
@@ -30,7 +36,23 @@ public class HudScript : MonoBehaviour {
       return;
     }
 
-	}
+    if (GameVars.getInstance ().getComboOrcKills () <= 1) {
+      scoreMultiplier = multiplierOne;
+      GameVars.getInstance().setComboMultiplier(1);
+    } else if (GameVars.getInstance ().getComboOrcKills () == 5) {
+      scoreMultiplier = multiplierTwo;
+      GameVars.getInstance().setComboMultiplier(2);
+    } else if (GameVars.getInstance ().getComboOrcKills () == 10) {
+      scoreMultiplier = multiplierThree;
+      GameVars.getInstance().setComboMultiplier(3);
+    } else if (GameVars.getInstance ().getComboOrcKills () == 15) {
+      scoreMultiplier = multiplierFour;
+      GameVars.getInstance().setComboMultiplier(4);
+    } else if (GameVars.getInstance ().getComboOrcKills () == 20) {
+      scoreMultiplier = multiplierFive;
+      GameVars.getInstance().setComboMultiplier(5);
+    }
+  }
 
 
 	void OnGUI()
@@ -55,6 +77,7 @@ public class HudScript : MonoBehaviour {
     GUILayout.Label(": " + (int) GameVars.getInstance().getDistance() + "m  ");
 	GUILayout.Box (moneyIcon, boxOptions);
 	GUILayout.Label(": $" + (int) GameVars.getInstance().getScore(), GUI.skin.label);
+	GUILayout.Box (scoreMultiplier, boxOptions);
     
 	GUILayout.FlexibleSpace();
     GUILayout.EndHorizontal();

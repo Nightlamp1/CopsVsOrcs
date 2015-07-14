@@ -609,6 +609,12 @@ MonoBehaviour:
   CVOFont: {fileID: 12800000, guid: 06f9667f78da40344923afa4c267a2d2, type: 3}
   roadIcon: {fileID: 2800000, guid: 8bd716e736b71d64f8432c483da7300a, type: 3}
   moneyIcon: {fileID: 2800000, guid: bc83f9e6b59d52b44b2d26dccb2a8dca, type: 3}
+  scoreMultiplier: {fileID: 2800000, guid: 420aa694e8dfba142b63650edd7569f3, type: 3}
+  multiplierOne: {fileID: 2800000, guid: 420aa694e8dfba142b63650edd7569f3, type: 3}
+  multiplierTwo: {fileID: 2800000, guid: 474cafb2f7602da419e70dc7163853e7, type: 3}
+  multiplierThree: {fileID: 2800000, guid: 2792c49a4070e2d4ca1a1480d8b2871a, type: 3}
+  multiplierFour: {fileID: 2800000, guid: a06ad6ed5f98a34488fba69ac436177c, type: 3}
+  multiplierFive: {fileID: 2800000, guid: bb9b01e9a641b3244b6cf11267013c3f, type: 3}
   mainMenuSkin: {fileID: 11400000, guid: 57daf9a583c1b9d4c98cc9a576e856d5, type: 2}
 --- !u!1001 &1682175744
 Prefab:

@@ -29,7 +29,11 @@ public class Bullet : MonoBehaviour {
   void FixedUpdate()
   {
     travelDistance += 1;
-    if(travelDistance > 75) Destroy (gameObject);
+    if (travelDistance > 75) {
+			Destroy (gameObject);
+			GameVars.getInstance().setComboOrcKills(0);
+			GameVars.getInstance().setComboMultiplier(1);
+		}
   }
 
   public static GameObject getPrefab()

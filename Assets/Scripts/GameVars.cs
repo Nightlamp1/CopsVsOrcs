@@ -15,6 +15,7 @@ public class GameVars : MonoBehaviour
   public const string VERSION_NUMBER  = "DEVELOPMENT";
 
   private const string DEFAULT_PLAYER_NAME = "";
+  private const string PLAYER_UUID_STRING  = "PLAYER_UUID";
 
   private static GameVars singleton;
   
@@ -26,7 +27,10 @@ public class GameVars : MonoBehaviour
   public List<AudioClip> sounds;
   public int mOrcKills = 0;
   public int mOrcHits = 0;
-  private int gameSession =1;
+  private int gameSession = 1;
+  public int mComboOrcKills = 0;
+  private int comboMultiplier = 0;
+  private float mScore = 0;
   public string debugMessage = "";
   private bool mUserHasStarted = false;
 
@@ -102,6 +106,28 @@ public class GameVars : MonoBehaviour
     return PlayerPrefs.GetString("playerName");
   }
 
+  public System.Guid getPlayerUuid() {
+    string playerUuid = "";
+
+    if (PlayerPrefs.HasKey(PLAYER_UUID_STRING)) {
+      playerUuid = PlayerPrefs.GetString(PLAYER_UUID_STRING);
+    }
+
+    if (playerUuid == "") {
+      playerUuid = (System.Guid.NewGuid()).ToString();
+
+      PlayerPrefs.SetString(PLAYER_UUID_STRING, playerUuid);
+
+      PlayerPrefs.Save();
+    }
+
+#if UNITY_EDITOR
+    Debug.Log("Player UUID: " + playerUuid);
+#endif
+
+    return new System.Guid(playerUuid);
+  }
+
   public void setDistance(float distance) {
     if (!PlayerManager.getInstance().isPlayerAlive()) return;
 
@@ -128,14 +154,30 @@ public class GameVars : MonoBehaviour
     setOrcKills(getOrcKills() + inc);
   }
 
+  public void setComboOrcKills(int OrcKills) {
+		mComboOrcKills = OrcKills;
+	}
+
+  public int getComboOrcKills() {
+		return mComboOrcKills;
+	}
+
+	public void incrementcomboOrcKills(int inc) {
+    setComboOrcKills(getComboOrcKills() + inc);
+	}
+
+	public void setComboMultiplier (int value){
+		comboMultiplier = value;
+	}
+
   public void setOrcHits(int orcHits) {
 		mOrcHits = orcHits;
   }
-	
+
   public int getOrcHits() {
     return mOrcHits;
   }
-	
+
   public void incrementOrcHits(int inc) {
     setOrcHits(getOrcHits() + inc);
   }
@@ -156,8 +198,19 @@ public class GameVars : MonoBehaviour
     return (PlayerPrefs.GetInt("GlobalHighScoresSelected") != 0);
   }
 
+  public void setMScore(float scoreVal){
+		mScore = scoreVal;
+	}
+
+  public void incrementMScore(float incScore){
+    mScore = getMScore() + (incScore * comboMultiplier);
+	}
+  public float getMScore(){
+		return mScore;
+	}
+
   public float getScore() {
-		return (mDistance / 2) + (mOrcKills * 2) - (mOrcHits * 2);
+		return (mDistance / 2) + mScore - (mOrcHits * 2);
   }
   
   public GameObject getPlayer()
@@ -173,9 +226,11 @@ public class GameVars : MonoBehaviour
   public void setgameSession(int session){
 		gameSession = session;
 	}
+
   public int getgameSession(){
 		return gameSession;
 	}
+
   public void incrementgameSession(int incSess){
 		setgameSession(getgameSession() + incSess);
 	}
