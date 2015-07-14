@@ -75,6 +75,8 @@ public class GameVars : MonoBehaviour
   public IEnumerator validateUsername(string playerName) {
     if (playerName.Length > 16) {
       validUsername = false;
+    } else if(playerName.Length == 0) {
+      validUsername = true;
     } else {
       string url = "https://www.copsvsorcs.com/validate_username.php?username=" + WWW.EscapeURL(playerName);
       WWW www = new WWW(url);
