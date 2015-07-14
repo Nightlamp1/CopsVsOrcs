@@ -146,6 +146,13 @@ public class GameVars : MonoBehaviour
     return mUserHasStarted;
   }
 
+  public void setGlobalHighScoresSelected(bool globalHighScoresSelected) {
+    PlayerPrefs.SetInt("GlobalHighScoresSelected", (globalHighScoresSelected ? 1 : 0));
+  }
+
+  public bool getGlobalHighScoresSelected() {
+    return (PlayerPrefs.GetInt("GlobalHighScoresSelected") != 0);
+  }
 
   public float getScore() {
 		return (mDistance / 2) + (mOrcKills * 2) - (mOrcHits * 2);

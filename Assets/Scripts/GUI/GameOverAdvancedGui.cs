@@ -61,9 +61,6 @@ public class GameOverAdvancedGui: MonoBehaviour {
 	
 	void Start () 
 	{
-    highScoreboard = HighScores.getInstance().localScores;
-		GlobalButtonToggle = GlobalButtonOff;
-		LocalButtonToggle = LocalButtonOn;
 	    buttonWidth = Screen.width * .2f;
 		buttonHeight = Screen.height * .1f;
 		rateWidth = Screen.width * .2f;
@@ -94,6 +91,15 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
     HighScores.getInstance().localScores.addHighScoreEntry(highScoreEntry);
 
+    if (GameVars.getInstance().getGlobalHighScoresSelected()) {
+      highScoreboard = HighScores.getInstance().globalScores;
+      GlobalButtonToggle = GlobalButtonOn;
+      LocalButtonToggle = LocalButtonOff;
+    } else {
+      highScoreboard = HighScores.getInstance().localScores;
+      GlobalButtonToggle = GlobalButtonOff;
+      LocalButtonToggle = LocalButtonOn;
+    }
 		
     if (GameVars.getInstance().getValidUsername()) {
   		up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
@@ -195,9 +201,6 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		GUILayout.EndVertical ();
 		GUILayout.EndArea ();
 
-
-
-
 		GUILayout.BeginArea (new Rect (0, 0, Screen.width, Screen.height));
 		GUILayout.BeginVertical ();
 		flexibleSpaces (2);
@@ -207,6 +210,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		if (GUILayout.Button (GlobalButtonToggle, scoreButtonOptions)) {
 			GlobalButtonToggle = GlobalButtonOn;
 			LocalButtonToggle = LocalButtonOff;
+      GameVars.getInstance().setGlobalHighScoresSelected(true);
       highScoreboard = HighScores.getInstance().globalScores;
     }
     
@@ -215,6 +219,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		if (GUILayout.Button (LocalButtonToggle, scoreButtonOptions)) {
 			GlobalButtonToggle = GlobalButtonOff;
 			LocalButtonToggle = LocalButtonOn;
+      GameVars.getInstance().setGlobalHighScoresSelected(false);
       highScoreboard = HighScores.getInstance().localScores;
     }
 
