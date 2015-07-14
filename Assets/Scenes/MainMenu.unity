@@ -403,14 +403,14 @@ MonoBehaviour:
   somePrefab: {fileID: 0}
   mDistance: 0
   sounds:
-  - {fileID: 8300000, guid: 9f882952da064c94fafa879bc1f4b8f9, type: 3}
-  - {fileID: 8300000, guid: 33924decec288344e8e6f223f8c76a53, type: 3}
-  - {fileID: 8300000, guid: 845fa8250c8f3344ea8221860784268f, type: 3}
-  - {fileID: 8300000, guid: b165b0e7c16386a42b48784e7a614429, type: 3}
-  - {fileID: 8300000, guid: 1208f0ee6ceaa3744947ee1696ff3168, type: 3}
-  - {fileID: 8300000, guid: f8299a3f290e8fd409bfdefa81b35c23, type: 3}
-  - {fileID: 8300000, guid: 8f095577fdfe82747a6211efcf862a88, type: 3}
-  - {fileID: 8300000, guid: af4c1297c0e979e4aadb9f665cfff7bc, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   mOrcKills: 0
   mOrcHits: 0
   mComboOrcKills: 0
@@ -585,12 +585,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca0c7a3c9d804b040aba0e09d09b4c39, type: 3}
   - {fileID: 8300000, guid: 29a883f88f490494f9c4ab51ba0d26d2, type: 3}
   - {fileID: 8300000, guid: 8f11ecb6733c9b749b0f68b93976b582, type: 3}
-  mainMenuJingleScaling: 255
-  endlessRunJingleScaling: 255
-  gameOverJingleScaling: 255
-  creditsJingleScaling: 255
-  firingSoundsScaling: 255
-  deathJingleScaling: 255
+  mainMenuJingleScaling: 230
+  endlessRunJingleScaling: 230
+  gameOverJingleScaling: 230
+  creditsJingleScaling: 230
+  firingSoundsScaling: 145
+  deathJingleScaling: 130
 --- !u!81 &1089631525
 AudioListener:
   m_ObjectHideFlags: 0
