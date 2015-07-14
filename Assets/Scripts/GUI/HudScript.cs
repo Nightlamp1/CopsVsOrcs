@@ -35,6 +35,9 @@ public class HudScript : MonoBehaviour {
 
 	void OnGUI()
 	{
+    if (!GameVars.getInstance().getUserHasStarted()) {
+      return;
+    }
 		GUI.skin = mainMenuSkin;
 		GUI.color = Color.white;
 		GUI.skin.font = CVOFont;
