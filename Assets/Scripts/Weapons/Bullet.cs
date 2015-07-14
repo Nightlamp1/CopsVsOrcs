@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour {
     travelDistance += 1;
     if (travelDistance > 75) {
 			Destroy (gameObject);
-			GameVars.getInstance().setcomboOrcKills(0);
+			GameVars.getInstance().setComboOrcKills(0);
 			GameVars.getInstance().setComboMultiplier(1);
 		}
   }

@@ -127,31 +127,31 @@ public class GameVars : MonoBehaviour
   public void incrementOrcKills(int inc) {
     setOrcKills(getOrcKills() + inc);
   }
-	//start combo setup
-	public void setcomboOrcKills(int OrcKills) {
+
+  public void setComboOrcKills(int OrcKills) {
 		mComboOrcKills = OrcKills;
 	}
-	
-	public int getcomboOrcKills() {
+
+  public int getComboOrcKills() {
 		return mComboOrcKills;
 	}
-	
+
 	public void incrementcomboOrcKills(int inc) {
-		setcomboOrcKills(getcomboOrcKills() + inc);
+    setComboOrcKills(getComboOrcKills() + inc);
 	}
 
 	public void setComboMultiplier (int value){
 		comboMultiplier = value;
 	}
-	//end combo setup
+
   public void setOrcHits(int orcHits) {
 		mOrcHits = orcHits;
   }
-	
+
   public int getOrcHits() {
     return mOrcHits;
   }
-	
+
   public void incrementOrcHits(int inc) {
     setOrcHits(getOrcHits() + inc);
   }
@@ -164,18 +164,18 @@ public class GameVars : MonoBehaviour
     return mUserHasStarted;
   }
 
-  public void setScore(float scoreVal){
+  public void setMScore(float scoreVal){
 		mScore = scoreVal;
 	}
-  public void incrementScore(float incScore){
-		mScore = getmScore()+(incScore * comboMultiplier);
-		setScore (mScore);
+
+  public void incrementMScore(float incScore){
+    mScore = getMScore() + (incScore * comboMultiplier);
 	}
-  public float getmScore(){
+  public float getMScore(){
 		return mScore;
 	}
 
-  public float getScore() {/*HERE for SCORE*/
+  public float getScore() {
 		return (mDistance / 2) + mScore - (mOrcHits * 2);
   }
   
