@@ -584,12 +584,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca0c7a3c9d804b040aba0e09d09b4c39, type: 3}
   - {fileID: 8300000, guid: 29a883f88f490494f9c4ab51ba0d26d2, type: 3}
   - {fileID: 8300000, guid: 8f11ecb6733c9b749b0f68b93976b582, type: 3}
-  mainMenuJingleScaling: 240
-  endlessRunJingleScaling: 240
-  gameOverJingleScaling: 240
-  creditsJingleScaling: 240
-  firingSoundsScaling: 155
-  deathJingleScaling: 140
+  mainMenuJingleScaling: 230
+  endlessRunJingleScaling: 230
+  gameOverJingleScaling: 230
+  creditsJingleScaling: 230
+  firingSoundsScaling: 145
+  deathJingleScaling: 130
 --- !u!81 &1089631525
 AudioListener:
   m_ObjectHideFlags: 0
