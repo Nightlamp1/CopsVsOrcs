@@ -15,6 +15,7 @@ public class GameVars : MonoBehaviour
   public const string VERSION_NUMBER  = "DEVELOPMENT";
 
   private const string DEFAULT_PLAYER_NAME = "";
+  private const string PLAYER_UUID_STRING  = "PLAYER_UUID";
 
   private static GameVars singleton;
   
@@ -100,6 +101,28 @@ public class GameVars : MonoBehaviour
   public string getPlayerName()
   {
     return PlayerPrefs.GetString("playerName");
+  }
+
+  public System.Guid getPlayerUuid() {
+    string playerUuid = "";
+
+    if (PlayerPrefs.HasKey(PLAYER_UUID_STRING)) {
+      playerUuid = PlayerPrefs.GetString(PLAYER_UUID_STRING);
+    }
+
+    if (playerUuid == "") {
+      playerUuid = (System.Guid.NewGuid()).ToString();
+
+      PlayerPrefs.SetString(PLAYER_UUID_STRING, playerUuid);
+
+      PlayerPrefs.Save();
+    }
+
+#if UNITY_EDITOR
+    Debug.Log("Player UUID: " + playerUuid);
+#endif
+
+    return new System.Guid(playerUuid);
   }
 
   public void setDistance(float distance) {

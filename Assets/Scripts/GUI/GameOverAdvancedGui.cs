@@ -5,6 +5,7 @@ using System.Collections;
 
 public class GameOverAdvancedGui: MonoBehaviour {
 	private const int INSERT_VERSION = 1;
+  private const int HIGHSCORE_VERSION = 2;
 	const string TwitterShare = "http://twitter.com/intent/tweet";
 	const string FacebookID = "648150285304327";
 	const string FacebookShare = "http://www.facebook.com/dialog/feed";
@@ -64,7 +65,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
     highScoreboard = HighScores.getInstance().localScores;
 		GlobalButtonToggle = GlobalButtonOff;
 		LocalButtonToggle = LocalButtonOn;
-	    buttonWidth = Screen.width * .2f;
+    buttonWidth = Screen.width * .2f;
 		buttonHeight = Screen.height * .1f;
 		rateWidth = Screen.width * .2f;
 		rateHeight = Screen.height * .1f;
@@ -87,19 +88,29 @@ public class GameOverAdvancedGui: MonoBehaviour {
     HighScoreEntry highScoreEntry = new HighScoreEntry();
 
     highScoreEntry.playerName   = GameVars.getInstance().getPlayerName();
+    highScoreEntry.playerUuid   = GameVars.getInstance().getPlayerUuid();
     highScoreEntry.scoreUuid    = System.Guid.NewGuid();
     highScoreEntry.score        = (int) score;
-    highScoreEntry.scoreVersion = 1;
+    highScoreEntry.scoreVersion = HIGHSCORE_VERSION;
     highScoreEntry.appVersion   = GameVars.VERSION_NUMBER;
 
     HighScores.getInstance().localScores.addHighScoreEntry(highScoreEntry);
 
-		
     if (GameVars.getInstance().getValidUsername()) {
-  		up_query = new WWW("https://www.copsvsorcs.com/insert_high_score.php" +
-  		                   "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) + 
-  		                   "&score=" + WWW.EscapeURL(score.ToString()) +
-  		                   "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString()));
+      string up_query_str =
+        "https://www.copsvsorcs.com/insert_high_score.php" +
+        "?id=" + WWW.EscapeURL(GameVars.getInstance().getPlayerName()) +
+        "&score=" + WWW.EscapeURL(score.ToString()) +
+        "&playerUuid=" + WWW.EscapeURL(highScoreEntry.playerUuid.ToString()) +
+        "&scoreVersion=" + WWW.EscapeURL(highScoreEntry.scoreVersion.ToString()) +
+        "&scoreUuid=" + WWW.EscapeURL(highScoreEntry.scoreUuid.ToString()) +
+        "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString());
+
+#if UNITY_EDITOR
+      Debug.Log(up_query_str);
+#endif
+
+      up_query = new WWW(up_query_str);
     }
 		
 		GameObject.Find ("HeroCop(Clone)").transform.position = new Vector3 (-6f, -3.4f, 0f);
@@ -209,7 +220,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 			LocalButtonToggle = LocalButtonOff;
       highScoreboard = HighScores.getInstance().globalScores;
     }
-    
+
 		GUILayout.Box (DonutMasters, goLabelOptions);
 
 		if (GUILayout.Button (LocalButtonToggle, scoreButtonOptions)) {

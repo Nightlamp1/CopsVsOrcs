@@ -40,6 +40,8 @@ public class SceneManager : MonoBehaviour {
     Application.LoadLevel(newScene);
     googleAnalytics.LogScreen(Application.loadedLevelName);
 
+    PlayerPrefs.Save();
+
     if (SceneChanged != null) {
       SceneChanged(currentScene, newScene);
     }
