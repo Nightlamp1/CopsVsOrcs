@@ -93,13 +93,15 @@ public class MainMenuGuis : MonoBehaviour {
 	GUILayout.BeginVertical ();
 	flexibleSpaces (2);
 	/*
-	 * The following code will set the correct label string/color based on the boolean variable nameCheck
+	 * The following code will set the correct label string/color based on the bool from getValidUsername()
 	 * if nameCheck is false we assume the name to be valid (no curse words) and the GUI shows no change
 	 * if nameCheck is true we assume an invalid name. At this point the text string "Enter Name here:"
 	 * will change to "NAME IS INVALID" and font color/label color will turn to red.
 	 * All that is left is your logic to toggle the nameCheck variable!!!
 	 */
-	if (GameVars.getInstance().getValidUsername()) {
+  if (GameVars.getInstance().getPlayerName() == "") {
+    GUILayout.Label ("Enter a Name to Compete Globally:");
+  } else if (GameVars.getInstance().getValidUsername()) {
 		GUI.color = Color.white;
 		GUILayout.Label ("Enter Name Here:");
 	} else {
