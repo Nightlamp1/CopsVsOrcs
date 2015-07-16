@@ -2,29 +2,30 @@
 using System.Collections;
 
 public class TutorialToggle : MonoBehaviour {
+  public  Texture2D[] Overlays;
+  private Texture2D   activeOverlay;
+  private GUIStyle     tutorialStyle;
 
-
-	public Sprite Overlay1; //Basic Instruction
-	public Sprite Overlay2; //Double Jump Introduction
-	public Sprite Overlay3; //Scoring and Multiplier Breakdown
 	// Use this for initialization
 	void Start () {
     if (!GameVars.getInstance().getUserHasStarted()) {
-			if(GameVars.getInstance().getgameSession() == 2) {
-				this.gameObject.GetComponent<SpriteRenderer>().sprite = Overlay2;
-			}else if (GameVars.getInstance().getgameSession() == 3){
-				this.gameObject.GetComponent<SpriteRenderer>().sprite = Overlay3;
-			}else this.gameObject.GetComponent<SpriteRenderer>().sprite = Overlay1;
+      if (GameVars.getInstance().getGameSession() < Overlays.Length) {
+        activeOverlay = Overlays[GameVars.getInstance().getGameSession()];
+      } else {
+        activeOverlay = Overlays[Random.Range(0, Overlays.Length)];
+      }
+    }
 
-			this.gameObject.GetComponent<SpriteRenderer> ().enabled = true;
-    }
+    tutorialStyle                = new GUIStyle();
+    tutorialStyle.fixedHeight    = Screen.height;
+    tutorialStyle.fixedWidth     = Screen.width;
+    tutorialStyle.stretchHeight  = true;
+    tutorialStyle.stretchWidth   = true;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-    if (GameVars.getInstance().getUserHasStarted()) {
-			this.gameObject.GetComponent<SpriteRenderer> ().enabled = false;
-			Debug.Log ("Game Session is:" + GameVars.getInstance().getgameSession());
+
+  void OnGUI() {
+    if (!GameVars.getInstance().getUserHasStarted()) {
+      GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), activeOverlay);
     }
-	}
+  }
 }

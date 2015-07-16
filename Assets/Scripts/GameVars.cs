@@ -223,15 +223,15 @@ public class GameVars : MonoBehaviour
     return mPlayer;
   }
 
-  public void setgameSession(int session){
+  public void setGameSession(int session){
 		gameSession = session;
 	}
 
-  public int getgameSession(){
+  public int getGameSession(){
 		return gameSession;
 	}
 
-  public void incrementgameSession(int incSess){
-		setgameSession(getgameSession() + incSess);
+  public void incrementGameSession(int incSess){
+    setGameSession(getGameSession() + incSess);
 	}
 }
