@@ -25,7 +25,7 @@ public class TutorialToggle : MonoBehaviour {
 
   void OnGUI() {
     if (!GameVars.getInstance().getUserHasStarted()) {
-      GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), activeOverlay);
+      GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), activeOverlay, ScaleMode.StretchToFill);
     }
   }
 }
