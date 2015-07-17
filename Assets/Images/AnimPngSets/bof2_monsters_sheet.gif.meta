@@ -1,0 +1,704 @@
+fileFormatVersion: 2
+guid: 71cdbfe57beb1244192a757ef565a8a2
+timeCreated: 1437030923
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bof2_monsters_sheet_0
+    21300002: bof2_monsters_sheet_1
+    21300004: bof2_monsters_sheet_2
+    21300006: bof2_monsters_sheet_3
+    21300008: bof2_monsters_sheet_4
+    21300010: bof2_monsters_sheet_5
+    21300012: bof2_monsters_sheet_6
+    21300014: bof2_monsters_sheet_7
+    21300016: bof2_monsters_sheet_8
+    21300018: bof2_monsters_sheet_9
+    21300020: bof2_monsters_sheet_10
+    21300022: bof2_monsters_sheet_11
+    21300024: bof2_monsters_sheet_12
+    21300026: bof2_monsters_sheet_13
+    21300028: bof2_monsters_sheet_14
+    21300030: bof2_monsters_sheet_15
+    21300032: bof2_monsters_sheet_16
+    21300034: bof2_monsters_sheet_17
+    21300036: bof2_monsters_sheet_18
+    21300038: bof2_monsters_sheet_19
+    21300040: bof2_monsters_sheet_20
+    21300042: bof2_monsters_sheet_21
+    21300044: bof2_monsters_sheet_22
+    21300046: bof2_monsters_sheet_23
+    21300048: bof2_monsters_sheet_24
+    21300050: bof2_monsters_sheet_25
+    21300052: bof2_monsters_sheet_26
+    21300054: bof2_monsters_sheet_27
+    21300056: bof2_monsters_sheet_28
+    21300058: bof2_monsters_sheet_29
+    21300060: bof2_monsters_sheet_30
+    21300062: bof2_monsters_sheet_31
+    21300064: bof2_monsters_sheet_32
+    21300066: bof2_monsters_sheet_33
+    21300068: bof2_monsters_sheet_34
+    21300070: bof2_monsters_sheet_35
+    21300072: bof2_monsters_sheet_36
+    21300074: bof2_monsters_sheet_37
+    21300076: bof2_monsters_sheet_38
+    21300078: bof2_monsters_sheet_39
+    21300080: bof2_monsters_sheet_40
+    21300082: bof2_monsters_sheet_41
+    21300084: bof2_monsters_sheet_42
+    21300086: bof2_monsters_sheet_43
+    21300088: bof2_monsters_sheet_44
+    21300090: bof2_monsters_sheet_45
+    21300092: bof2_monsters_sheet_46
+    21300094: bof2_monsters_sheet_47
+    21300096: bof2_monsters_sheet_48
+    21300098: bof2_monsters_sheet_49
+    21300100: bof2_monsters_sheet_50
+    21300102: bof2_monsters_sheet_51
+    21300104: bof2_monsters_sheet_52
+    21300106: bof2_monsters_sheet_53
+    21300108: bof2_monsters_sheet_54
+    21300110: bof2_monsters_sheet_55
+    21300112: bof2_monsters_sheet_56
+    21300114: bof2_monsters_sheet_57
+    21300116: bof2_monsters_sheet_58
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bof2_monsters_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 304
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 307
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 303
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 303
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 303
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 301
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 301
+        width: 47
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 303
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 244
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 244
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 244
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 245
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 245
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 196
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 196
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 207
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 207
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 205
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 208
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 131
+        width: 53
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 132
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 133
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 131
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 153
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 155
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 74
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 80
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 78
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 78
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 19
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 21
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 17
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 19
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 21
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 14
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 28
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 18
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 14
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 28
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 18
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 15
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 31
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 19
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 15
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 31
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 19
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_55
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_56
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 0
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_57
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 0
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bof2_monsters_sheet_58
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
