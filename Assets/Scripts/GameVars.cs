@@ -11,6 +11,9 @@ public class GameVars : MonoBehaviour
   public const int ENDLESS_RUN_SCENE  = 1;
   public const int GAME_OVER_SCENE    = 2;
   public const int CREDITS_SCENE      = 3;
+#if UNITY_EDITOR
+  public const int DEBUG_SCENE        = 4;
+#endif
 
   public const string VERSION_NUMBER  = "DEVELOPMENT";
 
