@@ -52,6 +52,8 @@ public class AdClicks {
       try {
         serializeFromPlayerPrefs();
       } catch (Exception ex) {
+        Debug.LogException("DEBUG", ex);
+
         singleton = new AdClicks();
       }
     }
@@ -79,9 +81,16 @@ public class AdClicks {
       singleton = new AdClicks();
     }
 
+    string   clicksText = "";
+    string[] clicksSplit;
+
     try {
-      string clicksText = PlayerPrefs.GetString("adClicks");
-      string[] clicksSplit = clicksText.Split(new char[] {'\n'});
+      clicksText = PlayerPrefs.GetString("adClicks");
+      clicksSplit = clicksText.Split(new char[] {'\n'});
+
+      if (clicksText == "") {
+        return;
+      }
 
       singleton.clicks = new List<DateTime>();
 
@@ -89,6 +98,9 @@ public class AdClicks {
         singleton.clicks.Add(DateTime.Parse(clicksSplit[i]));
       }
     } catch (Exception ex) {
+      Debug.LogException(ex);
+
+      Debug.LogDebug("Unable to parse clicksText: " + clicksText);
     }
   }
 }
