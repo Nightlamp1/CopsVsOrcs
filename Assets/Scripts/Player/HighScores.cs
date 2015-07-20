@@ -27,7 +27,7 @@ public class HighScores : MonoBehaviour {
     try {
       serializeFromPlayerPrefs();
     } catch (System.Exception ex) {
-      
+      Debug.LogException("ERROR", ex);
     }
     
     if (localScores == null) {
@@ -44,7 +44,7 @@ public class HighScores : MonoBehaviour {
     SceneManager.getInstance().SceneChanged += sceneChangeEventHandler;
   }
 
-  void SceneChange(int oldScene, int newScene) {
+  void SceneChange(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
     serializeToPlayerPrefs();
   }
 

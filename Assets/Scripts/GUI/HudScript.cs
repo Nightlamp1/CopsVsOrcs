@@ -3,7 +3,6 @@ using System.Collections;
 
 public class HudScript : MonoBehaviour {
 	public Font CVOFont;
-	private int ScoreTen = 0;
 	public Texture2D roadIcon;
 	public Texture2D moneyIcon;
 	public Texture2D scoreMultiplier;

@@ -128,11 +128,7 @@ public class GoogleAnalyticsV4 : MonoBehaviour {
     }
 
     if (UncaughtExceptionReporting) {
-#if UNITY_5_0
       Application.logMessageReceived += HandleException;
-#else
-      Application.RegisterLogCallback (HandleException);
-#endif
       if (GoogleAnalyticsV4.belowThreshold(logLevel, GoogleAnalyticsV4.DebugMode.VERBOSE)) {
         Debug.Log("Enabling uncaught exception reporting.");
       }

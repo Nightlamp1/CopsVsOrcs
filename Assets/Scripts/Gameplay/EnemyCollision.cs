@@ -2,15 +2,12 @@
 using System.Collections;
 
 public class EnemyCollision : MonoBehaviour {
-	HudScript hud;
 	Animator anim;
 	RaycastHit2D MyRay;
 	
 	void Start()
 	{
-		hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
 		anim = gameObject.GetComponent<Animator> ();
-
 	}
 
 	void FixedUpdate()

@@ -33,7 +33,7 @@ public class Platformer2DUserControl : MonoBehaviour
   {
     // Don't do anything if we're not on the Endless Run Level
     //  or if the player is dead.
-    if (Application.loadedLevel != GameVars.ENDLESS_RUN_SCENE || 
+    if ((SceneManager.Scene) Application.loadedLevel != SceneManager.Scene.ENDLESS_RUN || 
         !PlayerManager.getInstance().isPlayerAlive()) return;
 
     // Read the jump input in Update so button presses aren't missed.
@@ -80,7 +80,7 @@ public class Platformer2DUserControl : MonoBehaviour
       GameObject.Find ("HeroCop(Clone)").transform.position = new Vector3 (-6f, -3.4f, 0f);
     }
 
-		if (Application.loadedLevel == GameVars.ENDLESS_RUN_SCENE)
+		if ((SceneManager.Scene) Application.loadedLevel == SceneManager.Scene.ENDLESS_RUN)
 			GetComponent<SpawnGroundversion2> ().enabled = true;
   }
 

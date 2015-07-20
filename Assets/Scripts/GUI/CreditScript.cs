@@ -25,7 +25,7 @@ public class CreditScript : MonoBehaviour {
     flexibleSpaces(39);
 
 		if (GUILayout.Button (MainReturn, buttonStyle, buttonOptions)) {
-			SceneManager.LoadLevel (GameVars.MAIN_MENU_SCENE);
+			SceneManager.LoadLevel (SceneManager.Scene.MAIN_MENU);
 		}
 
     flexibleSpaces(1);
