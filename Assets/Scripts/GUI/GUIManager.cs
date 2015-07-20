@@ -1,10 +1,20 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GUIManager : MonoBehaviour {
   public static GUIManager singleton;
 
   private int previousLevel = -1;
+
+  [Tooltip("These are the textures for the Debug GUI.  They must match the order of the array below.")]
+  public Texture2D[] debugGuiTextures;
+  [Tooltip("These are the enums for the textures in the Debug GUI.  They must match the order of the array above.")]
+  public DebugGUI.DebugGuiTexturesEnum[] debugGuiTexturesEnum;
+
+//  public Texture2D getDeleteButtonAsset() {
+//    return DeleteButtonAsset;
+//  }
 
   void Awake()
   {
