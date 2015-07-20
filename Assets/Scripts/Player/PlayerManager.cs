@@ -25,8 +25,8 @@ public class PlayerManager : MonoBehaviour {
     SceneManager.getInstance().SceneChanged += new SceneChangedEventHandler(AfterSceneChange);
   }
 
-  public void AfterSceneChange(int oldScene, int newScene) {
-    if (newScene != GameVars.ENDLESS_RUN_SCENE) {
+  public void AfterSceneChange(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
+    if (newScene != SceneManager.Scene.ENDLESS_RUN) {
       return;
     }
 
@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour {
   }
 
   private void deathSoundOver(float length, bool blocking) {
-    SceneManager.LoadLevel(GameVars.GAME_OVER_SCENE);
+    SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
 
     AudioManager.getInstance().SFXEnded -= sfxEndedEventHandler;
   }

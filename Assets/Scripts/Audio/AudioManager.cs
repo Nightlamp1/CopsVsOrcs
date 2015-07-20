@@ -66,17 +66,17 @@ public class AudioManager : MonoBehaviour {
 
     lastLoadedLevel = Application.loadedLevel;
 
-    switch (Application.loadedLevel) {
-      case GameVars.MAIN_MENU_SCENE:
+    switch ((SceneManager.Scene) Application.loadedLevel) {
+      case SceneManager.Scene.MAIN_MENU:
         StartCoroutine(playMusic(mainMenuJingle, mainMenuJingleScaling));
         break;
-      case GameVars.ENDLESS_RUN_SCENE:
+      case SceneManager.Scene.ENDLESS_RUN:
         StartCoroutine(playMusic(endlessRunJingle, endlessRunJingleScaling));
         break;
-      case GameVars.GAME_OVER_SCENE:
+      case SceneManager.Scene.GAME_OVER:
         StartCoroutine(playMusic(gameOverJingle, gameOverJingleScaling));
         break;
-      case GameVars.CREDITS_SCENE:
+      case SceneManager.Scene.CREDITS:
         StartCoroutine(playMusic(creditsJingle, creditsJingleScaling));
         break;
       default:

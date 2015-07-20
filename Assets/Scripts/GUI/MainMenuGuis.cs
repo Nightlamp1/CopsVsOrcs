@@ -11,7 +11,6 @@ public class MainMenuGuis : MonoBehaviour {
   private float muteHeight = 0;
   private float textWidth  = 0;
   private float textHeight = 0;
-	private bool nameCheck = false; //if false user name is VALID if true user name is BLOCKED
 
 	public GUISkin customSkin;
 	public Texture2D startGame;
@@ -70,7 +69,7 @@ public class MainMenuGuis : MonoBehaviour {
     GUILayout.BeginHorizontal();
     flexibleSpaces(hSpaceBeforeButton);
     if (GUILayout.Button(startGame, buttonStyle, buttonOptions)) {
-      SceneManager.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
+      SceneManager.LoadLevel(SceneManager.Scene.ENDLESS_RUN);
     }
 
     flexibleSpaces(hSpaceAfterButton);
@@ -81,7 +80,7 @@ public class MainMenuGuis : MonoBehaviour {
     flexibleSpaces(hSpaceBeforeButton);
     
     if (GUILayout.Button(creditsButton, buttonStyle, buttonOptions)) {
-      SceneManager.LoadLevel(GameVars.CREDITS_SCENE);
+      SceneManager.LoadLevel(SceneManager.Scene.CREDITS);
     }
 
     flexibleSpaces(hSpaceAfterButton);

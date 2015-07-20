@@ -7,14 +7,6 @@ public class GameVars : MonoBehaviour
   // Scene constants (These need to change anytime we build.
   //  We should no longer use stuff like "Application.loadedLevel == 3"
   //  And use these constants instead.
-  public const int MAIN_MENU_SCENE    = 0;
-  public const int ENDLESS_RUN_SCENE  = 1;
-  public const int GAME_OVER_SCENE    = 2;
-  public const int CREDITS_SCENE      = 3;
-#if UNITY_EDITOR
-  public const int DEBUG_SCENE        = 4;
-#endif
-
   public const string VERSION_NUMBER  = "DEVELOPMENT";
 
   private const string DEFAULT_PLAYER_NAME = "";
@@ -39,12 +31,8 @@ public class GameVars : MonoBehaviour
 
   private bool validUsername = false;
 
-  private AudioSource audioSource;
-
   void Awake()
   {
-    audioSource = GetComponent<AudioSource>();
-
     mUserHasStarted = false;
     // TODO Does this code even do anything consequential?
     if(singleton != null && singleton != this)

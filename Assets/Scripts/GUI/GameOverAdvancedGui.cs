@@ -30,10 +30,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
 
   private HighScoreboard highScoreboard;
 	
-	private float topSize      = 0.35f;
-	
 	float score = 0;
-	string scores;
 	
 	WWW up_query;
 	
@@ -81,8 +78,6 @@ public class GameOverAdvancedGui: MonoBehaviour {
 		backGroundHeight = Screen.height * 0.5f;
 		up_handled = false;
 		
-		scores = "";
-		
 		score = Mathf.Round(GameVars.getInstance().getScore());
 
     HighScoreEntry highScoreEntry = new HighScoreEntry();
@@ -117,7 +112,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
         "&version=" + WWW.EscapeURL(INSERT_VERSION.ToString());
 
 #if UNITY_EDITOR
-      Debug.Log(up_query_str);
+      Debug.LogDebug(up_query_str);
 #endif
 
       up_query = new WWW(up_query_str);
@@ -135,7 +130,6 @@ public class GameOverAdvancedGui: MonoBehaviour {
 			HighScores.getInstance().LoadGlobalScoresResponseString(up_query.text);
 		}
 		
-		GUIStyle buttonStyle = new GUIStyle();
 		GUI.skin = gameOverSkin;
 		GUI.skin.label.fontSize = (int) (Screen.height*0.038f);
 		GUILayoutOption[] buttonOptions = {GUILayout.Width(buttonWidth), GUILayout.Height(buttonHeight)};
@@ -162,7 +156,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
       GameVars.getInstance().setComboMultiplier(0);
       GameVars.getInstance().setComboOrcKills(0);
       GameVars.getInstance().setMScore(0);
-			SceneManager.LoadLevel(GameVars.ENDLESS_RUN_SCENE);
+			SceneManager.LoadLevel(SceneManager.Scene.ENDLESS_RUN);
 		}
 
 		flexibleSpaces (1);//spacefrom retry button to game over label
@@ -177,7 +171,7 @@ public class GameOverAdvancedGui: MonoBehaviour {
       GameVars.getInstance().setComboMultiplier(0);
       GameVars.getInstance().setComboOrcKills(0);
       GameVars.getInstance().setMScore(0);
-			SceneManager.LoadLevel(GameVars.MAIN_MENU_SCENE);
+			SceneManager.LoadLevel(SceneManager.Scene.MAIN_MENU);
 		}
 
 		flexibleSpaces (1);//space from main menu to right edge

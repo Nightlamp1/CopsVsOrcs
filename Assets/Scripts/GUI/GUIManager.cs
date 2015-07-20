@@ -39,17 +39,17 @@ public class GUIManager : MonoBehaviour {
     //  it takes too long to run the first time.
     previousLevel = Application.loadedLevel;
 
-    switch (Application.loadedLevel) {
-      case GameVars.MAIN_MENU_SCENE:
+    switch ((SceneManager.Scene) Application.loadedLevel) {
+      case SceneManager.Scene.MAIN_MENU:
         break;
-      case GameVars.ENDLESS_RUN_SCENE:
+      case SceneManager.Scene.ENDLESS_RUN:
         break;
-      case GameVars.GAME_OVER_SCENE:
+      case SceneManager.Scene.GAME_OVER:
         break;
-      case GameVars.CREDITS_SCENE:
+      case SceneManager.Scene.CREDITS:
         break;
 #if UNITY_EDITOR
-      case GameVars.DEBUG_SCENE:
+      case SceneManager.Scene.DEBUG:
         gameObject.AddComponent<DebugGUI>();
 #endif
         break;

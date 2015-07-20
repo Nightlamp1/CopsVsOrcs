@@ -49,9 +49,9 @@ public class AdManager : MonoBehaviour {
     SceneManager.getInstance().SceneChanged += new SceneChangedEventHandler(SceneChange);
   }
 
-  private void SceneChange(int oldScene, int newScene) {
-    switch (newScene) {
-      case GameVars.GAME_OVER_SCENE:
+  private void SceneChange(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
+    switch ((SceneManager.Scene) newScene) {
+      case SceneManager.Scene.GAME_OVER:
         if (!frequencyTimerExpired || !preloaded || AdClicks.tooManyClicks()) {
           return;
         }
