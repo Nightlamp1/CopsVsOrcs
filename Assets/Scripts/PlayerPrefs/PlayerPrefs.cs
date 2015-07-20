@@ -58,7 +58,7 @@ public class PlayerPrefs : MonoBehaviour {
     SetListString(PREFS.SERIALIZED_PLAYER_PREFS_KEYS, keys);
     Save();
   }
-  
+
   public static void deserializeKeys() {
     List<string> deserializedKeys = GetListString(PREFS.SERIALIZED_PLAYER_PREFS_KEYS);
 
