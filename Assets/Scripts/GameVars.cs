@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameVars : MonoBehaviour 
+public class GameVars : MonoBehaviour
 {
   // Scene constants (These need to change anytime we build.
   //  We should no longer use stuff like "Application.loadedLevel == 3"
@@ -13,9 +13,9 @@ public class GameVars : MonoBehaviour
   private const string PLAYER_UUID_STRING  = "PLAYER_UUID";
 
   private static GameVars singleton;
-  
+
   public Transform somePrefab;
-  
+
   private GameObject mPlayer;
 	
   public float mDistance;
@@ -203,7 +203,7 @@ public class GameVars : MonoBehaviour
   public float getScore() {
 		return (mDistance / 2) + mScore - (mOrcHits * 2);
   }
-  
+
   public GameObject getPlayer()
   {
     if (mPlayer == null)
