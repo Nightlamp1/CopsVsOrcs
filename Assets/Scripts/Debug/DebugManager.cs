@@ -30,6 +30,10 @@ class DebugManager : MonoBehaviour {
     Debug.setLogLevel(logLevel);
   }
 
+  void Start() {
+    Debug.setLogLevel(logLevel);
+  }
+
   public static DebugManager getInstance() {
     return singleton;
   }
