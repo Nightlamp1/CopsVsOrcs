@@ -795,6 +795,7 @@ MonoBehaviour:
   - 4
   - 4
   - 4
+  orcGrowlMaxRan: 100
   orcHitSounds:
   - {fileID: 8300000, guid: dbde4955aa2b2064983af3a3cbfb1e48, type: 3}
   - {fileID: 8300000, guid: f614f8aa34a29bb40bb51ad883c583ab, type: 3}
@@ -834,6 +835,7 @@ MonoBehaviour:
   - 24.25
   - 24.25
   - 24.25
+  orcOtherSoundsMaxRan: 100
   mainMenuJingleScaling: 230
   endlessRunJingleScaling: 230
   gameOverJingleScaling: 230
@@ -844,7 +846,7 @@ MonoBehaviour:
   orcHitJingleScaling: 255
   orcOtherJingleScaling: 255
   playerOuchJingleScaling: 255
-  playerHitJingleScaling: 255
+  playerHitJingleScaling: 192
 --- !u!81 &1089631525
 AudioListener:
   m_ObjectHideFlags: 0
