@@ -196,6 +196,10 @@ public class AudioManager : MonoBehaviour {
     StartCoroutine(playSFX(orcGrowlSounds[growl], orcGrowlJingleScaling));
   }
 
+  public void playHitSound() {
+    StartCoroutine(playSFX(orcHitSounds[Random.Range(0, orcHitSounds.Length - 1)], orcHitJingleScaling));
+  }
+
   public void setMusicBlocking(bool blocking) {
     musicSourceBlocking = blocking;
   }

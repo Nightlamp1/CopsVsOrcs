@@ -39,6 +39,7 @@ public class EnemyCollision : MonoBehaviour {
 		else if (other.gameObject.tag == "Bullet") 
 		{
 			anim.SetTrigger("Death");
+      gameObject.GetComponent<Orc>().hit();
 			GameVars.getInstance().incrementOrcKills(1);
 			GameVars.getInstance().incrementMScore(2);
 			GameVars.getInstance().incrementcomboOrcKills(1);

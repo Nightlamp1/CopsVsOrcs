@@ -12,4 +12,8 @@ public class Orc : MonoBehaviour {
 
     AudioManager.getInstance().playGrowlSound();
   }
+
+  public void hit() {
+    AudioManager.getInstance().playHitSound();
+  }
 }
