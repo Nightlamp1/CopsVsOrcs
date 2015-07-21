@@ -186,7 +186,7 @@ public class PlayerPrefs : MonoBehaviour {
     if (HasKey(key)) {
       defaultValue = UnityEngine.PlayerPrefs.GetString(key, defaultValue);
 
-      ir (HasKey(key + ENCODING_SUFFIX) &&
+      if (HasKey(key + ENCODING_SUFFIX) &&
           UnityEngine.PlayerPrefs.GetInt(key + ENCODING_SUFFIX) == (int) PlayerPrefsEncoding.BASE64) {
         defaultValue = Base64.decodeString(defaultValue);
       }
