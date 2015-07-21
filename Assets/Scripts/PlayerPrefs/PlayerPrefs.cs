@@ -23,6 +23,7 @@ public class PlayerPrefs : MonoBehaviour {
     INT,
     STRING,
     LONG,
+    DATETIME,
   }
 
   public enum PlayerPrefsEncoding {
@@ -145,14 +146,45 @@ public class PlayerPrefs : MonoBehaviour {
   public static long GetLong(string key) {
     long value = 0;
 
+    if (HasKey(key)) {
+      try {
+        value = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+        addValidKey(key);
+      } catch (System.Exception ex) {
+        Debug.LogException(ex);
+      }
+    }
+
+    return value;
+  }
+
+  public static void SetDateTime(string key, System.DateTime dt) {
+    long value = 0;
+
     try {
-      value = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+      value = dt.ToBinary();
+
+      UnityEngine.PlayerPrefs.SetString(key, "" + value);
+      UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.DATETIME);
+      UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
       addValidKey(key);
     } catch (System.Exception ex) {
       Debug.LogException(ex);
     }
+  }
 
-    return value;
+  public static System.DateTime GetDateTime(string key) {
+    long value = 0;
+    System.DateTime dt = new System.DateTime();
+
+    try {
+      value = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+      dt = System.DateTime.FromBinary(value);
+    } catch (System.Exception ex) {
+      Debug.LogException(ex);
+    }
+
+    return dt;
   }
 
   // Essentially Overloads
