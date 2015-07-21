@@ -8,6 +8,22 @@ public class PlayerPrefs : MonoBehaviour {
 
   private static List<string> keys;
 
+  public event BeforeDeletingKeyEventHandler BeforeDeletingKey;
+  public event AfterDeletedKeyEventHandler   AfterDeletedKey;
+
+  public enum PlayerPrefsType {
+    UNSET,
+    FLOAT,
+    INT,
+    STRING,
+    LONG,
+  }
+
+  public enum PlayerPrefsEncoding {
+    NONE,
+    BASE64,
+  }
+
   void Awake() {
     if (initialized) {
       Destroy(gameObject);
@@ -83,6 +99,49 @@ public class PlayerPrefs : MonoBehaviour {
     }
 
     return keysArray;
+  }
+
+  // Given a key, what type is stored?
+  public static PlayerPrefsType getKeyType(string key) {
+    return (PlayerPrefsType) UnityEngine.PlayerPrefs.GetInt(key + KEY_TYPE_SUFFIX);
+  }
+
+  public static void deleteKeyAndSetType(string key, PlayerPrefsType type) {
+    DeleteKey(key);
+
+    switch (type) {
+      case PlayerPrefsType.FLOAT:
+        SetFloat(key);
+        break;
+      case PlayerPrefsType.INT:
+        SetInt(key);
+        break;
+      case PlayerPrefsType.STRING:
+        SetString(key);
+        break;
+      default:
+        break;
+    }
+  }
+
+  public static void SetLong(string key, long value) {
+    UnityEngine.PlayerPrefs.SetString(key, "" + value);
+    UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.LONG);
+    UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
+    addValidKey(key);
+  }
+  
+  public static long GetLong(string key) {
+    long value = 0;
+
+    try {
+      value = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+      addValidKey(key);
+    } catch (System.Exception ex) {
+      Debug.LogException(ex);
+    }
+
+    return value;
   }
 
   // Essentially Overloads
