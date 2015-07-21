@@ -15,7 +15,7 @@ public class PlayerPrefs : MonoBehaviour {
   private static List<string> keys;
 
   public event BeforeDeletingKeyEventHandler BeforeDeletingKey;
-  public event AfterDeletedKeyEventHandler  AfterDeletedKey;
+  public event AfterDeletedKeyEventHandler   AfterDeletedKey;
 
   public enum PlayerPrefsType {
     UNSET,
@@ -186,7 +186,7 @@ public class PlayerPrefs : MonoBehaviour {
     if (HasKey(key)) {
       defaultValue = UnityEngine.PlayerPrefs.GetString(key, defaultValue);
 
-      if (HasKey(key + ENCODING_SUFFIX) &&
+      ir (HasKey(key + ENCODING_SUFFIX) &&
           UnityEngine.PlayerPrefs.GetInt(key + ENCODING_SUFFIX) == (int) PlayerPrefsEncoding.BASE64) {
         defaultValue = Base64.decodeString(defaultValue);
       }
