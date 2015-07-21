@@ -75,8 +75,8 @@ public class GUIManager : MonoBehaviour {
           //  because the log level didn't match or because the game isn't running in the editor.
           Debug.QuietLogError("c3689a90-1b42-4887-a018-858cd039ca76");
         }
-#endif
         break;
+#endif
       default:
         break;
     }
