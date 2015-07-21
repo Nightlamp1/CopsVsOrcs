@@ -7,7 +7,9 @@ public class GUIManager : MonoBehaviour {
   public static GUIManager singleton;
 
   private int previousLevel = -1;
+#if UNITY_EDITOR
   private Component debugGuiComponent;
+#endif
 
   [Tooltip("These are the textures for the Debug GUI.  They must match the order of the array below.")]
   public Texture2D[] debugGuiTextures;
@@ -82,7 +84,9 @@ public class GUIManager : MonoBehaviour {
     }
   }
 
+#if UNITY_EDITOR
   void LeavingDebugScene(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
     Destroy(debugGuiComponent);
   }
+#endif
 }
