@@ -82,6 +82,7 @@ public class SceneManager : MonoBehaviour {
         scenes[(int) newScene] + " aka " + newScene + " [" + (int) newScene + "]");
 
     PlayerPrefs.Save();
+    StatsManager.Save();
 
     if (SceneChanged != null) {
       SceneChanged(currentScene, newScene);

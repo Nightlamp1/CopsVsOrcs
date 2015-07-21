@@ -34,6 +34,9 @@ public class DebugGUI : MonoBehaviour {
   }
 
   void OnGUI() {
+    string currentValue;
+    string futureValue;
+
     keys = PlayerPrefs.getKeys();
 
     GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
@@ -123,6 +126,35 @@ public class DebugGUI : MonoBehaviour {
           GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.STRING_TYPE_PRESSED), buttonOptions);
 
           PlayerPrefs.SetString(keys[i], GUILayout.TextArea(PlayerPrefs.GetString(keys[i])));
+
+          break;
+        case PlayerPrefs.PlayerPrefsType.LONG:
+          // Long Type
+          if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.UNSET_TYPE_BUTTON), buttonOptions)) {
+            PlayerPrefs.deleteKeyAndSetType(key, PlayerPrefs.PlayerPrefsType.UNSET);
+            break;
+          }
+
+          if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.INT_TYPE_BUTTON), buttonOptions)) {
+            PlayerPrefs.deleteKeyAndSetType(key, PlayerPrefs.PlayerPrefsType.INT);
+            break;
+          }
+
+          if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.FLOAT_TYPE_BUTTON), buttonOptions)) {
+            PlayerPrefs.deleteKeyAndSetType(key, PlayerPrefs.PlayerPrefsType.FLOAT);
+            break;
+          }
+
+          GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.STRING_TYPE_PRESSED), buttonOptions);
+
+          currentValue = PlayerPrefs.GetLong(keys[i]).ToString();
+          futureValue = GUILayout.TextArea(currentValue);
+
+          try {
+            PlayerPrefs.SetLong(keys[i], System.Convert.ToInt64(futureValue));
+          } catch (System.Exception ex) {
+            Debug.LogException(ex);
+          }
 
           break;
         default:

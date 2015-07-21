@@ -6,7 +6,6 @@ public delegate void MusicEndedEventHandler   (float musicLength, bool blocking)
 public delegate void SFXStartedEventHandler   (float sfxLength,   bool blocking);
 public delegate void SFXEndedEventHandler     (float sfxLength,   bool blocking);
 
-
 public class AudioManager : MonoBehaviour {
   private         int           lastLoadedLevel;
   public          AudioSource   musicSource;

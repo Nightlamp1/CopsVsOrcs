@@ -22,6 +22,8 @@ public class PlayerPrefs : MonoBehaviour {
     FLOAT,
     INT,
     STRING,
+    LONG,
+    DATETIME,
   }
 
   public enum PlayerPrefsEncoding {
@@ -132,6 +134,59 @@ public class PlayerPrefs : MonoBehaviour {
       default:
         break;
     }
+  }
+
+  public static void SetLong(string key, long value) {
+    UnityEngine.PlayerPrefs.SetString(key, "" + value);
+    UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.LONG);
+    UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
+    addValidKey(key);
+  }
+  
+  public static long GetLong(string key, long defaultValue = 0) {
+    if (HasKey(key)) {
+      try {
+        defaultValue = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+        addValidKey(key);
+      } catch (System.Exception ex) {
+        Debug.LogException(ex);
+      }
+    }
+
+    return defaultValue;
+  }
+
+  public static void SetDateTime(string key, System.DateTime dt) {
+    long value = 0;
+
+    try {
+      value = dt.ToBinary();
+
+      UnityEngine.PlayerPrefs.SetString(key, "" + value);
+      UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.DATETIME);
+      UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
+      addValidKey(key);
+    } catch (System.Exception ex) {
+      Debug.LogException(ex);
+    }
+  }
+
+  public static System.DateTime GetDateTime(string key) {
+    return GetDateTime(key, new System.DateTime());
+  }
+
+  public static System.DateTime GetDateTime(string key, System.DateTime defaultValue) {
+    long value = 0;
+    System.DateTime dt = new System.DateTime();
+
+    try {
+      value = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+      dt = System.DateTime.FromBinary(value);
+    } catch (System.Exception ex) {
+      Debug.LogException(ex);
+    }
+
+    return dt;
   }
 
   // Essentially Overloads
