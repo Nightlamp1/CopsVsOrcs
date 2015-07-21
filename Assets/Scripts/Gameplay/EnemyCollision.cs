@@ -32,6 +32,7 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") 
 		{
+      PlayerManager.getInstance().hit();
 			GameVars.getInstance().incrementOrcHits(1);
 			GameVars.getInstance().setComboOrcKills(0);
 			Physics2D.IgnoreCollision(other.collider, this.GetComponent<Collider2D>());
@@ -39,6 +40,7 @@ public class EnemyCollision : MonoBehaviour {
 		else if (other.gameObject.tag == "Bullet") 
 		{
 			anim.SetTrigger("Death");
+      gameObject.GetComponent<Orc>().hit();
 			GameVars.getInstance().incrementOrcKills(1);
 			GameVars.getInstance().incrementMScore(2);
 			GameVars.getInstance().incrementcomboOrcKills(1);

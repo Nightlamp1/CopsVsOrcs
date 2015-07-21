@@ -7,7 +7,9 @@ public class GUIManager : MonoBehaviour {
   public static GUIManager singleton;
 
   private int previousLevel = -1;
+#if UNITY_EDITOR
   private Component debugGuiComponent;
+#endif
 
   [Tooltip("These are the textures for the Debug GUI.  They must match the order of the array below.")]
   public Texture2D[] debugGuiTextures;
@@ -75,14 +77,16 @@ public class GUIManager : MonoBehaviour {
           //  because the log level didn't match or because the game isn't running in the editor.
           Debug.QuietLogError("c3689a90-1b42-4887-a018-858cd039ca76");
         }
-#endif
         break;
+#endif
       default:
         break;
     }
   }
 
+#if UNITY_EDITOR
   void LeavingDebugScene(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
     Destroy(debugGuiComponent);
   }
+#endif
 }
