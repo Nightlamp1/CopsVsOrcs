@@ -143,19 +143,17 @@ public class PlayerPrefs : MonoBehaviour {
     addValidKey(key);
   }
   
-  public static long GetLong(string key) {
-    long value = 0;
-
+  public static long GetLong(string key, long defaultValue = 0) {
     if (HasKey(key)) {
       try {
-        value = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
+        defaultValue = System.Convert.ToInt64(UnityEngine.PlayerPrefs.GetString(key));
         addValidKey(key);
       } catch (System.Exception ex) {
         Debug.LogException(ex);
       }
     }
 
-    return value;
+    return defaultValue;
   }
 
   public static void SetDateTime(string key, System.DateTime dt) {
@@ -174,6 +172,10 @@ public class PlayerPrefs : MonoBehaviour {
   }
 
   public static System.DateTime GetDateTime(string key) {
+    return GetDateTime(key, new System.DateTime());
+  }
+
+  public static System.DateTime GetDateTime(string key, System.DateTime defaultValue) {
     long value = 0;
     System.DateTime dt = new System.DateTime();
 
