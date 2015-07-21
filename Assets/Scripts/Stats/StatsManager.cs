@@ -25,9 +25,13 @@ public class StatsManager : MonoBehaviour {
   }
 
   public enum StatSig {
-    NONE,        // Don't send this up
-    NORMAL,
-    DAYS_PASSED, // NOW - DATETIME_IN_QUESTION
+    NONE,         // Don't send this up and don't save it.  I don't know why you would use this.
+    DELTA,        // This sends the delta to analytics (the record since the last Save())
+                  //  but saves the cumulative value to PlayerPrefs (useful for achievements)
+    CUMULATIVE,   // This sends the cumulative value to analytics (the total)
+    DAYS_PASSED,  // NOW - DATETIME_IN_QUESTION
+    MAX,          // Like delta, but throw away the lower value
+    MIN,          // Like delta, but throw away the higher value
     //These are just ideas
     DIFFERENCE_SINCE_LAST,
     //STD_DEV_BASED_ON_RUNS,
@@ -69,26 +73,76 @@ public class StatsManager : MonoBehaviour {
         oldValue = PlayerPrefs.GetLong(key);
         newValue = oldValue + value;
 
-        Debug.LogDebug("LongStats[key=" + key + "]=" + LongStats[key] + " = oldValue=" + oldValue + " + value=" + value + " = newValue=" + newValue);
-
         switch (StatSigs[key]) {
           case StatSig.NONE:
+            break;
+
+          case StatSig.CUMULATIVE:
+            Debug.LogDebug(
+                "LongStats[key=" + key + "]=" + LongStats[key] + " = " +
+                "oldValue=" + oldValue + " + " +
+                "value=" + value + " = " +
+                "newValue=" + newValue);
+
+            SceneManager.getInstance().googleAnalytics.LogEvent(
+                "Statistics", "StatisticsOnScene", key, newValue);
+
+            PlayerPrefs.SetLong(key, newValue);
 
             break;
 
-          case StatSig.NORMAL:
+          case StatSig.DELTA:
             SceneManager.getInstance().googleAnalytics.LogEvent(
                 "Statistics", "StatisticsOnScene", key, value);
+
+            PlayerPrefs.SetLong(key, newValue);
+
+            break;
+
+          case StatSig.MAX:
+            // We have a problem!  oldValue might start out higher than is
+            //  normally possible.  We have to initialize it to the minimum possible value
+            //  if it's not found
+            oldValue = PlayerPrefs.GetLong(key, System.Int64.MinValue);
+            newValue = Mathl.max(oldValue, value);
+
+            Debug.LogDebug(
+                "LongStats[key=" + key + "]=" + LongStats[key] + " = " +
+                "Mathl.max(oldValue=" + oldValue + ", " +
+                "value=" + value + ")=" + newValue);
+
+            SceneManager.getInstance().googleAnalytics.LogEvent(
+                "Statistics", "StatisticsOnScene", key, value);
+
+            PlayerPrefs.SetLong(key, newValue);
+
+            break;
+
+          case StatSig.MIN:
+            // We have a problem!  oldValue might start out lower than is
+            //  normally possible.  We have to initialize it to the maximum possible value
+            oldValue = PlayerPrefs.GetLong(key, System.Int64.MaxValue);
+            newValue = Mathl.min(oldValue, value);
+
+            Debug.LogDebug(
+                "LongStats[key=" + key + "]=" + LongStats[key] + " = " +
+                "Mathl.min(oldValue=" + oldValue + ", " +
+                "value=" + value + ")=" + newValue);
+
+            SceneManager.getInstance().googleAnalytics.LogEvent(
+                STATS.GAME_STATISTICS, STATS.STATISTICS_ON_SCENE, key, value);
+
+            PlayerPrefs.SetLong(key, newValue);
 
             break;
 
           default:
             Debug.LogError("Statistical Significance " + StatSigs[key] + " Not implemented.");
 
+            PlayerPrefs.SetLong(key, PlayerPrefs.GetLong(key) + value);
+
             break;
         }
-
-        PlayerPrefs.SetLong(key, PlayerPrefs.GetLong(key) + value);
       }
     }
 
@@ -118,7 +172,7 @@ public class StatsManager : MonoBehaviour {
 
   // This only modifies the Stats value for this key.  Save() will get
   //  called automatically and add this value to the saved preferences.
-  public static void incLong(string key, long value = 1, StatSig ss = StatSig.NORMAL) {
+  public static void incLong(string key, StatSig ss = StatSig.CUMULATIVE, long value = 1) {
     if (LongStats.ContainsKey(key)) {
       Debug.LogDebug("Incrementing LongStats[key=" + key + "]=" + LongStats[key] + " by " + value);
       LongStats[key] += value;
@@ -139,12 +193,14 @@ public class StatsManager : MonoBehaviour {
 
   // This only sets the Stats value for this key.  Save() will get
   //  called automatically and add this value to the saved preferences.
-  public static void setLong(string key, long value, StatSig ss = StatSig.NORMAL) {
+  public static void setLong(string key, long value, StatSig ss = StatSig.CUMULATIVE) {
     if (LongStats.ContainsKey(key)) {
       LongStats[key] = value;
     } else {
       LongStats.Add(key, value);
     }
+
+    SetStatSig(key, ss);
   }
 
   public static System.DateTime getDateTime(string key) {
