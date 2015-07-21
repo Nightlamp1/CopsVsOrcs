@@ -1,8 +1,31 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DebugGUI : MonoBehaviour {
   private Vector2 scrollView;
+
+  private GUILayoutOption[] buttonOptions = new GUILayoutOption[] {GUILayout.Width(32), GUILayout.Height(32)};
+
+  private Texture2D activeBlank;
+  private Texture2D activeInt;
+  private Texture2D activeFloat;
+  private Texture2D activeString;
+
+  public enum DebugGuiTexturesEnum {
+    DELETE_BUTTON,
+    UNSET_TYPE_BUTTON,
+    UNSET_TYPE_PRESSED,
+    INT_TYPE_BUTTON,
+    INT_TYPE_PRESSED,
+    FLOAT_TYPE_BUTTON,
+    FLOAT_TYPE_PRESSED,
+    STRING_TYPE_BUTTON,
+    STRING_TYPE_PRESSED,
+    BACK_BUTTON,
+  }
+
+  string[] keys;
 
   void Start() {
   }
@@ -18,10 +41,11 @@ public class DebugGUI : MonoBehaviour {
 
     GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
-    scrollView = GUILayout.BeginScrollView(scrollView);//new Rect(0.05f*Screen.width, 0.05f*Screen.height, 0.9f*Screen.width, 0.9f*Screen.height));
+    GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
 
-    for (int i = 0; i < 50; ++i) {
-      GUILayout.Button("This is a test button " + i + " is my number.");
+    if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.BACK_BUTTON), buttonOptions)) {
+      SceneManager.LoadLevel(SceneManager.Scene.MAIN_MENU);
     }
 
     GUILayout.FlexibleSpace();
@@ -168,5 +192,17 @@ public class DebugGUI : MonoBehaviour {
     GUILayout.EndScrollView();
 
     GUILayout.EndArea();
+  }
+
+  private Texture2D getPPTTexture(DebugGuiTexturesEnum pptt) {
+    GUIManager gm = gameObject.GetComponent<GUIManager>();
+
+    for (int i = 0; i < gm.debugGuiTexturesEnum.Length; ++i) {
+      if (gm.debugGuiTexturesEnum[i] == pptt) {
+        return gm.debugGuiTextures[i];
+      }
+    }
+
+    return null;
   }
 }
