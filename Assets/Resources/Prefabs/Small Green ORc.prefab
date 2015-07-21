@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11497432}
   - 50: {fileID: 5012630}
   - 95: {fileID: 9560530}
+  - 114: {fileID: 11426958}
   m_Layer: 0
   m_Name: GreenOrc
   m_TagString: Enemy
@@ -64,6 +65,7 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5012630
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -72,11 +74,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -120,6 +122,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11426958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e84b4566d43e74c9ad52621a012a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11497432
 MonoBehaviour:
   m_ObjectHideFlags: 1

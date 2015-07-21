@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11425802}
   - 50: {fileID: 5082626}
   - 95: {fileID: 9564530}
+  - 114: {fileID: 11440398}
   m_Layer: 0
   m_Name: BlueORc
   m_TagString: Enemy
@@ -50,6 +51,7 @@ GameObject:
   - 114: {fileID: 11447558}
   - 50: {fileID: 5070362}
   - 95: {fileID: 9585242}
+  - 114: {fileID: 11448190}
   m_Layer: 0
   m_Name: RedOrc
   m_TagString: Enemy
@@ -97,6 +99,7 @@ Transform:
   m_RootOrder: 1
 --- !u!50 &5070362
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -105,13 +108,14 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &5082626
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -120,11 +124,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -209,6 +213,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68308be9b572114ca8b9b15521e85ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11440398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d8381ff772be845ace6371553c5385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11447558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +233,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d68308be9b572114ca8b9b15521e85ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11448190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b821dc33f274284cac92dd677aefbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21200000

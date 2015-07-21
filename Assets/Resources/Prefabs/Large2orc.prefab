@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11453242}
   - 50: {fileID: 5057644}
   - 95: {fileID: 9543480}
+  - 114: {fileID: 11489180}
   m_Layer: 0
   m_Name: RedOrc
   m_TagString: Enemy
@@ -50,6 +51,7 @@ GameObject:
   - 114: {fileID: 11408974}
   - 50: {fileID: 5078094}
   - 95: {fileID: 9546332}
+  - 114: {fileID: 11462166}
   m_Layer: 0
   m_Name: BlueORc
   m_TagString: Enemy
@@ -97,6 +99,7 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5057644
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -105,13 +108,14 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &5078094
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -120,11 +124,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -218,6 +222,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d68308be9b572114ca8b9b15521e85ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11462166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d8381ff772be845ace6371553c5385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11489180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b821dc33f274284cac92dd677aefbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21200000
