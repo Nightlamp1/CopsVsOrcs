@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 
+// This logging class overrides the UnityEngine.Debug class.
+//  QuietLog means to log it, but only save the log information in the
+//  PlayerPrefs database.
+//  Other Log routines log out to the screen.
 class Debug {
 #if UNITY_EDITOR
-  private static bool suppressAnalyticsLogging = true; 
+  private static bool suppressAnalyticsLogging = true;
 #else
-  private static bool suppressAnalyticsLogging = false; 
+  private static bool suppressAnalyticsLogging = false;
 #endif
 
   // Default to a pretty light error log.
@@ -16,7 +20,7 @@ class Debug {
   //  Higher in the list (ERROR, for example) is of higher importance.
   public enum LogLevel {
     NONE, // NONE is reserved for setting a maxLogLevel where no logging ever happens.
-    ERROR, 
+    ERROR,
     WARN,
     INFO,
     DEBUG
@@ -91,6 +95,17 @@ class Debug {
 
   public static void LogError(string message) {
     LogConditional("ERROR", message);
+  }
+
+  // When you call this function, make sure you call it with a generated UUID and put
+  //  a comment explaining what the message is.
+  public static void QuietLogError(string message) {
+    try {
+      PlayerPrefs.SetInt(message, PlayerPrefs.GetInt(message) + 1);
+      googleAnalytics.LogEvent("Bug", "Detected", message, PlayerPrefs.GetInt(message) + 1);
+    } catch (Exception) {
+      // On the off chance we get an exception, let's go ahead and catch it and ignore it.
+    }
   }
 
   public static void LogException(System.Exception ex) {
