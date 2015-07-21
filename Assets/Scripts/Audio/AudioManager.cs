@@ -19,12 +19,33 @@ public class AudioManager : MonoBehaviour {
   public          AudioClip     creditsJingle;
   public          AudioClip[]   firingSounds;
 
+  public          AudioClip[]   orcGrowlSounds;
+  [Tooltip("Chances in orcGrowlMaxRan to spawn.")]
+  public          float[]       orcGrowlRarity;
+  [Tooltip("The size of the die that is rolled to select an orc growl.")]
+  public          int           orcGrowlMaxRan = 100;
+
+  public          AudioClip[]   orcHitSounds;
+  public          AudioClip[]   playerOuchSounds;
+  public          AudioClip[]   playerHitSounds;
+
+  public          AudioClip[]   orcOtherSounds;
+  [Tooltip("Chances in orcOtherSoundsMaxRan to spawn.")]
+  public          float[]       orcOtherSoundsRarity;
+  [Tooltip("The size of the die that is rolled to select an orc other sound.")]
+  public          int           orcOtherSoundsMaxRan = 100;
+
   public          int           mainMenuJingleScaling   = 255;
   public          int           endlessRunJingleScaling = 255;
   public          int           gameOverJingleScaling   = 255;
   public          int           creditsJingleScaling    = 255;
   public          int           firingSoundsScaling     = 255;
   public          int           deathJingleScaling      = 255;
+  public          int           orcGrowlJingleScaling   = 255;
+  public          int           orcHitJingleScaling     = 255;
+  public          int           orcOtherJingleScaling   = 255;
+  public          int           playerOuchJingleScaling = 255;
+  public          int           playerHitJingleScaling  = 255;
 
   private static  bool          initialized = false;
   private static  AudioManager  singleton;
@@ -32,6 +53,7 @@ public class AudioManager : MonoBehaviour {
   private         bool          musicSourceBlocking;
   private         bool          sfxSourceBlocking;
   private         bool          firingEnabled;
+  private         bool          growlingEnabled;
 
   public event MusicStartedEventHandler MusicStarted;
   public event MusicEndedEventHandler   MusicEnded;
@@ -52,6 +74,7 @@ public class AudioManager : MonoBehaviour {
     musicSourceBlocking = false;
     sfxSourceBlocking = false;
     firingEnabled = false;
+    growlingEnabled = false;
 
 		DontDestroyOnLoad (gameObject);
 
@@ -163,6 +186,16 @@ public class AudioManager : MonoBehaviour {
     }
   }
 
+  public void playGrowlSound() {
+    if (!growlingEnabled) return;
+
+    int growl = Ran.rarityIndex(orcGrowlRarity, 100);
+
+    if (growl < 0) return;
+
+    StartCoroutine(playSFX(orcGrowlSounds[growl], orcGrowlJingleScaling));
+  }
+
   public void setMusicBlocking(bool blocking) {
     musicSourceBlocking = blocking;
   }
@@ -173,13 +206,16 @@ public class AudioManager : MonoBehaviour {
 
   public void setFiring(bool pFiringEnabled) {
     firingEnabled = pFiringEnabled;
+    growlingEnabled = pFiringEnabled;
   }
 
   public void disableFiring() {
     firingEnabled = false;
+    growlingEnabled = false;
   }
 
   public void enableFiring() {
     firingEnabled = true;
+    growlingEnabled = true;
   }
 }
