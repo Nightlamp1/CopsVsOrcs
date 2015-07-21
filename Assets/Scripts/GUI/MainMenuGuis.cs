@@ -45,6 +45,12 @@ public class MainMenuGuis : MonoBehaviour {
 	// Update is called once per frame
 	void OnGUI()
 	{
+#if UNITY_EDITOR
+    if (GUI.Button(new Rect(0.25f * Screen.width, 0, 0.5f * Screen.width, 0.05f * Screen.height), "This big hideous button is for the debug menu.")) {
+      SceneManager.LoadLevel(SceneManager.Scene.DEBUG);
+    }
+#endif
+
 		if (AudioManager.getInstance ().musicSource.mute) {
 			toggleTextureMute = muteTrue;
 		} else if (!AudioManager.getInstance ().musicSource.mute) {

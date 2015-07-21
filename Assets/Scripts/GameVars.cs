@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameVars : MonoBehaviour 
+public class GameVars : MonoBehaviour
 {
   // Scene constants (These need to change anytime we build.
   //  We should no longer use stuff like "Application.loadedLevel == 3"
@@ -10,12 +10,11 @@ public class GameVars : MonoBehaviour
   public const string VERSION_NUMBER  = "DEVELOPMENT";
 
   private const string DEFAULT_PLAYER_NAME = "";
-  private const string PLAYER_UUID_STRING  = "PLAYER_UUID";
 
   private static GameVars singleton;
-  
+
   public Transform somePrefab;
-  
+
   private GameObject mPlayer;
 	
   public float mDistance;
@@ -61,9 +60,9 @@ public class GameVars : MonoBehaviour
 
   public void setPlayerName(string playerName)
   {
-    if (playerName != PlayerPrefs.GetString("playerName")) {
+    if (playerName != PlayerPrefs.GetString(PREFS.PLAYER_NAME)) {
       StartCoroutine(validateUsername(playerName));
-      PlayerPrefs.SetString("playerName", playerName);
+      PlayerPrefs.SetString(PREFS.PLAYER_NAME, playerName);
     }
   }
 
@@ -94,20 +93,21 @@ public class GameVars : MonoBehaviour
 
   public string getPlayerName()
   {
-    return PlayerPrefs.GetString("playerName");
+    return PlayerPrefs.GetString(PREFS.PLAYER_NAME);
   }
 
   public System.Guid getPlayerUuid() {
     string playerUuid = "";
 
-    if (PlayerPrefs.HasKey(PLAYER_UUID_STRING)) {
-      playerUuid = PlayerPrefs.GetString(PLAYER_UUID_STRING);
+    if (PlayerPrefs.HasKey(PREFS.PLAYER_UUID)) {
+      playerUuid = PlayerPrefs.GetString(PREFS.PLAYER_UUID);
     }
 
     if (playerUuid == "") {
       playerUuid = (System.Guid.NewGuid()).ToString();
 
-      PlayerPrefs.SetString(PLAYER_UUID_STRING, playerUuid);
+      Debug.LogDebug("Setting string " + PREFS.PLAYER_UUID + " to playerUuid " + playerUuid);
+      PlayerPrefs.SetString(PREFS.PLAYER_UUID, playerUuid);
 
       PlayerPrefs.Save();
     }
@@ -182,11 +182,11 @@ public class GameVars : MonoBehaviour
   }
 
   public void setGlobalHighScoresSelected(bool globalHighScoresSelected) {
-    PlayerPrefs.SetInt("GlobalHighScoresSelected", (globalHighScoresSelected ? 1 : 0));
+    PlayerPrefs.SetInt(PREFS.GLOBAL_HIGHSCORES_SELECTED, (globalHighScoresSelected ? 1 : 0));
   }
 
   public bool getGlobalHighScoresSelected() {
-    return (PlayerPrefs.GetInt("GlobalHighScoresSelected") != 0);
+    return (PlayerPrefs.GetInt(PREFS.GLOBAL_HIGHSCORES_SELECTED) != 0);
   }
 
   public void setMScore(float scoreVal){
@@ -203,7 +203,7 @@ public class GameVars : MonoBehaviour
   public float getScore() {
 		return (mDistance / 2) + mScore - (mOrcHits * 2);
   }
-  
+
   public GameObject getPlayer()
   {
     if (mPlayer == null)

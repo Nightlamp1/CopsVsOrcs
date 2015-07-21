@@ -2,11 +2,32 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+public delegate void AfterDeletedKeyEventHandler  (string key);
+public delegate void BeforeDeletingKeyEventHandler (string key);
+
 public class PlayerPrefs : MonoBehaviour {
+  private const string KEY_TYPE_SUFFIX = "_KEY_TYPE_SUFFIX_fcd61b9d-76cb-47f3-ab36-8792f3fc38d5";
+  private const string ENCODING_SUFFIX = "_ENCODING_SUFFIX_ab10ca5a-dd8d-46d5-a97f-9a037876dec1";
+
   private static  bool        initialized = false;
   private static  PlayerPrefs singleton;
 
   private static List<string> keys;
+
+  public event BeforeDeletingKeyEventHandler BeforeDeletingKey;
+  public event AfterDeletedKeyEventHandler   AfterDeletedKey;
+
+  public enum PlayerPrefsType {
+    UNSET,
+    FLOAT,
+    INT,
+    STRING,
+  }
+
+  public enum PlayerPrefsEncoding {
+    NONE,
+    BASE64,
+  }
 
   void Awake() {
     if (initialized) {
@@ -39,11 +60,16 @@ public class PlayerPrefs : MonoBehaviour {
     keys.Add(PREFS.MUTE_STATE);
     keys.Add(PREFS.PLAYER_NAME);
     keys.Add(PREFS.SERIALIZED_PLAYER_PREFS_KEYS);
+    keys.Add(PREFS.PLAYER_UUID);
 
     deserializeKeys();
   }
 
   public static void addValidKey(string key) {
+    if (key.Contains(ENCODING_SUFFIX) || key.Contains(KEY_TYPE_SUFFIX)) {
+      return;
+    }
+
     init_keys();
 
     // add the key to the internal list, save off the internal list
@@ -58,7 +84,7 @@ public class PlayerPrefs : MonoBehaviour {
     SetListString(PREFS.SERIALIZED_PLAYER_PREFS_KEYS, keys);
     Save();
   }
-  
+
   public static void deserializeKeys() {
     List<string> deserializedKeys = GetListString(PREFS.SERIALIZED_PLAYER_PREFS_KEYS);
 
@@ -71,11 +97,11 @@ public class PlayerPrefs : MonoBehaviour {
     }
   }
 
-  public List<string> getKeysList() {
+  public static List<string> getKeysList() {
     return keys;
   }
 
-  public string[] getKeys() {
+  public static string[] getKeys() {
     string[] keysArray = new string[keys.Count];
 
     for (int i = 0; i < keys.Count; ++i) {
@@ -85,14 +111,57 @@ public class PlayerPrefs : MonoBehaviour {
     return keysArray;
   }
 
+  // Given a key, what type is stored?
+  public static PlayerPrefsType getKeyType(string key) {
+    return (PlayerPrefsType) UnityEngine.PlayerPrefs.GetInt(key + KEY_TYPE_SUFFIX);
+  }
+
+  public static void deleteKeyAndSetType(string key, PlayerPrefsType type) {
+    DeleteKey(key);
+
+    switch (type) {
+      case PlayerPrefsType.FLOAT:
+        SetFloat(key);
+        break;
+      case PlayerPrefsType.INT:
+        SetInt(key);
+        break;
+      case PlayerPrefsType.STRING:
+        SetString(key);
+        break;
+      default:
+        break;
+    }
+  }
+
   // Essentially Overloads
   public static void DeleteAll() {
     UnityEngine.PlayerPrefs.DeleteAll();
   }
 
   public static void DeleteKey(string key) {
+    DeletingKey(key);
     UnityEngine.PlayerPrefs.DeleteKey(key);
-    addValidKey(key);
+    UnityEngine.PlayerPrefs.DeleteKey(key + KEY_TYPE_SUFFIX);
+    UnityEngine.PlayerPrefs.DeleteKey(key + ENCODING_SUFFIX);
+    keys.Remove(key);
+    DeletedKey(key);
+  }
+
+  public static void DeletingKey(string key) {
+    PlayerPrefs pp = getInstance();
+
+    if (pp.BeforeDeletingKey != null) {
+      pp.BeforeDeletingKey(key);
+    }
+  }
+
+  public static void DeletedKey(string key) {
+    PlayerPrefs pp = getInstance();
+
+    if (pp.AfterDeletedKey != null) {
+      pp.AfterDeletedKey(key);
+    }
   }
 
   public static float GetFloat(string key, float defaultValue = 0.0f) {
@@ -116,6 +185,12 @@ public class PlayerPrefs : MonoBehaviour {
   public static string GetString(string key, string defaultValue = "") {
     if (HasKey(key)) {
       defaultValue = UnityEngine.PlayerPrefs.GetString(key, defaultValue);
+
+      if (HasKey(key + ENCODING_SUFFIX) &&
+          UnityEngine.PlayerPrefs.GetInt(key + ENCODING_SUFFIX) == (int) PlayerPrefsEncoding.BASE64) {
+        defaultValue = Base64.decodeString(defaultValue);
+      }
+
       addValidKey(key);
     }
 
@@ -135,7 +210,6 @@ public class PlayerPrefs : MonoBehaviour {
 
         foreach (string s in encodedStrings) {
           list.Add(s);
-          //Debug.LogDebug(
         }
       }
     }
@@ -145,7 +219,6 @@ public class PlayerPrefs : MonoBehaviour {
 
   public static bool HasKey(string key) {
     if (UnityEngine.PlayerPrefs.HasKey(key)) {
-      addValidKey(key);
       return true;
     }
 
@@ -156,18 +229,36 @@ public class PlayerPrefs : MonoBehaviour {
     UnityEngine.PlayerPrefs.Save();
   }
 
+  private static void SetFloat(string key) {
+    SetFloat(key, 0f);
+  }
+
   public static void SetFloat(string key, float value) {
     UnityEngine.PlayerPrefs.SetFloat(key, value);
+    UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.FLOAT);
+    UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
     addValidKey(key);
+  }
+
+  public static void SetInt(string key) {
+    SetInt(key, 0);
   }
 
   public static void SetInt(string key, int value) {
     UnityEngine.PlayerPrefs.SetInt(key, value);
+    UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.INT);
+    UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
     addValidKey(key);
+  }
+
+  public static void SetString(string key) {
+    SetString(key, "");
   }
 
   public static void SetString(string key, string value) {
     UnityEngine.PlayerPrefs.SetString(key, value);
+    UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.STRING);
+    UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.NONE);
     addValidKey(key);
   }
 
@@ -182,6 +273,8 @@ public class PlayerPrefs : MonoBehaviour {
       }
     }
 
-    SetString(key, output);
+    UnityEngine.PlayerPrefs.SetString(key, output);
+    UnityEngine.PlayerPrefs.SetInt(key + KEY_TYPE_SUFFIX, (int) PlayerPrefsType.STRING);
+    UnityEngine.PlayerPrefs.SetInt(key + ENCODING_SUFFIX, (int) PlayerPrefsEncoding.BASE64);
   }
 }

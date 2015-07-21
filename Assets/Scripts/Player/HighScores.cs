@@ -12,6 +12,7 @@ public class HighScores : MonoBehaviour {
   public static HighScores  singleton;
 
   private SceneChangedEventHandler sceneChangeEventHandler;
+  private AfterDeletedKeyEventHandler deletedKeyEventHandler;
 
   void Awake() {
     if (initialized) {
@@ -42,10 +43,26 @@ public class HighScores : MonoBehaviour {
   void Start() {
     sceneChangeEventHandler = new SceneChangedEventHandler(SceneChange);
     SceneManager.getInstance().SceneChanged += sceneChangeEventHandler;
+
+    deletedKeyEventHandler = new AfterDeletedKeyEventHandler(AfterDeletedKey);
+    PlayerPrefs.getInstance().AfterDeletedKey += deletedKeyEventHandler;
   }
 
   void SceneChange(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
     serializeToPlayerPrefs();
+  }
+
+  void AfterDeletedKey(string key) {
+    switch (key) {
+      case PREFS.LOCAL_SCORES:
+        localScores = new HighScoreboard();
+        break;
+      case PREFS.GLOBAL_SCORES:
+        globalScores = new HighScoreboard();
+        break;
+      default:
+        break;
+    }
   }
 
   public static HighScores getInstance() {
@@ -107,18 +124,18 @@ public class HighScores : MonoBehaviour {
     StringWriter globalScoreStringWriter = new StringWriter();
     serializer.Serialize(globalScoreStringWriter, globalScores);
 
-    PlayerPrefs.SetString("localScores",  localScoreStringWriter.ToString());
-    PlayerPrefs.SetString("globalScores", globalScoreStringWriter.ToString());
+    PlayerPrefs.SetString(PREFS.LOCAL_SCORES,  localScoreStringWriter.ToString());
+    PlayerPrefs.SetString(PREFS.GLOBAL_SCORES, globalScoreStringWriter.ToString());
   }
 
   // This function loads the local scores from the player preferences.
   private void serializeFromPlayerPrefs() {
     XmlSerializer serializer = new XmlSerializer(typeof(HighScoreboard));
 
-    StringReader localScoreStringReader = new StringReader(PlayerPrefs.GetString("localScores"));
+    StringReader localScoreStringReader = new StringReader(PlayerPrefs.GetString(PREFS.LOCAL_SCORES));
     localScores = (HighScoreboard) serializer.Deserialize(localScoreStringReader);
 
-    StringReader globalScoreStringReader = new StringReader(PlayerPrefs.GetString("globalScores"));
+    StringReader globalScoreStringReader = new StringReader(PlayerPrefs.GetString(PREFS.GLOBAL_SCORES));
     globalScores = (HighScoreboard) serializer.Deserialize(globalScoreStringReader);
   }
 }
