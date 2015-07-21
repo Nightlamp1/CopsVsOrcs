@@ -22,6 +22,7 @@ public class DebugGUI : MonoBehaviour {
     FLOAT_TYPE_PRESSED,
     STRING_TYPE_BUTTON,
     STRING_TYPE_PRESSED,
+    BACK_BUTTON,
   }
 
   string[] keys;
@@ -36,6 +37,16 @@ public class DebugGUI : MonoBehaviour {
     keys = PlayerPrefs.getKeys();
 
     GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+
+    GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+
+    if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.BACK_BUTTON), buttonOptions)) {
+      SceneManager.LoadLevel(SceneManager.Scene.MAIN_MENU);
+    }
+
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
 
     scrollView = GUILayout.BeginScrollView(scrollView);
 

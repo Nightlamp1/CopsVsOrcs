@@ -6,7 +6,7 @@ public delegate void SceneChangedEventHandler       (SceneManager.Scene sceneFro
 
 public class SceneManager : MonoBehaviour {
   // These must be in the exact same order as the build order.  If a scene is removed from the build,
-  //  you must remove all scene changes to it.  Search all of the code for "LoadLevel" to find all 
+  //  you must remove all scene changes to it.  Search all of the code for "LoadLevel" to find all
   //  scene changes.
   public enum Scene {
     MAIN_MENU,
@@ -67,18 +67,18 @@ public class SceneManager : MonoBehaviour {
     if (BeforeSceneChange != null) {
       BeforeSceneChange(currentScene, newScene);
     }
-    
+
     Application.LoadLevel((int)newScene);
     googleAnalytics.LogScreen(Application.loadedLevelName);
 
-    // If you see this because you experienced an index out of bounds exception, you probably 
+    // If you see this because you experienced an index out of bounds exception, you probably
     //  want to fix it in the Scene enum above and also in the Awake() function.  Unfortunately,
     //  Unity doesn't let me populate this stuff based on which scenes exist in the build.
     // Other scripts may need to know about that scene as well.
 
     Debug.LogDebug(
-        "Scene changed from " + 
-        scenes[(int) currentScene] + " aka " + currentScene + " [" + (int) currentScene + "] to " + 
+        "Scene changed from " +
+        scenes[(int) currentScene] + " aka " + currentScene + " [" + (int) currentScene + "] to " +
         scenes[(int) newScene] + " aka " + newScene + " [" + (int) newScene + "]");
 
     PlayerPrefs.Save();
