@@ -22,8 +22,8 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
   {
-    Debug.LogDebug("Shooting a donut!");
-    StatsManager.incLong(STATS.TOTAL_DONUTS_SHOT);
+    StatsManager.incLong(STATS.TOTAL_DONUTS_SHOT, StatsManager.StatSig.CUMULATIVE);
+    StatsManager.incLong(STATS.PEAK_DONUTS_SHOT, StatsManager.StatSig.MAX);
     Destroy(gameObject, m_range);
 	}
 	
