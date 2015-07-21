@@ -85,7 +85,7 @@ public class StatsManager : MonoBehaviour {
                 "newValue=" + newValue);
 
             SceneManager.getInstance().googleAnalytics.LogEvent(
-                "Statistics", "StatisticsOnScene", key, newValue);
+                STATS.GAME_STATISTICS, STATS.STATISTICS_ON_SCENE, key, newValue);
 
             PlayerPrefs.SetLong(key, newValue);
 
@@ -93,7 +93,7 @@ public class StatsManager : MonoBehaviour {
 
           case StatSig.DELTA:
             SceneManager.getInstance().googleAnalytics.LogEvent(
-                "Statistics", "StatisticsOnScene", key, value);
+                STATS.GAME_STATISTICS, STATS.STATISTICS_ON_SCENE, key, value);
 
             PlayerPrefs.SetLong(key, newValue);
 
@@ -112,7 +112,7 @@ public class StatsManager : MonoBehaviour {
                 "value=" + value + ")=" + newValue);
 
             SceneManager.getInstance().googleAnalytics.LogEvent(
-                "Statistics", "StatisticsOnScene", key, value);
+                STATS.GAME_STATISTICS, STATS.STATISTICS_ON_SCENE, key, value);
 
             PlayerPrefs.SetLong(key, newValue);
 
