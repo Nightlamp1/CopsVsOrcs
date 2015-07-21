@@ -53,6 +53,16 @@ public class SceneManager : MonoBehaviour {
   }
 
   public void changeScene(Scene newScene) {
+    // If trying to load the debug scene, just return, refuse to do it.
+    //  Trust me.  It's for the best.
+#if !UNITY_EDITOR
+    if (newScene == Scene.DEBUG) {
+      // 146fcc25-42e8-45cc-9e78-ad2db99fde39 = In a potentially production environment, a change to the debug scene was requested, rejecting it.
+      Debug.QuietLogError("146fcc25-42e8-45cc-9e78-ad2db99fde39");
+      return;
+    }
+#endif
+
     // If any event handlers have attached, process them.
     if (BeforeSceneChange != null) {
       BeforeSceneChange(currentScene, newScene);
