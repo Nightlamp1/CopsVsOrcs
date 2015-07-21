@@ -200,6 +200,14 @@ public class AudioManager : MonoBehaviour {
     StartCoroutine(playSFX(orcHitSounds[Random.Range(0, orcHitSounds.Length - 1)], orcHitJingleScaling));
   }
 
+  public void playOuchSound() {
+    StartCoroutine(playSFX(playerOuchSounds[Random.Range(0, playerOuchSounds.Length - 1)], playerOuchJingleScaling));
+  }
+
+  public void playPlayerHitSound() {
+    StartCoroutine(playSFX(playerHitSounds[Random.Range(0, playerHitSounds.Length - 1)], playerHitJingleScaling));
+  }
+
   public void setMusicBlocking(bool blocking) {
     musicSourceBlocking = blocking;
   }

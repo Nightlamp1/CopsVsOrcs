@@ -32,6 +32,7 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") 
 		{
+      PlayerManager.getInstance().hit();
 			GameVars.getInstance().incrementOrcHits(1);
 			GameVars.getInstance().setComboOrcKills(0);
 			Physics2D.IgnoreCollision(other.collider, this.GetComponent<Collider2D>());
