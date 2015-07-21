@@ -7,7 +7,6 @@ public class Orc : MonoBehaviour {
   void Update() {
     if (!gameObject.GetComponent<SpriteRenderer>().isVisible) return;
     if (triedGrowl) return;
-    Debug.LogDebug("Time to try!");
 
     triedGrowl = true;
 
