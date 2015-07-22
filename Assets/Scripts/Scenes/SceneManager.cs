@@ -14,6 +14,7 @@ public class SceneManager : MonoBehaviour {
     GAME_OVER,
     CREDITS,
     DEBUG,
+    AD,
   }
 
   private static string[] scenes;
@@ -39,17 +40,22 @@ public class SceneManager : MonoBehaviour {
 
     DontDestroyOnLoad(gameObject);
 
-    scenes = new string[5];
+    scenes = new string[6];
 
-    scenes[(int) Scene.MAIN_MENU]    = "Main Menu";
-    scenes[(int) Scene.ENDLESS_RUN]  = "Endless Run";
+    scenes[(int) Scene.MAIN_MENU]   = "Main Menu";
+    scenes[(int) Scene.ENDLESS_RUN] = "Endless Run";
     scenes[(int) Scene.GAME_OVER]   = "Game Over";
     scenes[(int) Scene.CREDITS]     = "Credits";
     scenes[(int) Scene.DEBUG]       = "Debug";
+    scenes[(int) Scene.AD]          = "Ad";
   }
 
   public static SceneManager getInstance() {
     return singleton;
+  }
+
+  public static SceneManager.Scene getScene() {
+    return (SceneManager.Scene) Application.loadedLevel;
   }
 
   public void changeScene(Scene newScene) {
