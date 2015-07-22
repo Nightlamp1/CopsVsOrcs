@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour {
   }
 
   private void deathSoundOver(float length, bool blocking) {
-    SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
+    SceneManager.LoadLevel(SceneManager.Scene.AD);
 
     AudioManager.getInstance().SFXEnded -= sfxEndedEventHandler;
   }
