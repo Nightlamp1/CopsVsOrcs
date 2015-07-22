@@ -4,9 +4,12 @@ using System.Collections.Generic;
 
 public class GUIManager : MonoBehaviour {
   private BeforeSceneChangeEventHandler leavingDebugBeforeSceneChangeEventHandler;
+  private BeforeSceneChangeEventHandler leavingMainMenuBeforeSceneChangeEventHandler;
   public static GUIManager singleton;
 
   private int previousLevel = -1;
+
+  private Component easterEggComponent;
 #if UNITY_EDITOR
   private Component debugGuiComponent;
 #endif
@@ -56,6 +59,10 @@ public class GUIManager : MonoBehaviour {
 
     switch ((SceneManager.Scene) Application.loadedLevel) {
       case SceneManager.Scene.MAIN_MENU:
+        easterEggComponent = gameObject.AddComponent<EasterEggsHiddenGUI>();
+        leavingMainMenuBeforeSceneChangeEventHandler = new BeforeSceneChangeEventHandler(LeavingMainMenuScene);
+        SceneManager.getInstance().BeforeSceneChange += leavingMainMenuBeforeSceneChangeEventHandler;
+
         break;
       case SceneManager.Scene.ENDLESS_RUN:
         break;
@@ -82,6 +89,10 @@ public class GUIManager : MonoBehaviour {
       default:
         break;
     }
+  }
+
+  void LeavingMainMenuScene(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
+    Destroy(easterEggComponent);
   }
 
 #if UNITY_EDITOR
