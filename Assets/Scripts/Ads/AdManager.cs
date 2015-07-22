@@ -4,6 +4,11 @@ using System.Collections;
 using GoogleMobileAds.Api;
 
 public class AdManager : MonoBehaviour {
+  public const string INTERSTITIAL_ADS        = "InterstitialAds";
+  public const string AD_FAILED_TO_LOAD       = "AdFailedToLoad";
+  public const string INTERSTITIAL_AD_SHOWN   = "InterstitialAdShown";
+  public const string ADS_SHOWN_THIS_SESSION  = "AdsShownThisSession";
+
   public const int DEFAULT_MIN_SECONDS_BETWEEN_ADS = 120;
 
   private static AdManager singleton;
@@ -51,8 +56,28 @@ public class AdManager : MonoBehaviour {
 
   private void SceneChange(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
     switch ((SceneManager.Scene) newScene) {
-      case SceneManager.Scene.GAME_OVER:
-        if (!frequencyTimerExpired || !preloaded || AdClicks.tooManyClicks()) {
+      case SceneManager.Scene.AD:
+        if (!frequencyTimerExpired) {
+          Debug.LogDebug("Frequency timer not yet expired.");
+          SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
+          return;
+        }
+
+        if (!preloaded) {
+          Debug.LogDebug("Not preloaded.");
+          SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
+          return;
+        }
+
+        if (AdClicks.tooManyClicks()) {
+          Debug.LogDebug("Too many clicks.");
+          SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
+          return;
+        }
+
+        if (!getInterstitial().IsLoaded()) {
+          Debug.LogDebug("Interstitial not yet loaded.");
+          SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
           return;
         }
 
@@ -63,15 +88,25 @@ public class AdManager : MonoBehaviour {
 
         ++adsShown;
         SceneManager.getInstance().googleAnalytics.LogEvent(
-          SystemInfo.operatingSystem, "InterstitialAdShown", "Shown", adsShown);
+          INTERSTITIAL_ADS, INTERSTITIAL_AD_SHOWN, ADS_SHOWN_THIS_SESSION, adsShown);
 
         StartCoroutine(resetFrequencyTimer());
+
+        StartCoroutine(nextScene());
 
         break;
       default:
         preloadInterstitial();
 
         break;
+    }
+  }
+
+  private IEnumerator nextScene() {
+    yield return new WaitForSeconds(5);
+
+    if (SceneManager.getScene() == SceneManager.Scene.AD) {
+      SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
     }
   }
 
@@ -111,7 +146,11 @@ public class AdManager : MonoBehaviour {
 
         ++adsFailedToLoad;
         SceneManager.getInstance().googleAnalytics.LogEvent(
-          SystemInfo.operatingSystem, "AdFailedToLoad", args.Message, adsFailedToLoad);
+          INTERSTITIAL_ADS, AD_FAILED_TO_LOAD, args.Message, adsFailedToLoad);
+      };
+
+      interstitial.AdClosed += delegate(object sender, EventArgs args) {
+        SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
       };
     }
 
@@ -147,6 +186,5 @@ public class AdManager : MonoBehaviour {
 
     // Load the interstitial with the request.
     getInterstitial().LoadAd(request);
-    print ("========== Preloaded interstitial ==========");
   }
 }
