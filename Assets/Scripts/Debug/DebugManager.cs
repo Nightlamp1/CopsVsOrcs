@@ -30,8 +30,10 @@ class DebugManager : MonoBehaviour {
     //  production)
     if (GameVars.VERSION_NUMBER.ToString() != "DEVELOPMENT" && logLevel != Debug.LogLevel.ERROR) {
       // ba84c7e0-cfab-4fee-96e7-0c1c4d34c530 = Unexpected logLevel in production.
+#if !UNITY_EDITOR
       Debug.QuietLogError("ba84c7e0-cfab-4fee-96e7-0c1c4d34c530");
       logLevel = Debug.LogLevel.ERROR;
+#endif
     }
 
     Debug.setLogLevel(logLevel);
