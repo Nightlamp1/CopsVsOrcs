@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour {
   public static PlayerManager getInstance() {
     return singleton;
   }
-  
+
   public void killPlayer() {
     setAlive(false);
 
@@ -45,6 +45,30 @@ public class PlayerManager : MonoBehaviour {
     AudioManager.getInstance().SFXEnded += sfxEndedEventHandler;
 
     AudioManager.getInstance().playDeathJingle();
+
+    StatsManager.incLong(
+        STATS.TOTAL_DEATHS,
+        StatsManager.StatSig.CUMULATIVE);
+
+    StatsManager.setLong(
+        STATS.PEAK_CASH_EARNED,
+        System.Convert.ToInt64(Mathf.Floor(GameVars.getInstance().getScore())),
+        StatsManager.StatSig.MAX);
+
+    StatsManager.setLong(
+        STATS.PEAK_DISTANCE_RUN,
+        System.Convert.ToInt64(Mathf.Floor(GameVars.getInstance().getDistance())),
+        StatsManager.StatSig.MAX);
+
+    StatsManager.incLong(
+        STATS.TOTAL_CASH_EARNED,
+        StatsManager.StatSig.CUMULATIVE,
+        System.Convert.ToInt64(Mathf.Floor(GameVars.getInstance().getScore())));
+
+    StatsManager.incLong(
+        STATS.TOTAL_DISTANCE_RUN,
+        StatsManager.StatSig.CUMULATIVE,
+        System.Convert.ToInt64(Mathf.Floor(GameVars.getInstance().getDistance())));
   }
 
   private void deathSoundOver(float length, bool blocking) {

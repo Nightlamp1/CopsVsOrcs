@@ -47,6 +47,8 @@ public class EnemyCollision : MonoBehaviour {
 			this.GetComponent<Collider2D>().enabled = false;
 			Destroy (this.gameObject, 0.4f);
 			Destroy (other.gameObject);
+      StatsManager.incLong(STATS.TOTAL_ORCS_KILLED, StatsManager.StatSig.CUMULATIVE);
+      StatsManager.incLong(STATS.PEAK_ORCS_KILLED, StatsManager.StatSig.MAX);
 		}
 	}
 }

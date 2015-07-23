@@ -157,6 +157,35 @@ public class DebugGUI : MonoBehaviour {
           }
 
           break;
+        case PlayerPrefs.PlayerPrefsType.DATETIME:
+          // String
+          if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.UNSET_TYPE_BUTTON), buttonOptions)) {
+            PlayerPrefs.deleteKeyAndSetType(key, PlayerPrefs.PlayerPrefsType.UNSET);
+            break;
+          }
+
+          if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.INT_TYPE_BUTTON), buttonOptions)) {
+            PlayerPrefs.deleteKeyAndSetType(key, PlayerPrefs.PlayerPrefsType.INT);
+            break;
+          }
+
+          if (GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.FLOAT_TYPE_BUTTON), buttonOptions)) {
+            PlayerPrefs.deleteKeyAndSetType(key, PlayerPrefs.PlayerPrefsType.FLOAT);
+            break;
+          }
+
+          GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.STRING_TYPE_PRESSED), buttonOptions);
+
+          currentValue = PlayerPrefs.GetDateTime(keys[i]).ToString();
+          futureValue = GUILayout.TextArea(currentValue);
+
+          try {
+            PlayerPrefs.SetDateTime(keys[i], System.Convert.ToDateTime(futureValue));
+          } catch (System.Exception ex) {
+            Debug.LogException(ex);
+          }
+
+          break;
         default:
           // Unset
           GUILayout.Button(getPPTTexture(DebugGuiTexturesEnum.UNSET_TYPE_PRESSED), buttonOptions);
