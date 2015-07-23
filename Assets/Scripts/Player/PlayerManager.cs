@@ -61,4 +61,9 @@ public class PlayerManager : MonoBehaviour {
     AudioManager.getInstance().setFiring(pAlive);
     alive = pAlive;
   }
+
+  public void hit() {
+    //AudioManager.getInstance().playPlayerHitSound();
+    AudioManager.getInstance().playOuchSound();
+  }
 }

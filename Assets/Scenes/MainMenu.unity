@@ -765,16 +765,88 @@ MonoBehaviour:
   gameOverJingle: {fileID: 8300000, guid: 32eef775cd4c5344abf5024f572294a6, type: 3}
   creditsJingle: {fileID: 8300000, guid: 1c56e47e542c53d42a73dd7cd76becbf, type: 3}
   firingSounds:
-  - {fileID: 8300000, guid: 433763a15c1a6c8428165df9422089f2, type: 3}
-  - {fileID: 8300000, guid: ca0c7a3c9d804b040aba0e09d09b4c39, type: 3}
-  - {fileID: 8300000, guid: 29a883f88f490494f9c4ab51ba0d26d2, type: 3}
-  - {fileID: 8300000, guid: 8f11ecb6733c9b749b0f68b93976b582, type: 3}
+  - {fileID: 8300000, guid: 12cabc73d300acf4ea8c85749bd4ebbe, type: 3}
+  - {fileID: 8300000, guid: 5a45c33d9a8a82345b9dc15d9fc086d0, type: 3}
+  - {fileID: 8300000, guid: eb9fb2b0014a8c84296c8c60b6782e4e, type: 3}
+  - {fileID: 8300000, guid: c8f78a16968b1854a96b86e0375eaa67, type: 3}
+  - {fileID: 8300000, guid: f952c36e99350f649acf8c839b224af5, type: 3}
+  - {fileID: 8300000, guid: c40149470c09f4c41b7c2bca063729e7, type: 3}
+  - {fileID: 8300000, guid: c6d6f4fa2f16dbb4e8030df556daf0a4, type: 3}
+  - {fileID: 8300000, guid: d9525e9f98050cd49ad5926170e47e7c, type: 3}
+  orcGrowlSounds:
+  - {fileID: 8300000, guid: 8e46112dc7acabc41b3f31b78559b350, type: 3}
+  - {fileID: 8300000, guid: a541be4d974b92240ab7dde28d2fbc0c, type: 3}
+  - {fileID: 8300000, guid: f5c9251cadcb0dd4bb7c737aa47fe93a, type: 3}
+  - {fileID: 8300000, guid: d2e740a1fb160434cb5880f15b2afc6e, type: 3}
+  - {fileID: 8300000, guid: 297c07b7d6af40249a179a85432263a1, type: 3}
+  - {fileID: 8300000, guid: 7479065a90d5f5949b2f872a07ba40ed, type: 3}
+  - {fileID: 8300000, guid: 740f293748329a84ebe26dce6697263c, type: 3}
+  - {fileID: 8300000, guid: 33dd17d45b4d5c641b22e3448588fa51, type: 3}
+  - {fileID: 8300000, guid: c427c9f5a4bda9d4a86ba49869ff2c88, type: 3}
+  - {fileID: 8300000, guid: 2ac65698ff7b3484d95fae35b64831cd, type: 3}
+  orcGrowlRarity:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  orcGrowlMaxRan: 100
+  orcHitSounds:
+  - {fileID: 8300000, guid: dbde4955aa2b2064983af3a3cbfb1e48, type: 3}
+  - {fileID: 8300000, guid: f614f8aa34a29bb40bb51ad883c583ab, type: 3}
+  - {fileID: 8300000, guid: fdc31993b3c32e74f9ffd5384abb16e0, type: 3}
+  - {fileID: 8300000, guid: 98d10118ed3222d418fd9209588f3237, type: 3}
+  - {fileID: 8300000, guid: 526a228200628e140a8d04cedf8c3539, type: 3}
+  - {fileID: 8300000, guid: 89cd6456afc0a134e8de10f70abb7952, type: 3}
+  - {fileID: 8300000, guid: 88aaeab0ac58a54448df2434e01787e2, type: 3}
+  - {fileID: 8300000, guid: 6e84e58188841af4a9e6fadf5cd12f0d, type: 3}
+  - {fileID: 8300000, guid: d6f33014f6ad0f04fad18fb55c1e688e, type: 3}
+  - {fileID: 8300000, guid: 4538587c1cdf1444dade5f07236ae6c4, type: 3}
+  - {fileID: 8300000, guid: 8abcc48ad0209124aae71a4594896753, type: 3}
+  - {fileID: 8300000, guid: 5f6db4f222b470f44b1fa913c7106aa2, type: 3}
+  - {fileID: 8300000, guid: 9e62378a647fd754f9eb874516b37f37, type: 3}
+  - {fileID: 8300000, guid: 96565cc1bfec4d94a8a6a4ce8dcbdc8c, type: 3}
+  - {fileID: 8300000, guid: 2f18b06ae962ba84a8e736e6cdd7b7e4, type: 3}
+  - {fileID: 8300000, guid: 854e8a4febf1f6346a8dbf48dc3a5bb8, type: 3}
+  - {fileID: 8300000, guid: 840c4a6202ba6294a909eae9176fcd17, type: 3}
+  - {fileID: 8300000, guid: bac0232ebd2d3444789561a6a48c47dd, type: 3}
+  playerOuchSounds:
+  - {fileID: 8300000, guid: 3b673d9430522e94d8c29afb5aeaf9dc, type: 3}
+  - {fileID: 8300000, guid: c58a42998ba412d4884f1e1ab4127338, type: 3}
+  - {fileID: 8300000, guid: bdd2b0a7e96595c4788f8d2382e1b79f, type: 3}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 413e9941e447abc45953658e67bce570, type: 3}
+  - {fileID: 8300000, guid: 676fe8dd6b6aff84db176d6cfcd7bcf6, type: 3}
+  - {fileID: 8300000, guid: 02ca9213579e03c41b8c4dbd55e8ddcc, type: 3}
+  orcOtherSounds:
+  - {fileID: 8300000, guid: 75f130cbb538ed445b485173f4034e12, type: 3}
+  - {fileID: 8300000, guid: 6112e4f35700fb64f9867c5e179fef54, type: 3}
+  - {fileID: 8300000, guid: a4d3794492b365f48b3b628cb34bc0ba, type: 3}
+  - {fileID: 8300000, guid: 6a1c4ffde8aa64c4d8259321dde2f8ae, type: 3}
+  - {fileID: 8300000, guid: d3cb4806ea0084a48bea1669fa52b5ac, type: 3}
+  orcOtherSoundsRarity:
+  - 1
+  - 24.25
+  - 24.25
+  - 24.25
+  - 24.25
+  orcOtherSoundsMaxRan: 100
   mainMenuJingleScaling: 230
   endlessRunJingleScaling: 230
   gameOverJingleScaling: 230
   creditsJingleScaling: 230
   firingSoundsScaling: 145
   deathJingleScaling: 130
+  orcGrowlJingleScaling: 255
+  orcHitJingleScaling: 255
+  orcOtherJingleScaling: 255
+  playerOuchJingleScaling: 255
+  playerHitJingleScaling: 192
 --- !u!81 &1089631525
 AudioListener:
   m_ObjectHideFlags: 0
