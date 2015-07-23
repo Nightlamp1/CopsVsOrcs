@@ -64,6 +64,10 @@ public class PlayerPrefs : MonoBehaviour {
     keys.Add(PREFS.SERIALIZED_PLAYER_PREFS_KEYS);
     keys.Add(PREFS.PLAYER_UUID);
 
+    foreach (string key in STATS.getAllStatsKeys()) {
+      keys.Add(key);
+    }
+
     deserializeKeys();
   }
 

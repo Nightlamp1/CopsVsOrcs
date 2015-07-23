@@ -34,6 +34,8 @@ public class AudioManager : MonoBehaviour {
   [Tooltip("The size of the die that is rolled to select an orc other sound.")]
   public          int           orcOtherSoundsMaxRan = 100;
 
+  public          AudioClip[]   playerJumpSounds;
+
   public          int           mainMenuJingleScaling   = 255;
   public          int           endlessRunJingleScaling = 255;
   public          int           gameOverJingleScaling   = 255;
@@ -45,6 +47,7 @@ public class AudioManager : MonoBehaviour {
   public          int           orcOtherJingleScaling   = 255;
   public          int           playerOuchJingleScaling = 255;
   public          int           playerHitJingleScaling  = 255;
+  public          int           playerJumpJingleScaling = 255;
 
   private static  bool          initialized = false;
   private static  AudioManager  singleton;
@@ -205,6 +208,10 @@ public class AudioManager : MonoBehaviour {
 
   public void playPlayerHitSound() {
     StartCoroutine(playSFX(playerHitSounds[Random.Range(0, playerHitSounds.Length - 1)], playerHitJingleScaling));
+  }
+
+  public void playPlayerJumpSound() {
+    StartCoroutine(playSFX(playerJumpSounds[Random.Range(0, playerJumpSounds.Length - 1)], playerJumpJingleScaling));
   }
 
   public void setMusicBlocking(bool blocking) {

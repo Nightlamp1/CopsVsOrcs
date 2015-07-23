@@ -8,9 +8,6 @@ public class STATS {
   public const string STATISTICS_ON_LAUNCH  = "Statistics on Launch";
 
   // | - Labels
-  // | | - Misc
-  public const string FIRST_LAUNCH          = "First Launch";
-  public const string SUBSEQUENT_LAUNCH     = "Subsequent Launch Period";
   // | | - First Launch Stats
   public const string DATE_FIRST_LAUNCH     = "Date of First Launch";
   public const string SECONDS_SINCE_INSTALL = "Seconds Since Install";
@@ -54,4 +51,38 @@ public class STATS {
   public const string SCENE_PREFIX          = "Loaded Scene ";
   public const string SESSION_TIME_ELAPSED  = "Session Time Elapsed";
   public const string TOTAL_UPDATES         = "Total Updates";
+
+  public static string[] getAllStatsKeys() {
+    return new string[] {
+      DATE_FIRST_LAUNCH,
+      SECONDS_SINCE_INSTALL,
+      FIRST_VERSION,
+      DATE_LAST_UPDATE,
+      SECONDS_SINCE_UPDATE,
+      LAST_VERSION,
+      TOTAL_LAUNCH_COUNT,
+      DATE_LAST_LAUNCH,
+      TOTAL_DONUTS_SHOT,
+      PEAK_DONUTS_SHOT,
+      TOTAL_ORCS_KILLED,
+      PEAK_ORCS_KILLED,
+      PEAK_DISTANCE_RUN,
+      TOTAL_DISTANCE_RUN,
+      PEAK_DISTANCE_RUN,
+      TOTAL_DISTANCE_RUN,
+      PEAK_CASH_EARNED,
+      TOTAL_CASH_EARNED,
+      TOTAL_FIRST_JUMPS,
+      PEAK_FIRST_JUMPS,
+      TOTAL_SECOND_JUMPS,
+      PEAK_SECOND_JUMPS,
+      TOTAL_THIRD_JUMPS,
+      PEAK_THIRD_JUMPS,
+      TOTAL_DEATHS,
+      TOTAL_TIME_PLAYED,
+      ENDLESS_RUN_TIME,
+      SESSION_TIME_ELAPSED,
+      TOTAL_UPDATES,
+    };
+  }
 }

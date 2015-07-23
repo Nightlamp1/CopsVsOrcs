@@ -81,13 +81,19 @@ public class AdManager : MonoBehaviour {
           return;
         }
 
+        if (Application.isEditor) {
+          Debug.LogDebug("Is editor.");
+          SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
+          return;
+        }
+
         frequencyTimerExpired = false;
         preloaded = false;
 
         getInterstitial().Show();
 
         ++adsShown;
-        SceneManager.getInstance().googleAnalytics.LogEvent(
+        ReportingManager.LogEvent(
           INTERSTITIAL_ADS, INTERSTITIAL_AD_SHOWN, ADS_SHOWN_THIS_SESSION, adsShown);
 
         StartCoroutine(resetFrequencyTimer());
@@ -145,7 +151,7 @@ public class AdManager : MonoBehaviour {
         frequencyTimerExpired = false;
 
         ++adsFailedToLoad;
-        SceneManager.getInstance().googleAnalytics.LogEvent(
+        ReportingManager.LogEvent(
           INTERSTITIAL_ADS, AD_FAILED_TO_LOAD, args.Message, adsFailedToLoad);
       };
 

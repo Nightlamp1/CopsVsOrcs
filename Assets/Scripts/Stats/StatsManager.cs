@@ -27,7 +27,7 @@ public class StatsManager : MonoBehaviour {
   }
 
   public enum StatSig {
-    NONE,         // Don't send this up and don't save it.  I don't know why you would use this.
+    NONE,         // Simple save.
     DELTA,        // This sends the delta to analytics (the record since the last Save())
                   //  but saves the cumulative value to PlayerPrefs (useful for achievements)
     CUMULATIVE,   // This sends the cumulative value to analytics (the total)

@@ -54,23 +54,24 @@ public class SceneManager : MonoBehaviour {
   void Start() {
     string eventName;
 
+    long secondsSinceInstall =
+      System.Convert.ToInt64(
+        (System.DateTime.Now - PlayerPrefs.GetDateTime(STATS.DATE_FIRST_LAUNCH)).TotalSeconds);
+    long secondsSinceUpdate =
+      System.Convert.ToInt64(
+        (System.DateTime.Now - PlayerPrefs.GetDateTime(STATS.DATE_LAST_UPDATE)).TotalSeconds);
+
+    Debug.LogDebug(secondsSinceInstall + " and " + secondsSinceUpdate);
+
     StatsManager.incLong(STATS.SCENE_PREFIX + scenes[Application.loadedLevel], StatsManager.StatSig.CUMULATIVE);
     StatsManager.incLong(STATS.TOTAL_LAUNCH_COUNT, StatsManager.StatSig.CUMULATIVE);
 
     if (PlayerPrefs.HasKey(STATS.DATE_FIRST_LAUNCH)) {
       // Subsequent installs
-      long secondsSinceInstall =
-        System.Convert.ToInt64(
-          (System.DateTime.Now - PlayerPrefs.GetDateTime(STATS.DATE_FIRST_LAUNCH)).TotalSeconds);
-      long secondsSinceUpdate =
-        System.Convert.ToInt64(
-          (System.DateTime.Now - PlayerPrefs.GetDateTime(STATS.DATE_LAST_UPDATE)).TotalSeconds);
 
-      StatsManager.setLong(STATS.SECONDS_SINCE_INSTALL, secondsSinceInstall, StatsManager.StatSig.NONE);
-
-      eventName = STATS.SUBSEQUENT_LAUNCH;
+      eventName = STATS.TOTAL_LAUNCH_COUNT;
       ReportingManager.LogEvent(
-        STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName);
+        STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName, PlayerPrefs.GetLong(STATS.TOTAL_LAUNCH_COUNT));
 
       eventName = STATS.DAYS_SINCE_INSTALL;
       ReportingManager.LogEvent(
@@ -84,7 +85,6 @@ public class SceneManager : MonoBehaviour {
         StatsManager.setDateTime(STATS.DATE_LAST_UPDATE, System.DateTime.Now);
         StatsManager.incLong(STATS.TOTAL_UPDATES, StatsManager.StatSig.CUMULATIVE);
       } else {
-        StatsManager.setLong(STATS.SECONDS_SINCE_UPDATE, secondsSinceUpdate, StatsManager.StatSig.NONE);
       }
 
       StatsManager.setString(STATS.LAST_VERSION, Application.version);
@@ -103,9 +103,10 @@ public class SceneManager : MonoBehaviour {
         STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName);
     }
 
+    PlayerPrefs.SetLong(STATS.SECONDS_SINCE_INSTALL, secondsSinceInstall);
+    PlayerPrefs.SetLong(STATS.SECONDS_SINCE_UPDATE, secondsSinceUpdate);
     StatsManager.setDateTime(STATS.DATE_LAST_LAUNCH, System.DateTime.Now);
     StatsManager.setString(STATS.LAST_VERSION, Application.version);
-
   }
 
   public static SceneManager getInstance() {
