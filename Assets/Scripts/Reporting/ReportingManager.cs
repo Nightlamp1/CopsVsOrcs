@@ -13,6 +13,8 @@ class ReportingManager : MonoBehaviour {
 
     initialized = true;
     singleton = this;
+
+    DontDestroyOnLoad(gameObject);
   }
 
   public static ReportingManager getInstance() {
