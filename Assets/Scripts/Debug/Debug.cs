@@ -102,7 +102,7 @@ class Debug {
   public static void QuietLogError(string message) {
     try {
       PlayerPrefs.SetInt(message, PlayerPrefs.GetInt(message) + 1);
-      SceneManager.getInstance().googleAnalytics.LogEvent("Bug", "Detected", message, PlayerPrefs.GetInt(message) + 1);
+      ReportingManager.LogEvent("Bug", "Detected", message, PlayerPrefs.GetInt(message) + 1);
     } catch (System.Exception ex) {
       // On the off chance we get an exception, let's go ahead and catch it and log it.
       LogException(ex);

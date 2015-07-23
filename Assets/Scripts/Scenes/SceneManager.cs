@@ -5,6 +5,8 @@ public delegate void BeforeSceneChangeEventHandler  (SceneManager.Scene sceneFro
 public delegate void SceneChangedEventHandler       (SceneManager.Scene sceneFrom, SceneManager.Scene sceneTo);
 
 public class SceneManager : MonoBehaviour {
+  public const string USER_LEFT_APP = "User Left App";
+
   // These must be in the exact same order as the build order.  If a scene is removed from the build,
   //  you must remove all scene changes to it.  Search all of the code for "LoadLevel" to find all
   //  scene changes.
@@ -26,8 +28,6 @@ public class SceneManager : MonoBehaviour {
 
   private         Scene             currentScene = 0;
 
-  public          GoogleAnalyticsV4 googleAnalytics;
-
   void Awake() {
     if (initialized) {
       Destroy(gameObject);
@@ -46,6 +46,64 @@ public class SceneManager : MonoBehaviour {
     scenes[(int) Scene.GAME_OVER]   = "Game Over";
     scenes[(int) Scene.CREDITS]     = "Credits";
     scenes[(int) Scene.DEBUG]       = "Debug";
+  }
+
+
+  void Start() {
+    string eventName;
+
+    StatsManager.incLong(STATS.SCENE_PREFIX + scenes[Application.loadedLevel], StatsManager.StatSig.CUMULATIVE);
+    StatsManager.incLong(STATS.TOTAL_LAUNCH_COUNT, StatsManager.StatSig.CUMULATIVE);
+
+    if (PlayerPrefs.HasKey(STATS.DATE_FIRST_LAUNCH)) {
+      // Subsequent installs
+      long secondsSinceInstall =
+        System.Convert.ToInt64(
+          (System.DateTime.Now - PlayerPrefs.GetDateTime(STATS.DATE_FIRST_LAUNCH)).TotalSeconds);
+      long secondsSinceUpdate =
+        System.Convert.ToInt64(
+          (System.DateTime.Now - PlayerPrefs.GetDateTime(STATS.DATE_LAST_UPDATE)).TotalSeconds);
+
+      StatsManager.setLong(STATS.SECONDS_SINCE_INSTALL, secondsSinceInstall, StatsManager.StatSig.NONE);
+
+      eventName = STATS.SUBSEQUENT_LAUNCH;
+      ReportingManager.LogEvent(
+        STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName);
+
+      eventName = STATS.DAYS_SINCE_INSTALL;
+      ReportingManager.LogEvent(
+        STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName, secondsSinceInstall / 86400);
+
+      if (PlayerPrefs.GetString(STATS.LAST_VERSION) != Application.version) {
+        eventName = STATS.UPDATED;
+        ReportingManager.LogEvent(
+          STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName, secondsSinceUpdate / 86400);
+
+        StatsManager.setDateTime(STATS.DATE_LAST_UPDATE, System.DateTime.Now);
+        StatsManager.incLong(STATS.TOTAL_UPDATES, StatsManager.StatSig.CUMULATIVE);
+      } else {
+        StatsManager.setLong(SECONDS_SINCE_UPDATE, secondsSinceUpdate, StatsManager.StatSig.NONE);
+      }
+
+      StatsManager.setString(STATS.LAST_VERSION, Application.version);
+
+      eventName = STATS.TOTAL_UPDATES;
+      ReportingManager.LogEvent(
+          STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName, PlayerPrefs.GetLong(STATS.TOTAL_UPDATES));
+    } else {
+      // First install
+      eventName = STATS.INSTALL;
+
+      StatsManager.setDateTime(STATS.DATE_FIRST_LAUNCH, System.DateTime.Now, StatsManager.StatSig.FIRST_ONLY);
+      StatsManager.setString(STATS.FIRST_VERSION, Application.version);
+
+      ReportingManager.LogEvent(
+        STATS.GAME_STATISTICS, STATS.STATISTICS_ON_LAUNCH, eventName);
+    }
+
+    StatsManager.setDateTime(STATS.DATE_LAST_LAUNCH, System.DateTime.Now);
+    StatsManager.setString(STATS.LAST_VERSION, Application.version);
+
   }
 
   public static SceneManager getInstance() {
@@ -69,7 +127,7 @@ public class SceneManager : MonoBehaviour {
     }
 
     Application.LoadLevel((int)newScene);
-    googleAnalytics.LogScreen(Application.loadedLevelName);
+    ReportingManager.LogScreen(Application.loadedLevelName);
 
     // If you see this because you experienced an index out of bounds exception, you probably
     //  want to fix it in the Scene enum above and also in the Awake() function.  Unfortunately,
@@ -81,6 +139,8 @@ public class SceneManager : MonoBehaviour {
         scenes[(int) currentScene] + " aka " + currentScene + " [" + (int) currentScene + "] to " +
         scenes[(int) newScene] + " aka " + newScene + " [" + (int) newScene + "]");
 
+    StatsManager.incLong(STATS.SCENE_PREFIX + scenes[(int) newScene], StatsManager.StatSig.CUMULATIVE);
+
     PlayerPrefs.Save();
     StatsManager.Save();
 
@@ -89,6 +149,10 @@ public class SceneManager : MonoBehaviour {
     }
 
     currentScene = newScene;
+  }
+
+  void OnApplicationPause(bool pauseStatus) {
+    StatsManager.incLong(STATS.SCENE_PREFIX + USER_LEFT_APP, StatsManager.StatSig.CUMULATIVE);
   }
 
   public static void LoadLevel(int newLevel) {

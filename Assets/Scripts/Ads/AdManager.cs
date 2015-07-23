@@ -62,7 +62,7 @@ public class AdManager : MonoBehaviour {
         getInterstitial().Show();
 
         ++adsShown;
-        SceneManager.getInstance().googleAnalytics.LogEvent(
+        ReportingManager.LogEvent(
           SystemInfo.operatingSystem, "InterstitialAdShown", "Shown", adsShown);
 
         StartCoroutine(resetFrequencyTimer());
@@ -110,7 +110,7 @@ public class AdManager : MonoBehaviour {
         frequencyTimerExpired = false;
 
         ++adsFailedToLoad;
-        SceneManager.getInstance().googleAnalytics.LogEvent(
+        ReportingManager.LogEvent(
           SystemInfo.operatingSystem, "AdFailedToLoad", args.Message, adsFailedToLoad);
       };
     }
