@@ -16,6 +16,7 @@ public class STATS {
   public const string SECONDS_SINCE_INSTALL = "Seconds Since Install";
   public const string DAYS_SINCE_INSTALL    = "Days Since Install";
   public const string FIRST_VERSION         = "First Version";
+  public const string INSTALL               = "Install Event";
 
   // | | - Subsequent Launch Stats
   public const string DATE_LAST_UPDATE      = "Date of Last Update";

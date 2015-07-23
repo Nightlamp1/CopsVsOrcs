@@ -82,7 +82,7 @@ public class SceneManager : MonoBehaviour {
         StatsManager.setDateTime(STATS.DATE_LAST_UPDATE, System.DateTime.Now);
         StatsManager.incLong(STATS.TOTAL_UPDATES, StatsManager.StatSig.CUMULATIVE);
       } else {
-        StatsManager.setLong(SECONDS_SINCE_UPDATE, secondsSinceUpdate, StatsManager.StatSig.NONE);
+        StatsManager.setLong(STATS.SECONDS_SINCE_UPDATE, secondsSinceUpdate, StatsManager.StatSig.NONE);
       }
 
       StatsManager.setString(STATS.LAST_VERSION, Application.version);
