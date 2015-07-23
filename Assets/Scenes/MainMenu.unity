@@ -845,16 +845,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bf261b2296670bc469dd25fb6f0e3dc1, type: 3}
   mainMenuJingleScaling: 230
   endlessRunJingleScaling: 230
-  gameOverJingleScaling: 230
+  gameOverJingleScaling: 215
   creditsJingleScaling: 230
-  firingSoundsScaling: 145
-  deathJingleScaling: 130
+  firingSoundsScaling: 140
+  deathJingleScaling: 192
   orcGrowlJingleScaling: 255
   orcHitJingleScaling: 255
   orcOtherJingleScaling: 255
   playerOuchJingleScaling: 192
   playerHitJingleScaling: 192
-  playerJumpJingleScaling: 255
+  playerJumpJingleScaling: 48
 --- !u!81 &1089631525
 AudioListener:
   m_ObjectHideFlags: 0
