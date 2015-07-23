@@ -54,6 +54,8 @@ public class StatsManager : MonoBehaviour {
     initialized = true;
     singleton = this;
 
+    DontDestroyOnLoad(gameObject);
+
     LongStats     = new Dictionary<string, long>();
     DateTimeStats = new Dictionary<string, System.DateTime>();
     StringStats     = new Dictionary<string, string>();
