@@ -13,7 +13,7 @@ public class EasterEggsHiddenGUI : MonoBehaviour {
 
   void Update() {
     if (Input.GetMouseButtonDown(0)) {
-      Debug.Log("Clicked");
+      Debug.LogDebug("Clicked");
     }
   }
 

@@ -66,4 +66,8 @@ public class PlayerManager : MonoBehaviour {
     //AudioManager.getInstance().playPlayerHitSound();
     AudioManager.getInstance().playOuchSound();
   }
+
+  public void jump() {
+    AudioManager.getInstance().playPlayerJumpSound();
+  }
 }

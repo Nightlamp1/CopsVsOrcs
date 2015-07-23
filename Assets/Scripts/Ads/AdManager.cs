@@ -81,6 +81,12 @@ public class AdManager : MonoBehaviour {
           return;
         }
 
+        if (Application.isEditor) {
+          Debug.LogDebug("Is editor.");
+          SceneManager.LoadLevel(SceneManager.Scene.GAME_OVER);
+          return;
+        }
+
         frequencyTimerExpired = false;
         preloaded = false;
 
