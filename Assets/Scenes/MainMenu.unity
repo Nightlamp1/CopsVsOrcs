@@ -216,7 +216,7 @@ GameObject:
   - 92: {fileID: 96630419}
   m_Layer: 0
   m_Name: GUIManager
-  m_TagString: Untagged
+  m_TagString: Indestructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,8 +230,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1650343545}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
 --- !u!92 &96630419
@@ -297,6 +296,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4adb3f0cc6f0a764a96a3f349746a8b9, type: 3}
   - {fileID: 2800000, guid: 3ac11329817fe884e8f3e09b66558bfc, type: 3}
   debugGuiTexturesEnum: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+  endlessRunGuiTextures:
+  - {fileID: 2800000, guid: f0e6b6c85b56d0d4ab5bdc8899db4eea, type: 3}
+  - {fileID: 2800000, guid: 2ad18c27bffae4441aa34d10547c7f1a, type: 3}
+  endlessRunGuiTexturesEnum: 0000000001000000
 --- !u!1001 &149305727
 Prefab:
   m_ObjectHideFlags: 0
@@ -957,47 +960,6 @@ AudioSource:
   m_PrefabParentObject: {fileID: 8233622, guid: 570721c83b2454547957551ac9f3b137,
     type: 2}
   m_PrefabInternal: {fileID: 1069494361}
---- !u!1 &1650343543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1650343545}
-  - 61: {fileID: 1650343544}
-  m_Layer: 0
-  m_Name: HackToGetOrcDimensions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1650343544
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1650343543}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1650343545
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1650343543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 96630418}
-  m_RootOrder: 0
 --- !u!1 &1770374496
 GameObject:
   m_ObjectHideFlags: 0
