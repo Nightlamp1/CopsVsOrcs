@@ -5,6 +5,8 @@ public class Destroyer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+    if (other.tag == "Indestructible") return;
+
 		if (other.tag == "Player") 
 		{
       PlayerManager.getInstance().killPlayer();

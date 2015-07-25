@@ -5,11 +5,15 @@ using System.Collections.Generic;
 public class GUIManager : MonoBehaviour {
   private BeforeSceneChangeEventHandler leavingDebugBeforeSceneChangeEventHandler;
   private BeforeSceneChangeEventHandler leavingMainMenuBeforeSceneChangeEventHandler;
-  public static GUIManager singleton;
+  private BeforeSceneChangeEventHandler leavingEndlessRunBeforeSceneChangeEventHandler;
+
+  private static GUIManager singleton;
+  private static bool initialized = false;
 
   private int previousLevel = -1;
 
   private Component easterEggComponent;
+  private Component endlessRunGuiComponent;
 #if UNITY_EDITOR
   private Component debugGuiComponent;
 #endif
@@ -19,32 +23,29 @@ public class GUIManager : MonoBehaviour {
   [Tooltip("These are the enums for the textures in the Debug GUI.  They must match the order of the array above.")]
   public DebugGUI.DebugGuiTexturesEnum[] debugGuiTexturesEnum;
 
+  [Tooltip("These are the textures for the Endless Run GUI.  They must match the order of the array below.")]
+  public Texture2D[] endlessRunGuiTextures;
+  [Tooltip("These are the enums for the textures in the Endless Run GUI.  They must match the order of the array above.")]
+  public EndlessRunGUI.EndlessRunGuiTexturesEnum[] endlessRunGuiTexturesEnum;
+
 //  public Texture2D getDeleteButtonAsset() {
 //    return DeleteButtonAsset;
 //  }
 
-  void Awake()
-  {
-    if(singleton != null && singleton != this)
-    {
+  void Awake() {
+    if (initialized) {
       Destroy(gameObject);
-      //singleton = this;
+      return;
     }
-    else
-    {
-      DontDestroyOnLoad(gameObject);
-      singleton = this;
-    }
+
+    initialized = true;
+    singleton = this;
+
+    DontDestroyOnLoad(gameObject);
   }
 
   public static GUIManager getInstance() {
     return singleton;
-  }
-
-  void Start() {
-  }
-
-  void Update() {
   }
 
   void OnGUI() {
@@ -65,6 +66,10 @@ public class GUIManager : MonoBehaviour {
 
         break;
       case SceneManager.Scene.ENDLESS_RUN:
+        endlessRunGuiComponent = gameObject.AddComponent<EndlessRunGUI>();
+        leavingEndlessRunBeforeSceneChangeEventHandler = new BeforeSceneChangeEventHandler(LeavingEndlessRunScene);
+        SceneManager.getInstance().BeforeSceneChange += leavingEndlessRunBeforeSceneChangeEventHandler;
+
         break;
       case SceneManager.Scene.GAME_OVER:
         break;
@@ -93,6 +98,10 @@ public class GUIManager : MonoBehaviour {
 
   void LeavingMainMenuScene(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
     Destroy(easterEggComponent);
+  }
+
+  void LeavingEndlessRunScene(SceneManager.Scene oldScene, SceneManager.Scene newScene) {
+    Destroy(endlessRunGuiComponent);
   }
 
 #if UNITY_EDITOR
