@@ -13,7 +13,7 @@ public class GlobalInput : MonoBehaviour {
   void Start() {
     GUI.color = new Color(0, 0, 0, 0);
 
-    width  = Screen.width  * 0.26f;
+    width  = Screen.width  * 0.25f;
     height = Screen.height * 0.05f;
     startX = (Screen.width - width) / 2f;
     startY = Screen.height * 0.85f;
