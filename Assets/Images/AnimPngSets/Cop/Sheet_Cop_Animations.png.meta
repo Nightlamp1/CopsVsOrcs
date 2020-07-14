@@ -1,124 +1,288 @@
 fileFormatVersion: 2
 guid: 7ad8fa8ec655f9c439e3a1ae16706b38
-timeCreated: 1437030927
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Sheet_Cop_Animations_0
-    21300002: Sheet_Cop_Animations_1
-    21300004: Sheet_Cop_Animations_2
-    21300006: Sheet_Cop_Animations_3
-    21300008: Sheet_Cop_Animations_4
-    21300010: Sheet_Cop_Animations_5
-    21300012: Sheet_Cop_Animations_6
-    21300014: Sheet_Cop_Animations_7
-    21300016: Sheet_Cop_Animations_8
-    21300018: Sheet_Cop_Animations_9
-    21300020: Sheet_Cop_Animations_10
-    21300022: Sheet_Cop_Animations_11
-    21300024: Sheet_Cop_Animations_12
-    21300026: Sheet_Cop_Animations_13
-    21300028: Sheet_Cop_Animations_14
-    21300030: Sheet_Cop_Animations_15
-    21300032: Sheet_Cop_Animations_16
-    21300034: Sheet_Cop_Animations_17
-    21300036: Sheet_Cop_Animations_18
-    21300038: Sheet_Cop_Animations_19
-    21300040: Sheet_Cop_Animations_20
-    21300042: Sheet_Cop_Animations_21
-    21300044: Sheet_Cop_Animations_22
-    21300046: Sheet_Cop_Animations_23
-    21300048: Sheet_Cop_Animations_24
-    21300050: Sheet_Cop_Animations_25
-    21300052: Sheet_Cop_Animations_26
-    21300054: Sheet_Cop_Animations_27
-    21300056: Sheet_Cop_Animations_28
-    21300058: Sheet_Cop_Animations_29
-    21300060: Sheet_Cop_Animations_30
-    21300062: Sheet_Cop_Animations_31
-    21300064: Sheet_Cop_Animations_32
-    21300066: Sheet_Cop_Animations_33
-    21300068: Sheet_Cop_Animations_34
-    21300070: Sheet_Cop_Animations_35
-    21300072: Sheet_Cop_Animations_36
-    21300074: Sheet_Cop_Animations_37
-    21300076: Sheet_Cop_Animations_38
-    21300078: Sheet_Cop_Animations_39
-    21300080: Sheet_Cop_Animations_40
-    21300082: Sheet_Cop_Animations_41
-    21300084: Sheet_Cop_Animations_42
-    21300086: Sheet_Cop_Animations_43
-    21300088: Sheet_Cop_Animations_44
-    21300090: Sheet_Cop_Animations_45
-    21300092: Sheet_Cop_Animations_46
-    21300094: Sheet_Cop_Animations_47
-    21300096: Sheet_Cop_Animations_48
-    21300098: Sheet_Cop_Animations_49
-    21300100: Sheet_Cop_Animations_50
-    21300102: Sheet_Cop_Animations_51
-    21300104: Sheet_Cop_Animations_52
-    21300106: Sheet_Cop_Animations_53
-    21300108: Sheet_Cop_Animations_54
-    21300110: Sheet_Cop_Animations_55
-    21300112: Sheet_Cop_Animations_56
-    21300114: Sheet_Cop_Animations_57
-    21300116: Sheet_Cop_Animations_58
-    21300118: Sheet_Cop_Animations_59
-    21300120: Sheet_Cop_Animations_60
-    21300122: Sheet_Cop_Animations_61
-    21300124: Sheet_Cop_Animations_62
-    21300126: Sheet_Cop_Animations_63
-    21300128: Sheet_Cop_Animations_64
-    21300130: Sheet_Cop_Animations_65
-    21300132: Sheet_Cop_Animations_66
-    21300134: Sheet_Cop_Animations_67
-    21300136: Sheet_Cop_Animations_68
-  serializedVersion: 2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Sheet_Cop_Animations_0
+  - first:
+      213: 21300002
+    second: Sheet_Cop_Animations_1
+  - first:
+      213: 21300004
+    second: Sheet_Cop_Animations_2
+  - first:
+      213: 21300006
+    second: Sheet_Cop_Animations_3
+  - first:
+      213: 21300008
+    second: Sheet_Cop_Animations_4
+  - first:
+      213: 21300010
+    second: Sheet_Cop_Animations_5
+  - first:
+      213: 21300012
+    second: Sheet_Cop_Animations_6
+  - first:
+      213: 21300014
+    second: Sheet_Cop_Animations_7
+  - first:
+      213: 21300016
+    second: Sheet_Cop_Animations_8
+  - first:
+      213: 21300018
+    second: Sheet_Cop_Animations_9
+  - first:
+      213: 21300020
+    second: Sheet_Cop_Animations_10
+  - first:
+      213: 21300022
+    second: Sheet_Cop_Animations_11
+  - first:
+      213: 21300024
+    second: Sheet_Cop_Animations_12
+  - first:
+      213: 21300026
+    second: Sheet_Cop_Animations_13
+  - first:
+      213: 21300028
+    second: Sheet_Cop_Animations_14
+  - first:
+      213: 21300030
+    second: Sheet_Cop_Animations_15
+  - first:
+      213: 21300032
+    second: Sheet_Cop_Animations_16
+  - first:
+      213: 21300034
+    second: Sheet_Cop_Animations_17
+  - first:
+      213: 21300036
+    second: Sheet_Cop_Animations_18
+  - first:
+      213: 21300038
+    second: Sheet_Cop_Animations_19
+  - first:
+      213: 21300040
+    second: Sheet_Cop_Animations_20
+  - first:
+      213: 21300042
+    second: Sheet_Cop_Animations_21
+  - first:
+      213: 21300044
+    second: Sheet_Cop_Animations_22
+  - first:
+      213: 21300046
+    second: Sheet_Cop_Animations_23
+  - first:
+      213: 21300048
+    second: Sheet_Cop_Animations_24
+  - first:
+      213: 21300050
+    second: Sheet_Cop_Animations_25
+  - first:
+      213: 21300052
+    second: Sheet_Cop_Animations_26
+  - first:
+      213: 21300054
+    second: Sheet_Cop_Animations_27
+  - first:
+      213: 21300056
+    second: Sheet_Cop_Animations_28
+  - first:
+      213: 21300058
+    second: Sheet_Cop_Animations_29
+  - first:
+      213: 21300060
+    second: Sheet_Cop_Animations_30
+  - first:
+      213: 21300062
+    second: Sheet_Cop_Animations_31
+  - first:
+      213: 21300064
+    second: Sheet_Cop_Animations_32
+  - first:
+      213: 21300066
+    second: Sheet_Cop_Animations_33
+  - first:
+      213: 21300068
+    second: Sheet_Cop_Animations_34
+  - first:
+      213: 21300070
+    second: Sheet_Cop_Animations_35
+  - first:
+      213: 21300072
+    second: Sheet_Cop_Animations_36
+  - first:
+      213: 21300074
+    second: Sheet_Cop_Animations_37
+  - first:
+      213: 21300076
+    second: Sheet_Cop_Animations_38
+  - first:
+      213: 21300078
+    second: Sheet_Cop_Animations_39
+  - first:
+      213: 21300080
+    second: Sheet_Cop_Animations_40
+  - first:
+      213: 21300082
+    second: Sheet_Cop_Animations_41
+  - first:
+      213: 21300084
+    second: Sheet_Cop_Animations_42
+  - first:
+      213: 21300086
+    second: Sheet_Cop_Animations_43
+  - first:
+      213: 21300088
+    second: Sheet_Cop_Animations_44
+  - first:
+      213: 21300090
+    second: Sheet_Cop_Animations_45
+  - first:
+      213: 21300092
+    second: Sheet_Cop_Animations_46
+  - first:
+      213: 21300094
+    second: Sheet_Cop_Animations_47
+  - first:
+      213: 21300096
+    second: Sheet_Cop_Animations_48
+  - first:
+      213: 21300098
+    second: Sheet_Cop_Animations_49
+  - first:
+      213: 21300100
+    second: Sheet_Cop_Animations_50
+  - first:
+      213: 21300102
+    second: Sheet_Cop_Animations_51
+  - first:
+      213: 21300104
+    second: Sheet_Cop_Animations_52
+  - first:
+      213: 21300106
+    second: Sheet_Cop_Animations_53
+  - first:
+      213: 21300108
+    second: Sheet_Cop_Animations_54
+  - first:
+      213: 21300110
+    second: Sheet_Cop_Animations_55
+  - first:
+      213: 21300112
+    second: Sheet_Cop_Animations_56
+  - first:
+      213: 21300114
+    second: Sheet_Cop_Animations_57
+  - first:
+      213: 21300116
+    second: Sheet_Cop_Animations_58
+  - first:
+      213: 21300118
+    second: Sheet_Cop_Animations_59
+  - first:
+      213: 21300120
+    second: Sheet_Cop_Animations_60
+  - first:
+      213: 21300122
+    second: Sheet_Cop_Animations_61
+  - first:
+      213: 21300124
+    second: Sheet_Cop_Animations_62
+  - first:
+      213: 21300126
+    second: Sheet_Cop_Animations_63
+  - first:
+      213: 21300128
+    second: Sheet_Cop_Animations_64
+  - first:
+      213: 21300130
+    second: Sheet_Cop_Animations_65
+  - first:
+      213: 21300132
+    second: Sheet_Cop_Animations_66
+  - first:
+      213: 21300134
+    second: Sheet_Cop_Animations_67
+  - first:
+      213: 21300136
+    second: Sheet_Cop_Animations_68
+  externalObjects: {}
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 4096
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: 16
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Sheet_Cop_Animations_0
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_0
       rect:
         serializedVersion: 2
         x: 12
@@ -128,7 +292,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_1
       rect:
         serializedVersion: 2
         x: 232
@@ -138,7 +313,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_2
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_2
       rect:
         serializedVersion: 2
         x: 454
@@ -148,7 +334,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_3
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_3
       rect:
         serializedVersion: 2
         x: 673
@@ -158,7 +355,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_4
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_4
       rect:
         serializedVersion: 2
         x: 892
@@ -168,7 +376,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_5
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_5
       rect:
         serializedVersion: 2
         x: 1109
@@ -178,7 +397,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_6
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_6
       rect:
         serializedVersion: 2
         x: 1331
@@ -188,7 +418,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_7
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_7
       rect:
         serializedVersion: 2
         x: 1551
@@ -198,7 +439,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_8
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_8
       rect:
         serializedVersion: 2
         x: 1770
@@ -208,7 +460,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_9
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_9
       rect:
         serializedVersion: 2
         x: 1989
@@ -218,7 +481,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_10
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_10
       rect:
         serializedVersion: 2
         x: 2211
@@ -228,7 +502,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_11
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_11
       rect:
         serializedVersion: 2
         x: 2431
@@ -238,7 +523,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_12
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_12
       rect:
         serializedVersion: 2
         x: 2661
@@ -248,7 +544,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_13
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_13
       rect:
         serializedVersion: 2
         x: 2883
@@ -258,7 +565,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_14
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_14
       rect:
         serializedVersion: 2
         x: 3103
@@ -268,7 +586,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_15
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_15
       rect:
         serializedVersion: 2
         x: 3322
@@ -278,7 +607,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_16
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_16
       rect:
         serializedVersion: 2
         x: 3544
@@ -288,7 +628,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_17
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_17
       rect:
         serializedVersion: 2
         x: 3763
@@ -298,7 +649,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_18
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_18
       rect:
         serializedVersion: 2
         x: 3986
@@ -308,7 +670,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_19
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_19
       rect:
         serializedVersion: 2
         x: 4205
@@ -318,7 +691,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_20
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_20
       rect:
         serializedVersion: 2
         x: 4424
@@ -328,7 +712,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_21
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_21
       rect:
         serializedVersion: 2
         x: 4646
@@ -338,7 +733,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_22
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_22
       rect:
         serializedVersion: 2
         x: 4866
@@ -348,7 +754,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_23
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_23
       rect:
         serializedVersion: 2
         x: 5085
@@ -358,7 +775,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_24
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_24
       rect:
         serializedVersion: 2
         x: 5305
@@ -368,7 +796,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_25
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_25
       rect:
         serializedVersion: 2
         x: 26
@@ -378,7 +817,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_26
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_26
       rect:
         serializedVersion: 2
         x: 245
@@ -388,7 +838,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_27
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_27
       rect:
         serializedVersion: 2
         x: 465
@@ -398,7 +859,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_28
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_28
       rect:
         serializedVersion: 2
         x: 684
@@ -408,7 +880,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_29
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_29
       rect:
         serializedVersion: 2
         x: 903
@@ -418,7 +901,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_30
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_30
       rect:
         serializedVersion: 2
         x: 1125
@@ -428,7 +922,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_31
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_31
       rect:
         serializedVersion: 2
         x: 1339
@@ -438,7 +943,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_32
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_32
       rect:
         serializedVersion: 2
         x: 1559
@@ -448,7 +964,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_33
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_33
       rect:
         serializedVersion: 2
         x: 1784
@@ -458,7 +985,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_34
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_34
       rect:
         serializedVersion: 2
         x: 2003
@@ -468,7 +1006,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_35
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_35
       rect:
         serializedVersion: 2
         x: 2225
@@ -478,7 +1027,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_36
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_36
       rect:
         serializedVersion: 2
         x: 2436
@@ -488,7 +1048,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_37
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_37
       rect:
         serializedVersion: 2
         x: 2653
@@ -498,7 +1069,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_38
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6305410000000000800000000000000
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_38
       rect:
         serializedVersion: 2
         x: 2875
@@ -508,7 +1090,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_39
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_39
       rect:
         serializedVersion: 2
         x: 3094
@@ -518,7 +1111,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_40
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_40
       rect:
         serializedVersion: 2
         x: 3314
@@ -528,7 +1132,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_41
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_41
       rect:
         serializedVersion: 2
         x: 3539
@@ -538,7 +1153,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_42
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_42
       rect:
         serializedVersion: 2
         x: 3758
@@ -548,7 +1174,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_43
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_43
       rect:
         serializedVersion: 2
         x: 3972
@@ -558,7 +1195,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_44
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67305410000000000800000000000000
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_44
       rect:
         serializedVersion: 2
         x: 4197
@@ -568,7 +1216,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_45
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_45
       rect:
         serializedVersion: 2
         x: 4438
@@ -578,7 +1237,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_46
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7305410000000000800000000000000
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_46
       rect:
         serializedVersion: 2
         x: 4657
@@ -588,7 +1258,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_47
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7305410000000000800000000000000
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_47
       rect:
         serializedVersion: 2
         x: 4877
@@ -598,7 +1279,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_48
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7305410000000000800000000000000
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_48
       rect:
         serializedVersion: 2
         x: 20
@@ -608,7 +1300,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_49
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08305410000000000800000000000000
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_49
       rect:
         serializedVersion: 2
         x: 234
@@ -618,7 +1321,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_50
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28305410000000000800000000000000
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_50
       rect:
         serializedVersion: 2
         x: 467
@@ -628,7 +1342,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_51
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_51
       rect:
         serializedVersion: 2
         x: 687
@@ -638,7 +1363,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_52
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68305410000000000800000000000000
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_52
       rect:
         serializedVersion: 2
         x: 906
@@ -648,7 +1384,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_53
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88305410000000000800000000000000
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_53
       rect:
         serializedVersion: 2
         x: 1125
@@ -658,7 +1405,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_54
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8305410000000000800000000000000
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_54
       rect:
         serializedVersion: 2
         x: 1345
@@ -668,7 +1426,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_55
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8305410000000000800000000000000
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_55
       rect:
         serializedVersion: 2
         x: 1564
@@ -678,7 +1447,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_56
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8305410000000000800000000000000
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_56
       rect:
         serializedVersion: 2
         x: 1784
@@ -688,7 +1468,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_57
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09305410000000000800000000000000
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_57
       rect:
         serializedVersion: 2
         x: 2003
@@ -698,7 +1489,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_58
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29305410000000000800000000000000
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_58
       rect:
         serializedVersion: 2
         x: 2203
@@ -708,7 +1510,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_59
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49305410000000000800000000000000
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_59
       rect:
         serializedVersion: 2
         x: 2417
@@ -718,7 +1531,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_60
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69305410000000000800000000000000
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_60
       rect:
         serializedVersion: 2
         x: 2631
@@ -728,7 +1552,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_61
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89305410000000000800000000000000
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_61
       rect:
         serializedVersion: 2
         x: 2843
@@ -738,7 +1573,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_62
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9305410000000000800000000000000
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_62
       rect:
         serializedVersion: 2
         x: 3065
@@ -748,7 +1594,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_63
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9305410000000000800000000000000
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_63
       rect:
         serializedVersion: 2
         x: 3284
@@ -758,7 +1615,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_64
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9305410000000000800000000000000
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_64
       rect:
         serializedVersion: 2
         x: 3506
@@ -768,7 +1636,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_65
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a305410000000000800000000000000
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_65
       rect:
         serializedVersion: 2
         x: 3728
@@ -778,7 +1657,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_66
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a305410000000000800000000000000
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_66
       rect:
         serializedVersion: 2
         x: 3948
@@ -788,7 +1678,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_67
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a305410000000000800000000000000
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_67
       rect:
         serializedVersion: 2
         x: 4172
@@ -798,7 +1699,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet_Cop_Animations_68
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a305410000000000800000000000000
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Cop_Animations_68
       rect:
         serializedVersion: 2
         x: 4400
@@ -808,7 +1720,29 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a305410000000000800000000000000
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
