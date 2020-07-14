@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CreditScript : MonoBehaviour {
-	public Texture2D MainReturn;
+  public Texture2D MainReturn;
 
   void flexibleSpaces(int num) {
     for (int i = 0; i < num; ++i) {
@@ -10,7 +10,7 @@ public class CreditScript : MonoBehaviour {
     }
   }
 
-	void OnGUI(){
+  void OnGUI(){
     GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
     GUIStyle buttonStyle = new GUIStyle();
     GUILayoutOption[] buttonOptions = {
@@ -24,9 +24,9 @@ public class CreditScript : MonoBehaviour {
 
     flexibleSpaces(39);
 
-		if (GUILayout.Button (MainReturn, buttonStyle, buttonOptions)) {
-			SceneManager.LoadLevel (SceneManager.Scene.MAIN_MENU);
-		}
+    if (GUILayout.Button (MainReturn, buttonStyle, buttonOptions)) {
+      SceneManager.LoadLevel (SceneManager.Scene.MAIN_MENU);
+    }
 
     flexibleSpaces(1);
 
@@ -35,5 +35,5 @@ public class CreditScript : MonoBehaviour {
     flexibleSpaces(1);
 
     GUILayout.EndArea();
-	}
+  }
 }
